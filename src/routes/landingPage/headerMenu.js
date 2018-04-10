@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Navbar, Nav, NavItem} from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import ImgExample from '../imgs/hiw-buy.png';
+import ImgExample from '../../imgs/hiw-buy.png';
 import {StyleSheet, css} from 'aphrodite';
 import {bootstrapUtils} from 'react-bootstrap/lib/utils';
 import {Link, Redirect} from 'react-router-dom';

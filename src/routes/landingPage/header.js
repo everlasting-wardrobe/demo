@@ -1,9 +1,9 @@
 import React from 'react'
 import {Navbar, Nav, NavItem} from 'react-bootstrap'
 import HeaderBanner from './headerBanner'
-import HeaderMenuContainer from '../containers/headerMenuContainer'
+import HeaderMenuContainer from '../../containers/headerMenuContainer'
 import {StyleSheet, css} from 'aphrodite';
-import BackgroundImg from '../imgs/headerBannerBackground.jpg';
+import BackgroundImg from '../../imgs/headerBannerBackground.jpg';
 
 const styles = StyleSheet.create({
   headerWrapper : {

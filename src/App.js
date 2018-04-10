@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Header from './components/header'
 import './App.css'
 import Service from './routes/service'
 import Homepage from './routes/homepage'

@@ -1,4 +1,4 @@
-import HeaderMenu from '../components/headerMenu';
+import HeaderMenu from '../routes/landingPage/headerMenu';
 import {connect} from 'react-redux';
 import {login, logout} from '../actions';
 

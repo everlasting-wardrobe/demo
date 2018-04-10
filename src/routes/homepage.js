@@ -1,9 +1,9 @@
 import React from 'react';
 import Hiw from '../components/hiw'
-import Pricing from '../components/pricing'
-import Benefit from '../components/benefit'
-import EcoFriendly from '../components/ecoFriendly'
-import Header from '../components/header'
+import Pricing from './landingPage/pricing'
+import Benefit from './landingPage/benefit'
+import EcoFriendly from './landingPage/ecoFriendly'
+import Header from './landingPage/header'
 
 const Homepage = () => {
   return (
