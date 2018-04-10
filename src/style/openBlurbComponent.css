@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+
+.openBlurbHead{
+  font-family: Playfair Display,sans-serif;
+}
+
+h4{
+  font-family: Raleway, sans-serif;
+}
