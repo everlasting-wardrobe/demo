@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, css} from 'aphrodite'
 import {Grid, Row, Col} from 'react-bootstrap'
 import Computer from '../imgs/computer.png'
+
 import Pig from '../imgs/pig.png'
 import Mailbox from '../imgs/mailbox.png'
 import Hanger from '../imgs/hanger.png'
@@ -9,12 +10,12 @@ import Hanger from '../imgs/hanger.png'
 const styles = StyleSheet.create({
   hiwProcessWrapper: {
     textAlign: 'center',
-    paddingTop: '80px',
-    paddingBottom:'150px',
+    paddingTop: '20px',
+    paddingBottom:'30px',
   },
 
   stepWrapper : {
-    backgroundColor: '#E98074',
+    backgroundColor: '#FFFFFF',
     height: '300px',
     padding: '20px, 0px, 20px, 20px',
     marginTop: '20px',
@@ -25,19 +26,33 @@ const styles = StyleSheet.create({
     paddingTop: '10px',
     paddingLeft:'5px',
     paddingRight:'5px',
-    color:'#EAE7DC',
+    color:'#000000',
     position: 'relative',
-    fontFamily: `'Open Sans', sans-serif`,
+
   },
 
   img: {
-    height: '150px',
+    height: '120px',
     width:'150px',
   },
 
   header:{
-    marginTop:'0px',
-    fontFamily: `'Open Sans', sans-serif`,
+    fontSize: '34px',
+    color : '#665350',
+    marginTop:'20px',
+    fontFamily: 'Lato',
+    fontStyle: 'thin',
+  },
+
+  content:{
+    marginTop: '5px',
+    fontFamily: 'Lato',
+    lineHeight: '21px',
+    fontSize: '17px',
+    margin: '0px 20px 0px 20px',
+    // color: '#655757',
+    color : '#8E8D8A',
+    fontStyle: 'italic',
   },
 
   index: {
@@ -71,16 +86,23 @@ const hiwProcessContents = [
   }
 ]
 
+
+
+var GridStyle = {
+  margin: '0px,0px, 0px, 0px',
+}
+
+
 const hiwProcessHandle = (contents)=> {
   return(
     contents.map((data, i) =>(
       <Col key={data.head} lg={3} md={3} sm={6} xs={12}>
         <div className={css(styles.stepWrapper)} >
           <div className={css(styles.textWrapper)}>
-            <h3 className={css(styles.index)}><strong>{i}</strong></h3>
+            <h3 hidden className={css(styles.index)}>{i}</h3>
             <img className={css(styles.img)} src = {data.img} />
-            <h3 className={css(styles.header)}><strong>{data.head}</strong></h3>
-            <p>{data.content}</p>
+            <h3 className={css(styles.header)}>{data.head}</h3>
+            <p className={css(styles.content)}>{data.content}</p>
           </div>
         </div>
       </Col>
@@ -92,7 +114,7 @@ const hiwProcessHandle = (contents)=> {
 const HiwProcess = () => {
   return (
     <div className = {css(styles.hiwProcessWrapper)}>
-      <Grid>
+      <Grid style = {GridStyle}>
         <Row>
         {hiwProcessHandle(hiwProcessContents)}
         </Row>
