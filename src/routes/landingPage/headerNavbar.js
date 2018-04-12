@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
-import '../style/headerNavbar.css';
 import {StyleSheet, css} from 'aphrodite';
 
 const styles = StyleSheet.create({

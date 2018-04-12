@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, css} from 'aphrodite'
 import {Grid, Row, Col} from 'react-bootstrap'
-import PricingImg from '../imgs/pricing.jpg'
+import PricingImg from '../../imgs/pricing.jpg'
 
 const styles = StyleSheet.create({
   pricingContainerWrapper : {
