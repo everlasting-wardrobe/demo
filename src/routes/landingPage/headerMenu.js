@@ -15,15 +15,19 @@ const styles = StyleSheet.create({
       width: '100%'
     },
   },
+
   white: {
     color: `white`,
   },
+
   black:{
     color:'black',
   },
+
   position: {
     marginTop: '0px',
   }
+
 })
 
 const propTypes = {
@@ -35,6 +39,7 @@ const propTypes = {
 const defaultProps = {
   login: false,
 }
+
 
 
 bootstrapUtils.addStyle(Navbar, 'custom');
@@ -95,7 +100,7 @@ class HeaderMenu extends Component {
     const {login, handleLogin, handleLogout, color} = this.props;
     return(
       <Navbar  className={css(styles.navbar)}
-        style={{background: 'transparent', border:'none'}}>
+        style={{background: 'transparent', border:'none', margin: 'none'}}>
         <Navbar.Header>
           <Navbar.Brand>
             <h3  className={css(styles[color], styles.position)}>Everlasting Wardrobe </h3>

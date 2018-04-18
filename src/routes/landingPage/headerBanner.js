@@ -11,8 +11,19 @@ const styles = StyleSheet.create({
     color: 'White', fontFamily: 'Dosis',
   },
   button:{
+  },
+  headtext: {
+
+  },
+  headContent: {
+    
   }
 })
+
+const welcomeContent = {
+  head: `Kids Grow, Clothing Doesn't.` ,
+  headContent: `The First Rental Clothing Service For Growing children`,
+}
 
 bootstrapUtils.addStyle(Button, 'custom');
 
@@ -35,8 +46,8 @@ const CustomButtonStyle = (props) => {
 const HeaderBanner = ()=>(
   <div className={css(styles.bannerWrapper)}>
     <div className={css(styles.textWrapper)}>
-      <h2><strong>The First Rental Clothing Service for Growing Kids…</strong></h2>
-      <h3>and Savvy Parents</h3>
+      <h2 className={css(styles.headtext)}>Kids Grow, Clothing Doesn't. </h2>
+      <h3 className={css(styles.headContent)}>The First Rental Clothing Service For Growing children</h3>
       <CustomButtonStyle text={`Let's Get Started`} />
     </div>
   </div>

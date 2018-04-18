@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
     paddingBottom:'150px',
   },
 
+  grid:{
+    width: '80%'
+  },
+
   stepWrapper : {
     backgroundColor: '#E98074',
     height: '300px',
@@ -92,7 +96,7 @@ const hiwProcessHandle = (contents)=> {
 const HiwProcess = () => {
   return (
     <div className = {css(styles.hiwProcessWrapper)}>
-      <Grid>
+      <Grid fluid >
         <Row>
         {hiwProcessHandle(hiwProcessContents)}
         </Row>
