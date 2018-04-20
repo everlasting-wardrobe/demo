@@ -2,6 +2,12 @@ import React from 'react'
 import {StyleSheet, css} from 'aphrodite'
 import {Grid, Row, Col} from 'react-bootstrap'
 import EcoFriendlyImg from '../../imgs/Eco_Friendly_Image.jpg'
+import MoneyBag from '../../imgs/Money.png'
+import Suncircle from '../../imgs/Sun_Circe.png'
+import Arrowcircle from '../../imgs/Arrow_Circle.png'
+import Plant from '../../imgs/Plant.png'
+
+
 // const styles = StyleSheet.create({
 //   benefitWrapper:{
 //     textAlign:'center'
@@ -17,18 +23,18 @@ const styles = StyleSheet.create({
     textAlign:'center',
     backgroundImage: `url(${EcoFriendlyImg})`,
     backgroundSize: `100% 100%`,
-    height: '800px',
+    // height: '1000px',
   },
   head: {
     marginTop: '0px',
     paddingTop: '20px',
     paddingBottom: '15px',
     color:  'white',
-    fontSize: '90px',
+    fontSize: '80px',
     fontFamily: 'Sacramento',
   },
   grid: {
-    width: '80%',
+    width: '100%',
     paddingLeft:'0px',
     paddingRight:'0px',
   },
@@ -42,80 +48,111 @@ const styles = StyleSheet.create({
     paddingRight:'0px',
     color: 'white',
   },
-  pricingButtonWrapper:{
-    height: '550px',
-    backgroundColor: 'rgba(232, 90, 79, 0.8)',
-    borderRadius:'15px',
-    opacity:'70%',
-    margin:'auto',
-    width: '100%',
+  image: {
+    height: '100px',
+    width: '100px',
   },
 
   content: {
-      margin : 'auto',
-      paddingLeft: '5%',
-      paddingRight: '5%',
-  },
-
-  pricingHead:{
-    paddingTop: '15%',
-    color: 'white',
-    paddingBottom: '15px',
-    marginBottom:'0px',
-    fontFamily: 'Open Sans',
-    fontSize: '65px',
-  },
-
-  quantity: {
-    fontSize: '48px',
-  },
-
-  price:{
-    fontSize: '80px',
-    paddingTop: '25px',
-    fontFamily: 'Lato',
-    fontStyle: 'italic, thin',
-  },
-
-  period:{
-    fontSize: '25px',
     fontFamily: 'Lato',
     fontStyle: 'italic',
+    lineHeight: '30px',
+    fontSize: '30px',
+    margin: '25px 60px 50px 60px',
+    // paddingLeft: '150px',
+    // paddingRight: '150px',
+    // color: '#white',
+    color : '#eae7dc',
+    // fontStyle: 'italic',
+  },
+  textWrapper: {
+    paddingTop: '10px',
+    // paddingLeft:'5px',
+    // paddingRight:'5px',
+    color:'white',
+    position: 'relative',
   },
 
-  detail: {
-    fontSize: '28px',
-    fontFamily: 'Lato',
-    fontStyle: 'italic',
-    marginLeft: '5%',
-    marginRight: '5%',
-  }
 })
 
+const EcoFriendlytitle = () => {
+  return (
+    <h1 className={css(styles.head)}>Do Good, Look Good, Feel Good</h1>
+  )
+}
 
+const featureContent = [
+  {
+    img: Plant,
+    content: `EW uses Eco-Friendly detergents and packaging 
+              materials to minimize our enviromental impact`
+  },
 
+  {
+    img: Arrowcircle,
+    content: `Apparel is Donated in Refurbished Wardrobes 
+              with Charity Partners after it is taken out of service`
+  },
+  {
+    img: Suncircle,
+    content: `Any inventory that's too damaged is sent to Recycling 
+              Partners for repurposing`
+  }
+]
+
+const FeatureHandle = (contents) => {
+  return (
+    contents.map((data, i) =>(
+      <div>
+        <Col key={data.head} xs={6} xsOffset={6}>
+          <div className = {css(styles.textWrapper)}>
+            <h3 hidden>{i}</h3>
+            <img className = {css(styles.image)} src = {data.img} />
+            <p className = {css(styles.content)}>{data.content}</p>
+          </div>
+        </Col>
+      </div>
+      )
+    )
+  )
+}
 const EcoFriendly = () => {
   return (
-    <div className={css(styles.EcoContainerWrapper)}>
-      <h2>Eco-friendly and Recycling</h2>
-      <Grid className={css(styles.grid)}>
+    <div className = {css(styles.EcoContainerWrapper)}>
+     <EcoFriendlytitle />
+      <Grid fluid >
         <Row>
-          <Col lg={4} md={4} sm={4} xs={4}>
-              <h4>Time</h4>
-              <p>&nbsp;</p>
-          </Col>
-          <Col lg={4} md={4} sm={4} xs={4}>
-              <h4>Money</h4>
-              <p>&nbsp;</p>
-          </Col>
-          <Col lg={4} md={4} sm={4} xs={4}>
-              <h4>Money</h4>
-              <p>&nbsp;</p>
-          </Col>
+          {FeatureHandle(featureContent)}
         </Row>
       </Grid>
     </div>
   )
 }
+
+// export default Benefit
+
+// const EcoFriendly = () => {
+//   return (
+//     <div className={css(styles.EcoContainerWrapper)}>
+//       <EcoFriendlytitle />
+//       <Grid className={css(styles.grid)}>
+//         <Row>
+//           <Col lg={4} md={4} sm={4} xs={4}>
+//               <h4>Time</h4>
+//               <p>&nbsp;</p>
+//           </Col>
+//           <Col lg={4} md={4} sm={4} xs={4}>
+//               <h4>Money</h4>
+//               <p>&nbsp;</p>
+//           </Col>
+//           <Col lg={4} md={4} sm={4} xs={4}>
+//               <h4>Money</h4>
+//               <p>&nbsp;</p>
+//           </Col>
+//         </Row>
+//       </Grid>
+//     </div>
+//   )
+// }
 
 export default EcoFriendly
