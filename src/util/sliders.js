@@ -16,7 +16,7 @@ const Slider = () => {
       <div>
         <svg>
           <path d="M 0 0 L 30 10 L 20 30 z"
-        fill="orange" stroke="black" stroke-width="3" />
+        fill="orange" stroke="black" strokeWidth="3" />
         </svg>
       </div>
     </ReactSimpleRange>

@@ -92,8 +92,8 @@ const benefitContent = [
 const BenefitHandle = (contents) => {
   return (
     contents.map((data, i) =>(
-      <div>
-        <Col key={data.head} lg = {6} md ={6} sm ={6} xs ={12}>
+      <div key={data.head}> 
+        <Col lg = {6} md ={6} sm ={6} xs ={12}>
           <div className = {css(styles.textWrapper)}>
             <h3 hidden>{i}</h3>
             <img className = {css(styles.image)} src = {data.img} />
