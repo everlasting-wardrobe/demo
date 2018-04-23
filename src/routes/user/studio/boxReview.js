@@ -9,6 +9,7 @@ export default class BoxReview extends Component {
       items: props.items,
       onPreviousClick : props.onPreviousClick,
       onClothClick: props.onClothClick,
+      onNextClick: props.onNextClick,
     }
   }
 
@@ -45,6 +46,7 @@ export default class BoxReview extends Component {
       <div>
         {this.renderItems(this.state.items)}
         <Button onClick={this.state.onPreviousClick}>Previous</Button>
+        <Button onClick={this.state.onNextClick}>Next</Button>
       </div>
     )
   }

@@ -17,11 +17,28 @@ export default class Feedback extends Component{
     this.onPreviousClick = this.onPreviousClick.bind(this);
     this.onClothClick = this.onClothClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
+    this.onNextClick = this.onNextClick.bind(this);
   }
 
   onPreviousClick = () => {
+    // still need to figure out the boundary
     let month = this.state.month;
-    this.setState({month: month - 1});
+    if (month != 1){
+      this.setState({month: month - 1});
+    }else {
+      month = this.state.month;
+      alert("this is the first order");
+    }
+  }
+
+  onNextClick = () => {
+    let month = this.state.month;
+    if (month != 12){
+      this.setState({month: month + 1});
+    }else {
+      month = this.state.month;
+      alert("this is the last month");
+    }
   }
 
   onClothClick = (displayingItem) => {
@@ -44,6 +61,7 @@ export default class Feedback extends Component{
           <Col lg={3} md={3} sm={3} xs={12}>
             <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
               onPreviousClick={this.onPreviousClick}
+              onNextClick = {this.onNextClick}
               onClothClick={this.onClothClick}/>
           </Col>
           <Col lg={8} md={8} sm={8} xs={12}>
