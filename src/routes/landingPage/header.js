@@ -8,9 +8,11 @@ import BackgroundImg from '../../imgs/headerBannerBackground.jpg';
 const styles = StyleSheet.create({
   headerWrapper : {
     backgroundImage: `url(${BackgroundImg})`,
-    backgroundSize: 'cover',
+    backgroundSize: `100% 100%`,
+    height: '1100px',
   }
 })
+
 
 
 const Header =() => {
