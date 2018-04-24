@@ -4,7 +4,6 @@ import Service from './routes/service'
 import Homepage from './routes/homepage'
 import User from './routes/user/user';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Slider from './util/sliders';
 
 export default class App extends Component {
   render() {
@@ -17,7 +16,6 @@ export default class App extends Component {
               <Route path='/user' component={User} />
             </Switch>
           </Router>
-          <Slider />
       </div>
     );
   }
