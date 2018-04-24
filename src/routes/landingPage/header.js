@@ -6,10 +6,12 @@ import {StyleSheet, css} from 'aphrodite';
 import BackgroundImg from '../../imgs/headerBannerBackground.jpg';
 
 const styles = StyleSheet.create({
+
   headerWrapper : {
     backgroundImage: `url(${BackgroundImg})`,
-    backgroundSize: `100% 100%`,
-    height: '1100px',
+    backgroundSize: `1920px 1000px`,
+    overflow: 'no',
+    height: '1000px'
   }
 })
 

@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
     paddingTop: '20px',
     paddingBottom:'30px',
     backgroundImage: `url(${benefitBackimg})`,
-    backgroundSize: `100% 150%`,
-    height: `500px`,
+    backgroundSize: `100% 150%`
   },
 
   benefithead: {
@@ -60,8 +59,8 @@ const styles = StyleSheet.create({
     lineHeight: '21px',
     fontSize: '17px',
     margin: '25px 60px 50px 60px',
-    paddingLeft: '150px',
-    paddingRight: '150px',
+    paddingLeft: '15%',
+    paddingRight: '15%',
     // color: '#655757',
     // color : '#8E8D8A',
     // fontStyle: 'italic',
@@ -92,8 +91,8 @@ const benefitContent = [
 const BenefitHandle = (contents) => {
   return (
     contents.map((data, i) =>(
-      <div>
-        <Col key={data.head} lg = {6} md ={6} sm ={6} xs ={12}>
+      <div  key={data.head}>
+        <Col lg = {6} md ={6} sm ={6} xs ={12}>
           <div className = {css(styles.textWrapper)}>
             <h3 hidden>{i}</h3>
             <img className = {css(styles.image)} src = {data.img} />
