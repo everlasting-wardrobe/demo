@@ -66,6 +66,7 @@ export default class Feedback extends Component{
           </Col>
           <Col lg={8} md={8} sm={8} xs={12}>
             <Booth item={this.state.displayingItem}/>
+            <button>BUY NOW </button>
             <Rating item={this.state.displayingItem}
               onUpdateClick = {this.onUpdateClick}/>
           </Col>

@@ -5,6 +5,7 @@ import EcoFriendlyImg from '../../imgs/Eco_Friendly_Image.jpg'
 import Suncircle from '../../imgs/Sun_Circe.png'
 import Arrowcircle from '../../imgs/Arrow_Circle.png'
 import Plant from '../../imgs/Plant.png'
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 
 // const styles = StyleSheet.create({
@@ -18,12 +19,21 @@ import Plant from '../../imgs/Plant.png'
 
 
 const styles = StyleSheet.create({
-  EcoContainerWrapper : {
+
+  EcoContainerWrapperBrowser : {
     textAlign:'center',
     backgroundImage: `url(${EcoFriendlyImg})`,
     backgroundSize: `1920px 1400px`,
      height: '1400px',
   },
+
+  EcoContainerWrapperMobile : {
+    backgroundImage: `url(${EcoFriendlyImg})`,
+    backgroundSize: `cover`,
+    overflow: 'no',
+    position: 'relative'
+  },
+
   head: {
     marginTop: '0px',
     paddingTop: '20px',
@@ -120,7 +130,7 @@ const FeatureHandle = (contents) => {
 }
 const EcoFriendly = () => {
   return (
-    <div className = {css(styles.EcoContainerWrapper)}>
+    <div className = {css(isMobile? styles.EcoContainerWrapperMobile:styles.EcoContainerWrapperBrowser)}>
      <EcoFriendlytitle />
       <Grid fluid >
         <Row>
