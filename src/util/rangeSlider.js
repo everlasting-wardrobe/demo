@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import BackgroundImg from '../imgs/headerBannerBackground.jpg';
 import {StyleSheet, css} from 'aphrodite';
+import TrackImg from './sliderTrack2.png';
+import ThumbImg from '../imgs/thumb.png';
 
 const styles=StyleSheet.create({
   rangeSliderTrack:{
@@ -8,11 +10,14 @@ const styles=StyleSheet.create({
     paddingRight:'25px',
     paddingTop:'25px',
     paddingBottom:'25px',
+    backgroundImage: `url(${TrackImg})`,
+    backgroundSize: 'cover',
   },
   rangeSliderHandle:{
-    backgroundColor:'green',
-    width: '25px',
-    height:'25px',
+    backgroundImage:`url(${ThumbImg})`,
+    backgroundSize:'cover',
+    width: '30px',
+    height:'30px',
   }
 });
 

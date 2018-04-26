@@ -1,5 +1,5 @@
 import React from 'react';
-import HtmlSliderCss from './htmlSlider.css';
+import './htmlSlider.css';
 
 const HtmlSlider = () => {
   return (
