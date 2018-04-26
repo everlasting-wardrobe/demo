@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     paddingBottom:'30px',
     backgroundImage: `url(${benefitBackimg})`,
     backgroundSize: `100% 150%`,
-    height: `500px`,
+    // height: `500px`
   },
 
   benefithead: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingLeft:'5px',
     paddingRight:'5px',
     color:'#000000',
-    position: 'relative',
+    position: 'relative'
   },
 
   stepWrapper : {
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
     height: '300px',
     padding: '20px, 0px, 20px, 20px',
     marginTop: '20px',
-    borderRadius: '25px',
+    borderRadius: '25px'
   },
 
   image: {
     height: '160px',
-    width: '150px',
+    width: '150px'
   },
 
   header: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginTop:'20px',
     fontFamily: 'Lato',
     fontStyle: 'thin',
-    marginBot: '20px',
+    marginBot: '20px'
   },
 
   content: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     fontSize: '17px',
     margin: '25px 60px 50px 60px',
     paddingLeft: '150px',
-    paddingRight: '150px',
+    paddingRight: '150px'
     // color: '#655757',
     // color : '#8E8D8A',
     // fontStyle: 'italic',
@@ -92,8 +92,8 @@ const benefitContent = [
 const BenefitHandle = (contents) => {
   return (
     contents.map((data, i) =>(
-      <div>
-        <Col key={data.head} lg = {6} md ={6} sm ={6} xs ={12}>
+      <div key={data.head}> 
+        <Col lg = {6} md ={6} sm ={6} xs ={12}>
           <div className = {css(styles.textWrapper)}>
             <h3 hidden>{i}</h3>
             <img className = {css(styles.image)} src = {data.img} />
@@ -112,7 +112,7 @@ const Benefit = () => {
       <Grid fluid >
         <Row>
         <Benefittitle />
-        {BenefitHandle(benefitContent)}
+          {BenefitHandle(benefitContent)}
         </Row>
       </Grid>
     </div>
