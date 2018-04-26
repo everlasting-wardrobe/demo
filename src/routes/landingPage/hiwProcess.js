@@ -75,7 +75,7 @@ const hiwProcessContents = [
   }
 ]
 
-const hiwProcessHandle = (contents)=> {
+const hiwProcessHandle = (contents, wid) =>{
   return(
     contents.map((data, i) =>(
       <Col key={data.head} lg={3} md={3} sm={6} xs={12}>
@@ -95,10 +95,10 @@ const hiwProcessHandle = (contents)=> {
 
 const HiwProcess = () => {
   return (
-    <div className = {css(styles.hiwProcessWrapper)}>
-      <Grid fluid >
+    <div className = {css(styles.hiwProcessWrapper)} ref={(hiwProcessWrapper)=>{this.hiwProcessWrapper = hiwProcessWrapper}}>
+      <Grid fluid>
         <Row>
-        {hiwProcessHandle(hiwProcessContents)}
+        {hiwProcessHandle(hiwProcessContents, this.hiwProcessWrapper.offsetWidth)}
         </Row>
       </Grid>
     </div>
