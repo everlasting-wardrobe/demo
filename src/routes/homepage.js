@@ -4,6 +4,7 @@ import Pricing from './landingPage/pricing'
 import Benefit from './landingPage/benefit'
 import EcoFriendly from './landingPage/ecoFriendly'
 import Header from './landingPage/header'
+import Signup from './user/signup/signup'
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <Pricing />
       <Benefit />
       <EcoFriendly />
+      <Signup />
     </div>
   )
 }
