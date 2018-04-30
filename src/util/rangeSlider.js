@@ -67,10 +67,10 @@ export default class RangeSlider extends Component{
     let position;
     if(this.state.vertical){
       position = Math.max(Math.min(mouseEvent.clientY - this.track.getBoundingClientRect().y - this.state.padding,
-                            parseInt(this.state.trackLength)), 0);
+                            parseInt(this.state.trackLength),10), 0);
     }else{
       position = Math.max(Math.min(mouseEvent.clientX - this.track.getBoundingClientRect().x - this.state.padding,
-                            parseInt(this.state.trackLength)), 0);
+                            parseInt(this.state.trackLength),10), 0);
     }
     return position;
   }

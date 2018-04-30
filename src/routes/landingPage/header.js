@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   headerWrapperMobile :{
     backgroundImage: `url(${BackgroundImg})`,
     backgroundSize: `cover`,
+    // backgroundSize: 'auto',
     overflow: 'no',
     position: 'relative'
   },
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
   headerWrapperBrowser : {
     backgroundImage: `url(${BackgroundImg})`,
     backgroundSize: `1920px 1000px`,
+    // backgroundSize: 'auto',
     overflow: 'no',
     height: '1000px'
   },

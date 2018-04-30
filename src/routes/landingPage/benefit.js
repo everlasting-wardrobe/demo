@@ -4,6 +4,8 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import MoneyBag from '../../imgs/Money.png'
 import clock from '../../imgs/Clock.png'
 import benefitBackimg from '../../imgs/BenefitsBackground.jpg'
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
+
 const styles = StyleSheet.create({
   benefitWrapper:{
     textAlign:'center',
@@ -19,7 +21,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato',
     fontStyle: 'thin'
   },
-
+  benefithead_mobile: {
+    fontSize: '60px',
+    fontFamily: 'Lato',
+    fontStyle: 'thin'
+  },
   grid:{
     width: '80%'
   },
@@ -70,7 +76,7 @@ const styles = StyleSheet.create({
 })
 const Benefittitle = () => {
   return (
-    <h1 className={css(styles.benefithead)}>Everlasting Wardrobe Save</h1>
+    <h1 className={css(isMobile? styles.benefithead_mobile: styles.benefithead)}>Everlasting Wardrobe Save</h1>
   )
 }
 const benefitContent = [
@@ -96,7 +102,7 @@ const BenefitHandle = (contents) => {
         <Col lg = {6} md ={6} sm ={6} xs ={12}>
           <div className = {css(styles.textWrapper)}>
             <h3 hidden>{i}</h3>
-            <img className = {css(styles.image)} src = {data.img} />
+            <img className = {css(styles.image)} src = {data.img} alt = '' />
             <h3 className = {css(styles.header)}>{data.head}</h3>
             <p className = {css(styles.content)}><strong>{data.content}</strong></p>
           </div>

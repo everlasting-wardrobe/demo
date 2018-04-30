@@ -116,10 +116,10 @@ const FeatureHandle = (contents) => {
   return (
     contents.map((data, i) =>(
       <div key = {data.head}>
-        <Col lg = {4} md = {6} sm ={12} lgOffset={8}>
+        <Col lg = {4} md = {6} sm ={12} lgOffset={6}>
           <div className = {css(styles.textWrapper)}>
             <h3 hidden>{i}</h3>
-            <img className = {css(styles.image)} src = {data.img} />
+            <img className = {css(styles.image)} src = {data.img} alt = '' />
             <p className = {css(styles.content)}>{data.content}</p>
           </div>
         </Col>
@@ -140,31 +140,5 @@ const EcoFriendly = () => {
     </div>
   )
 }
-
-// export default Benefit
-
-// const EcoFriendly = () => {
-//   return (
-//     <div className={css(styles.EcoContainerWrapper)}>
-//       <EcoFriendlytitle />
-//       <Grid className={css(styles.grid)}>
-//         <Row>
-//           <Col lg={4} md={4} sm={4} xs={4}>
-//               <h4>Time</h4>
-//               <p>&nbsp;</p>
-//           </Col>
-//           <Col lg={4} md={4} sm={4} xs={4}>
-//               <h4>Money</h4>
-//               <p>&nbsp;</p>
-//           </Col>
-//           <Col lg={4} md={4} sm={4} xs={4}>
-//               <h4>Money</h4>
-//               <p>&nbsp;</p>
-//           </Col>
-//         </Row>
-//       </Grid>
-//     </div>
-//   )
-// }
 
 export default EcoFriendly

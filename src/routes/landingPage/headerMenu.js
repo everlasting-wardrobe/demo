@@ -66,7 +66,7 @@ class HeaderMenu extends Component {
           <h4  className={css(styles[color], styles.position)}>Welcome!</h4>
         </NavItem>
         <NavItem key='photo'>
-          <img src={ImgExample}  style={{width: '35px', height: '35px'}} />
+          <img alt = '' src={ImgExample}  style={{width: '35px', height: '35px'}} />
         </NavItem>
       </Nav>
     )

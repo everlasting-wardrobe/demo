@@ -51,6 +51,9 @@ export default class Feedback extends Component{
 
   onUpdateClick = (fitRating, styleRating) => {
     this.state.displayingItem.fitRating = fitRating;
+    // this.setState({
+    //   displayingItem.fitRating : fitRating
+    // });
     this.state.displayingItem.styleRating = styleRating;
     console.log(this.state.boxReviewData);
   }
