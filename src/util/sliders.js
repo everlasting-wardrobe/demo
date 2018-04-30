@@ -1,10 +1,18 @@
 import React from 'react';
 import {StyleSheet, css} from 'aphrodite';
 import ReactSimpleRange from 'react-simple-range';
+import TestBackground from '../imgs/headerBannerBackground.jpg';
+
+const styles = StyleSheet.create({
+  background: {
+    backgroundImage: `url{${TestBackground}}`,
+  }
+})
 
 const Slider = () => {
   return (
-    <ReactSimpleRange
+    <div className = {css(styles.background)}>
+    <ReactSimpleRange className = {css(styles.background)}
       sliderSize={2}
       eventWrapperPadding={14}
       label
@@ -20,6 +28,7 @@ const Slider = () => {
         </svg>
       </div>
     </ReactSimpleRange>
+    </div>
   )
 }
 

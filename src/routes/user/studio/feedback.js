@@ -4,6 +4,7 @@ import boxReviewDataGenerator from './boxReviewTestData';
 import BoxReview from './boxReview';
 import Booth from './booth';
 import Rating from './rating';
+import ColorPicker from './colorPicker';
 
 export default class Feedback extends Component{
   constructor(props){
@@ -70,6 +71,9 @@ export default class Feedback extends Component{
             <Rating item={this.state.displayingItem}
               onUpdateClick = {this.onUpdateClick}/>
           </Col>
+        </Row>
+        <Row>
+          <ColorPicker />;
         </Row>
       </Grid>
     )
