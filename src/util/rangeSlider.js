@@ -8,16 +8,14 @@ const styles=StyleSheet.create({
   rangeSliderTrack:{
     paddingLeft: '25px',
     paddingRight:'25px',
-    paddingTop:'25px',
-    paddingBottom:'25px',
+    marginTop:'25px',
+    marginBottom:'25px',
     backgroundImage: `url(${TrackImg})`,
     backgroundSize: 'cover',
   },
   rangeSliderHandle:{
     backgroundImage:`url(${ThumbImg})`,
     backgroundSize:'cover',
-    width: '30px',
-    height:'30px',
   }
 });
 
@@ -28,9 +26,9 @@ export default class RangeSlider extends Component{
     const {vertical, value, rangeMin, rangeMax, trackLength, trackWidth, HandleComponent} = this.props;
     this.state = {
       handle : { xPos: `0px`, yPos: '0px'},
+      handleWidth: trackWidth || '25px',
       dragging: false,
       vertical: vertical || false,
-      track:{width: '500px', height:'400px'},
       rangeMin: rangeMin || 1,
       rangeMax: rangeMax || 5,
       range: rangeMax - rangeMin + 1 || 5,
@@ -52,29 +50,39 @@ export default class RangeSlider extends Component{
     this.mouseClickHandler = this.mouseClickHandler.bind(this);
   }
 
+  // Get the current value according to the position of handle
   getValue(position){
-    const step = this.state.trackLength / this.state.range;
+    const step = (this.state.trackLength - parseInt(this.state.handleWidth))/ (this.state.range - 1);
     const value = ((position % step) / step > 0.5 ? 1 : 0) + Math.floor(position / step);
     return value;
   }
 
+  getStep(){
+    return (this.state.trackLength - parseInt(this.state.handleWidth))/ (this.state.range - 1);
+  }
+
+  // Create mouse down event handler for handle
   mousedownHandler(mouseEvent){
     console.log('mousedownHandler called');
     this.setState({dragging:true});
   }
 
+  // Get handle's postion according to mouse's move. And the position is
+  // prevented from getting out of the bound of track.
   getPosition(mouseEvent){
     let position;
     if(this.state.vertical){
-      position = Math.max(Math.min(mouseEvent.clientY - this.track.getBoundingClientRect().y - this.state.padding,
-                            parseInt(this.state.trackLength)), 0);
+      position = Math.max(Math.min(mouseEvent.clientY - this.track.getBoundingClientRect().y,
+                            parseInt(this.state.trackLength) - parseInt(this.state.handleWidth)), 0);
     }else{
-      position = Math.max(Math.min(mouseEvent.clientX - this.track.getBoundingClientRect().x - this.state.padding,
-                            parseInt(this.state.trackLength)), 0);
+      position = Math.max(Math.min(mouseEvent.clientX - this.track.getBoundingClientRect().x,
+                            parseInt(this.state.trackLength) - parseInt(this.state.handleWidth)), 0);
     }
     return position;
   }
 
+  // Create handle for mouse move event and will set the handle's position and
+  // handle's value in state.
   mousemoveHandler(mouseEvent){
     console.log('mousemoveHandler called');
     let position = this.getPosition(mouseEvent);
@@ -91,43 +99,49 @@ export default class RangeSlider extends Component{
     this.setState({value : value});
   }
 
+  // Create handler for mouse up event.
   mouseupHandler(mouseEvent){
     console.log('mouseupHandler called');
     this.setState({dragging: false});
   }
 
+  // Create handler for mouse leave event.
   mouseleaveHandler(mouseEvent){
     this.setState({dragging: false});
   }
 
+  // Create handler for user to click on track.
   mouseClickHandler(mouseEvent){
     const position = this.getPosition(mouseEvent);
+    const step = this.getStep();
     const value = this.getValue(position);
     if(this.state.vertical){
-      const yPos = value * (this.state.trackLength / this.state.range) + 'px';
+      const yPos = step * value + 'px';
       console.log(yPos);
       this.setState({handle: {xPos:'0px', yPos: yPos}});
     }else{
-      const xPos = value * (this.state.trackLength / this.state.range) + 'px';
+      const xPos = step * value + 'px';
       console.log(xPos);
       this.setState({handle: {xPos: xPos, yPos:'0px'}});
     }
     this.setState({value});
   }
 
+
   getTrackWidth(){
     return (this.state.vertical ? this.state.trackWidth: this.state.trackLength) + 2 * this.state.padding;
   }
 
   getTrackHeight(){
-    return (this.state.vertical? this.state.trackLength: this.state.trackWidth) + 2 * this.state.padding;
+    return (this.state.vertical? this.state.trackLength: this.state.trackWidth);
   }
 
   constructHandle(){
     if(this.state.HandleComponent === undefined){
       return(
         <div style={{position: 'relative', left:this.state.handle.xPos,
-          top:this.state.handle.yPos}}
+          top:this.state.handle.yPos, width: this.state.handleWidth,
+          height: this.state.handleWidth}}
           ref={(handle)=>{this.handle = handle}}
           onMouseDown={(mouseEvent)=>{this.mousedownHandler(mouseEvent)}}
           onMouseUp={(mouseEvent)=>{this.mouseupHandler(mouseEvent)}}
@@ -142,7 +156,7 @@ export default class RangeSlider extends Component{
   render(){
     return(
       <div>
-        current value: {this.state.value}
+        current value: {this.state.value + 1}
         <div className={css(styles.rangeSliderTrack)}
           ref={(track)=>{this.track = track}}
           style={{width: this.getTrackWidth(),

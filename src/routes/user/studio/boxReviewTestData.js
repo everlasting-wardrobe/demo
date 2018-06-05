@@ -4,12 +4,29 @@ const boxReviewDataGenerator = () => {
   const boxReviewData = []
   for(let i = 0; i < 12; i++){
     let items = [];
+    let fitRating, styleRating, size, price, msrp, sku, gender, color;
     for(let j = 0; j < 8; j++){
-      let fitRating = Math.round(Math.random() * 5);
-      let styleRating = Math.round(Math.random() * 5);
+      fitRating = Math.round(Math.random() * 5);
+      styleRating = Math.round(Math.random() * 5);
+      size = Math.floor(Math.random() * 10);
+      gender = Math.random() < 0.5 ? 'Male' : 'Female';
+      msrp = Math.floor((1 - Math.random() * 0.5) * 90);
+      price = Math.floor((1 - Math.random() * 0.3) * msrp);
+      sku = 0;
+      color = 'COLOR';
+      for(let i = 0; i < 9; i++){
+        sku = sku * 10 + Math.floor(Math.random() * 10);
+      }
       const item = {
         key : `Month${i+1}Item${j+1}`,
         clothImgUrl: clothImgUrl,
+        title: `This is the Month ${i + 1} Item ${j + 1}'s Title`,
+        size: size,
+        msrp: msrp,
+        price: price,
+        sku: sku,
+        gender: gender,
+        color: color,
         discription: `this is test discription! Month ${i + 1}, Item ${j + 1}`,
         detail: `This is the detail for Month ${i + 1}, Item ${j + 1}`,
         fitRating: fitRating,

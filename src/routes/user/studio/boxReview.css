@@ -1,0 +1,81 @@
+@media screen and (min-width:1200px){
+  #box-review-table {
+    font-size: 11px;
+  }
+
+  #box-review-table th, #box-review-table td{
+    padding: 1.5% 0px 2% 0px;
+  }
+
+  #box-review-previous{
+
+  }
+}
+
+@media (min-width:980px) and (max-width:1200px){
+  #box-review-table {
+    font-size: 10px;
+  }
+
+  #box-review-table th, #box-review-table td{
+    padding: 1.5% 0px 1.5% 0px;
+  }
+}
+
+@media (min-width:780px) and (max-width:980px){
+  #box-review-table {
+    font-size: 9px;
+  }
+
+  #box-review-table th, #box-review-table td{
+    padding: 1% 0px 1% 0px;
+  }
+
+  .box-review-tips{
+    font-size: 8px;
+  }
+}
+
+#box-review-table {
+  width: 100%;
+  user-select: none;
+}
+
+#box-review-table th{
+  color: #3546dd;
+  font-family: Handlee;
+}
+
+#box-review-table tr :first-child{
+  text-align: left;
+}
+
+#box-review-table tr :not(:first-child){
+  text-align: center;
+}
+
+#box-review-table tr :last-child{
+  text-decoration: line-through;
+  text-decoration-color: #FF4B4B;
+}
+
+#box-review-previous {
+  color: #3546dd;
+  border: none;
+  background: none;
+  margin: auto;
+  display: block;
+  font-family: Handlee;
+}
+
+
+.box-review-tips{
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+  color: #3546dd;
+}
+
+.item-select {
+  background-color:#FFA5A5;
+  color: #FF4B4B;
+}

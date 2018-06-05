@@ -1,0 +1,43 @@
+@media screen and (min-width: 780px){
+  #feedback {
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    padding-bottom: 23%;
+    background-image: url('../../../imgs/boxReviewBackground.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-position: center center; */
+  }
+
+  #box-review-wrapper {
+    width: 27%;
+    margin-left: 8%;
+    padding-top: 9%;
+    margin-right: 0px;
+    display: inline-block;
+  }
+
+  #item-display-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 9%;
+    width: 60%;
+    margin-left: 4%;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  #box-review-wrapper{
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 779px) and (min-width: 414px){
+  #feedback{
+    width: 80%;
+    margin: auto;
+  }
+}

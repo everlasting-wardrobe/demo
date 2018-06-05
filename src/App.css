@@ -1,35 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Dosis|Open+Sans|Lato:300|Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Dosis|Open+Sans|Lato:300|Sacramento|Handlee');
 
 
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+header, nav, footer, section, article, div {
+  box-sizing: border-box;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.size-panel{
-  padding-top: 20px;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

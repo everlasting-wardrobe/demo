@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
 import boxReviewDataGenerator from './boxReviewTestData';
 import BoxReview from './boxReview';
 import Booth from './booth';
-import Rating from './rating';
-import ColorPicker from './colorPicker';
+// import Rating from './rating';
+import './feedback.css';
 
 export default class Feedback extends Component{
   constructor(props){
@@ -14,10 +13,31 @@ export default class Feedback extends Component{
       month: 12,
       boxReviewData : boxReviewData,
       displayingItem: boxReviewData[11][7],
+      currentKey : boxReviewData[11][7].key,
+      width: window.innerWidth,
     }
     this.onPreviousClick = this.onPreviousClick.bind(this);
     this.onClothClick = this.onClothClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
+    this.onNextClick = this.onNextClick.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
+  updateDimensions = function() {
+    this.setState({width: window.innerWidth});
+    console.log(this.state.width);
+  }
+
+  componentDidMount = function() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount = function() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  fetchBoxData = () => {
+
   }
 
   onPreviousClick = () => {
@@ -25,11 +45,19 @@ export default class Feedback extends Component{
     this.setState({month: month - 1});
   }
 
+  onNextClick = () => {
+    let month = this.state.month;
+    this.setState({month: month + 1});
+  }
+
   onClothClick = (displayingItem) => {
     // console.log(displayingItem);
+    let currentKey = displayingItem.key;
     this.setState({
       displayingItem,
-    })
+      currentKey,
+    });
+    console.log(currentKey);
   }
 
   onUpdateClick = (fitRating, styleRating) => {
@@ -38,25 +66,47 @@ export default class Feedback extends Component{
     console.log(this.state.boxReviewData);
   }
 
+
+  //     <Col lg={6} md={6} sm={6} xs={12} lgOffset={1}>
+  //       <Booth item={this.state.displayingItem}/>
+  //       {<Rating item={this.state.displayingItem}
+  //         onUpdateClick = {this.onUpdateClick}/>}
+  //     </Col>
+
   render(){
+    console.log(this.state.width);
     return(
-      <Grid>
-        <Row>
-          <Col lg={3} md={3} sm={3} xs={12}>
-            <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
-              onPreviousClick={this.onPreviousClick}
-              onClothClick={this.onClothClick}/>
-          </Col>
-          <Col lg={8} md={8} sm={8} xs={12}>
-            <Booth item={this.state.displayingItem}/>
-            <Rating item={this.state.displayingItem}
-              onUpdateClick = {this.onUpdateClick}/>
-          </Col>
-        </Row>
-        <Row>
-          <ColorPicker />;
-        </Row>
-      </Grid>
+      <div>
+          {
+            this.state.width < 780 ? (
+            <div id='feedback'>
+              <div id='item-display-wrapper'>
+                <Booth item={this.state.displayingItem}/>
+              </div>
+              <div id="box-review-wrapper">
+                <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
+                  currentKey={this.state.currentKey}
+                  onPreviousClick={this.onPreviousClick}
+                  onNextClick={this.onNextClick}
+                  onClothClick={this.onClothClick}/>
+              </div>
+            </div>
+            ) : (
+            <div id='feedback'>
+              <div id="box-review-wrapper">
+                <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
+                  currentKey={this.state.currentKey}
+                  onPreviousClick={this.onPreviousClick}
+                  onNextClick={this.onNextClick}
+                  onClothClick={this.onClothClick}/>
+              </div>
+              <div id='item-display-wrapper'>
+                <Booth item={this.state.displayingItem}/>
+              </div>
+            </div>
+            )
+          }
+      </div>
     )
   }
 }
