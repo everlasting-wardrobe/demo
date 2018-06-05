@@ -37,12 +37,27 @@ export default class Feedback extends Component{
   }
 
   fetchBoxData = () => {
-
   }
 
   onPreviousClick = () => {
+    // still need to figure out the boundary
     let month = this.state.month;
-    this.setState({month: month - 1});
+    if (month != 1){
+      this.setState({month: month - 1});
+    }else {
+      month = this.state.month;
+      alert("this is the first order");
+    }
+  }
+
+  onNextClick = () => {
+    let month = this.state.month;
+    if (month != 12){
+      this.setState({month: month + 1});
+    }else {
+      month = this.state.month;
+      alert("this is the last month");
+    }
   }
 
   onNextClick = () => {
@@ -62,6 +77,9 @@ export default class Feedback extends Component{
 
   onUpdateClick = (fitRating, styleRating) => {
     this.state.displayingItem.fitRating = fitRating;
+    // this.setState({
+    //   displayingItem.fitRating : fitRating
+    // });
     this.state.displayingItem.styleRating = styleRating;
     console.log(this.state.boxReviewData);
   }

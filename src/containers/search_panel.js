@@ -61,7 +61,7 @@ export default class SearchPanel extends Component{
       gender:this.state.gender
     }).then((response) => {
       return response.data.map((option) => {
-        if(this.state.gender='M'){
+        if(this.state.gender == 'M'){
           return {value: option.bsize};
         }else{
           return {value: option.gsize};

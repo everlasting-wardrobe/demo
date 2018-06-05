@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
   pricingContainerWrapper : {
     textAlign:'center',
     backgroundImage: `url(${PricingImg})`,
-    backgroundSize: `100% 100%`,
-    height: '800px',
+    backgroundSize: `100% 100%`
   },
   head: {
     marginTop: '0px',
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     paddingRight:'0px',
   },
   row: {
-
+    marginBottom: '5%'
   },
   col: {
     marginLeft: '5.15%',

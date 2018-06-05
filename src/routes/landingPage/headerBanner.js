@@ -13,10 +13,10 @@ const styles = StyleSheet.create({
   button:{
   },
   headtext: {
-
+    // position: 'absolute'
   },
   headContent: {
-    
+    // position: 'absolute'
   }
 })
 
@@ -46,7 +46,7 @@ const CustomButtonStyle = (props) => {
 const HeaderBanner = ()=>(
   <div className={css(styles.bannerWrapper)}>
     <div className={css(styles.textWrapper)}>
-      <h2 className={css(styles.headtext)}>Kids Grow, Clothing Doesn't. </h2>
+      <h2 className={css(styles.headtext)}>{`Kids Grow, Clothing Doesn't.`} </h2>
       <h3 className={css(styles.headContent)}>The First Rental Clothing Service For Growing children</h3>
       <CustomButtonStyle text={`Let's Get Started`} />
     </div>

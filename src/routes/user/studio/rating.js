@@ -35,7 +35,7 @@ class Rating extends Component{
             defaultValue={this.state.item.fitRating} disabled={false} onChange={value => {this.setState({newFitRating: value})}}/>
         </Col>
         <Col lg={3} md={3} sm={3} xs={3} style={{height:'200px'}}>
-          <Slider key={`styleSlider${this.state.item.key}`} ref={(styleSlider)=>{this.styleSlider=styleSlider}} vertical={true} min={1} max={5}
+          <Slider key={`styleSlider${this.state.item.key}`} ref={(styleSlider)=>{this.styleSlider=styleSlider}} min={1} max={5}
             marks={{1:'1', 2:'2', 3:'3', 4:'4', 5:'5'}} defaultValue={this.state.item.styleRating}
               onChange={ value =>{this.setState({newStyleRating: value})}}
             />
