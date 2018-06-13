@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import BackgroundImg from '../imgs/headerBannerBackground.jpg';
 import {StyleSheet, css} from 'aphrodite';
 import TrackImg from './sliderTrack2.png';
 import ThumbImg from '../imgs/thumb.png';
@@ -12,10 +11,12 @@ const styles=StyleSheet.create({
     marginBottom:'25px',
     backgroundImage: `url(${TrackImg})`,
     backgroundSize: 'cover',
+    'z-index': -1,
   },
   rangeSliderHandle:{
     backgroundImage:`url(${ThumbImg})`,
     backgroundSize:'cover',
+    'z-index': 1,
   }
 });
 
@@ -52,13 +53,13 @@ export default class RangeSlider extends Component{
 
   // Get the current value according to the position of handle
   getValue(position){
-    const step = (this.state.trackLength - parseInt(this.state.handleWidth))/ (this.state.range - 1);
+    const step = (this.state.trackLength - parseInt(this.state.handleWidth), 10)/ (this.state.range - 1);
     const value = ((position % step) / step > 0.5 ? 1 : 0) + Math.floor(position / step);
     return value;
   }
 
   getStep(){
-    return (this.state.trackLength - parseInt(this.state.handleWidth))/ (this.state.range - 1);
+    return (this.state.trackLength - parseInt(this.state.handleWidth), 10)/ (this.state.range - 1);
   }
 
   // Create mouse down event handler for handle
@@ -73,10 +74,10 @@ export default class RangeSlider extends Component{
     let position;
     if(this.state.vertical){
       position = Math.max(Math.min(mouseEvent.clientY - this.track.getBoundingClientRect().y,
-                            parseInt(this.state.trackLength) - parseInt(this.state.handleWidth)), 0);
+                            parseInt(this.state.trackLength, 10) - parseInt(this.state.handleWidth), 10), 0);
     }else{
       position = Math.max(Math.min(mouseEvent.clientX - this.track.getBoundingClientRect().x,
-                            parseInt(this.state.trackLength) - parseInt(this.state.handleWidth)), 0);
+                            parseInt(this.state.trackLength, 10) - parseInt(this.state.handleWidth), 10), 0);
     }
     return position;
   }

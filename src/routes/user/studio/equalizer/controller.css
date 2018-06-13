@@ -1,0 +1,49 @@
+.equalizer-controller{
+  width: 200px;
+  position: relative;
+}
+
+.equalizer-wrapper{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.equalizer-panel-over{
+  width: 100%;
+}
+
+#equalizer-panel-bottom{
+  display: block;
+  width: 150px;
+  margin-left: 29px;
+}
+
+image{
+  display: block;
+}
+
+.equalizer-value-box-container{
+  position: absolute;
+  top: 7%;
+  height:86.5%;
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+}
+
+.equalizer-value-box{
+  width: 64%;
+  height: 9.6%;
+  margin-bottom: 1%;
+  margin-right: 18%;
+  align-self: flex-end;
+  opacity: 0.5;
+  border-radius: 7%;
+}
+
+.equalizer-panel-button{
+  width: 100%;
+}

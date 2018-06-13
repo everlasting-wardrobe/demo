@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import {Media, Button} from 'react-bootstrap';
 import {StyleSheet, css} from 'aphrodite';
 import './boxReview.css';

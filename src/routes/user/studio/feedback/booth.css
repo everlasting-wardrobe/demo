@@ -1,0 +1,157 @@
+/*
+ * Booth
+ */
+@media screen and (min-width:780px){
+  #booth{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 80%;
+  }
+}
+
+/*
+ * Booth item image review
+ */
+#booth-item-image-review{
+  width: 200px;
+  height: 100%;
+}
+
+#booth-item-display-image-wrapper{
+  display: block;
+  margin-left: 5%;
+  width: 90%;
+}
+
+#booth-item-display-image-wrapper img{
+  width: 180px;
+  height: 160px;
+}
+
+@media screen and (min-width:1200px){
+  #booth-item-display-image-wrapper img{
+    height: 120px;
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.booth-item-image-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  vertical-align: bottom;
+}
+
+.item-image{
+  width: 40px;
+  height: 40px;
+  margin: 4px auto 4px auto;
+  /* margin-top: 4px;
+  margin-bottom: 4px; */
+  -webkit-user-drag:none;
+  -moz-user-drag:none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.image-select {
+   width: 48px;
+   height: 48px;
+   margin-top: 0px;
+ }
+
+
+ /*
+  * Booth item info review
+  */
+
+#booth-item-info-wrapper{
+  margin-left: 5%;
+  width: 50%;
+}
+
+
+
+
+/* @media screen and (min-width:1200px){
+  #pay-for-cloth-button{
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width:980px) and (max-width:1199px){
+
+
+  #pay-for-cloth-button{
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width:780px) and (max-width:980px){
+
+
+  #booth-SKU-title{
+    font-size: 15px;
+  }
+
+  #booth-SKU-code{
+    font-size: 13px;
+  }
+
+  #booth-item-msrp{
+    font-size: 13px;
+  }
+
+  #booth-item-price{
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width:780px){
+
+
+  #pay-for-cloth-button{
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+
+.cloth-info-container{
+  display: table;
+  width: 100%;
+}
+
+.cloth-info{
+  display: table-cell;
+}
+
+#booth-item-display-image-wrapper{
+  display: inline-block;
+}
+
+#booth-item-display-image-wrapper img{
+  border: solid 1px;
+}
+#booth-item-info-wrapper{
+  display: inline-block;
+  vertical-align: top;
+}
+
+#pay-for-cloth-button{
+  width: 80%;
+  background-color: #E75A50;
+  border: none;
+  text-align: center;
+  color: white;
+}
+
+#booth-SKU-title{
+  margin-top: 0px;
+} */
