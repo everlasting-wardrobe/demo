@@ -73,8 +73,63 @@
   margin-left: 5%;
   width: 50%;
 }
+/* style by ayan*/
+#booth-SKU-title{
+  font-size: 1.9rem;
+}
+#booth-SKU-code{
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+.cloth-info-container{
+  display: table;
+  width: 70%;
+}
+.cloth-info{
+  padding-top: 1rem;
+  display: table-cell;
+  width:33%;
+}
+.booth-item-container{
+  padding-top: 1.2rem;
+}
+#booth-item-msrp{
+  font-size: 1.7rem;
+}
+#booth-item-price{
+  font-size: 1.7rem;
+}
+.booth-button-container{
+  padding-top: 1rem;
+}
+.booth-item-button {
+  background: #e08484;
+  background-image: -webkit-linear-gradient(top, #e08484, #ff0000);
+  background-image: -moz-linear-gradient(top, #e08484, #ff0000);
+  background-image: -ms-linear-gradient(top, #e08484, #ff0000);
+  background-image: -o-linear-gradient(top, #e08484, #ff0000);
+  background-image: linear-gradient(to bottom, #e08484, #ff0000);
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1.7rem;
+  padding: 10px 20px 10px 20px;
+  border: solid #ebebeb 2px;
+  text-decoration: none;
+}
+
+.booth-item-button:hover {
+  background: #c90404;
+  background-image: -webkit-linear-gradient(top, #c90404, #9e0303);
+  background-image: -moz-linear-gradient(top, #c90404, #9e0303);
+  background-image: -ms-linear-gradient(top, #c90404, #9e0303);
+  background-image: -o-linear-gradient(top, #c90404, #9e0303);
+  background-image: linear-gradient(to bottom, #c90404, #9e0303);
+  text-decoration: none;
+}
 
 
+
+/* style by ayan*/
 
 
 /* @media screen and (min-width:1200px){
