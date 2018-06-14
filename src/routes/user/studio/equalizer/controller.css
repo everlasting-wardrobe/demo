@@ -1,5 +1,5 @@
 .equalizer-controller{
-  width: 200px;
+  width: 100px;
   position: relative;
 }
 
@@ -11,16 +11,7 @@
 
 .equalizer-panel-over{
   width: 100%;
-}
-
-#equalizer-panel-bottom{
-  display: block;
-  width: 150px;
-  margin-left: 29px;
-}
-
-image{
-  display: block;
+  pointer-events: none;
 }
 
 .equalizer-value-box-container{
@@ -30,8 +21,6 @@ image{
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
-  /* justify-content: flex-end; */
-  align-items: flex-end;
 }
 
 .equalizer-value-box{
@@ -44,6 +33,50 @@ image{
   border-radius: 7%;
 }
 
+.equalizer-panel-button-wrapper{
+  overflow: hidden;
+  position: relative;
+}
+
+.equalizer-button-plus-wrapper{
+  position: absolute;
+  left: 55%;
+  top: 15%;
+  width: 30%;
+  height: 40%;
+  cursor: pointer;
+}
+
+
+
+.equalizer-button-minus-wrapper{
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  width: 30%;
+  height: 40%;
+  cursor: pointer;
+}
+
+.equalizer-panel-button-plus{
+  position: absolute;
+  width: 80%;
+  left: 15%;
+  top: 18%;
+}
+
+.equalizer-panel-button-minus{
+  width: 80%;
+  position: absolute;
+  left: 30%;
+  top: 14%;
+}
+
+.equalizer-button-symbol{
+
+}
+
 .equalizer-panel-button{
   width: 100%;
+  pointer-events: none;
 }

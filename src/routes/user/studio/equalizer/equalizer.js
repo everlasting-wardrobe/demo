@@ -6,10 +6,11 @@ import "./equalizer.css";
 export default class Equalizer extends Component{
   constructor(props){
     super(props);
-    const Genres = [];
     const {jazz, pop, indie, funk, jockJams, hipHop, totalPoints, pointBoundary} = this.props;
     this.state = {
-      totalPoints: totalPoints || 30,
+      genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
+      colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
+      totalPoints: totalPoints || 0,
       pointBoundary: pointBoundary || 10,
       jazz: jazz || 0,
       pop: pop || 0,
@@ -20,12 +21,30 @@ export default class Equalizer extends Component{
     }
   };
 
-  componentWillMount(){
-
+  constructOnPlusClick(genre){
+    return (value) => {
+      console.log(value);
+      console.log(this.state.totalPoints);
+      console.log(typeof this.state.totalPoints);
+      if(this.state.totalPoints < 30){
+        console.log(this.state.totalPoints);
+        this.setState((prevState)=> {
+          console.log(prevState[genre]);
+          return {[genre]: prevState[genre] + 1, totalPoints: prevState.totalPoints + 1}
+        });
+      }
+      console.log(`${genre} ${this.state[genre]}`);
+    };
   }
 
-  totalPointsCounter(){
-
+  constructOnMinusClick(genre){
+    return (value) => {
+      if(this.totalPoints > 0){
+        this.setState((prevState)=> {
+          return {[genre]: value, totalPoints: prevState.totalPoints - 1}
+        });
+      }
+    };
   }
 
   constructTuneHandler = (type) => {
@@ -34,15 +53,24 @@ export default class Equalizer extends Component{
     }
   };
 
+  renderEqualizer(){
+    return this.state.genres.map((genre, i) => {
+      return (<Controller value={this.state[genre]} color={this.state.colors[i]}
+
+              />);
+    });
+  }
+
+  // onPlusClick = {this.constructOnPlusClick(genre).bind(this)}
+  // onMinusClick = {this.constructOnMinusClick(genre).bind(this)}
+
   render(){
     let tuneHandler = this.constructTuneHandler('jazz').bind(this);
     return(
       <div>
         <div>Equalizer</div>
         <div className={"equalizer-container"}>
-          <Controller value= {9} color='green' />
-          <Controller value= {10} color= 'red'/>
-          <Controller value= {3} color='blue'/>
+          {this.renderEqualizer()}
         </div>
       </div>
     )
