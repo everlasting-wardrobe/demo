@@ -5,7 +5,7 @@ import Booth from './booth';
 // import Rating from './rating';
 import './feedback.css';
 import './feedbackSlider.css';
-import BoxReviewBackground from './boxReviewBackground.png';
+import BoxReviewBackground from './boxReviewBackground.png'
 
 export default class Feedback extends Component{
   constructor(props){
@@ -82,14 +82,20 @@ export default class Feedback extends Component{
               onNextClick={this.onNextClick}
               onClothClick={this.onClothClick}/>
           </div>
-          <div id='item-display-wrapper'>
-            <Booth item={this.state.displayingItem}/>
-          </div>
-          <div className="item-feedback-slider-container">
-            <input type="range" min="1" max="9" step="1"
-             className="feedback-slider style-feedback-slider" style={{fontSize:"10px"}}/>
-            <input type="range" min="1" max="9" step="1"
-             className="feedback-slider fit-feedback-slider" style={{fontSize:"10px"}}/>
+          <div className="item-display-rating">
+            <div id='item-display-wrapper'>
+              <Booth item={this.state.displayingItem}/>
+            </div>
+            <div className="item-feedback-slider-container">
+              <div className="item-feedback-slider-wrapper">
+                <input type="range" min="1" max="9" step="1"
+                className="feedback-slider style-feedback-slider" style={{fontSize:"10px"}}/>
+              </div>
+              <div className="item-feedback-slider-wrapper">
+                <input type="range" min="1" max="9" step="1"
+                className="feedback-slider fit-feedback-slider" style={{fontSize:"10px"}}/>
+              </div>
+            </div>
           </div>
         </div>
       </div>

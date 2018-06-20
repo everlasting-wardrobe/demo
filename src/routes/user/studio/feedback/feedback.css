@@ -1,26 +1,15 @@
-.box-review-background-wrapper{
-  float: left;
-}
-
-.box-review-background{
-  display: block;
-  width: 100%;
-}
-
 @media screen and (min-width: 780px){
-  #feedback::before {
-    content: " ";
+  #feedback {
     width: 100%;
     margin:auto;
     height: 0;
     padding-bottom: 40%;
     max-height: 480px;
-    background-image: url('./boxReviewBackground.png');
+    background-image: url('../../../../imgs/boxReviewBackground.png');
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
     flex-wrap: wrap;
-    z-index: -1;
     /* background-position: center center; */
   }
 
@@ -30,19 +19,27 @@
     padding-top: 9%;
     margin-right: 0px;
     display: inline-block;
+    position: relative;
   }
 
-  #item-display-wrapper {
-    display: inline-block;
-    vertical-align: top;
-    padding-top: 9%;
-    width: 60%;
+  .item-display-rating{
+    width: 53%;
+    margin-top: 9%;
     margin-left: 4%;
-    height: 50%;
+    position: relative;
   }
 
   .item-feedback-slider-container{
-    display: flex;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .item-feedback-slider-wrapper{
+    width: 50%;
+  }
+
+  .feedback-slider{
+    margin: auto;
   }
 }
 
