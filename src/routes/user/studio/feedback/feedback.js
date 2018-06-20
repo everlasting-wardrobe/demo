@@ -4,6 +4,8 @@ import BoxReview from './boxReview';
 import Booth from './booth';
 // import Rating from './rating';
 import './feedback.css';
+import './feedbackSlider.css';
+import BoxReviewBackground from './boxReviewBackground.png';
 
 export default class Feedback extends Component{
   constructor(props){
@@ -14,27 +16,14 @@ export default class Feedback extends Component{
       boxReviewData : boxReviewData,
       displayingItem: boxReviewData[11][7],
       currentKey : boxReviewData[11][7].key,
-      width: window.innerWidth,
     }
     this.onPreviousClick = this.onPreviousClick.bind(this);
     this.onClothClick = this.onClothClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
     this.onNextClick = this.onNextClick.bind(this);
-    this.updateDimensions = this.updateDimensions.bind(this);
   }
 
-  updateDimensions = function() {
-    this.setState({width: window.innerWidth});
-    console.log(this.state.width);
-  }
 
-  componentDidMount = function() {
-    window.addEventListener("resize", this.updateDimensions);
-  }
-
-  componentWillUnmount = function() {
-    window.removeEventListener("resize", this.updateDimensions);
-  }
 
   fetchBoxData = () => {
   }
@@ -85,35 +74,24 @@ export default class Feedback extends Component{
     console.log(this.state.width);
     return(
       <div>
-          {
-            this.state.width < 780 ? (
-            <div id='feedback'>
-              <div id='item-display-wrapper'>
-                <Booth item={this.state.displayingItem}/>
-              </div>
-              <div id="box-review-wrapper">
-                <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
-                  currentKey={this.state.currentKey}
-                  onPreviousClick={this.onPreviousClick}
-                  onNextClick={this.onNextClick}
-                  onClothClick={this.onClothClick}/>
-              </div>
-            </div>
-            ) : (
-            <div id='feedback'>
-              <div id="box-review-wrapper">
-                <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
-                  currentKey={this.state.currentKey}
-                  onPreviousClick={this.onPreviousClick}
-                  onNextClick={this.onNextClick}
-                  onClothClick={this.onClothClick}/>
-              </div>
-              <div id='item-display-wrapper'>
-                <Booth item={this.state.displayingItem}/>
-              </div>
-            </div>
-            )
-          }
+        <div id='feedback'>
+          <div id="box-review-wrapper">
+            <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
+              currentKey={this.state.currentKey}
+              onPreviousClick={this.onPreviousClick}
+              onNextClick={this.onNextClick}
+              onClothClick={this.onClothClick}/>
+          </div>
+          <div id='item-display-wrapper'>
+            <Booth item={this.state.displayingItem}/>
+          </div>
+          <div className="item-feedback-slider-container">
+            <input type="range" min="1" max="9" step="1"
+             className="feedback-slider style-feedback-slider" style={{fontSize:"10px"}}/>
+            <input type="range" min="1" max="9" step="1"
+             className="feedback-slider fit-feedback-slider" style={{fontSize:"10px"}}/>
+          </div>
+        </div>
       </div>
     )
   }
