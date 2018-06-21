@@ -52,11 +52,13 @@ class Booth extends Component {
               <span className={'cloth-info'}>{size}</span>
               <span className={'cloth-info'}>{color}</span>
             </div>
-            <div>
-              <h4 id="booth-item-msrp">MSRP:${msrp}</h4>
-            </div>
-            <div>
-              <h4 id="booth-item-price">THE PRICE YOU PAY: ${price}</h4>
+            <div className={'overall-price'}>
+              <div>
+                <h4 id="booth-item-msrp">MSRP:<span>${msrp}</span></h4>
+              </div>
+              <div>
+                <h4 id="booth-item-price">THE PRICE YOU PAY:<span>${price}</span></h4>
+              </div>
             </div>
             <div>
               <button id='pay-for-cloth-button'>BUY NOW FOR ${price}</button>
