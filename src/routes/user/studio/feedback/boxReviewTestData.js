@@ -1,5 +1,5 @@
 const clothImgUrl = 'https://thumb1.shutterstock.com/display_pic_with_logo/3108527/445572067/stock-photo-flat-lay-set-of-classic-men-s-clothes-such-as-blue-suit-brown-shoes-belt-watches-and-bracelet-on-445572067.jpg';
-const clothImgUrl1 = 'https://elizabethhagan.com/wp-content/uploads/2015/03/clothing_trans.png';
+const clothImgUrl1 = 'https://slack-imgs.com/?c=1&o1=ro&url=http%3A%2F%2Fres.cloudinary.com%2Fkaojichi%2Fimage%2Fupload%2Fv1528926424%2F1800001808%2FIMG_5419.jpg';
 const clothImgUrl2 = 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2017/12/04/grid-img/1513712621177934845.jpg';
 const clothImgUrl3 = 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&h=350';
 
@@ -22,7 +22,7 @@ const boxReviewDataGenerator = () => {
       }
       const item = {
         key : `Month${i+1}Item${j+1}`,
-        clothImgUrls: [clothImgUrl, clothImgUrl1, clothImgUrl2, clothImgUrl3],
+        clothImgUrls: [clothImgUrl1, clothImgUrl1, clothImgUrl1, clothImgUrl1],
         title: `This is the Month ${i + 1} Item ${j + 1}'s Title`,
         size: size,
         msrp: msrp,

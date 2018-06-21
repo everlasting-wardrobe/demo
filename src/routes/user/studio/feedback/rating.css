@@ -1,0 +1,23 @@
+.item-feedback-slider-container{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.item-feedback-slider-wrapper{
+  width: 50%;
+}
+
+.feedback-slider{
+  margin: auto;
+}
+
+.feedback-notation{
+  display: flex;
+}
+
+.feedback-notation div{
+  width: 25%;
+  transform: rotate(90deg);
+  font-size: 0.5em;
+  margin-top: 5em;
+}

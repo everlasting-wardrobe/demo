@@ -6,6 +6,7 @@ import Booth from './booth';
 import './feedback.css';
 import './feedbackSlider.css';
 import BoxReviewBackground from './boxReviewBackground.png'
+import Rating from './rating';
 
 export default class Feedback extends Component{
   constructor(props){
@@ -73,9 +74,9 @@ export default class Feedback extends Component{
   render(){
     console.log(this.state.width);
     return(
-      <div>
-        <div id='feedback'>
-          <div id="box-review-wrapper">
+      <div className="feedback-wrapper">
+        <div className='feedback'>
+          <div className="box-review-wrapper">
             <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
               currentKey={this.state.currentKey}
               onPreviousClick={this.onPreviousClick}
@@ -83,18 +84,11 @@ export default class Feedback extends Component{
               onClothClick={this.onClothClick}/>
           </div>
           <div className="item-display-rating">
-            <div id='item-display-wrapper'>
+            <div className='item-display-wrapper'>
               <Booth item={this.state.displayingItem}/>
             </div>
-            <div className="item-feedback-slider-container">
-              <div className="item-feedback-slider-wrapper">
-                <input type="range" min="1" max="9" step="1"
-                className="feedback-slider style-feedback-slider" style={{fontSize:"10px"}}/>
-              </div>
-              <div className="item-feedback-slider-wrapper">
-                <input type="range" min="1" max="9" step="1"
-                className="feedback-slider fit-feedback-slider" style={{fontSize:"10px"}}/>
-              </div>
+            <div className="feedback-rating">
+              <Rating />
             </div>
           </div>
         </div>

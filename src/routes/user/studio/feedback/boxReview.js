@@ -19,8 +19,6 @@ export default class BoxReview extends Component {
   }
 
   renderBoxItems(items){
-    console.log(items);
-    console.log(this.state.currentKey);
     return (
       <table id='box-review-table'>
         <tbody style={{textAlign: 'center'}}>
