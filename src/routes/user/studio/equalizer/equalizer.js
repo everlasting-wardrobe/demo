@@ -23,17 +23,17 @@ export default class Equalizer extends Component{
 
   constructOnPlusClick(genre){
     return (value) => {
-      console.log(value);
-      console.log(this.state.totalPoints);
-      console.log(typeof this.state.totalPoints);
+      // console.log(value);
+      // console.log(this.state.totalPoints);
+      // console.log(typeof this.state.totalPoints);
       if(this.state.totalPoints < 30){
-        console.log(this.state.totalPoints);
+        // console.log(this.state.totalPoints);
         this.setState((prevState)=> {
-          console.log(prevState[genre]);
+          // console.log(prevState[genre]);
           return {[genre]: prevState[genre] + 1, totalPoints: prevState.totalPoints + 1}
         });
       }
-      console.log(`${genre} ${this.state[genre]}`);
+      // console.log(`${genre} ${this.state[genre]}`);
     };
   }
 
@@ -55,7 +55,7 @@ export default class Equalizer extends Component{
 
   renderEqualizer(){
     return this.state.genres.map((genre, i) => {
-      return (<Controller value={this.state[genre]} color={this.state.colors[i]}
+      return (<Controller key={i} value={this.state[genre]} color={this.state.colors[i]}
 
               />);
     });
