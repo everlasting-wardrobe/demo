@@ -66,12 +66,6 @@ class Booth extends Component {
               <div>
                 <h4 id="booth-item-msrp">MSRP:<span>${msrp}</span></h4>
               </div>
-              <div>
-                <h4 id="booth-item-price">THE PRICE YOU PAY:<span>${Item.Selling_price}</span></h4>
-              </div>
-            </div>
-            <div>
-              <button id='pay-for-cloth-button'>BUY NOW FOR ${Item.Selling_price}</button>
             </div>
         </div>
       </div>

@@ -10,8 +10,8 @@ const boxReviewDataGenerator = () => {
     let items = [];
     let fitRating, styleRating, size, price, msrp, sku, gender, color;
     for(let j = 0; j < 8; j++){
-      fitRating = Math.round(Math.random() * 5);
-      styleRating = Math.round(Math.random() * 5);
+      fitRating = Math.round(Math.random() * 8) + 1;
+      styleRating = Math.round(Math.random() * 8) + 1;
       size = Math.floor(Math.random() * 10).toString(10);
       gender = Math.random() < 0.5 ? 'Male' : 'Female';
       msrp = Math.floor((1 - Math.random() * 0.5) * 90);

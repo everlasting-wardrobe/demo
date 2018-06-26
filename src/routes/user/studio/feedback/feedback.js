@@ -60,6 +60,10 @@ export default class Feedback extends Component{
     // console.log(this.state.boxReviewData);
   }
 
+  onSliderChange = (action, value)=>{
+    // this.setState({this.state.displayingItem: })
+  }
+
   componentDidMount(){
     const boxReviewData = boxReviewDataGenerator();
     this.setState({
@@ -94,9 +98,12 @@ export default class Feedback extends Component{
                 <Booth item={this.state.displayingItem}/>
               </div>
             }
-            <div className="feedback-rating">
-              <Rating />
-            </div>
+            {
+              this.state.displayingItem &&
+              <div className="feedback-rating">
+                <Rating FitRating={this.state.displayingItem.FitRating} StyleRating = {this.state.displayingItem.StyleRating}/>
+              </div>
+            }
           </div>
         </div>
       </div>
