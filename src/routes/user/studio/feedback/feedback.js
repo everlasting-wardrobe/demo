@@ -2,31 +2,25 @@ import React, {Component} from 'react';
 import boxReviewDataGenerator from './boxReviewTestData';
 import BoxReview from './boxReview';
 import Booth from './booth';
-// import Rating from './rating';
 import './feedback.css';
 import './feedbackSlider.css';
 import BoxReviewBackground from './boxReviewBackground.png'
 import Rating from './rating';
+import PropTypes from 'prop-types';
 
 export default class Feedback extends Component{
   constructor(props){
     super(props);
-    const boxReviewData = boxReviewDataGenerator();
     this.state = {
-      month: 12,
-      boxReviewData : boxReviewData,
-      displayingItem: boxReviewData[11][7],
-      currentKey : boxReviewData[11][7].key,
+      month: 0,
+      boxReviewData : [],
+      displayingItem: null,
+      currentKey : null,
     }
     this.onPreviousClick = this.onPreviousClick.bind(this);
     this.onClothClick = this.onClothClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
     this.onNextClick = this.onNextClick.bind(this);
-  }
-
-
-
-  fetchBoxData = () => {
   }
 
   onPreviousClick = () => {
@@ -50,11 +44,6 @@ export default class Feedback extends Component{
     }
   }
 
-  onNextClick = () => {
-    let month = this.state.month;
-    this.setState({month: month + 1});
-  }
-
   onClothClick = (displayingItem) => {
     // console.log(displayingItem);
     let currentKey = displayingItem.key;
@@ -62,31 +51,49 @@ export default class Feedback extends Component{
       displayingItem,
       currentKey,
     });
-    console.log(currentKey);
+    // console.log(currentKey);
   }
 
   onUpdateClick = (fitRating, styleRating) => {
     this.state.displayingItem.fitRating = fitRating;
     this.state.displayingItem.styleRating = styleRating;
+    // console.log(this.state.boxReviewData);
+  }
+
+  componentDidMount(){
+    const boxReviewData = boxReviewDataGenerator();
+    this.setState({
+      boxReviewData,
+      displayingItem: boxReviewData[boxReviewData.length - 1].items[7],
+      currentKey : boxReviewData[boxReviewData.length - 1].items[7].key,
+      month: boxReviewData.length,
+    });
     console.log(this.state.boxReviewData);
+    console.log(this.state.displayingItem);
   }
 
   render(){
-    console.log(this.state.width);
+    // console.log(this.state.width);
     return(
       <div className="feedback-wrapper">
         <div className='feedback'>
           <div className="box-review-wrapper">
-            <BoxReview items={this.state.boxReviewData[this.state.month - 1]}
-              currentKey={this.state.currentKey}
-              onPreviousClick={this.onPreviousClick}
-              onNextClick={this.onNextClick}
-              onClothClick={this.onClothClick}/>
+            {
+              this.state.boxReviewData.length > 0 &&
+              <BoxReview items={this.state.boxReviewData[this.state.month - 1].items}
+                currentKey={this.state.currentKey}
+                onPreviousClick={this.onPreviousClick}
+                onNextClick={this.onNextClick}
+                onClothClick={this.onClothClick}/>
+            }
           </div>
           <div className="item-display-rating">
-            <div className='item-display-wrapper'>
-              <Booth item={this.state.displayingItem}/>
-            </div>
+            {
+              this.state.displayingItem &&
+              <div className='item-display-wrapper'>
+                <Booth item={this.state.displayingItem}/>
+              </div>
+            }
             <div className="feedback-rating">
               <Rating />
             </div>

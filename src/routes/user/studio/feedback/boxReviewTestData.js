@@ -6,38 +6,55 @@ const clothImgUrl3 = 'https://images.pexels.com/photos/996329/pexels-photo-99632
 const boxReviewDataGenerator = () => {
   const boxReviewData = []
   for(let i = 0; i < 12; i++){
+    let box = {};
     let items = [];
     let fitRating, styleRating, size, price, msrp, sku, gender, color;
     for(let j = 0; j < 8; j++){
       fitRating = Math.round(Math.random() * 5);
       styleRating = Math.round(Math.random() * 5);
-      size = Math.floor(Math.random() * 10);
+      size = Math.floor(Math.random() * 10).toString(10);
       gender = Math.random() < 0.5 ? 'Male' : 'Female';
       msrp = Math.floor((1 - Math.random() * 0.5) * 90);
       price = Math.floor((1 - Math.random() * 0.3) * msrp);
-      sku = 0;
       color = 'COLOR';
       for(let i = 0; i < 9; i++){
         sku = sku * 10 + Math.floor(Math.random() * 10);
       }
       const item = {
+        Barcode: `Month${i+1}Item${j+1}`,
         key : `Month${i+1}Item${j+1}`,
-        clothImgUrls: [clothImgUrl1, clothImgUrl1, clothImgUrl1, clothImgUrl1],
+        FrontPhoto: clothImgUrl1,
+        BackPhoto: clothImgUrl1,
+        LeftPhoto: clothImgUrl1,
+        RightPhoto: clothImgUrl1,
         title: `This is the Month ${i + 1} Item ${j + 1}'s Title`,
-        size: size,
-        msrp: msrp,
-        price: price,
-        sku: sku,
-        gender: gender,
-        color: color,
-        discription: `this is test discription! Month ${i + 1}, Item ${j + 1}`,
-        detail: `This is the detail for Month ${i + 1}, Item ${j + 1}`,
-        fitRating: fitRating,
-        styleRating: styleRating,
+        Size: {Size: '6Y'},
+        msrp: msrp, // not listed in reponse
+        Item: {
+                        "Selling_price": "75.00",
+                        "Brand": {
+                            "BrandName": "Anais & I"
+                        }
+                    },
+        gender: gender, // not in Response should be a array. ['girls', 'unisex']
+        Color_Combo: {
+                        "CCID": 33,
+                        "Color_1": {
+                            "RGB": null
+                        },
+                        "Color_2": null,
+                        "Color_3": null,
+                        "Color_4": null,
+                        "Color_5": null
+                    },
+        FitRating: fitRating,
+        StyleRating: styleRating,
       }
       items[j] = item;
     }
-    boxReviewData[i] = items;
+    box.items = items;
+    box.month = `Month${i + 1}`;
+    boxReviewData[i] = box;
   }
   return boxReviewData;
 }

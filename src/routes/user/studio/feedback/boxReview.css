@@ -36,6 +36,11 @@
   }
 }
 
+
+.box-review-botton-wrapper{
+  display: flex;
+}
+
 #box-review-table {
   width: 100%;
   user-select: none;
@@ -60,6 +65,15 @@
 }
 
 #box-review-previous {
+  color: #3546dd;
+  border: none;
+  background: none;
+  margin: auto;
+  display: block;
+  font-family: Handlee;
+}
+
+#box-review-next{
   color: #3546dd;
   border: none;
   background: none;
