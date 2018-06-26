@@ -50,8 +50,8 @@ class Booth extends Component {
             <div className={'cloth-info-container'}>
               <span className={'cloth-info'}>{gender}</span>
               <span className={'cloth-info'}>{size}</span>
-              <span className={'cloth-info'}>{color}</span>
             </div>
+            <div className={'cloth-color'}></div>
             <div className={'overall-price'}>
               <div>
                 <h4 id="booth-item-msrp">MSRP:<span>${msrp}</span></h4>

@@ -15,14 +15,16 @@
  */
 #booth-item-image-review{
   width: 40%;
+  flex-direction: row;
   height: 100%;
 }
 
 #booth-item-display-image-wrapper{
+  order: 1;
   display: block;
   margin-left: 5%;
   width: 90%;
-  height: 70%;
+  height: 80%;
 }
 
 #booth-item-display-image-wrapper img{
@@ -49,15 +51,18 @@
 } */
 
 .booth-item-image-container{
+  order: 2;
+  height: 20%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5%;
+  margin-top: 2%;
   vertical-align: bottom;
 }
 
 .item-image{
-  width: 40px;
-  height: 40px;
+  /* width: 40px;
+  height: 40px; */
+  height: 100%;
   margin: 4px auto 4px auto;
   opacity: 0.5;
   /* margin-top: 4px;
@@ -81,18 +86,22 @@
   height: 100%;
   margin-left: 5%;
   width: 50%;
+  font-family: Lato;
+  font-weight:400;
   line-height: 1.5em;
 }
 
 #booth-SKU-title{
   height: 20%;
-  font-size: 1.5em;
-  text-align: center;
+  font-size: 1.6em;
+  font-weight: 600;
+  text-align: left;
   flex-wrap: nowrap;
   overflow: hidden;
 }
 #booth-SKU-code{
   height: 10%;
+  font-family: Lato;
   font-size: 1.1em;
 }
 
@@ -102,12 +111,12 @@
   /* line-height: 2em; */
   padding-right: 8%;
 }
+.cloth-color{
+  height: 20%;
+}
 .overall-price{
-    height: 25%;
-  margin-top: 5%;
-  text-align: center;
+
   font-size: 1.5em;
-  line-height: 2em;
 }
 
 .overall-price #booth-item-msrp span{
@@ -116,14 +125,23 @@
   display: inline-block;
   text-decoration: line-through;
 }
+#booth-item-price{
+    display: none;
+}
 .overall-price #booth-item-price span{
   padding-left: 5%;
   color: red;
   text-shadow: 0 0 0.05em #FF0000;
 }
 #pay-for-cloth-button {
-  height: 35%;
-  margin-top: 5%;
+  height: 150%;
+  line-height: 2em;
+  font-weight: 1000;
+  width: 75%;
+  background: linear-gradient(#ff5b5b, #ed0909);
+  color: white;
+  display: none;
+  /* margin-top: 2%; */
 }
 /* @media screen and (min-width:1200px){
   #pay-for-cloth-button{
