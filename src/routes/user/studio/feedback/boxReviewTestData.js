@@ -47,6 +47,15 @@ const boxReviewDataGenerator = () => {
                         "Color_4": null,
                         "Color_5": null
                     },
+        BoxProducts: {
+          "BoxID": 11,
+          "ProductID": "EW-1-22-33-13-4",
+          "FitRating": null,
+          "StyleRating": null,
+          "Comments": null,
+          "CreatedAt": "2018-06-26T19:06:09.045Z",
+          "UpdatedAt": "2018-06-26T19:06:09.045Z"
+        },
         FitRating: fitRating,
         StyleRating: styleRating,
       }
