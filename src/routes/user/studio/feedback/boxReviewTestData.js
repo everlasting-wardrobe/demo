@@ -26,7 +26,6 @@ const boxReviewDataGenerator = () => {
         BackPhoto: clothImgUrl1,
         LeftPhoto: clothImgUrl1,
         RightPhoto: clothImgUrl1,
-        title: `This is the Month ${i + 1} Item ${j + 1}'s Title`,
         Size: {Size: '6Y'},
         Item: {
                         "Selling_price": msrp,
@@ -34,6 +33,9 @@ const boxReviewDataGenerator = () => {
                             "BrandName": "Anais & I"
                         },
                         'Gender': 'Girl',
+                        "Genus": {
+                            "Genus": "Sweater"
+                        },
                     },
         Color_Combo: {
                         "CCID": 33,

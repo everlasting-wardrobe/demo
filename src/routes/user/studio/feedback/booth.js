@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './booth.css';
-import ReactImageMagnify from 'react-image-magnify';
+import ErrorBoundary from './errorBoundary';
 
 export default class Booth extends Component {
   constructor(props){
@@ -45,7 +45,10 @@ export default class Booth extends Component {
         </div>
       )
     }
-    const {title, Color_Combo, Size, Barcode, Item} = this.state.product;
+    const {Color_Combo, Size, Barcode, Item, PatternB} = this.state.product;
+    let title = Item.Brand.BrandName + " " + (PatternB ? PatternB.PatternB + " " : "")
+                + (PatternB && PatternB.PatternA && PatternB.PatternB !== PatternB.PatternA.PatternA ? PatternB.PatternA.PatternA + " ":"")
+                + Item.Genus.Genus;
     return(
       <div id="booth">
         <content id="booth-item-image-review">
@@ -60,7 +63,7 @@ export default class Booth extends Component {
             <h3 id="booth-SKU-title">{title}</h3>
             <h4 id="booth-SKU-code">{Barcode}</h4>
             <div className={'cloth-info-container'}>
-              <span className={'cloth-info'}>{Item.Gender}</span>
+              <span className={'cloth-info'}>{Item.Gender.Gender}</span>
               <span className={'cloth-info'}>{Size.Size}</span>
             </div>
             <div className={'cloth-color'}>
