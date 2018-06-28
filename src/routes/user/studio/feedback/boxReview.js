@@ -35,10 +35,13 @@ export default class BoxReview extends Component {
             const onClick = () => {
               this.state.onClothClick(item);
             }
+            let title = item.Item.Brand.BrandName + " " + (item.PatternB ? item.PatternB.PatternB + " " : "")
+                        + (item.PatternB && item.PatternB.PatternA && item.PatternB.PatternA !== item.PatternB.PatternA.PatternA ? item.PatternB.PatternA.PatternA + " ":"")
+                        + item.Item.Genus.Genus;
             return(
               <tr key={item.Barcode} onClick={onClick} className={`box-review-table-row ${this.state.currentKey ===
                 item.Barcode ? 'item-select': ''}`}>
-                <td>{item.title}</td>
+                <td>{title}</td>
                 <td>{item.Size.Size}</td>
                 <td>{`TBD`}</td>
                 <td>{item.Item.Selling_price}</td>
