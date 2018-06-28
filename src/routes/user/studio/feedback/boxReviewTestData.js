@@ -22,21 +22,19 @@ const boxReviewDataGenerator = () => {
       }
       const item = {
         Barcode: `Month${i+1}Item${j+1}`,
-        key : `Month${i+1}Item${j+1}`,
         FrontPhoto: clothImgUrl1,
         BackPhoto: clothImgUrl1,
         LeftPhoto: clothImgUrl1,
         RightPhoto: clothImgUrl1,
         title: `This is the Month ${i + 1} Item ${j + 1}'s Title`,
         Size: {Size: '6Y'},
-        msrp: msrp, // not listed in reponse
         Item: {
-                        "Selling_price": "75.00",
+                        "Selling_price": msrp,
                         "Brand": {
                             "BrandName": "Anais & I"
-                        }
+                        },
+                        'Gender': 'Girl',
                     },
-        gender: gender, // not in Response should be a array. ['girls', 'unisex']
         Color_Combo: {
                         "CCID": 33,
                         "Color_1": {
@@ -50,19 +48,16 @@ const boxReviewDataGenerator = () => {
         BoxProducts: {
           "BoxID": 11,
           "ProductID": "EW-1-22-33-13-4",
-          "FitRating": null,
-          "StyleRating": null,
+          "FitRating": fitRating,
+          "StyleRating": styleRating,
           "Comments": null,
           "CreatedAt": "2018-06-26T19:06:09.045Z",
           "UpdatedAt": "2018-06-26T19:06:09.045Z"
         },
-        FitRating: fitRating,
-        StyleRating: styleRating,
       }
       items[j] = item;
     }
-    box.items = items;
-    box.month = `Month${i + 1}`;
+    box.Products = items;
     boxReviewData[i] = box;
   }
   return boxReviewData;

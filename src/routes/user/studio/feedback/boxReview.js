@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './boxReview.css';
 import PropTypes from 'prop-types';
+import ErrorBoundary from './errorBoundary';
 
 export default class BoxReview extends Component {
   constructor(props){
@@ -35,12 +36,12 @@ export default class BoxReview extends Component {
               this.state.onClothClick(item);
             }
             return(
-              <tr key={i} onClick={onClick} className={`box-review-table-row ${this.state.currentKey ===
-                item.key ? 'item-select': ''}`}>
+              <tr key={item.Barcode} onClick={onClick} className={`box-review-table-row ${this.state.currentKey ===
+                item.Barcode ? 'item-select': ''}`}>
                 <td>{item.title}</td>
-                <td>{item.size}</td>
-                <td>{item.price}</td>
-                <td>{item.msrp}</td>
+                <td>{item.Size.Size}</td>
+                <td>{`TBD`}</td>
+                <td>{item.Item.Selling_price}</td>
               </tr>
             )
           })}
@@ -53,14 +54,18 @@ export default class BoxReview extends Component {
   render(){
     return(
       <div>
-        <div>
-          {this.renderBoxItems(this.state.items)}
-        </div>
-        <p className={`box-review-tips`}>{`Click Item for More Information`}</p>
-        <div className="box-review-botton-wrapper">
-          <button id="box-review-previous" onClick={this.state.onPreviousClick}>Previous Month</button>
-          <button id="box-review-next" onClick={this.state.onNextClick}>Next Month</button>
-        </div>
+        <ErrorBoundary>
+          <div>
+            {this.renderBoxItems(this.state.items)}
+          </div>
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <p className={`box-review-tips`}>{`Click Item for More Information`}</p>
+          <div className="box-review-botton-wrapper">
+            <button id="box-review-previous" onClick={this.state.onPreviousClick}>Previous Month</button>
+            <button id="box-review-next" onClick={this.state.onNextClick}>Next Month</button>
+          </div>
+        </ErrorBoundary>
       </div>
     )
   }
