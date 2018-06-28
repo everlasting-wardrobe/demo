@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './booth.css';
 
-class Booth extends Component {
+export default class Booth extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -44,7 +44,7 @@ class Booth extends Component {
         </div>
       )
     }
-    const {title, gender, Color_Combo, Size, msrp, Barcode, Item} = this.state.product;
+    const {title, Color_Combo, Size, Barcode, Item} = this.state.product;
     return(
       <div id="booth">
         <content id="booth-item-image-review">
@@ -59,12 +59,12 @@ class Booth extends Component {
             <h3 id="booth-SKU-title">{title}</h3>
             <h4 id="booth-SKU-code">{Barcode}</h4>
             <div className={'cloth-info-container'}>
-              <span className={'cloth-info'}>{gender}</span>
+              <span className={'cloth-info'}>{Item.Gender}</span>
               <span className={'cloth-info'}>{Size.Size}</span>
             </div>
             <div className={'overall-price'}>
               <div>
-                <h4 id="booth-item-msrp">MSRP:<span>${msrp}</span></h4>
+                <h4 id="booth-item-msrp">MSRP:<span>${Item.Selling_price}</span></h4>
               </div>
             </div>
         </div>
@@ -72,5 +72,3 @@ class Booth extends Component {
     )
   }
 }
-
-export default Booth;

@@ -4,10 +4,11 @@ import BoxReview from './boxReview';
 import Booth from './booth';
 import './feedback.css';
 import './feedbackSlider.css';
-import BoxReviewBackground from './boxReviewBackground.png'
 import Rating from './rating';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import ErrorBoundary from './errorBoundary';
+
 
 export default class Feedback extends Component{
   constructor(props){
@@ -47,7 +48,7 @@ export default class Feedback extends Component{
   }
 
   onClothClick = (displayingItem) => {
-    let currentKey = displayingItem.key;
+    let currentKey = displayingItem.Barcode;
     this.setState({
       displayingItem,
       currentKey,
@@ -55,11 +56,11 @@ export default class Feedback extends Component{
   }
 
   onUpdateClick = (FitRating, StyleRating) => {
-    this.state.displayingItem.FitRating = FitRating;
-    this.state.displayingItem.StyleRating = StyleRating;
+    this.state.displayingItem.BoxProducts.FitRating = FitRating;
+    this.state.displayingItem.BoxProducts.StyleRating = StyleRating;
     axios.post('/user', {
-      BoxID: this.state.displayingItem.BoxID,
-      ProductID: this.state.displayingItem.ProductID,
+      BoxID: this.state.displayingItem.BoxProducts.BoxID,
+      ProductID: this.state.displayingItem.BoxProducts.ProductID,
       FitRating: FitRating,
       StyleRating: StyleRating,
     })
@@ -75,8 +76,8 @@ export default class Feedback extends Component{
     // const boxReviewData = boxReviewDataGenerator();
     if(this.state.boxReviewData.length > 0){
       this.setState({
-        displayingItem: this.state.boxReviewData[this.state.boxReviewData.length - 1].items[7],
-        currentKey : this.state.boxReviewData[this.state.boxReviewData.length - 1].items[7].key,
+        displayingItem: this.state.boxReviewData[this.state.boxReviewData.length - 1].Products[7],
+        currentKey : this.state.boxReviewData[this.state.boxReviewData.length - 1].Products[7].Barcode,
         month: this.state.boxReviewData.length,
       });
     }
@@ -88,31 +89,37 @@ export default class Feedback extends Component{
       <div className="feedback-wrapper">
         <div className='feedback'>
           <div className="box-review-wrapper">
+            <ErrorBoundary>
             {
               this.state.month != 0 &&
-              <BoxReview items={this.state.boxReviewData[this.state.month - 1].items}
+              <BoxReview items={this.state.boxReviewData[this.state.month - 1].Products}
                 currentKey={this.state.currentKey}
                 onPreviousClick={this.onPreviousClick}
                 onNextClick={this.onNextClick}
                 onClothClick={this.onClothClick}/>
             }
+            </ErrorBoundary>
           </div>
           <div className="item-display-rating">
+            <ErrorBoundary>
             {
               this.state.displayingItem &&
               <div className='item-display-wrapper'>
                 <Booth item={this.state.displayingItem}/>
               </div>
             }
+            </ErrorBoundary>
+            <ErrorBoundary>
             {
               this.state.displayingItem &&
               <div className="feedback-rating">
                 <Rating Barcode={this.state.displayingItem.Barcode}
-                  FitRating={this.state.displayingItem.FitRating}
-                  StyleRating = {this.state.displayingItem.StyleRating}
+                  FitRating={this.state.displayingItem.BoxProducts.FitRating}
+                  StyleRating = {this.state.displayingItem.BoxProducts.StyleRating}
                   onUpdateClick={this.onUpdateClick}/>
               </div>
             }
+            </ErrorBoundary>
           </div>
         </div>
       </div>
