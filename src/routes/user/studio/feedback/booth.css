@@ -143,9 +143,10 @@
 
 /*  ---------COLOR---------  */
 .cloth-color{
-  margin-top: 10%;
+  margin-top: 0%;
+  margin-bottom: 10%;
   height: 20%;
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-between;;
   align-items: center;

@@ -19,11 +19,14 @@
 
   .box-review-wrapper {
     width: 27%;
+    height: 88%;
     margin-left: 8%;
     padding-top: 9%;
     margin-right: 0px;
-    display: inline-block;
-    position: relative;
+    /* display: inline-block; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
   }
 
   .item-display-rating{
