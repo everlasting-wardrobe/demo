@@ -56,17 +56,19 @@ export default class BoxReview extends Component {
 
   render(){
     return(
-      <div>
+      <div className = "boxReview">
         <ErrorBoundary>
-          <div>
+          <div className ="boxReview-top">
             {this.renderBoxItems(this.state.items)}
           </div>
         </ErrorBoundary>
         <ErrorBoundary>
-          <p className={`box-review-tips`}>{`Click Item for More Information`}</p>
-          <div className="box-review-botton-wrapper">
-            <button id="box-review-previous" onClick={this.state.onPreviousClick}>Previous Month</button>
-            <button id="box-review-next" onClick={this.state.onNextClick}>Next Month</button>
+          <div className = "boxReview-bot">
+            <p className={`box-review-tips`}>{`Click Item for More Information`}</p>
+            <div className="box-review-botton-wrapper">
+              <button id="box-review-previous" onClick={this.state.onPreviousClick}>Previous Month</button>
+              <button id="box-review-next" onClick={this.state.onNextClick}>Next Month</button>
+            </div>
           </div>
         </ErrorBoundary>
       </div>

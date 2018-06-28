@@ -39,9 +39,7 @@ export default class Rating extends Component{
           className="feedback-slider fit-feedback-slider" onChange={this.constructChange('FitRating').bind(this)} style={{fontSize:"0.8em"}}/>
           <div className="feedback-notation">
             <div>{"WAY TO SMALL!"}</div>
-            <div>{"A LITTEL TOO SMALL"}</div>
             <div>{"PERFECT"}</div>
-            <div>{"A LITTLE TOO BIG"}</div>
             <div>{"WAY TOO BIG"}</div>
           </div>
         </div>

@@ -2,8 +2,8 @@ input.feedback-slider {
   align-self: center;
   border: 0;
   padding: 0;
-  width: 20em;
-  height: 6.2em;
+  width: 22em;
+
   opacity: 1;
   font-size: 1em;
   cursor: pointer;
@@ -15,8 +15,8 @@ input.feedback-slider, input.feedback-slider::-webkit-slider-runnable-track, inp
 
 input.feedback-slider::-webkit-slider-runnable-track {
   position: relative;
-  width: 20em;
-  height: 6.2em;
+
+  height: 4em;
   padding-left: 0.32em;
   padding-right: 0.32em;
   background-size: cover;
@@ -25,21 +25,23 @@ input.feedback-slider::-webkit-slider-runnable-track {
 
 input.feedback-slider::-webkit-slider-runnable-track {
   background-image: url('./styleFeedbackTrack.png');
+  background-size: 100% 100%;
 }
 
 input.fit-feedback-slider::-webkit-slider-runnable-track {
   background-image: url('./fitFeedbackTrack.png');
+  background-size: 100% 100%;
 }
 
 input.feedback-slider::-webkit-slider-thumb {
   position: relative;
   margin-left: 0em;
-  margin-top: 2.1em;
+  margin-top: 0.5em;
   border: none;
   border-radius: 50% 50% 0;
   background-image: url('./thumb.png');
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   z-index: 100;
   background-size: contain;
 }

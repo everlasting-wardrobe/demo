@@ -53,7 +53,7 @@ export default class Booth extends Component {
       <div id="booth">
         <content id="booth-item-image-review">
           <div id="booth-item-display-image-wrapper">
-            <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
+             <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
           </div>
           <div className="booth-item-image-container">
             {this.renderItemImages()}
@@ -65,6 +65,12 @@ export default class Booth extends Component {
             <div className={'cloth-info-container'}>
               <span className={'cloth-info'}>{Item.Gender.Gender}</span>
               <span className={'cloth-info'}>{Size.Size}</span>
+            </div>
+            <div className={'cloth-color'}>
+              <div >color:</div>
+              <div className='color_1'></div>
+              <div className='color_2'></div>
+              <div className='color_3'></div>
             </div>
             <div className={'overall-price'}>
               <div>
