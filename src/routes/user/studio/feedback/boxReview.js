@@ -41,7 +41,7 @@ export default class BoxReview extends Component {
             return(
               <tr key={item.Barcode} onClick={onClick} className={`box-review-table-row ${this.state.currentKey ===
                 item.Barcode ? 'item-select': ''}`}>
-                <td>{title}</td>
+                <td className="box-items-title">{title}</td>
                 <td>{item.Size.Size}</td>
                 <td>{`TBD`}</td>
                 <td>{item.Item.Selling_price}</td>
