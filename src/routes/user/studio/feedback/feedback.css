@@ -10,7 +10,7 @@
     height: 0;
     padding-bottom: 40%;
     max-height: 480px;
-    background-image: url('../../../../imgs/boxReviewBackground.png');
+    background-image: url('./boxReviewBackground.png');
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
@@ -28,7 +28,7 @@
 
   .item-display-rating{
     width: 52%;
-    margin-top: 11%;
+    margin-top: 10%;
     margin-left: 42%;
     position: absolute;
     height: 65%;

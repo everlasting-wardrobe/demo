@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import boxReviewDataGenerator from './boxReviewTestData';
+// import boxReviewDataGenerator from './boxReviewTestData';
 import BoxReview from './boxReview';
 import Booth from './booth';
 import './feedback.css';
@@ -7,13 +7,14 @@ import './feedbackSlider.css';
 import BoxReviewBackground from './boxReviewBackground.png'
 import Rating from './rating';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 export default class Feedback extends Component{
   constructor(props){
     super(props);
     this.state = {
       month: 0,
-      boxReviewData : [],
+      boxReviewData : this.props.boxReviewData || [],
       displayingItem: null,
       currentKey : null,
     }
@@ -21,6 +22,7 @@ export default class Feedback extends Component{
     this.onClothClick = this.onClothClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
     this.onNextClick = this.onNextClick.bind(this);
+    this.onUpdateClick = this.onUpdateClick.bind(this);
   }
 
   onPreviousClick = () => {
@@ -36,7 +38,7 @@ export default class Feedback extends Component{
 
   onNextClick = () => {
     let month = this.state.month;
-    if (month != 12){
+    if (month < this.state.boxReviewData.length){
       this.setState({month: month + 1});
     }else {
       month = this.state.month;
@@ -45,35 +47,39 @@ export default class Feedback extends Component{
   }
 
   onClothClick = (displayingItem) => {
-    // console.log(displayingItem);
     let currentKey = displayingItem.key;
     this.setState({
       displayingItem,
       currentKey,
     });
-    // console.log(currentKey);
   }
 
-  onUpdateClick = (fitRating, styleRating) => {
-    this.state.displayingItem.fitRating = fitRating;
-    this.state.displayingItem.styleRating = styleRating;
-    // console.log(this.state.boxReviewData);
-  }
-
-  onSliderChange = (action, value)=>{
-    // this.setState({this.state.displayingItem: })
+  onUpdateClick = (FitRating, StyleRating) => {
+    this.state.displayingItem.FitRating = FitRating;
+    this.state.displayingItem.StyleRating = StyleRating;
+    axios.post('/user', {
+      BoxID: this.state.displayingItem.BoxID,
+      ProductID: this.state.displayingItem.ProductID,
+      FitRating: FitRating,
+      StyleRating: StyleRating,
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   componentDidMount(){
-    const boxReviewData = boxReviewDataGenerator();
-    this.setState({
-      boxReviewData,
-      displayingItem: boxReviewData[boxReviewData.length - 1].items[7],
-      currentKey : boxReviewData[boxReviewData.length - 1].items[7].key,
-      month: boxReviewData.length,
-    });
-    console.log(this.state.boxReviewData);
-    console.log(this.state.displayingItem);
+    // const boxReviewData = boxReviewDataGenerator();
+    if(this.state.boxReviewData.length > 0){
+      this.setState({
+        displayingItem: this.state.boxReviewData[this.state.boxReviewData.length - 1].items[7],
+        currentKey : this.state.boxReviewData[this.state.boxReviewData.length - 1].items[7].key,
+        month: this.state.boxReviewData.length,
+      });
+    }
   }
 
   render(){
@@ -83,7 +89,7 @@ export default class Feedback extends Component{
         <div className='feedback'>
           <div className="box-review-wrapper">
             {
-              this.state.boxReviewData.length > 0 &&
+              this.state.month != 0 &&
               <BoxReview items={this.state.boxReviewData[this.state.month - 1].items}
                 currentKey={this.state.currentKey}
                 onPreviousClick={this.onPreviousClick}
@@ -101,7 +107,10 @@ export default class Feedback extends Component{
             {
               this.state.displayingItem &&
               <div className="feedback-rating">
-                <Rating FitRating={this.state.displayingItem.FitRating} StyleRating = {this.state.displayingItem.StyleRating}/>
+                <Rating Barcode={this.state.displayingItem.Barcode}
+                  FitRating={this.state.displayingItem.FitRating}
+                  StyleRating = {this.state.displayingItem.StyleRating}
+                  onUpdateClick={this.onUpdateClick}/>
               </div>
             }
           </div>
