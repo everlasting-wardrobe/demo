@@ -6,8 +6,8 @@ export default class Rating extends Component{
     super(props);
     this.state = {
       Barcode: this.props.Barcode,
-      FitRating : this.props.FitRating || 5,
-      StyleRating : this.props.StyleRating || 5,
+      FitRating : this.props.FitRating || 0,
+      StyleRating : this.props.StyleRating || 0,
       onUpdateClick: this.props.onUpdateClick,
     }
   }
@@ -29,12 +29,19 @@ export default class Rating extends Component{
     return (
       <div key={this.state.Barcode} className={`item-feedback-slider-container`}>
         <div className="item-feedback-slider-wrapper">
-          <input type="range" min="1" max="9" step="1"
+        <div className="item-feedback-slider-title">{"Style Rating"}</div>
+          <input type="range" min="-4" max="4" step="1"
           value = {`${this.state.StyleRating}`}
           className="feedback-slider style-feedback-slider" onChange={this.constructChange('StyleRating').bind(this)} style={{fontSize:"0.8em"}}/>
+          <div className="feedback-notation">
+            <div>{"FINE"}</div>
+            <div>{"GOOD"}</div>
+            <div>{"THAT'S MY STYLE"}</div>
+          </div>
         </div>
         <div className="item-feedback-slider-wrapper">
-          <input type="range" min="1" max="9" step="1"
+        <div className="item-feedback-slider-title">{"Fit Rating"}</div>
+          <input type="range" min="-4" max="4" step="1"
           value = {`${this.state.FitRating}`}
           className="feedback-slider fit-feedback-slider" onChange={this.constructChange('FitRating').bind(this)} style={{fontSize:"0.8em"}}/>
           <div className="feedback-notation">

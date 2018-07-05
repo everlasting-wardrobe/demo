@@ -9,19 +9,19 @@
     margin:auto;
     height: 0;
     padding-bottom: 40%;
-    max-height: 480px;
+    /* max-height: 480px; */
     background-image: url('./boxReviewBackground.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     display: flex;
     flex-wrap: wrap;
   }
 
   .box-review-wrapper {
-    width: 27%;
-    height: 88%;
-    margin-left: 8%;
-    padding-top: 9%;
+    width: 22%;
+    height: 70%;
+    margin-left: 16%;
+    padding-top: 6.5%;
     margin-right: 0px;
     /* display: inline-block; */
     position: absolute;
@@ -30,11 +30,11 @@
   }
 
   .item-display-rating{
-    width: 52%;
-    margin-top: 10%;
-    margin-left: 42%;
+    width: 45%;
+    margin-top: 7%;
+    margin-left: 40.5%;
     position: absolute;
-    height: 65%;
+    height: 50%;
   }
 
   .item-display-wrapper{

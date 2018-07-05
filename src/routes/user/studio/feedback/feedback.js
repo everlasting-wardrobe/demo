@@ -33,7 +33,7 @@ export default class Feedback extends Component{
       this.setState({month: month - 1});
     }else {
       month = this.state.month;
-      alert("this is the first order");
+      alert("this is the first box");
     }
   }
 
@@ -43,7 +43,7 @@ export default class Feedback extends Component{
       this.setState({month: month + 1});
     }else {
       month = this.state.month;
-      alert("this is the last month");
+      alert("this is the latest box");
     }
   }
 
@@ -65,10 +65,15 @@ export default class Feedback extends Component{
       StyleRating: StyleRating,
     })
     .then(function (response) {
-      console.log(response);
+      if(response.status === 200){
+        alert("Rating updated! Thank you!");
+      } else {
+        alert("Update Rating Failed");
+      }
     })
     .catch(function (error) {
-      console.log(error);
+      alert("Update Rating Failed");
+      console.log(error)
     });
   }
 
