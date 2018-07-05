@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './booth.css';
 import ErrorBoundary from './errorBoundary';
+import ReactImageZoom from 'react-image-zoom';
 
 export default class Booth extends Component {
   constructor(props){
@@ -24,13 +25,13 @@ export default class Booth extends Component {
       const onClick = ()=> {
         this.handleImageOnClick(photoName);
       }
-      if(this.state.product[photoName] !== null){
+      // if(this.state.product[photoName] !== null){
         return (
           <img key={photoName} src={this.state.product[photoName]} onClick = {onClick}
             className={`item-image ${this.state.selectImg === photoName ? 'image-select':''}`}
             alt={`Item Image Review for ${photoName}`} />
         )
-      }
+      // }
     })
   }
 
@@ -46,18 +47,29 @@ export default class Booth extends Component {
       )
     }
     const {Color_Combo, Size, Barcode, Item, PatternB} = this.state.product;
+    // const zoomImage={
+    //   width:
+    //   scale: 2,
+    //   img: this.state.product[this.state.selectImg]
+    // }
+
+    // <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
     let title = Item.Brand.BrandName + " " + (PatternB ? PatternB.PatternB + " " : "")
                 + (PatternB && PatternB.PatternA && PatternB.PatternB !== PatternB.PatternA.PatternA ? PatternB.PatternA.PatternA + " ":"")
                 + Item.Genus.Genus;
     return(
       <div id="booth">
         <content id="booth-item-image-review">
+        <ErrorBoundary>
           <div id="booth-item-display-image-wrapper">
-             <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
+             <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" /> 
           </div>
+        </ErrorBoundary>
+        <ErrorBoundary>
           <div className="booth-item-image-container">
             {this.renderItemImages()}
           </div>
+        </ErrorBoundary>
         </content>
         <div id="booth-item-info-wrapper">
             <h3 id="booth-SKU-title">{title}</h3>

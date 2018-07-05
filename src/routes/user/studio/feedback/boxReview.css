@@ -112,6 +112,6 @@
   color: #FF4B4B;
 }
 
-.box-review-table-row :hover{
-  background-color:#FFA5A5;
+td .box-items-title :hover{
+  background-color: yellow;
 }
