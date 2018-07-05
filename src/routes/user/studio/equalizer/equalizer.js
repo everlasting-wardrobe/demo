@@ -20,6 +20,7 @@ export default class Equalizer extends Component{
       jockJams: jockJams || 0,
       hipHop: hipHop || 0,
     }
+    this.onAmfmResetClick = this.onAmfmResetClick.bind(this);
   };
 
   // setValue will set state value. it receive two params, genre and action,
@@ -53,7 +54,7 @@ export default class Equalizer extends Component{
 
   onAmfmResetClick = ()=> {
     this.state.genres.forEach((genre) => {
-      this.setState([genre]: 0);
+      this.setState({[genre]: 0});
     });
     this.setState({totalPoints: 0});
   }
@@ -73,7 +74,10 @@ export default class Equalizer extends Component{
   render(){
     return(
       <div className={"equalizer-container"}>
-        <AMFM className={'amfm-wrapper'} rest={30 - this.state.totalPoints}/>
+        <div className={'amfm-wrapper'} >
+          <AMFM rest={30 - this.state.totalPoints}
+            onResetClick={this.onAmfmResetClick}/>
+        </div>
         <div className={"controller-container"}>
           {this.renderControllers()}
         </div>

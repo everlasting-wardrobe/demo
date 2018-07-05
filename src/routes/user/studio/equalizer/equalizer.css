@@ -3,9 +3,10 @@
 }
 
 .amfm-wrapper{
-  width: 40%;
+  width: 52%;
 }
 
 .controller-container{
   display: flex;
+  width: 47%;
 }
