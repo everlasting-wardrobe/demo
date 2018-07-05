@@ -11,6 +11,7 @@ export default class Controller extends Component{
     this.state = {
       value: this.props.value || 0,
       color: this.props.color || 'green',
+      title: this.props.title || 'Equalizer',
     };
 
     this.onPlusClick = () => {
@@ -46,6 +47,10 @@ export default class Controller extends Component{
     }
   }
 
+  componentWillReceiveProps({value}){
+    this.setState({value});
+  }
+
   renderValueDiplay(value){
     let divSet = [];
     for(let i = 0; i < value; i++){
@@ -71,6 +76,9 @@ export default class Controller extends Component{
             <img className={"equalizer-panel-button-minus"} src={PanelLevelsMinusSymbol} />
           </div>
           <img src={PanelButton} className="equalizer-panel-button"/>
+          <div className={'equalizer-controller-title'}>
+            <p style={{color:this.state.color}}>{this.state.title}</p>
+          </div>
         </div>
       </div>
     )

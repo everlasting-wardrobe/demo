@@ -1,0 +1,18 @@
+.amfm{
+  position: relative;
+  z-index: -100;
+}
+
+.img{
+  z-index: 2;
+}
+
+.amfm-points{
+  z-index: -1;
+  position: absolute;
+  height: 27.2%;
+  background-color: red;
+  top: 46.2%;
+  opacity: 0.5;
+  left: 25%;
+}
