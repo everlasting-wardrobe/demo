@@ -51,6 +51,12 @@ export default class Equalizer extends Component{
     return onTuneClick.bind(this);
   };
 
+  onAmfmResetClick = ()=> {
+    this.state.genres.forEach((genre) => {
+      this.setState([genre]: 0);
+    });
+    this.setState({totalPoints: 0});
+  }
 
   // traverse differents kinks of genres and generate corresponding controller.
   renderControllers(){
@@ -67,7 +73,7 @@ export default class Equalizer extends Component{
   render(){
     return(
       <div className={"equalizer-container"}>
-        <AMFM className={'amfm-wrapper'} />
+        <AMFM className={'amfm-wrapper'} rest={30 - this.state.totalPoints}/>
         <div className={"controller-container"}>
           {this.renderControllers()}
         </div>
