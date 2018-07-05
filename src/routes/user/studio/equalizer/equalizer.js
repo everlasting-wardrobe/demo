@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Controller from './controller';
+import AMFM from './amfm';
 import "./equalizer.css";
 
 
@@ -21,56 +22,60 @@ export default class Equalizer extends Component{
     }
   };
 
-  constructOnPlusClick(genre){
-    return (value) => {
-      // console.log(value);
-      // console.log(this.state.totalPoints);
-      // console.log(typeof this.state.totalPoints);
-      if(this.state.totalPoints < 30){
-        // console.log(this.state.totalPoints);
+  // setValue will set state value. it receive two params, genre and action,
+  // which will change corresponding genre's value.
+  setValue(genre, action){
+    // console.log(`${genre}  ${action}`);
+    if(action === 'plus'){
+      if(this.state[genre] < 10 && this.state.totalPoints < 30){
         this.setState((prevState)=> {
-          // console.log(prevState[genre]);
           return {[genre]: prevState[genre] + 1, totalPoints: prevState.totalPoints + 1}
         });
       }
-      // console.log(`${genre} ${this.state[genre]}`);
-    };
-  }
-
-  constructOnMinusClick(genre){
-    return (value) => {
-      if(this.totalPoints > 0){
+    }
+    if(action === 'minus'){
+      if(this.state[genre] > 0 && this.state.totalPoints > 0){
         this.setState((prevState)=> {
-          return {[genre]: value, totalPoints: prevState.totalPoints - 1}
+          return {[genre]: prevState[genre] - 1, totalPoints: prevState.totalPoints - 1}
         });
       }
-    };
+    }
   }
 
-  constructTuneHandler = (type) => {
-    return (value) => {
-      this.setState({[type]: value});
+  // construct event listener function for controller corresponding to genre and action.
+  // Each function will carry two states, genre and action.
+  constructOnTuneClick = (genre, action) => {
+    let onTuneClick = () => {
+      this.setValue(genre, action);
     }
+    return onTuneClick.bind(this);
   };
 
-  renderEqualizer(){
+  onAmfmResetClick = ()=> {
+    this.state.genres.forEach((genre) => {
+      this.setState([genre]: 0);
+    });
+    this.setState({totalPoints: 0});
+  }
+
+  // traverse differents kinks of genres and generate corresponding controller.
+  renderControllers(){
     return this.state.genres.map((genre, i) => {
       return (<Controller key={i} value={this.state[genre]} color={this.state.colors[i]}
-
+                onPlusClick = {this.constructOnTuneClick(genre, 'plus')}
+                onMinusClick = {this.constructOnTuneClick(genre, 'minus')}
+                title={genre}
               />);
     });
   }
 
-  // onPlusClick = {this.constructOnPlusClick(genre).bind(this)}
-  // onMinusClick = {this.constructOnMinusClick(genre).bind(this)}
 
   render(){
-    let tuneHandler = this.constructTuneHandler('jazz').bind(this);
     return(
-      <div>
-        <div>Equalizer</div>
-        <div className={"equalizer-container"}>
-          {this.renderEqualizer()}
+      <div className={"equalizer-container"}>
+        <AMFM className={'amfm-wrapper'} rest={30 - this.state.totalPoints}/>
+        <div className={"controller-container"}>
+          {this.renderControllers()}
         </div>
       </div>
     )

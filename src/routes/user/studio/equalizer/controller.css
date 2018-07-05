@@ -1,6 +1,7 @@
 .equalizer-controller{
   width: 100px;
   position: relative;
+  user-select: none;
 }
 
 .equalizer-wrapper{
@@ -73,7 +74,15 @@
 }
 
 .equalizer-button-symbol{
+}
 
+.equalizer-controller-title{
+  position: absolute;
+  width: 50%;
+  top: 60%;
+  font-size: 0.8em;
+  left: 25%;
+  text-align: center;
 }
 
 .equalizer-panel-button{
