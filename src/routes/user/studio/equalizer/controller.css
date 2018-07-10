@@ -44,10 +44,10 @@
 
 .equalizer-button-plus-wrapper{
   position: absolute;
-  left: 55%;
-  top: 15%;
-  width: 30%;
-  height: 40%;
+  left: 53%;
+  top: 13%;
+  width: 33%;
+  height: 50%;
   cursor: pointer;
 }
 
@@ -55,10 +55,10 @@
 
 .equalizer-button-minus-wrapper{
   position: absolute;
-  left: 15%;
+  left: 12%;
   top: 15%;
-  width: 30%;
-  height: 40%;
+  width: 33%;
+  height: 50%;
   cursor: pointer;
 }
 
@@ -66,14 +66,14 @@
   position: absolute;
   width: 80%;
   left: 10%;
-  top: 18%;
+  top: 30%;
 }
 
 .equalizer-panel-button-minus{
   width: 80%;
   position: absolute;
   left: 15%;
-  top: 38%;
+  top: 40%;
 }
 
 .equalizer-button-symbol{
@@ -81,12 +81,14 @@
 
 .equalizer-controller-title{
   font-family: Lato;
-  position: absolute;
-  top: 60%;
-  font-size: 0.8em;
+  width: 100%;
+  top: 70%;
+  font-size: 1.1em;
   text-align: center;
 }
-
+.equalizer-controller-title p{
+  margin-bottom: 0;
+}
 .equalizer-panel-button{
   width: 100%;
   pointer-events: none;
