@@ -1,12 +1,33 @@
 .equalizer-container{
   display: flex;
+  border: solid gray 1px;
+  background-color: grey;
 }
 
 .amfm-wrapper{
-  width: 52%;
+  width: 50%;
+}
+
+.amfm-inner-wrapper{
+  width: 90%;
+  margin: 4% auto 4% auto;
+}
+
+.controller-container-wrapper{
+  display: flex;
+  width: 50%;
 }
 
 .controller-container{
   display: flex;
-  width: 47%;
+  width: 90%;
+  margin: 3% auto 3% auto;
+  background-image: url('./equalizerWindow.png');
+  background-size: cover;
+  padding: 3% 3% 3% 3%;
+}
+
+.controller-wrapper{
+  width: 75%;
+  margin: auto;
 }

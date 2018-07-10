@@ -4,10 +4,11 @@
   user-select: none;
 }
 
-.equalizer-wrapper{
-  width: 100%;
+.equalizer-controller-wrapper{
+  width: 90%;
   overflow: hidden;
   position: relative;
+  margin: auto;
 }
 
 .equalizer-panel-over{
@@ -17,18 +18,18 @@
 
 .equalizer-value-box-container{
   position: absolute;
-  top: 7%;
-  height:86.5%;
+  top: 2%;
+  height:96%;
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
 }
 
 .equalizer-value-box{
-  width: 64%;
-  height: 9.6%;
+  width: 91%;
+  height: 9.8%;
   margin-bottom: 1%;
-  margin-right: 18%;
+  margin-right: 4%;
   align-self: flex-end;
   opacity: 0.5;
   border-radius: 7%;
@@ -37,6 +38,8 @@
 .equalizer-panel-button-wrapper{
   overflow: hidden;
   position: relative;
+  margin-top: 30%;
+  margin-bottom: 5%;
 }
 
 .equalizer-button-plus-wrapper{
@@ -62,26 +65,25 @@
 .equalizer-panel-button-plus{
   position: absolute;
   width: 80%;
-  left: 15%;
+  left: 10%;
   top: 18%;
 }
 
 .equalizer-panel-button-minus{
   width: 80%;
   position: absolute;
-  left: 30%;
-  top: 14%;
+  left: 15%;
+  top: 38%;
 }
 
 .equalizer-button-symbol{
 }
 
 .equalizer-controller-title{
+  font-family: Lato;
   position: absolute;
-  width: 50%;
   top: 60%;
   font-size: 0.8em;
-  left: 25%;
   text-align: center;
 }
 

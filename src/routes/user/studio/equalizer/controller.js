@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PanelButton from './PanelLevelsButton.png';
 import PanelOver from './PanelLevelsOverButton.png';
-import PanelLevelsPlusSymbol from './PanelLevelsPlusSymbol.svg';
-import PanelLevelsMinusSymbol from './PanelLevelsMinusSymbol.svg';
+import PanelLevelsPlusSymbol from './PanelLevelsPlusSymbol.png';
+import PanelLevelsMinusSymbol from './PanelLevelsMinusSymbol.png';
 import './controller.css';
 
 export default class Controller extends Component{
@@ -54,7 +54,7 @@ export default class Controller extends Component{
   renderValueDiplay(value){
     let divSet = [];
     for(let i = 0; i < value; i++){
-      divSet.push(<div key={i} style={{backgroundColor:this.state.color}} className="equalizer-value-box"></div>);
+      divSet.push(<div key={i} style={{backgroundColor:'#96D6D7'}} className="equalizer-value-box"></div>);
     }
     return divSet;
   }
@@ -62,7 +62,7 @@ export default class Controller extends Component{
   render(){
     return (
       <div className={"equalizer-controller"}>
-        <div className={"equalizer-wrapper"}>
+        <div className={"equalizer-controller-wrapper"}>
           <img src={PanelOver} style={{width:'100%'}} className="equalizer-panel-over" />
           <div className="equalizer-value-box-container">
             {this.renderValueDiplay(this.state.value)}
@@ -77,7 +77,7 @@ export default class Controller extends Component{
           </div>
           <img src={PanelButton} className="equalizer-panel-button"/>
           <div className={'equalizer-controller-title'}>
-            <p style={{color:this.state.color}}>{this.state.title}</p>
+            <p>{this.state.title.toUpperCase()}</p>
           </div>
         </div>
       </div>
