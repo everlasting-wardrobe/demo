@@ -41,6 +41,7 @@
 }
 .boxReview-top{
   height: 75%;
+  overflow: auto;
 }
 .boxReview-bot{
   height : 25%;

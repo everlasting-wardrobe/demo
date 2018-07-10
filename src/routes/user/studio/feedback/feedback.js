@@ -81,8 +81,8 @@ export default class Feedback extends Component{
     // const boxReviewData = boxReviewDataGenerator();
     if(this.state.boxReviewData.length > 0){
       this.setState({
-        displayingItem: this.state.boxReviewData[this.state.boxReviewData.length - 1].Products[7],
-        currentKey : this.state.boxReviewData[this.state.boxReviewData.length - 1].Products[7].Barcode,
+        displayingItem: this.state.boxReviewData[this.state.boxReviewData.length - 1].Products[0],
+        currentKey : this.state.boxReviewData[this.state.boxReviewData.length - 1].Products[0].Barcode,
         month: this.state.boxReviewData.length,
       });
     }

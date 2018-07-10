@@ -1,9 +1,8 @@
-@media screen and (min-width: 780px){
+@media screen and (min-width: 1200px){
   .feedback-wrapper{
     position: relative;
     font-size: 16px;
   }
-
   .feedback {
     width: 100%;
     margin:auto;
@@ -47,17 +46,63 @@
 
 }
 
+@media screen and (max-width: 1200px)and (min-width: 780px){
+  .feedback-wrapper{
+    position: relative;
+    font-size: 12px;
+  }
+  .feedback {
+    width: 100%;
+    margin:auto;
+    height: 0;
+    padding-bottom: 40%;
+    /* max-height: 480px; */
+    background-image: url('./boxReviewBackground.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .box-review-wrapper {
+    width: 22%;
+    height: 70%;
+    margin-left: 16%;
+    padding-top: 6.5%;
+    margin-right: 0px;
+    /* display: inline-block; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-display-rating{
+    width: 45%;
+    margin-top: 7%;
+    margin-left: 40.5%;
+    position: absolute;
+    height: 50%;
+  }
+
+  .item-display-wrapper{
+    height: 60%;
+  }
+
+  .feedback-rating{
+    margin-top: 3%;
+  }
+}
 @media screen and (max-width: 779px) and (min-width: 414px){
   .feedback{
     width: 80%;
     margin: auto;
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width: 414px) {
   .box-review-wrapper{
     margin-top: 20px;
-    font-size: 10px;
+    font-size: 8px;
   }
 }
