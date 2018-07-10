@@ -7,7 +7,7 @@
 }
 
 .amfm-img{
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   user-select: none;
   -webkit-user-drag: none;
@@ -17,30 +17,30 @@
   width: 18%;
   height: 11%;
   position: absolute;
-  top: 12.5%;
-  left: 54%;
+  top: 6.5%;
+  left: 58%;
   /* background-color: red;
   opacity: 0.5; */
 }
 
-.amfm-undo{
+.amfm-save{
   width: 17%;
   height: 11%;
   position: absolute;
-  top: 12.5%;
-  left: 75.5%;
+  top: 6.5%;
+  left: 78.5%;
   /* background-color: red;
   opacity: 0.5; */
 }
 
 .amfm-points{
-  z-index: -1;
+  z-index: 3;
   position: absolute;
   height: 27.2%;
-  background-color: red;
-  top: 46%;
+  background-color: #96D6D7;
+  top: 45.3%;
   opacity: 0.5;
-  left: 24.5%;
+  left: 22%;
 }
 
 .amfm-button{

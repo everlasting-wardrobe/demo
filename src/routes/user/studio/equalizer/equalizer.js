@@ -62,11 +62,16 @@ export default class Equalizer extends Component{
   // traverse differents kinks of genres and generate corresponding controller.
   renderControllers(){
     return this.state.genres.map((genre, i) => {
-      return (<Controller key={i} value={this.state[genre]} color={this.state.colors[i]}
-                onPlusClick = {this.constructOnTuneClick(genre, 'plus')}
-                onMinusClick = {this.constructOnTuneClick(genre, 'minus')}
-                title={genre}
-              />);
+      return (
+        <div>
+          <div className={'controller-wrapper'}>
+            <Controller key={i} value={this.state[genre]} color={this.state.colors[i]}
+              onPlusClick = {this.constructOnTuneClick(genre, 'plus')}
+              onMinusClick = {this.constructOnTuneClick(genre, 'minus')}
+              title={genre}/>
+          </div>
+        </div>
+            );
     });
   }
 
@@ -74,12 +79,16 @@ export default class Equalizer extends Component{
   render(){
     return(
       <div className={"equalizer-container"}>
-        <div className={'amfm-wrapper'} >
-          <AMFM rest={30 - this.state.totalPoints}
-            onResetClick={this.onAmfmResetClick}/>
+        <div className={'amfm-wrapper'}>
+          <div className={'amfm-inner-wrapper'}>
+            <AMFM rest={30 - this.state.totalPoints}
+              onResetClick={this.onAmfmResetClick}/>
+          </div>
         </div>
-        <div className={"controller-container"}>
-          {this.renderControllers()}
+        <div className={'controller-container-wrapper'}>
+          <div className={"controller-container"}>
+            {this.renderControllers()}
+          </div>
         </div>
       </div>
     )
