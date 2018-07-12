@@ -78,13 +78,32 @@
 
 .equalizer-button-symbol{
 }
-
-.equalizer-controller-title{
-  font-family: Lato;
-  width: 100%;
-  top: 70%;
-  font-size: 1.1em;
-  text-align: center;
+@media screen and (max-width: 1599px) and (min-width: 1300px) {
+  .equalizer-controller-title{
+    font-family: Lato;
+    width: 100%;
+    top: 70%;
+    font-size: 0.9em;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .equalizer-controller-title{
+    font-family: Lato;
+    width: 100%;
+    top: 70%;
+    font-size: 1.1em;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1299px) {
+  .equalizer-controller-title{
+    font-family: Lato;
+    width: 100%;
+    top: 70%;
+    font-size: 0.7em;
+    text-align: center;
+  }
 }
 .equalizer-controller-title p{
   margin-bottom: 0;
