@@ -1,6 +1,7 @@
 import React from 'react';
 import Feedback from './feedback/feedback';
 import Equalizer from './equalizer/equalizer';
+import ColorPickerSet from './colorPickerSet/colorPickerSet';
 import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import './studio.css';
 
@@ -11,6 +12,9 @@ const Studio = () => {
       <Feedback boxReviewData={boxReviewData}/>
       <div className={'equalizer-wrapper'}>
         <Equalizer />
+      </div>
+      <div className={'color-picker-set-wrapper'}>
+        <ColorPickerSet />
       </div>
     </div>
   )

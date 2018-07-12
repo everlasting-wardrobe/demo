@@ -1,0 +1,57 @@
+.color-picker-set{
+  background-image: url('./ColorPickerSetPanel.png');
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.color-picker-container{
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px){
+  .color-picker-container{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 899px){
+  .color-picker-container{
+    font-size: 8px;
+  }
+}
+
+.screw-top-left{
+  width: 1.2em;
+  position: absolute;
+  left: 1.1%;
+  top: 2.6%;
+}
+
+.screw-top-right{
+  width: 1.2em;
+  position: absolute;
+  right: 1.1%;
+  top: 2.6%;
+  transform: rotate(45deg);
+}
+
+.screw-bottom-left{
+  width: 1.2em;
+  position: absolute;
+  left: 1.1%;
+  bottom: 2.6%;
+  transform: rotate(90deg);
+}
+
+.screw-bottom-right{
+  width: 1.2em;
+  position: absolute;
+  right: 1.1%;
+  bottom: 2.6%;
+  transform: rotate(135deg);
+}

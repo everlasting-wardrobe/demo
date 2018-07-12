@@ -1,0 +1,33 @@
+.color-picker{
+  width: 12em;
+}
+
+.color-picker-panel{
+  position: absolute;
+  left: 1.15em;
+  top: 0.15em;
+  width: 9.75em;
+  height: 5.85em;
+  border-radius: 0.1em;
+  opacity: 1;
+}
+
+.color-picker-window-wrapper{
+  width: 12em;
+  display: table-cell;
+  text-align: center;
+  position: relative;
+}
+
+.color-picker-window{
+  width: 10em;
+}
+
+.color-picker-rgba-slider-container{
+  margin: auto;
+  width: 11em;
+  height: 12em;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}

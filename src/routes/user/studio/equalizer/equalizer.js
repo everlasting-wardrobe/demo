@@ -63,9 +63,9 @@ export default class Equalizer extends Component{
   renderControllers(){
     return this.state.genres.map((genre, i) => {
       return (
-        <div>
+        <div key={i}>
           <div className={'controller-wrapper'}>
-            <Controller key={i} value={this.state[genre]} color={this.state.colors[i]}
+            <Controller value={this.state[genre]} color={this.state.colors[i]}
               onPlusClick = {this.constructOnTuneClick(genre, 'plus')}
               onMinusClick = {this.constructOnTuneClick(genre, 'minus')}
               title={genre}/>
