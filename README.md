@@ -26,6 +26,7 @@ yarn start
 
 * Write Smoke tests
 * Write full rendering tests
+
 [Acceptance Testing](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare/)
 
 * Write acceptance tests to mock user behaviors
