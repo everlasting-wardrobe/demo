@@ -1,0 +1,22 @@
+#days-remaining-dash-board{
+  position: relative;
+}
+
+.box-count-down-dash-board{
+  width: 100%;
+}
+
+.box-count-down-dash-board-arm{
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 60.5%;
+  transform-origin: left 40.5%;
+}
+
+.box-count-down-arm-cover{
+  width: 14%;
+  position: absolute;
+  left: 43%;
+  top: 55%;
+}

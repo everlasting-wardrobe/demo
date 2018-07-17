@@ -1,9 +1,4 @@
-.equalizer-wrapper{
-  padding: 0 10% 0 10%;
-  background-color: #eae7dc;
-}
-
-.color-picker-set-wrapper{
+.equalizer-wrapper, .color-picker-set-wrapper, .box-count-down-wrapper{
   padding: 0 10% 0 10%;
   background-color: #eae7dc;
 }
