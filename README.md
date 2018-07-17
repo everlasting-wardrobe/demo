@@ -1,4 +1,4 @@
-# Everlasting Wardrobe Front End Work Guid
+# Everlasting Wardrobe Front End Work Guide
 
 ## Start
 To start this project, clone this repository to your local use
@@ -23,9 +23,11 @@ yarn start
 
 ### Test Driven Development
 [Create-react-app test guide ](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+
 * Write Smoke tests
 * Write full rendering tests
 [Acceptance Testing](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare/)
+
 * Write acceptance tests to mock user behaviors
 
 ### Commit
