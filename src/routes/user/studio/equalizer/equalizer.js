@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Controller from './controller';
 import AMFM from './amfm';
 import "./equalizer.css";
+import {withPanelBackground} from '../util';
 
 
-export default class Equalizer extends Component{
+class Equalizer extends Component{
   constructor(props){
     super(props);
     const {jazz, pop, indie, funk, jockJams, hipHop, totalPoints, pointBoundary} = this.props;
@@ -71,7 +72,7 @@ export default class Equalizer extends Component{
               title={genre}/>
           </div>
         </div>
-            );
+      );
     });
   }
 
@@ -93,5 +94,6 @@ export default class Equalizer extends Component{
       </div>
     )
   }
-
 }
+
+export default withPanelBackground(Equalizer);

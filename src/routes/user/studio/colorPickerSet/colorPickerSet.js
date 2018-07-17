@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import ColorPicker from './colorPicker';
 import './colorPickerSet.css';
 import Screw from './Screw.png';
+import {withPanelBackground} from '../util';
 
 
-export default class ColorPickerSet extends Component{
+class ColorPickerSet extends Component{
   constructor(props){
     super(props);
     this.state={
@@ -26,10 +27,6 @@ export default class ColorPickerSet extends Component{
   render(){
     return(
       <div className={'color-picker-set'}>
-        <img src={Screw} className={'screw-top-left'}/>
-        <img src={Screw} className={'screw-top-right'}/>
-        <img src={Screw} className={'screw-bottom-left'}/>
-        <img src={Screw} className={'screw-bottom-right'}/>
         <div className={'color-picker-container'}>
           <div className={"color-picker-wrapper"}>
             <ColorPicker {...this.state.color1} />
@@ -48,3 +45,5 @@ export default class ColorPickerSet extends Component{
     )
   }
 }
+
+export default withPanelBackground(ColorPickerSet);
