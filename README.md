@@ -31,5 +31,11 @@ yarn start
 
 * Write acceptance tests to mock user behaviors
 
+Some articles about Testing
+```
+https://hackernoon.com/testing-your-frontend-code-part-i-introduction-7e307eac4446
+https://www.creativebloq.com/how-to/an-introduction-to-frontend-testing
+```
+
 ### Commit
 * Commit to personal branch and send pull request.
