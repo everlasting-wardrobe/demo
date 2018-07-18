@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './util.css';
 import Screw from './Screw.png';
 
