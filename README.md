@@ -23,6 +23,8 @@ yarn start
 
 ### Test Driven Development
 [Create-react-app test guide ](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+[Jest](https://jestjs.io/docs/en/getting-started)
+[Enzyme](https://airbnb.io/enzyme/docs/api/)
 
 * Write Smoke tests
 * Write full rendering tests
