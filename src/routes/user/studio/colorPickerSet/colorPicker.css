@@ -30,4 +30,11 @@
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.color-picker-slider-name{
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
 }

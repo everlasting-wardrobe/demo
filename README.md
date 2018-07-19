@@ -29,7 +29,7 @@ yarn start
 
 * Write Smoke tests
 * Write full rendering tests
-* Write acceptance tests to mock user behaviors [Acceptance Testing](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare/)
+* Write acceptance tests to mock user behaviors [Acceptance Testing](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare/) Or [end to end testing](https://blog.logrocket.com/end-to-end-testing-react-apps-with-puppeteer-and-jest-ce2f414b4fd7)
 
 Some articles about Testing
 ```

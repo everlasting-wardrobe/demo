@@ -25,6 +25,18 @@ input.vertical-slider[type='range'] {
 input.vertical-slider[type='range'], input.vertical-slider[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+
 input.vertical-slider[type='range']::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   box-sizing: border-box;
@@ -32,7 +44,46 @@ input.vertical-slider[type='range']::-webkit-slider-runnable-track {
   width: 12.5em;
   height: 0.25em;
 }
+
+input.vertical-slider[type='range']::-moz-range-track {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border: none;
+  width: 12.5em;
+  height: 0.25em;
+}
+
+input.vertical-slider[type='range']::-ms-track {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border: none;
+  width: 12.5em;
+  height: 0.25em;
+}
+
 input.vertical-slider[type='range']::-webkit-slider-thumb {
+  margin-top: -0.625em;
+  box-sizing: border-box;
+  border: none;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url('./ColorPickerSliderButton.png');
+  z-index: 100;
+  background-size: contain;
+}
+
+input.vertical-slider[type='range']::-moz-slider-thumb {
+  margin-top: -0.625em;
+  box-sizing: border-box;
+  border: none;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url('./ColorPickerSliderButton.png');
+  z-index: 100;
+  background-size: contain;
+}
+
+input.vertical-slider[type='range']::-ms-thumb {
   margin-top: -0.625em;
   box-sizing: border-box;
   border: none;
