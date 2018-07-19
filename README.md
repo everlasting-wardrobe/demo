@@ -18,7 +18,8 @@ yarn start
 ### Component Design
 * Decide where to put the component,
 * Split UI into Container and Component.
-* Build from basic component and make sure it is responsive and fully tested, ideally, all changeable invariants in the component should come from a parent container.
+* Build from basic component and make sure it is responsive and fully tested, ideally, all changeable invariants in the component should come from a parent container. [responsive Web Design](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893)
+
 * Build Container and decide data source.
 
 ### Test Driven Development
@@ -28,10 +29,7 @@ yarn start
 
 * Write Smoke tests
 * Write full rendering tests
-
-[Acceptance Testing](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare/)
-
-* Write acceptance tests to mock user behaviors
+* Write acceptance tests to mock user behaviors [Acceptance Testing](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare/)
 
 Some articles about Testing
 ```
