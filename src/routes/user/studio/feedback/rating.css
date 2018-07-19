@@ -18,8 +18,9 @@
 
 .feedback-notation{
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .feedback-notation div{

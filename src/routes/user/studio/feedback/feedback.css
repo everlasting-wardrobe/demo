@@ -46,7 +46,7 @@
 
 }
 
-@media screen and (max-width: 1200px)and (min-width: 780px){
+@media screen and (max-width: 1200px)and (min-width: 750px){
   .feedback-wrapper{
     position: relative;
     font-size: 12px;
@@ -89,20 +89,17 @@
   }
 
   .feedback-rating{
-    margin-top: 3%;
+    padding-top: 3%;
+    height: 40%;
   }
 }
-@media screen and (max-width: 779px) and (min-width: 414px){
+@media screen and (max-width: 749px){
   .feedback{
-    width: 80%;
+    width: 90%;
     margin: auto;
     font-size: 10px;
   }
-}
-
-@media screen and (max-width: 414px) {
-  .box-review-wrapper{
-    margin-top: 20px;
-    font-size: 8px;
+  .item-display-rating{
+    width: 100%;
   }
 }
