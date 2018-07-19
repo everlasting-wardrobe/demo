@@ -49,7 +49,7 @@
 @media screen and (max-width: 1200px)and (min-width: 750px){
   .feedback-wrapper{
     position: relative;
-    font-size: 12px;
+    font-size: 10px;
   }
   .feedback {
     width: 100%;
