@@ -32,8 +32,11 @@ export default class ColorPicker extends Component{
         step = "0.01";
       }
       return (
+          <div>
             <VerticalSlider key={stateName} type="range" min={min} max={max} step={step}
               value={this.state[stateName]} onChange={this.constructOnRangeChange(stateName)}/>
+            <div className={'color-picker-slider-name'}>{stateName}</div>
+          </div>
       )
     })
   }

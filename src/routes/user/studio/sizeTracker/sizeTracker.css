@@ -1,0 +1,62 @@
+@font-face {
+    font-family: digital-dream-narrow;
+    src: url(DigitaldreamNarrow.ttf);
+}
+
+.size-tracker, .size-tracker-image-wrapper, .size-tracker-image {
+  width: 100%;
+}
+
+.size-tracker-image-wrapper{
+  position: relative;
+}
+
+.size-tracker-up-arrow-wrapper {
+  width: 5.5%;
+  position: absolute;
+  right: 3%;
+  top: 10%;
+  cursor: pointer;
+}
+
+.size-tracker-up-arrow-wrapper img{
+  width: 100%;
+}
+
+.size-tracker-down-arrow-wrapper {
+  width: 5.5%;
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  cursor: pointer;
+}
+
+.size-tracker-down-arrow-wrapper img{
+  width: 100%;
+}
+
+.size-tracker-value-wrapper{
+  width: 19%;
+  position: absolute;
+  top: 17.8%;
+  right: 9%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.size-tracker-value{
+  font-family: digital-dream-narrow;
+  font-size: 6vw;
+  text-align: center;
+  color: #65edf2;
+  letter-spacing: 0.5em;
+  margin-right:-0.5em;
+}
+
+.size-tracker-value, .size-tracker-down-arrow, .size-tracker-up-arrow {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

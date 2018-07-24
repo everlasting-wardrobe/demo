@@ -1,7 +1,5 @@
 .equalizer-container{
   display: flex;
-  border: solid gray 1px;
-  background-color: grey;
 }
 
 .amfm-wrapper{

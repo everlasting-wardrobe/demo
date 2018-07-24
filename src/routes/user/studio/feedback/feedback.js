@@ -29,7 +29,7 @@ export default class Feedback extends Component{
   onPreviousClick = () => {
     // still need to figure out the boundary
     let month = this.state.month;
-    if (month != 1){
+    if (month !== 1){
       this.setState({month: month - 1});
     }else {
       month = this.state.month;
@@ -96,7 +96,7 @@ export default class Feedback extends Component{
           <div className="box-review-wrapper">
             <ErrorBoundary>
             {
-              this.state.month != 0 &&
+              this.state.month !== 0 &&
               <BoxReview items={this.state.boxReviewData[this.state.month - 1].Products}
                 currentKey={this.state.currentKey}
                 onPreviousClick={this.onPreviousClick}
