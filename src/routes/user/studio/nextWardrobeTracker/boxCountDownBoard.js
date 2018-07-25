@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DashBoard from './DaysRemainingDashBoard.png';
+import DashBoard from './DayGauge.png';
 import DashBoardArm from './DaysRemainingArm.png';
 import './daysRemainingDashBoard.css';
 import ArmCover from './DaysRemainingCircel.png';
@@ -19,7 +19,7 @@ const DaysRemainingDashBoard = ({days}) => {
 }
 
 DaysRemainingDashBoard.defaultProps={
-  days: 15,
+  days: 10,
 }
 
 export default DaysRemainingDashBoard;

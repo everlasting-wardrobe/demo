@@ -1,62 +1,98 @@
-@font-face {
-    font-family: digital-dream-narrow;
-    src: url(DigitaldreamNarrow.ttf);
-}
+/*
+ * size tracker unit styles
+ */
 
-.size-tracker, .size-tracker-image-wrapper, .size-tracker-image {
-  width: 100%;
-}
-
-.size-tracker-image-wrapper{
+.size-tracker-unit{
+  display: flex;
   position: relative;
 }
 
-.size-tracker-up-arrow-wrapper {
-  width: 5.5%;
-  position: absolute;
-  right: 3%;
-  top: 10%;
-  cursor: pointer;
+.size-tracker-name{
+  width: 55%;
+  /* font-size: 8vw; */
+  margin: 0;
+  text-align: right;
 }
 
-.size-tracker-up-arrow-wrapper img{
-  width: 100%;
+.size-tracker-display{
+  width: 20%;
+  margin-left: 10%;
 }
 
-.size-tracker-down-arrow-wrapper {
-  width: 5.5%;
-  position: absolute;
-  right: 3%;
-  top: 50%;
-  cursor: pointer;
-}
-
-.size-tracker-down-arrow-wrapper img{
+.size-tracker-display img{
   width: 100%;
 }
 
 .size-tracker-value-wrapper{
-  width: 19%;
   position: absolute;
-  top: 17.8%;
-  right: 9%;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.size-tracker-value{
-  font-family: digital-dream-narrow;
-  font-size: 6vw;
+  width: 20%;
+  left: 65%;
   text-align: center;
+  margin-right: 0;
+  font-family: digital-dream-narrow;
   color: #65edf2;
-  letter-spacing: 0.5em;
-  margin-right:-0.5em;
+  padding-top: 1%;
 }
 
-.size-tracker-value, .size-tracker-down-arrow, .size-tracker-up-arrow {
+.size-tracker-adjust{
+  width: 8%;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.size-tracker-adjust img{
+  cursor: pointer;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
+  -ms-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+
+.size-tracker-adjust-img{
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+
+/*
+ * Size tracker style
+ */
+
+
+.size-tracker-title{
+  width: 90%;
+  margin: auto;
+  padding-top: 8%;
+}
+
+.size-tracker-unit-wrapper{
+  width: 80%;
+  margin: 8% auto 0 auto;
+}
+
+.size-tracker-decoration{
+  width: 90%;
+  margin: 10% auto 0 auto;
+  display: flex;
+}
+
+.size-tracker-headphones-jack{
+  margin-top: 1.5%;
+  width: 10%;
+  height: 10%;
+}
+
+.size-tracker-knob-container{
+  width: 50%;
+  margin-left: 40%;
+}
+
+.size-tracker-knob{
+  width: 20%;
+  margin-left: 12%;
 }

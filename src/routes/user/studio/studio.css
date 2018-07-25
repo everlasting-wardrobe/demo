@@ -1,5 +1,33 @@
-.equalizer-wrapper, .color-picker-set-wrapper, .box-count-down-wrapper,
-.size-tracker-wrapper {
+.studio{
+  width: 100%;
+}
+
+
+.studio-container{
+  display: flex;
+  flex-wrap: wrap;
   padding: 0 10% 0 10%;
   background-color: #eae7dc;
+}
+
+/* .equalizer-wrapper, .color-picker-set-wrapper, .box-count-down-wrapper,
+.size-tracker-wrapper, .next-wardrobe-tracker-wrapper {
+  padding: 0 10% 0 10%;
+  background-color: #eae7dc;
+} */
+
+/* .equalizer-wrapper{
+  width: 70%;
+}
+
+.color-picker-set-wrapper, .box-count-down-wrapper,
+.size-tracker-wrapper, .next-wardrobe-tracker-wrapper {
+  width: 50%;
+} */
+
+
+
+@font-face {
+    font-family: digital-dream-narrow;
+    src: url(DigitaldreamNarrow.eot), url(DigitaldreamNarrow.ttf);
 }

@@ -12,6 +12,7 @@ export default class Controller extends Component{
       value: this.props.value || 0,
       color: this.props.color || 'green',
       title: this.props.title || 'Equalizer',
+      width: this.props.width || 1,
     };
 
     this.onPlusClick = () => {
@@ -76,7 +77,7 @@ export default class Controller extends Component{
             <img className={"equalizer-panel-button-minus"} src={PanelLevelsMinusSymbol} />
           </div>
           <img src={PanelButton} className="equalizer-panel-button"/>
-          <div className={'equalizer-controller-title'}>
+          <div className={'equalizer-controller-title'} style={{fontSize: `${this.state.width}vw`}}>
             <p>{this.state.title.toUpperCase()}</p>
           </div>
         </div>

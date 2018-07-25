@@ -20,6 +20,7 @@ class Equalizer extends Component{
       funk: funk || 0,
       jockJams: jockJams || 0,
       hipHop: hipHop || 0,
+      width: this.props.width || 1,
     }
     this.onAmfmResetClick = this.onAmfmResetClick.bind(this);
   };
@@ -69,7 +70,7 @@ class Equalizer extends Component{
             <Controller value={this.state[genre]} color={this.state.colors[i]}
               onPlusClick = {this.constructOnTuneClick(genre, 'plus')}
               onMinusClick = {this.constructOnTuneClick(genre, 'minus')}
-              title={genre}/>
+              title={genre} width={this.state.width}/>
           </div>
         </div>
       );
@@ -79,16 +80,19 @@ class Equalizer extends Component{
 
   render(){
     return(
-      <div className={"equalizer-container"}>
-        <div className={'amfm-wrapper'}>
-          <div className={'amfm-inner-wrapper'}>
-            <AMFM rest={30 - this.state.totalPoints}
-              onResetClick={this.onAmfmResetClick}/>
+      <div className={"equalizer"} style={{width: `${this.state.width * 100}vw`}}>
+        <h3 style={{fontSize: `${this.state.width * 10}vw`}}>{"-SYTLE PRESETS-"}</h3>
+        <div className={"equalizer-container"}>
+          <div className={'amfm-wrapper'}>
+            <div className={'amfm-inner-wrapper'}>
+              <AMFM rest={30 - this.state.totalPoints}
+                onResetClick={this.onAmfmResetClick}/>
+            </div>
           </div>
-        </div>
-        <div className={'controller-container-wrapper'}>
-          <div className={"controller-container"}>
-            {this.renderControllers()}
+          <div className={'controller-container-wrapper'}>
+            <div className={"controller-container"}>
+              {this.renderControllers()}
+            </div>
           </div>
         </div>
       </div>
@@ -96,4 +100,4 @@ class Equalizer extends Component{
   }
 }
 
-export default withPanelBackground(Equalizer);
+export default Equalizer;
