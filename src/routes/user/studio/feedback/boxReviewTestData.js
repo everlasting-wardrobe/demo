@@ -30,7 +30,7 @@ const boxReviewDataGenerator = () => {
         Item: {
                         "Selling_price": msrp,
                         "Brand": {
-                            "BrandName": "Anais & I"
+                            "BrandName": "Anais & I welcome to my home"
                         },
                         'Gender': 'Girl',
                         "Genus": {

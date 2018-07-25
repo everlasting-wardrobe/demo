@@ -7,7 +7,7 @@ input.feedback-slider {
   opacity: 1;
   cursor: pointer;
 }
-
+/* ---------------------------------for chrome------------------------------------ */
 input.feedback-slider, input.feedback-slider::-webkit-slider-runnable-track, input.feedback-slider[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
@@ -37,6 +37,78 @@ input.feedback-slider::-webkit-slider-thumb {
   margin-left: 0em;
   margin-top: auto;
   margin-bottom: auto;
+  border: none;
+  border-radius: 50% 50% 0;
+  background-image: url('./thumb.png');
+  width: 11.11%;
+  height: 100%;
+  z-index: 100;
+  background-size: inherit;
+}
+/* -------------------------for firefox ----------------------- */
+input.feedback-slider, input.feedback-slider::-moz-range-track, input.feedback-slider[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+}
+
+input.feedback-slider::-moz-range-track {
+  position: relative;
+
+  height: 3vw;
+  padding-left: 0.3vw;
+  padding-right: 0.3vw;
+  background-size: cover;
+  z-index: 1;
+}
+
+input.feedback-slider::-moz-range-track {
+  background-image: url('./styleFeedbackTrack.png');
+  background-size: 100% 100%;
+}
+
+input.fit-feedback-slider::-moz-range-track {
+  background-image: url('./fitFeedbackTrack.png');
+  background-size: 100% 100%;
+}
+
+input.feedback-slider::-moz-range-thumb {
+  position: relative;
+  margin-left: 0em;
+  border: none;
+  border-radius: 50% 50% 0;
+  background-image: url('./thumb.png');
+  width: 11.11%;
+  height: 100%;
+  z-index: 100;
+  background-size: inherit;
+}
+/* ----------------------------------for IE------------------------------- */
+input.feedback-slider, input.feedback-slider::-ms-track, input.feedback-slider[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+}
+
+input.feedback-slider::-ms-track {
+  position: relative;
+
+  height: 3vw;
+  padding-left: 0.3vw;
+  padding-right: 0.3vw;
+  background-size: cover;
+  z-index: 1;
+}
+
+input.feedback-slider::-ms-track {
+  background-image: url('./styleFeedbackTrack.png');
+  background-size: 100% 100%;
+}
+
+input.fit-feedback-slider::-ms-track {
+  background-image: url('./fitFeedbackTrack.png');
+  background-size: 100% 100%;
+}
+
+input.feedback-slider::-ms-thumb {
+  position: relative;
+  margin-left: 0em;
   border: none;
   border-radius: 50% 50% 0;
   background-image: url('./thumb.png');
