@@ -27,7 +27,7 @@ const Studio = () => {
             <Equalizer width={0.4}/>
           </div>
           <div className={"colorpicker-set-wrapper"}>
-            <ColorPickerSet width={0.5}/>
+            <ColorPickerSet width={0.4}/>
           </div>
         </div>
       </div>
