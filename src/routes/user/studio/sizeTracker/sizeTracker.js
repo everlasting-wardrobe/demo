@@ -107,4 +107,4 @@ SizeTracker.defaultProps = {
   width: 1,
 }
 
-export default SizeTracker;
+export default withPanelBackground(SizeTracker);
