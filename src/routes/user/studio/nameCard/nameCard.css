@@ -1,0 +1,30 @@
+.name-card-wrapper {
+    position: relative;
+    display: flex;
+    margin: 20px;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    align-content: center;
+}
+.name-card-label-wrapper {
+    font-family: sans-serif;
+    font-size: 2vw;
+    text-align: center;
+}
+.name-card-window-wrapper {
+
+}
+.name-card-window {
+    width: 90%;
+    margin-left: 2%;
+}
+.name-card-value {
+    position: absolute;
+    top: 2%;
+    right: 15%;
+    font-family: digital-dream-narrow;
+    color: #65edf2;
+    font-size: 2.5vw;
+}
