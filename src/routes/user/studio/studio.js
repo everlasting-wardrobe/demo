@@ -5,6 +5,7 @@ import ColorPickerSet from './colorPickerSet/colorPickerSet';
 import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
+import NameCard from './nameCard/nameCard';
 import './studio.css';
 
 
@@ -22,6 +23,7 @@ const Studio = () => {
         <div className={'color-picker-set-wrapper'}>
           <ColorPickerSet />
         </div>
+        <NameCard width={0.2} userName="Joshua" />
       </div>
     </div>
   )
