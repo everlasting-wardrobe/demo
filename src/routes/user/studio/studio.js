@@ -18,10 +18,8 @@ const Studio = () => {
       <div className={"studio-container"} >
         <NextWardrobeTracker width={0.2}/>
         <SizeTracker width={0.2}/>
-        <Equalizer width={0.35}/>
-        <div className={'color-picker-set-wrapper'}>
-          <ColorPickerSet />
-        </div>
+        <Equalizer width={0.39}/>
+        <ColorPickerSet width={0.2}/>
       </div>
     </div>
   )
