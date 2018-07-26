@@ -1,13 +1,42 @@
 .studio{
   width: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -ms-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
+.studio img{
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -ms-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.studio-container-wrapper{
+  background-color: #eae7dc;
+}
 
 .studio-container{
   display: flex;
   flex-wrap: wrap;
-  padding: 0 10% 0 10%;
-  background-color: #eae7dc;
+  margin: 0 5% 0 5%;
+  padding-left: 3vw;
+  padding-top: 2vw;
+  background-image: url('./PanelBoard.png');
+  background-size: 100% 100%
+}
+
+.color-picker-set-wrapper{
+  width: 100%;
+}
+
+.next-wardrobe-tracker-wrapper, .size-tracker-wrapper,
+.equalizer-wrapper, .colorpicker-set-wrapper{
+  margin: 0.5vw;
 }
 
 /* .equalizer-wrapper, .color-picker-set-wrapper, .box-count-down-wrapper,

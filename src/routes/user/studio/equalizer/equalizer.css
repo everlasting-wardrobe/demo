@@ -5,6 +5,8 @@
 
 .equalizer-container{
   display: flex;
+  background-image: url('./SectionBox.png');
+  background-size: 100% 100%;
 }
 
 .amfm-wrapper{
@@ -25,8 +27,9 @@
   display: flex;
   width: 90%;
   margin: 3% auto 3% auto;
-  background-image: url('./equalizerWindow.png');
-  background-size: 100% 100%;
+  background-image: url('./StylePresetsSelectionWindow.png');
+  background-size: 100% 72%;
+  background-repeat: no-repeat;
   padding: 4% 3% 1% 3%;
 }
 

@@ -16,12 +16,20 @@ const Studio = () => {
   return (
     <div className={"studio"}>
       <Feedback boxReviewData={boxReviewData}/>
-      <div className={"studio-container"} >
-        <NextWardrobeTracker width={0.2}/>
-        <SizeTracker width={0.2}/>
-        <Equalizer width={0.35}/>
-        <div className={'color-picker-set-wrapper'}>
-          <ColorPickerSet />
+      <div className={"studio-container-wrapper"}>
+        <div className={"studio-container"} >
+          <div className={"next-wardrobe-tracker-wrapper"}>
+            <NextWardrobeTracker width={0.2}/>
+          </div>
+          <div className={"size-tracker-wrapper"}>
+            <SizeTracker width={0.2}/>
+          </div>
+          <div className={"equalizer-wrapper"}>
+            <Equalizer width={0.4}/>
+          </div>
+          <div className={"colorpicker-set-wrapper"}>
+            <ColorPickerSet width={0.5}/>
+          </div>
         </div>
         <NameCard width={0.2} userName="Joshua" />
       </div>
