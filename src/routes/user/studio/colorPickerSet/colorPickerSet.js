@@ -13,6 +13,7 @@ class ColorPickerSet extends Component{
       color2 : this.props.Color2 || {r:'255', g: '255', b:'255', a:'1'},
       color3 : this.props.Color3 || {r:'255', g: '255', b:'255', a:'1'},
       color4 : this.props.Color3 || {r:'255', g: '255', b:'255', a:'1'},
+      width : this.props.width || 1,
     }
   }
 
@@ -26,8 +27,8 @@ class ColorPickerSet extends Component{
 
   render(){
     return(
-      <div className={'color-picker-set'}>
-        <div className={'color-picker-container'}>
+      <div className={'color-picker-set'} style={{width: `${this.state.width * 100}vw`}}>
+        <div className={'color-picker-container'} style={{fontSize: `${this.state.width * 1.875}vw`}}>
           <div className={"color-picker-wrapper"}>
             <ColorPicker {...this.state.color1} />
           </div>
@@ -46,4 +47,4 @@ class ColorPickerSet extends Component{
   }
 }
 
-export default withPanelBackground(ColorPickerSet);
+export default ColorPickerSet;

@@ -3,24 +3,13 @@
 }
 
 .color-picker-container{
-  padding-top: 3%;
-  padding-bottom: 3%;
-  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 900px){
-  .color-picker-container{
-    font-size: 12px;
-  }
-}
-
-@media only screen and (max-width: 899px){
-  .color-picker-container{
-    font-size: 8px;
-  }
+.color-picker-container{
+  font-size: 1.5vw;
 }
 
 .screw-top-left{

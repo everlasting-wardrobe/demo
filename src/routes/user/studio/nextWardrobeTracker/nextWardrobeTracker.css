@@ -1,0 +1,40 @@
+.next-wardrobe-tracker-text{
+  text-align: center;
+}
+
+.next-wardrobe-tracker{
+  width: 100%;
+  position: relative;
+}
+
+.next-wardrobe-tracker-image{
+  width: 100%;
+}
+
+.next-wardrobe-tracker-date{
+  position: absolute;
+  width: 90%;
+  top: 10%;
+  left: 5%;
+  height: 60%;
+  font-size: 4vw;
+}
+
+.next-wardrobe-tracker-date p{
+  height: 100%;
+  weight: 100%;
+  display: flex;
+  margin: -0.3vw 0 0 0;
+  justify-content: space-between;
+  font-family: digital-dream-narrow;
+  color: #65edf2;
+}
+
+.next-wardrobe-tracker-month{
+  display: flex;
+
+}
+
+.next-wardrobe-tracker-day{
+  text-align: right;
+}
