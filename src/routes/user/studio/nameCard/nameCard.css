@@ -1,8 +1,8 @@
 .name-card-wrapper {
     position: relative;
     display: flex;
-    margin: 20px;
-    width: 40%;
+    margin-bottom: 20px;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -10,21 +10,23 @@
 }
 .name-card-label-wrapper {
     font-family: sans-serif;
-    font-size: 2vw;
-    text-align: center;
+    font-size: 3.5em;
+    height: 100%;
+    margin-right: 3%;
 }
 .name-card-window-wrapper {
+    text-align: center;
 
 }
 .name-card-window {
-    width: 90%;
-    margin-left: 2%;
+    width: 100%;
+    margin-left: 0%;
 }
 .name-card-value {
     position: absolute;
-    top: 2%;
-    right: 15%;
+    top: 0;
+    right: 5%;
     font-family: digital-dream-narrow;
     color: #65edf2;
-    font-size: 2.5vw;
+    font-size: 4.5em;
 }

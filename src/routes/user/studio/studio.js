@@ -31,7 +31,7 @@ const Studio = () => {
             <ColorPickerSet width={0.5}/>
           </div>
         </div>
-        <NameCard width={0.2} userName="Joshua" />
+        <NameCard width={0.3} />
       </div>
     </div>
   )
