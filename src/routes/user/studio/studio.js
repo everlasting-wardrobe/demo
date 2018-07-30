@@ -5,6 +5,7 @@ import ColorPickerSet from './colorPickerSet/colorPickerSet';
 import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
+import StyleBalancer from './styleBalancer/styleBalancerContainer';
 import './studio.css';
 
 
@@ -28,6 +29,9 @@ const Studio = () => {
           </div>
           <div className={"colorpicker-set-wrapper"}>
             <ColorPickerSet width={0.4}/>
+          </div>
+          <div className={"style-balancer-wrapper"}>
+            <StyleBalancer />
           </div>
         </div>
       </div>

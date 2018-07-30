@@ -1,5 +1,6 @@
 import React from 'react';
-import './verticalSlider.css';
+import './colorPickerSlider.css';
+import '../util/verticalSlider.css';
 
 const VerticalSlider = (props) => {
   const {style, color} = props;
@@ -15,8 +16,8 @@ const VerticalSlider = (props) => {
     }
   }
   return (
-    <div className = {'vertical-slider-wrapper'} style={style}>
-      <input className={`vertical-slider ${getColor(color)}`} type="range"  {...props}/>
+    <div className = {'vertical-slider-wrapper color-picker-vertical-slider-wrapper'} style={style}>
+      <input className={`vertical-slider color-picker-vertical-slider ${getColor(color)}`} type="range"  {...props}/>
     </div>
   )
 }

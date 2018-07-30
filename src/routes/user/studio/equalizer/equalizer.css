@@ -7,6 +7,7 @@
   display: flex;
   background-image: url('./SectionBox.png');
   background-size: 100% 100%;
+  position: relative;
 }
 
 .amfm-wrapper{
@@ -16,6 +17,22 @@
 .amfm-inner-wrapper{
   width: 90%;
   margin: 4% auto 4% auto;
+}
+
+.equalizer-reset-button{
+  position: absolute;
+  width: 10%;
+  top: 70%;
+  left: 25%;
+  cursor: pointer;
+}
+
+.equalizer-save-button{
+  position: absolute;
+  width: 10%;
+  top: 70%;
+  left: 37%;
+  cursor: pointer;
 }
 
 .controller-container-wrapper{

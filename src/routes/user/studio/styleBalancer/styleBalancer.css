@@ -1,0 +1,17 @@
+.style-balancer{
+  width: 100%;
+}
+
+.style-balancer-slider-suit{
+  width: 33.3%;
+}
+
+.style-balancer-slider-suit p{
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.style-balancer-slider-container{
+  width: 12em;
+  display: flex;
+}
