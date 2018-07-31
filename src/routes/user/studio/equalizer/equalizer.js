@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Controller from './controller';
 import AMFM from './amfm';
 import "./equalizer.css";
-import {withPanelBackground} from '../util';
+import ResetButton from './ResetButton.png';
+import SaveButton from './SaveButton.png';
 
 
 class Equalizer extends Component{
@@ -89,6 +90,8 @@ class Equalizer extends Component{
                 onResetClick={this.onAmfmResetClick}/>
             </div>
           </div>
+          <img className={"equalizer-reset-button"} src={ResetButton} alt={"RESET"} onClick={this.onAmfmResetClick}/>
+          <img className={"equalizer-save-button"} src={SaveButton} alt={"SAVE"}/>
           <div className={'controller-container-wrapper'}>
             <div className={"controller-container"}>
               {this.renderControllers()}

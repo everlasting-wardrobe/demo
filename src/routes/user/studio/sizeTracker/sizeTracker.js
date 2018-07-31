@@ -9,7 +9,7 @@ import HeadphoneJack from './HeadphonesJack.png';
 import DownArrow from './DownArrow.png';
 import UpArrow from './UpArrow.png';
 import './sizeTracker.css';
-import {withPanelBackground} from '../util';
+import {withPanelBackground} from '../util/util';
 
 const SizeTrackerUnit = ({trackerName, value, onUpClick, onDownClick, width}) => {
   return (

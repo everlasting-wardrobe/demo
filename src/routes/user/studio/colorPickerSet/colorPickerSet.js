@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ColorPicker from './colorPicker';
 import './colorPickerSet.css';
 import Screw from './Screw.png';
-import {withPanelBackground} from '../util';
 
 
 class ColorPickerSet extends Component{
@@ -28,7 +27,30 @@ class ColorPickerSet extends Component{
   render(){
     return(
       <div className={'color-picker-set'} style={{width: `${this.state.width * 100}vw`}}>
-        <div className={'color-picker-container'} style={{fontSize: `${this.state.width * 1.875}vw`}}>
+        <h3 className={'color-picker-set-title'} style={{fontSize: `${this.state.width * 6}vw`}}>{"-COLOR PICKER-"}</h3>
+        <div className={'color-picker-set-info-left'} style={{fontSize: `${this.state.width * 1.2}vw`}}>
+          <p>
+            {`R RED `}
+          </p>
+          <p>
+            {` G GREEN `}
+          </p>
+          <p>
+            {` B BLUE `}
+          </p>
+          <p>
+            {` X SATURATION `}
+          </p>
+        </div>
+        <div className={"color-picker-set-info-right"} style={{fontSize: `${this.state.width * 1.2}vw`}}>
+          <p>
+            {`CREATE AND EDIT YOUR FAVORITE COLORS `}
+          </p>
+          <p>
+              {`YOU CAN MAKE CHANGES ANYTIME`}
+          </p>
+        </div>
+        <div className={'color-picker-container'} style={{fontSize: `${this.state.width * 1.6}vw`}}>
           <div className={"color-picker-wrapper"}>
             <ColorPicker {...this.state.color1} />
           </div>

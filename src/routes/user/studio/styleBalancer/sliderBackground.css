@@ -1,0 +1,22 @@
+input.style-balancer-slider[type='range']{
+  background-color:rgba(0, 0, 0, 0);
+}
+
+.style-balancer-slider-wrapper{
+  background-image: url('./StyleBalancerSliderBackground.png');
+  background-size: 100% 100%;
+  padding: 0 1.3em 0 1.3em;
+}
+
+
+input.style-balancer-slider[type='range']::-webkit-slider-thumb{
+  background-image: url('./BThumb.png');
+}
+
+input.style-balancer-slider[type='range']::-moz-slider-thumb{
+  background-image: url('./BThumb.png');
+}
+
+input.style-balancer-slider[type='range']::-ms-thumb{
+  background-image: url('./BThumb.png');
+}

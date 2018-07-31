@@ -2,7 +2,6 @@
   float: left;
   position: relative;
   margin: 0 .5em .5em;
-  padding: .5em;
   height: 12.5em;
   width: 1.5em;
 }
@@ -18,10 +17,11 @@ input.vertical-slider[type='range'] {
   height: 1.5em;
   border-radius: 0.75em;
   transform: translate(-50%, -50%) rotate(-90deg);
-  background-image: url('./ColorPickerSlider.png');
   background-size: 100% 100%;
   font: 1em/1 arial, sans-serif;
 }
+
+
 input.vertical-slider[type='range'], input.vertical-slider[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
@@ -68,15 +68,15 @@ input[type=range]:focus::-ms-fill-lower, input[type=range]:focus::-ms-fill-upper
 
 
 input.vertical-slider[type='range']::-webkit-slider-thumb {
-  margin-top: -0.625em;
+  margin-top: -0.875em;
   box-sizing: border-box;
   border: none;
-  width: 1.5em;
-  height: 1.5em;
-  background-image: url('./ColorPickerSliderButton.png');
+  width: 2em;
+  height: 2em;
   z-index: 100;
   background-size: contain;
 }
+
 
 input.vertical-slider[type='range']::-moz-slider-thumb {
   margin-top: -0.625em;
@@ -84,7 +84,6 @@ input.vertical-slider[type='range']::-moz-slider-thumb {
   border: none;
   width: 1.5em;
   height: 1.5em;
-  background-image: url('./ColorPickerSliderButton.png');
   z-index: 100;
   background-size: contain;
 }
@@ -97,7 +96,6 @@ input.vertical-slider[type='range']::-ms-thumb {
   width: 1.5em;
   height: 1.5em;
   margin-top: 0em;
-  background-image: url('./ColorPickerSliderButton.png');
   z-index: 100;
   background-size: contain;
 }
