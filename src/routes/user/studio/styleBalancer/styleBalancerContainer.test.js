@@ -10,7 +10,5 @@ it('somke test without crashing', ()=>{
 
 it('full-rendering test without crashing', ()=>{
   const wrapper = mount(<StyleBalancerContainer />);
-  // expect(wrapper.find('.size-tracker-image')).toHaveLength(2);
-  // expect(wrapper.find('.size-tracker-up-arrow')).toHaveLength(2);
-  // expect(wrapper.find('.size-tracker-down-arrow')).toHaveLength(2);
+  expect(wrapper.find('.style-balancer-slider-suit')).toHaveLength(3);
 })

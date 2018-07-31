@@ -1,0 +1,46 @@
+.screw-panel-background{
+  background-image: url(StyleBalancerPlate.png);
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.screw-top-left, .screw-top-right, .screw-bottom-left,
+.screw-bottom-right{
+  width: 6%;
+  position: absolute;
+}
+
+.screw-top-left{
+  left: 1.1%;
+  top: 2.6%;
+}
+
+.screw-top-right{
+  right: 1.1%;
+  top: 2.6%;
+  transform: rotate(45deg);
+}
+
+.screw-bottom-left{
+  left: 1.1%;
+  bottom: 2.6%;
+  transform: rotate(90deg);
+}
+
+.screw-bottom-right{
+  right: 1.1%;
+  bottom: 2.6%;
+  transform: rotate(135deg);
+}
+
+
+
+/*
+ * Panel background style
+ */
+
+ .panel-background{
+   background-image: url('./SectionBox.png');
+   background-size: 100% 100%;
+   position: relative;
+ }

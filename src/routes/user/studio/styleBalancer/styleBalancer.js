@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import './styleBalancer.css';
 import './sliderBackground.css';
 import '../util/verticalSlider.css';
+import {withScrewBackground} from '../util/util';
 
 
 class StyleBalancer extends Component{
   constructor(props){
     super(props);
-    const {sliderArray, range, onChange, ...sliders} = this.props;
+    const {sliderArray, range, onChange, width, ...sliders} = this.props;
     this.state = {
       sliderArray : sliderArray,
-      range : range,
-      onChange : onChange,
+      range       : range,
+      onChange    : onChange,
+      width       : width,
       ...sliders
     }
   }
@@ -25,7 +27,7 @@ class StyleBalancer extends Component{
   renderSlider = (sliderArray)=>{
     return sliderArray.map((slider)=>{
       return (
-        <div className={'style-balancer-slider-suit'}>
+        <div className={'style-balancer-slider-suit'} key={slider.name}>
           <p>{slider.upperBound}</p>
           <div className = {'vertical-slider-wrapper style-balancer-slider-wrapper'} key={slider.name}>
             <input className={`vertical-slider style-balancer-slider`} type="range"
@@ -40,8 +42,9 @@ class StyleBalancer extends Component{
 
   render(){
     return(
-      <div className={'style-balancer'}>
-        <div className={'style-balancer-slider-container'}>
+      <div className={'style-balancer'} style={{width:`${this.state.width * 100}vw `}}>
+        <div className={'style-balancer-slider-container'}
+        style={{fontSize:`${this.state.width * 6.25}vw `}}>
           {this.renderSlider(this.state.sliderArray)}
         </div>
       </div>
@@ -52,17 +55,19 @@ class StyleBalancer extends Component{
 
 StyleBalancer.defaultProps={
   sliderArray : [],
-  range : 5,
-  slider : {},
+  range       : 5,
+  width       : 1,
+  slider      : {},
 }
 
 
 StyleBalancer.propTypes = {
   sliderArray : PropTypes.arrayOf(PropTypes.object),
   range : PropTypes.number,
+  width : PropTypes.number,
 }
 
 
 
 
-export default StyleBalancer;
+export default withScrewBackground(StyleBalancer);
