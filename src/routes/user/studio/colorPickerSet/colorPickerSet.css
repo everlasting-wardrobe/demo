@@ -2,8 +2,33 @@
   position: relative;
 }
 
+.color-picker-set-title{
+  text-align: center;
+}
+
+.color-picker-set-info-left{
+  position: absolute;
+  top: 2%;
+}
+
+.color-picker-set-info-left p{
+  margin: 0 0 1% 0;
+  top: 1%;
+  font-weight: bold;
+}
+
+.color-picker-set-info-right{
+  position: absolute;
+  right: 0%;
+  top: 2%;
+  width: 40%;
+  text-align: right;
+  font-weight: bold;
+}
+
 .color-picker-container{
-  margin: auto;
+  margin: 2% auto 0 auto;
+  width: 95%;
   display: flex;
   justify-content: space-between;
 }

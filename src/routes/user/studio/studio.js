@@ -5,7 +5,11 @@ import ColorPickerSet from './colorPickerSet/colorPickerSet';
 import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
+<<<<<<< HEAD
 import NameCard from './nameCard/nameCard';
+=======
+import StyleBalancer from './styleBalancer/styleBalancerContainer';
+>>>>>>> 0ea93063b9a02706f1214e8a471eb485e5caf2b4
 import './studio.css';
 
 
@@ -28,7 +32,10 @@ const Studio = () => {
             <Equalizer width={0.4}/>
           </div>
           <div className={"colorpicker-set-wrapper"}>
-            <ColorPickerSet width={0.5}/>
+            <ColorPickerSet width={0.4}/>
+          </div>
+          <div className={"style-balancer-wrapper"}>
+            <StyleBalancer />
           </div>
         </div>
         <NameCard width={0.3} />

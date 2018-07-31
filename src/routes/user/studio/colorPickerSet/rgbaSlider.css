@@ -1,4 +1,4 @@
-.rgba-slider-wrapper {
+/* .rgba-slider-wrapper {
   float: left;
   position: relative;
   margin: 0 .5em .5em;
@@ -40,4 +40,4 @@ input.rgba-slider[type='range'] {
   background-image: url('./ColorPickerSliderButton.png');
   z-index: 100;
   background-size: contain;
-}
+} */
