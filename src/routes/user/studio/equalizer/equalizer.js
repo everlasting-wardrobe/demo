@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Controller from './controller';
 import AMFM from './amfm';
 import "./equalizer.css";
-import {withPanelBackground} from '../util';
 import ResetButton from './ResetButton.png';
 import SaveButton from './SaveButton.png';
 
