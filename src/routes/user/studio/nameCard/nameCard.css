@@ -1,7 +1,6 @@
 .name-card-wrapper {
     position: relative;
     display: flex;
-    margin-bottom: 20px;
     width: 100%;
     justify-content: space-between;
     align-items: center;

@@ -5,13 +5,10 @@ import ColorPickerSet from './colorPickerSet/colorPickerSet';
 import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
-<<<<<<< HEAD
-import NameCard from './nameCard/nameCard';
-=======
 import StyleBalancer from './styleBalancer/styleBalancerContainer';
->>>>>>> 0ea93063b9a02706f1214e8a471eb485e5caf2b4
 import './studio.css';
-
+import NameCard from './nameCard/nameCard';
+import TopPanel from './topPanel/topPanel';
 
 // Warning! For NextWardrobeTracker the total width should be 100vw;
 
@@ -22,6 +19,7 @@ const Studio = () => {
       <Feedback boxReviewData={boxReviewData}/>
       <div className={"studio-container-wrapper"}>
         <div className={"studio-container"} >
+          <TopPanel />
           <div className={"next-wardrobe-tracker-wrapper"}>
             <NextWardrobeTracker width={0.2}/>
           </div>
@@ -38,7 +36,6 @@ const Studio = () => {
             <StyleBalancer />
           </div>
         </div>
-        <NameCard width={0.3} />
       </div>
     </div>
   )
