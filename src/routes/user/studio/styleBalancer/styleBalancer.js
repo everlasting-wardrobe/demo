@@ -68,7 +68,13 @@ StyleBalancer.propTypes = {
   width : PropTypes.number,
 }
 
+
+// Add Screw Background
 const StyleBalancerWithBackground = withScrewBackground(StyleBalancer);
+
+
+// Build a component with title
+// InfoButtonInsertion component is used to add infomation button on inner component
 
 class StyleBalancerPanel extends Component{
   constructor(props){
@@ -77,7 +83,7 @@ class StyleBalancerPanel extends Component{
 
   render(){
     return (
-      <InfoButtonInsertion>
+      <InfoButtonInsertion type={'left'} top={'25%'}>
         <div className={'style-balancer-panel'} style={{width:`${this.props.width * 100} vw`}}>
           <div className={'style-balancer-title'}>
             <h3>{"-STYLE BALANCE-"}</h3>
