@@ -24,7 +24,7 @@ class StyleBalancerContainer extends Component{
     return (
       <StyleBalancer sliderArray={this.state.sliderArray}
         size={this.state.size} style={this.state.style} genre={this.state.genre}
-        width={0.2} onChange = {this.onChange}/>
+        width={this.state.width} onChange = {this.onChange}/>
     )
   }
 }
@@ -35,7 +35,7 @@ StyleBalancerContainer.defaultProps = {
     {name: 'style', upperBound:'FANCY', lowerBound:'CASUAL'},
     {name: 'genre', upperBound:'TOPS', lowerBound:'BOTTOMS'}
   ],
-  size : 1,
+  size  : 1,
   style : 1,
   genre : 1,
   range : 5,

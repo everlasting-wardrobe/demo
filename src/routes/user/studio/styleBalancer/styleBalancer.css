@@ -25,3 +25,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.style-balancer-panel{
+  margin-top: -5%;
+}
+
+.style-balancer-title h3{
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './util.css';
 import Screw from './Screw.png';
 
@@ -25,4 +25,19 @@ export function withPanelBackground(WrappedComponent){
       </div>
     )
   }
+}
+
+
+export class InfoButtonInsertion extends Component{
+    constructor(props){
+      super(props);
+    }
+
+    render(){
+      return (
+        <div>
+          {this.props.children}
+        </div>
+      )
+    }
 }

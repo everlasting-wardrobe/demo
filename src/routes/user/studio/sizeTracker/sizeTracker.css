@@ -77,7 +77,8 @@
 
 .size-tracker-decoration{
   width: 90%;
-  margin: 10% auto 0 auto;
+  margin: 10% auto 5% auto;
+  padding-bottom: 5%;
   display: flex;
 }
 

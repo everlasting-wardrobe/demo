@@ -4,6 +4,7 @@ import './styleBalancer.css';
 import './sliderBackground.css';
 import '../util/verticalSlider.css';
 import {withScrewBackground} from '../util/util';
+import {InfoButtonInsertion} from '../util/util';
 
 
 class StyleBalancer extends Component{
@@ -44,7 +45,7 @@ class StyleBalancer extends Component{
     return(
       <div className={'style-balancer'} style={{width:`${this.state.width * 100}vw `}}>
         <div className={'style-balancer-slider-container'}
-        style={{fontSize:`${this.state.width * 6.25}vw `}}>
+        style={{fontSize:`${this.state.width * 5.5}vw `}}>
           {this.renderSlider(this.state.sliderArray)}
         </div>
       </div>
@@ -67,7 +68,26 @@ StyleBalancer.propTypes = {
   width : PropTypes.number,
 }
 
+const StyleBalancerWithBackground = withScrewBackground(StyleBalancer);
 
+class StyleBalancerPanel extends Component{
+  constructor(props){
+    super(props);
+  }
 
+  render(){
+    return (
+      <InfoButtonInsertion>
+        <div className={'style-balancer-panel'} style={{width:`${this.props.width * 100} vw`}}>
+          <div className={'style-balancer-title'}>
+            <h3>{"-STYLE BALANCE-"}</h3>
+          </div>
+          <StyleBalancerWithBackground {...this.props} />
+        </div>
+      </InfoButtonInsertion>
+    )
+  }
 
-export default withScrewBackground(StyleBalancer);
+}
+
+export default StyleBalancerPanel;
