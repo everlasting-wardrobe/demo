@@ -1,3 +1,29 @@
-.left-tuners-section-box {
-    width: 100%;
+.left-tuners-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 5%;
+}
+.left-tuners-headphone-jack-wrapper {
+    flex: 1 1 10%;
+    margin-top: 2%;
+}
+.left-tuners-headphone-jack {
+    width: 60%;
+}
+.left-tuners-knob-container {
+    flex: 6 1 10%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+.left-tuners-inputknob-wrapper {
+    flex: 3 1 10%;
+}
+.left-tuners-inputknob {
+    width: 80%;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }

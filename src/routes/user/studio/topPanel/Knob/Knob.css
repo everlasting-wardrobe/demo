@@ -1,0 +1,54 @@
+.knob-container {
+    position: relative;
+    width: 100%;
+}
+.knob-background {
+    width: 100%;
+}
+.knob-top {
+    position: absolute;
+    left: 18%;
+    top: 30%;
+    width: 65%;
+}
+.knob-top-spinner {
+    position: absolute;
+    left: 19%;
+    top: 32%;
+    width: 65%;
+    z-index: 10;
+    cursor: pointer;
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+}
+
+.staying {
+    -ms-transform: rotate(0deg); 
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+/* .knob-top-spinner:active {
+    -webkit-animation:rotate 5s linear infinite;
+    animation:knob-top-rotate 5s linear infinite;
+}
+
+@-webkit-keyframes knob-top-rotate{
+    0%{ -webkit-transform: rotate(0deg);}
+    50%{ -webkit-transform: rotate(180deg);}
+    100%{ -webkit-transform: rotate(360deg);}
+}
+@keyframes knob-top-rotate{
+    0%{ -webkit-transform: rotate(0deg);}
+    50%{ -webkit-transform: rotate(180deg);}
+    100%{ -webkit-transform: rotate(360deg);}
+} */
+
+.rotating {
+    -ms-transform: rotate(360deg); 
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}

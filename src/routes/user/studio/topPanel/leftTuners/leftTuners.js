@@ -1,10 +1,28 @@
 import React from 'react';
 import sectionBox from './TopLeftSectionBox.png';
+import headphoneJack from './HeadphonesJack.png';
+import InputKnob from './InputKnob.png';
+
+import Knob from '../Knob/Knob';
 import './leftTuners.css';
 
-const leftTuners = () => {
+const leftTuners = (props) => {
     return (
-        <img className={"left-tuners-section-box"} src={sectionBox} />
+        <div className={"left-tuners-container"}
+            // style={{width: `${props.width * 100}vw`, fontSize: `${props.width * 1.875}vw`}}
+            >
+            <div className={"left-tuners-headphone-jack-wrapper"}>
+                <img className={"left-tuners-headphone-jack"} src={headphoneJack} />
+            </div>
+            <div className={"left-tuners-knob-container"}>
+                <Knob knobName="Low"/>
+                <Knob knobName="Mid"/>
+                <Knob knobName="High"/>
+            </div>
+            <div className={"left-tuners-inputknob-wrapper"}>
+                <img className={"left-tuners-inputknob"} src={InputKnob} />
+            </div>
+        </div>
     );
 }
 
