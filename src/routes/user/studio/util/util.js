@@ -31,6 +31,30 @@ export function withPanelBackground(WrappedComponent){
 }
 
 
+
+const constructStyle = (state)=>{
+  let style = {};
+  if(!state.top && ! state.bottom){
+    style.top = 0;
+  }else if(state.top){
+    style.top = state.top;
+  }else{
+    style.bottom = state.bottom;
+  }
+  if(!state.left && ! state.right){
+    style.left = 0;
+  }else if(state.left){
+    style.left = state.left;
+  }else{
+    style.right = state.right;
+  }
+  style.width = state.width;
+  return style;
+}
+
+
+// InfoButtonInsertion
+
 export class InfoButtonInsertion extends Component{
     constructor(props){
       super(props);
@@ -46,12 +70,16 @@ export class InfoButtonInsertion extends Component{
         right: this.props.right,
         bottom: this.props.bottom,
         width: this.props.size,
+        displayAttachment: this.props.displayAttachment,
       }
+
+      this.onClick = this.onClick.bind(this);
     }
 
     static defaultProps = {
       type: "inside",
       width: `40px`,
+      displayAttachment: false,
     }
 
     getImg = (type) => {
@@ -65,35 +93,83 @@ export class InfoButtonInsertion extends Component{
       }
     }
 
-    constructStyle = ()=>{
-      let style = {};
-      if(!this.state.top && ! this.state.bottom){
-        style.top = 0;
-      }else if(this.state.top){
-        style.top = this.state.top;
-      }else{
-        style.bottom = this.state.bottom;
-      }
-      if(!this.state.left && ! this.state.right){
-        style.left = 0;
-      }else if(this.state.left){
-        style.left = this.state.left;
-      }else{
-        style.right = this.state.right;
-      }
-      style.width = this.state.width;
-      return style;
+    addPropsToAttachment = ()=>{
+      return React.Children.map(this.props.children, (child) =>{
+        if(child.type.displayName === "Attachment"){
+          this.attachmentChild = React.cloneElement(child, {onClick : this.onClick});
+        }else{
+          return child;
+        }
+      })
+    }
+
+    onClick = () => {
+      this.setState((prevState)=>{
+        return {displayAttachment: !prevState.displayAttachment};
+      })
     }
 
     render(){
       const ButtonImg = this.getImg(this.state.type);
-      const style = this.constructStyle();
+      const style = constructStyle(this.state);
+      const children = this.addPropsToAttachment();
       return (
         <div className={"info-button-insertion"}>
           <img src={ButtonImg} alt={"info button"} className={"info-button"}
-          style={style} />
-          {this.props.children}
+          style={style} onClick={this.onClick}/>
+          {this.state.displayAttachment && this.attachmentChild}
+          {children}
         </div>
       )
     }
+}
+
+
+
+// Attachment start here
+
+
+export class Attachment extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      display : this.props.display,
+      left: this.props.left,
+      right: this.props.right,
+      top: this.props.top,
+      bottom: this.props.bottom,
+      buttonState : {
+        left: this.props.buttonLeft,
+        right: this.props.buttonRight,
+        top: this.props.buttonTop,
+        bottom: this.props.buttonBottom,
+      }
+    }
+  }
+
+  static displayName = "Attachment";
+
+  componentDidMount(props){
+    console.log(props);
+  }
+
+  render(){
+    const style = constructStyle(this.state);
+    const buttonStyle=constructStyle(this.state.buttonState);
+    return (
+        <div className={`studio-attachment ${!this.state.display && 'hidden'}`} style={style}>
+          <div className={'attachment-close'} onClick={this.props.onClick} ></div>
+          {this.props.children}
+        </div>
+    )
+  }
+
+  static defaultProps={
+    display: true,
+    left: 0,
+    top: 0,
+    buttonLeft: 0,
+    buttonTop: 0,
+  }
+
 }

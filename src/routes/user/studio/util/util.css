@@ -60,4 +60,29 @@
   position: absolute;
   width: 2vw;
   z-index: 5;
+  cursor: pointer;
+}
+
+
+/*
+ * Attachment style
+ */
+.studio-attachment{
+  position: absolute;
+  right: 100%;
+  top: 15%;
+  z-index: 5;
+}
+
+.hidden{
+  display: hidden;
+}
+
+.attachment-close{
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }

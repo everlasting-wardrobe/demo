@@ -33,3 +33,11 @@
 .style-balancer-title h3{
   text-align: center;
 }
+
+
+/*
+ * Attachment style
+ */
+.attachment-img{
+  width: 400px;
+}
