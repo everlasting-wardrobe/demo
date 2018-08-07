@@ -2,6 +2,7 @@ import React, { Component }from 'react';
 import airButton from './OnAirButton.png';
 import onButton from './OnButtonGreen.png';
 import Knob from '../Knob/Knob';
+import InputKnobComp from '../InputKnob/inputKnob';
 import inputKnob from './InputKnob.png';
 import airButtonRed from './AirButtonRed.png';
 import offButton from './OffButton.png';
@@ -50,7 +51,8 @@ class RightButtons extends Component {
                      src={this.state.onButton? onButton: offButton} />
             </div>
             <div className="right-buttons-input-knob-wrapper">
-                <img className="right-buttons-input-knob" src={inputKnob} />
+                {/* <img className="right-buttons-input-knob" src={inputKnob} /> */}
+                <InputKnobComp />
             </div>
         </div>
         );

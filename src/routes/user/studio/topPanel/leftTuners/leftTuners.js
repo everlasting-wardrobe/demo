@@ -1,7 +1,7 @@
 import React from 'react';
 import sectionBox from './TopLeftSectionBox.png';
 import headphoneJack from './HeadphonesJack.png';
-import InputKnob from './InputKnob.png';
+import InputKnob from '../InputKnob/inputKnob';
 
 import Knob from '../Knob/Knob';
 import './leftTuners.css';
@@ -20,7 +20,7 @@ const leftTuners = (props) => {
                 <Knob knobName="High"/>
             </div>
             <div className={"left-tuners-inputknob-wrapper"}>
-                <img className={"left-tuners-inputknob"} src={InputKnob} />
+                <InputKnob />
             </div>
         </div>
     );
