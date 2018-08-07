@@ -9,6 +9,11 @@
   margin-top: 8%;
 }
 
+
+.style-balancer-slider:focus{
+  outline: none;
+}
+
 .style-balancer-slider-suit p{
   text-align: center;
   font-size: 0.8em;
