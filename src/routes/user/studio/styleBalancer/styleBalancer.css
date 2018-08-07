@@ -1,17 +1,48 @@
-.style-balancer{
-  width: 100%;
-}
-
 .style-balancer-slider-suit{
   width: 33.3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.style-balancer-slider-wrapper{
+  margin-top: 8%;
+}
+
+
+.style-balancer-slider:focus{
+  outline: none;
 }
 
 .style-balancer-slider-suit p{
   text-align: center;
   font-size: 0.8em;
+  margin: 0;
+}
+
+.style-balancer{
+  background-size: 100% 100%;
 }
 
 .style-balancer-slider-container{
-  width: 12em;
+  padding: 6% 4% 6% 4%;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+.style-balancer-panel{
+  margin-top: -5%;
+}
+
+.style-balancer-title h3{
+  text-align: center;
+}
+
+
+/*
+ * Attachment style
+ */
+.attachment-img{
+  width: 400px;
 }

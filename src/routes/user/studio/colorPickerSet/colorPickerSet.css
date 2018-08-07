@@ -36,34 +36,3 @@
 .color-picker-container{
   font-size: 1.5vw;
 }
-
-.screw-top-left{
-  width: 1.2em;
-  position: absolute;
-  left: 1.1%;
-  top: 2.6%;
-}
-
-.screw-top-right{
-  width: 1.2em;
-  position: absolute;
-  right: 1.1%;
-  top: 2.6%;
-  transform: rotate(45deg);
-}
-
-.screw-bottom-left{
-  width: 1.2em;
-  position: absolute;
-  left: 1.1%;
-  bottom: 2.6%;
-  transform: rotate(90deg);
-}
-
-.screw-bottom-right{
-  width: 1.2em;
-  position: absolute;
-  right: 1.1%;
-  bottom: 2.6%;
-  transform: rotate(135deg);
-}

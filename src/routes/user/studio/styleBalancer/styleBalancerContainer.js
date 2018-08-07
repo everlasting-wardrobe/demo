@@ -10,6 +10,7 @@ class StyleBalancerContainer extends Component{
       style: this.props.style,
       genre: this.props.genre,
       range: this.props.range,
+      width: this.props.width,
     }
 
     this.onChange = this.onChange.bind(this);
@@ -22,7 +23,8 @@ class StyleBalancerContainer extends Component{
   render(){
     return (
       <StyleBalancer sliderArray={this.state.sliderArray}
-        size={this.state.size} style={this.state.style} genre={this.state.genre} onChange = {this.onChange}/>
+        size={this.state.size} style={this.state.style} genre={this.state.genre}
+        width={this.state.width} onChange = {this.onChange}/>
     )
   }
 }
@@ -33,10 +35,11 @@ StyleBalancerContainer.defaultProps = {
     {name: 'style', upperBound:'FANCY', lowerBound:'CASUAL'},
     {name: 'genre', upperBound:'TOPS', lowerBound:'BOTTOMS'}
   ],
-  size : 1,
+  size  : 1,
   style : 1,
   genre : 1,
   range : 5,
+  width : 1,
 }
 
 export default StyleBalancerContainer;

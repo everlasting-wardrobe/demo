@@ -33,7 +33,7 @@ const Studio = () => {
             <ColorPickerSet width={0.4}/>
           </div>
           <div className={"style-balancer-wrapper"}>
-            <StyleBalancer />
+            <StyleBalancer width={0.18}/>
           </div>
         </div>
       </div>

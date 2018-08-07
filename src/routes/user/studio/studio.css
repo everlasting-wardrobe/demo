@@ -32,7 +32,6 @@
 }
 
 .style-balancer-wrapper{
-  width: 100%;
 }
 
 .next-wardrobe-tracker-wrapper, .size-tracker-wrapper,
@@ -42,5 +41,5 @@
 
 @font-face {
     font-family: digital-dream-narrow;
-    src: url(DigitaldreamNarrow.eot), url(DigitaldreamNarrow.ttf);
+    src: url('./util/DigitaldreamNarrow.eot'), url('./util/DigitaldreamNarrow.ttf');
 }

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ColorPicker from './colorPicker';
 import './colorPickerSet.css';
 import Screw from './Screw.png';
-import {withPanelBackground} from '../util';
 
 
 class ColorPickerSet extends Component{
