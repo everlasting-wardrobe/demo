@@ -1,7 +1,7 @@
 import React from 'react';
 //import sectionBox from './TopLeftSectionBox.png';
 import headphoneJack from './HeadphonesJack.png';
-import InputKnob from '../InputKnob/inputKnob';
+import InputKnob from '../inputKnob/inputKnob';
 import {withPanelBackground} from '../../util/util';
 import Knob from '../Knob/Knob';
 import './leftTuners.css';

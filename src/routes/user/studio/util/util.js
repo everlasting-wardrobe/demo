@@ -158,8 +158,10 @@ export class Attachment extends Component{
     const buttonStyle=constructStyle(this.state.buttonState);
     return (
         <div className={`studio-attachment ${!this.state.display && 'hidden'}`} style={style}>
-          <div className={'attachment-close'} onClick={this.props.onClick} ></div>
-          {this.props.children}
+          <div className={'attachment-close-wrapper'}>
+            <div className={'attachment-close'} onClick={this.props.onClick} ></div>
+            {this.props.children}
+          </div>
         </div>
     )
   }
