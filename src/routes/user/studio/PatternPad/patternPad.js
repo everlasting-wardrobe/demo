@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import "./patternPad.css"
+import AlwaysLight from './patternImg/AlwaysLight.png';
+import NeverLight from './patternImg/NeverLight.png';
+import SometimesLight from './patternImg/SometimesLight.png';
 import Logos2 from './patternImg/Logos2.png';
 import Logos1 from './patternImg/Logos1.png';
 import Logos0 from './patternImg/Logos0.png';
@@ -36,9 +39,9 @@ import Solids2 from './patternImg/Solids2.png';
 import Stripes0 from './patternImg/Stripes0.png';
 import Stripes1 from './patternImg/Stripes1.png';
 import Stripes2 from './patternImg/Stripes2.png';
+import {withPanelBackground} from '../util/util'
 
-
-export default class PatternPannel extends Component{
+class PatternPannel extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -107,11 +110,11 @@ export default class PatternPannel extends Component{
 
   patternOnClick = (pattern) =>{
     let patternST = Object.assign({}, this.state[pattern]);
-    if(patternST.prefer === 0){
-      patternST.prefer = 2;
+    if(patternST.prefer === 2){
+      patternST.prefer = 0;
       this.setState({[pattern] :patternST});
     }else{
-      patternST.prefer = patternST.prefer - 1;
+      patternST.prefer = patternST.prefer + 1;
       this.setState({[pattern] :patternST});
     }
     console.log(this.state[pattern]);
@@ -136,26 +139,22 @@ export default class PatternPannel extends Component{
           {this.renderPatternicon()}
         </div>
         <div className={"patternPannel-footer"}>
-          <div className={"patternPannel-footer-part"}>
-            <div className={"patternPannel-footer-icon"}>
-
+          <div className={"patternPannel-footer-part"} >
+              <img src ={AlwaysLight} />
               <span>ALWAYS</span>
-            </div>
           </div>
-          <div className={"patternPannel-footer-part"}>
-            <div className={"patternPannel-footer-icon"}>
-
+          <div className={"patternPannel-footer-part"} >
+              <img src ={SometimesLight} />
               <span>SOMETIMES</span>
-            </div>
           </div>
-          <div className={"patternPannel-footer-part"}>
-            <div className={"patternPannel-footer-icon"}>
-
+          <div className={"patternPannel-footer-part"} >
+              <img src ={NeverLight} />
               <span>NEVER</span>
-            </div>
           </div>
         </div>
       </div>
     );
   }
 }
+
+export const PatternPannelWithBackground = withPanelBackground(PatternPannel);
