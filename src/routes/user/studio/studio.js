@@ -6,6 +6,8 @@ import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
 import StyleBalancer from './styleBalancer/styleBalancerContainer';
+import PatternPannel from './PatternPad/patternPad';
+
 import './studio.css';
 
 
@@ -32,6 +34,9 @@ const Studio = () => {
           </div>
           <div className={"style-balancer-wrapper"}>
             <StyleBalancer width={0.18}/>
+          </div>
+          <div className={"patternPannel-wrapper"}>
+            <PatternPannel width ={0.4}/>
           </div>
         </div>
       </div>

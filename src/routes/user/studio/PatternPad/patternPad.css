@@ -1,0 +1,25 @@
+.patternPannel{
+  text-align: center;
+}
+.patternPannel-patterns{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pattern-icon-wrapper{
+  width: 15%;
+}
+.patternImg{
+  width:90%;
+}
+
+.patternPannel-footer{
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
