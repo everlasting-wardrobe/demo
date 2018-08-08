@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import './styleBalancer.css';
 import './sliderBackground.css';
 import '../util/verticalSlider.css';
-import {withScrewBackground} from '../util/util';
-import {InfoButtonInsertion} from '../util/util';
-
+import {withScrewBackground, InfoButtonInsertion, Attachment} from '../util/util';
+import IndieAttachment from './IndieAttachment.png';
 
 class StyleBalancer extends Component{
   constructor(props){
@@ -68,7 +67,13 @@ StyleBalancer.propTypes = {
   width : PropTypes.number,
 }
 
+
+// Add Screw Background
 const StyleBalancerWithBackground = withScrewBackground(StyleBalancer);
+
+
+// Build a component with title
+// InfoButtonInsertion component is used to add infomation button on inner component
 
 class StyleBalancerPanel extends Component{
   constructor(props){
@@ -77,7 +82,11 @@ class StyleBalancerPanel extends Component{
 
   render(){
     return (
-      <InfoButtonInsertion>
+      <InfoButtonInsertion type={'left'} top={'25%'}>
+        <Attachment right = {'100%'} top={'10%'} buttonTop={0} buttonRight={0}>
+          <img className={'attachment-img'} src={IndieAttachment}
+            alt={"attachment"}/>
+        </Attachment>
         <div className={'style-balancer-panel'} style={{width:`${this.props.width * 100} vw`}}>
           <div className={'style-balancer-title'}>
             <h3>{"-STYLE BALANCE-"}</h3>

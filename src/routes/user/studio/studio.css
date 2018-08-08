@@ -25,7 +25,8 @@
   flex-wrap: wrap;
   margin: 0 5% 0 5%;
   padding-left: 3vw;
-  padding-top: 2vw;
+  padding-right: 3vw;
+  padding-top: 0vw;
   background-image: url('./PanelBoard.png');
   background-size: 100% 100%
 }
