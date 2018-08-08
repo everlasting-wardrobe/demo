@@ -78,6 +78,11 @@
   display: hidden;
 }
 
+.attachment-close-wrapper{
+  position: relative;
+  display: inline-block;
+}
+
 .attachment-close{
   position: absolute;
   width: 10%;
