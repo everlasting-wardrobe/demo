@@ -1,0 +1,9 @@
+.with-spinning-function-container {
+    cursor: pointer;
+    transition: 2s;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    width: 100%;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import separator from './PanelBoardSeparator.png';
 import NameCard from '../nameCard/nameCard';
 import LeftTuners from './leftTuners/leftTuners';
-import RightButtons from './RightButtons/RightButtons';
+import RightButtons from './rightButtons/rightButtons';
 import './topPanel.css';
 
 
