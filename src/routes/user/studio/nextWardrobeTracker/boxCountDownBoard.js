@@ -3,6 +3,7 @@ import DashBoard from './DayGauge.png';
 import DashBoardArm from './DaysRemainingArm.png';
 import './daysRemainingDashBoard.css';
 import ArmCover from './DaysRemainingCircel.png';
+import {connect} from 'react-redux';
 
 const DaysRemainingDashBoard = ({days}) => {
   let deg = 146 / 30 * days + 20;
@@ -19,7 +20,12 @@ const DaysRemainingDashBoard = ({days}) => {
 }
 
 DaysRemainingDashBoard.defaultProps={
-  days: 10,
+  days: 30,
 }
 
-export default DaysRemainingDashBoard;
+const mapStateToProps = (state, ownProps) => ({
+  days: state.nextWardrobeReducer.countdown,
+})
+
+
+export default connect(mapStateToProps)(DaysRemainingDashBoard);
