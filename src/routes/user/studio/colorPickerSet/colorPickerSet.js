@@ -2,16 +2,16 @@ import React, {Component} from 'react';
 import ColorPicker from './colorPicker';
 import './colorPickerSet.css';
 import Screw from './Screw.png';
-
+import {connect} from 'react-redux';
 
 class ColorPickerSet extends Component{
   constructor(props){
     super(props);
     this.state={
-      color1 : this.props.Color1 || {r:'255', g: '255', b:'255', a:'1'},
+      color1 : this.props.Color1 || {r:'135', g: '255', b:'255', a:'1'},
       color2 : this.props.Color2 || {r:'255', g: '255', b:'255', a:'1'},
       color3 : this.props.Color3 || {r:'255', g: '255', b:'255', a:'1'},
-      color4 : this.props.Color3 || {r:'255', g: '255', b:'255', a:'1'},
+      color4 : this.props.Color4 || {r:'255', g: '255', b:'255', a:'1'},
       width : this.props.width || 1,
     }
   }
@@ -69,4 +69,15 @@ class ColorPickerSet extends Component{
   }
 }
 
-export default ColorPickerSet;
+const mapStateToProps = (state, ownProps) => {
+  const colorPickerData = state.colorPickerReducer.colorSetData;
+  console.log(colorPickerData);
+  return {
+    Color1: colorPickerData[0],
+    Color2: colorPickerData[1],
+    Color3: colorPickerData[2],
+    Color4: colorPickerData[3],
+  }
+}
+
+export default connect(mapStateToProps)(ColorPickerSet);

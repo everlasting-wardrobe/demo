@@ -1,9 +1,9 @@
 import React from 'react';
-import knobTopSpinner from './KnobTopSpinning.png';
-import withSpinningFunction from '../../../../../components/withSpinningFunction';
+import knobTopSpinner from '../../assets/img/KnobTopSpinning.png';
+import withSpinningFunction from '../../util/withSpinningFunction';
 
 const KnobTop = () => (
-    <img style={{width: '100%'}} src={knobTopSpinner} />
+    <img style={{width: '100%', display: 'block'}} src={knobTopSpinner} />
 );
 
 export default withSpinningFunction(KnobTop);

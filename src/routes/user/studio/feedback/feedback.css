@@ -9,7 +9,7 @@
     height: 0;
     padding-bottom: 40%;
     /* max-height: 480px; */
-    background-image: url('./boxReviewBackground.png');
+    background-image: url('./boxReviewBackground.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;

@@ -1,7 +1,6 @@
 import React, { Component }from 'react';
 import airButton from './OnAirButton.png';
 import onButton from './OnButtonGreen.png';
-import Knob from '../knob/knob';
 import InputKnobComp from '../inputKnob/inputKnob';
 import KnobWithHoc from '../knobWithHoc/knobWithHoc';
 import airButtonRed from './AirButtonRed.png';
@@ -41,12 +40,12 @@ class RightButtons extends Component {
                 <KnobWithHoc knobName="High" />
             </div>
             <div className="right-buttons-air-button-red-wrapper">
-                <img className="right-buttons-air-button-red" 
+                <img className="right-buttons-air-button-red"
                      onClick={this.airButtonToggler}
                      src={this.state.airButton? airButtonRed: offButton} />
             </div>
             <div className="right-buttons-on-button-wrapper">
-                <img className="right-buttons-on-button" 
+                <img className="right-buttons-on-button"
                      onClick={this.onButtonToggler}
                      src={this.state.onButton? onButton: offButton} />
             </div>
@@ -58,7 +57,7 @@ class RightButtons extends Component {
         );
     }
 }
-    
+
 
 
 export default RightButtons;

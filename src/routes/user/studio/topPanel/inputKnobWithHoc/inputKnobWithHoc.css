@@ -1,0 +1,14 @@
+.input-knob-with-hoc-container {
+    width: 100%;
+    position: relative;
+    padding-left: 10%;
+}
+.input-knob-with-hoc-back {
+    width: 100%;
+}
+.input-knob-with-hoc-top {
+    width: 13%;
+    position: absolute;
+    top: 38%;
+    left: 49%;
+}

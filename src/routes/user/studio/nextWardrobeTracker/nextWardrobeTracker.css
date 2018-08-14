@@ -7,8 +7,15 @@
   position: relative;
 }
 
+.next-wardrobe-tracker-placeholder{
+  padding-bottom: 18%;
+}
+
 .next-wardrobe-tracker-image{
   width: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
 }
 
 .next-wardrobe-tracker-date{

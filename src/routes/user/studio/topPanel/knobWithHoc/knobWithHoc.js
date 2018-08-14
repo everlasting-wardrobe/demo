@@ -1,8 +1,8 @@
 import React from 'react';
 import KnobTop from './knobTop';
-import lowKnob from './LowKnob.png';
-import midKnob from './MidKnob.png';
-import highKnob from './HighKnob.png';
+import lowKnob from '../../assets/img/LowKnob.png';
+import midKnob from '../../assets/img/MidKnob.png';
+import highKnob from '../../assets/img/HighKnob.png';
 import './knobWithHoc.css';
 
 const KnobWithHoc = (props) => {
@@ -25,7 +25,7 @@ const KnobWithHoc = (props) => {
     return (
         <div className={'knob-with-hoc-container'}>
             <img className={'knob-with-hoc-background'} src={backgroundImage} />
-            <div className= {'knob-with-hoc-top'}>
+            <div className={'knob-with-hoc-top'}>
                 <KnobTop  />
             </div>
         </div>

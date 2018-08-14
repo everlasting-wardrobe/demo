@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import nameWindow from './NameWindow.png';
+import nameWindow from '../../assets/img/NameWindow.png';
 import propTypes from 'prop-types';
 
 import './nameCard.css';
