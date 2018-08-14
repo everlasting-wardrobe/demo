@@ -3,10 +3,12 @@ import React from 'react';
 import headphoneJack from './HeadphonesJack.png';
 import InputKnob from '../inputKnob/inputKnob';
 import {withPanelBackground} from '../../util/util';
-import Knob from '../Knob/Knob';
+import Knob from '../knob/knob';
+import KnobWithHoc from '../knobWithHoc/knobWithHoc';
+import Test from './test';
 import './leftTuners.css';
 
-const leftTuners = (props) => {
+const LeftTuners = (props) => {
     return (
         <div className={"left-tuners-container"}
             // style={{width: `${props.width * 100}vw`, fontSize: `${props.width * 1.875}vw`}}
@@ -15,15 +17,16 @@ const leftTuners = (props) => {
                 <img className={"left-tuners-headphone-jack"} src={headphoneJack} />
             </div>
             <div className={"left-tuners-knob-container"}>
-                <Knob knobName="Low"/>
-                <Knob knobName="Mid"/>
-                <Knob knobName="High"/>
+                <KnobWithHoc  knobName="Low" />
+                <KnobWithHoc knobName="Mid"/>
+                <KnobWithHoc knobName="High"/>
             </div>
             <div className={"left-tuners-inputknob-wrapper"}>
                 <InputKnob />
             </div>
+            
         </div>
     );
 }
 
-export default withPanelBackground(leftTuners);
+export default withPanelBackground(LeftTuners);

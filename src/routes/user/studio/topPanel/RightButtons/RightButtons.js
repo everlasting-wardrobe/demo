@@ -1,12 +1,11 @@
 import React, { Component }from 'react';
 import airButton from './OnAirButton.png';
 import onButton from './OnButtonGreen.png';
-import Knob from '../Knob/Knob';
 import InputKnobComp from '../inputKnob/inputKnob';
-import inputKnob from './InputKnob.png';
+import KnobWithHoc from '../knobWithHoc/knobWithHoc';
 import airButtonRed from './AirButtonRed.png';
 import offButton from './OffButton.png';
-import './RightButtons.css';
+import './rightButtons.css';
 
 class RightButtons extends Component {
     state = {
@@ -35,10 +34,10 @@ class RightButtons extends Component {
                 <img className="right-buttons-air-button" src={airButton}/>
             </div>
             <div className="right-buttons-low-knob-wrapper">
-                <Knob knobName="Low" />
+                <KnobWithHoc knobName="Low" />
             </div>
             <div className="right-buttons-high-knob-wrapper">
-                <Knob knobName="High" />
+                <KnobWithHoc knobName="High" />
             </div>
             <div className="right-buttons-air-button-red-wrapper">
                 <img className="right-buttons-air-button-red"

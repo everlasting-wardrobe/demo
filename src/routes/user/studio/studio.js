@@ -7,7 +7,6 @@ import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
 import StyleBalancer from './styleBalancer/styleBalancerContainer';
 import './studio.css';
-import NameCard from './nameCard/nameCard';
 import TopPanel from './topPanel/topPanel';
 
 // Warning! For NextWardrobeTracker the total width should be 100vw;
