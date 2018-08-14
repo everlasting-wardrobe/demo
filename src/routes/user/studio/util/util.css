@@ -2,7 +2,7 @@
  * With Screw Background Styles
  */
 .screw-panel-background{
-  background-image: url(StyleBalancerPlate.png);
+  background-image: url('StyleBalancerPlate.webp');
   background-size: 100% 100%;
   position: relative;
 }
@@ -80,6 +80,7 @@
 
 .attachment-close-wrapper{
   position: relative;
+  display: inline-block;
 }
 
 .attachment-close{

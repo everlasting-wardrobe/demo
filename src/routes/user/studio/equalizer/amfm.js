@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import AMFMImg from './StylePresetsTuner.png';
+import AMFMWebp from './StylePresetsTuner.webp';
+import AMFMPng from './StylePresetsTuner.png';
 import './amfm.css';
 
 const AMFM = ({rest})=>{
@@ -8,7 +9,11 @@ const AMFM = ({rest})=>{
   return (
     <div className={'amfm'}>
       <div className={'amfm-img-wrapper'}>
-        <img src = {AMFMImg} className={'amfm-img'} />
+        <picture className={"amfm-img"}>
+          <source srcSet={AMFMWebp} type="image/webp" />
+          <source srcSet={AMFMPng} type="image/png" />
+        </picture>
+        <img src = {AMFMWebp} className={'amfm-img'} />
         <div className={'amfm-points'} style={{width: `${width}%`}}/>
       </div>
     </div>

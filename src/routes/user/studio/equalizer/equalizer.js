@@ -4,6 +4,7 @@ import AMFM from './amfm';
 import "./equalizer.css";
 import ResetButton from './ResetButton.png';
 import SaveButton from './SaveButton.png';
+import {connect} from 'react-redux';
 
 
 class Equalizer extends Component{
@@ -103,4 +104,14 @@ class Equalizer extends Component{
   }
 }
 
-export default Equalizer;
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...state.stylePresetsReducer,
+    ...ownProps,
+  }
+}
+
+
+
+export default connect(mapStateToProps)(Equalizer);

@@ -10,6 +10,8 @@ import DownArrow from './DownArrow.png';
 import UpArrow from './UpArrow.png';
 import './sizeTracker.css';
 import {withPanelBackground} from '../util/util';
+import {connect} from 'react-redux';
+import {updateSizeUpdater} from '../../../routerAction';
 
 const SizeTrackerUnit = ({trackerName, value, onUpClick, onDownClick, width}) => {
   return (
@@ -39,33 +41,18 @@ class SizeTracker extends Component{
   constructor(props){
     super(props);
     this.state = {
-      sizeRange : this.props.sizeRange,
-      topSizeIndex : this.props.topSizeIndex,
-      bottomSizeIndex : this.props.bottomSizeIndex,
+      topSize: this.props.topSize,
+      bottomSize: this.props.bottomSize,
       width: this.props.width,
+      onTopAddClick: this.props.onTopAddClick,
+      onTopMinusClick: this.props.onTopMinusClick,
+      onBottomAddClick: this.props.onBottomAddClick,
+      onBottomMinusClick: this.props.onBottomMinusClick,
     }
   }
 
-  saveState(categoryName, action){
-    const category = categoryName === 'top'? 'topSizeIndex' : 'bottomSizeIndex';
-    if(action === 'add' && this.state[category] < 11 ){
-      this.setState((prevState)=>{
-        return {[category] : prevState[category] + 1}
-      })
-    }else if(action === 'minus' && this.state[category] > 0){
-      this.setState((prevState)=>{
-        return {[category] : prevState[category] - 1}
-      })
-    }
-  }
-
-  constructOnClick(categoryName, action){
-    let onClick = () => {
-      console.log('onClick is called');
-      this.saveState(categoryName, action);
-    }
-    onClick = onClick.bind(this);
-    return onClick;
+  componentWillReceiveProps({topSize, bottomSize}){
+    this.setState({topSize, bottomSize});
   }
 
   render(){
@@ -74,24 +61,36 @@ class SizeTracker extends Component{
         <h3 className={"size-tracker-title"} style={{fontSize:`${10 * this.state.width}vw`}}>{"-SIZE UPDATER-"}</h3>
         <div className={"size-tracker-unit-wrapper"}>
           <SizeTrackerUnit trackerName={"TOP"}
-            value={this.state.sizeRange[this.state.topSizeIndex]}
-            onUpClick={this.constructOnClick('top', 'add')}
-            onDownClick={this.constructOnClick('top', 'minus')}
+            value={this.state.topSize}
+            onUpClick={this.state.onTopAddClick}
+            onDownClick={this.state.onTopMinusClick}
             width={this.state.width}/>
         </div>
         <div className={"size-tracker-unit-wrapper"}>
           <SizeTrackerUnit trackerName={"BOTTOM"}
-            value={this.state.sizeRange[this.state.bottomSizeIndex]}
-            onUpClick={this.constructOnClick('bottom', 'add')}
-            onDownClick={this.constructOnClick('bottom', 'minus')}
+            value={this.state.bottomSize}
+            onUpClick={this.state.onBottomAddClick}
+            onDownClick={this.state.onBottomMinusClick}
             width={this.state.width}/>
         </div>
         <div className={"size-tracker-decoration"}>
             <img className={"size-tracker-headphones-jack"} src={HeadphoneJack} alt={""} />
             <div className={"size-tracker-knob-container"}>
-              <img className={"size-tracker-knob"} src={KnobHigh} alt={""}/>
-              <img className={"size-tracker-knob"} src={KnobLow} alt={""}/>
-              <img className={"size-tracker-knob"} src={KnobHigh} alt={""}/>
+              <img
+                className={"size-tracker-knob"}
+                src={KnobHigh}
+                alt={""}
+              />
+              <img
+                className={"size-tracker-knob"}
+                src={KnobLow}
+                alt={""}
+              />
+              <img
+                className={"size-tracker-knob"}
+                src={KnobHigh}
+                alt={""}
+              />
             </div>
         </div>
       </div>
@@ -101,10 +100,37 @@ class SizeTracker extends Component{
 
 
 SizeTracker.defaultProps = {
-  sizeRange : ['6M', '01', '02', '03', '04','05','06','07','08','10','12','14'],
-  topSizeIndex: 0,
+  topSize: '6M',
+  bottomSize: '6M',
   bottomSizeIndex: 0,
   width: 1,
 }
 
-export default withPanelBackground(SizeTracker);
+const mapStateToProps = (state, ownProps) => {
+  const sizeUpdaterData = state.sizeUpdaterReducer;
+  return ({
+    topSize: sizeUpdaterData.sizeTrackerRange[sizeUpdaterData.topSizeIndex],
+    bottomSize: sizeUpdaterData.sizeTrackerRange[sizeUpdaterData.bottomSizeIndex],
+    ...ownProps,
+  });
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTopAddClick : () => {
+      dispatch(updateSizeUpdater('add', 'top'));
+    },
+    onTopMinusClick: () => {
+      dispatch(updateSizeUpdater('minus', 'top'));
+    },
+    onBottomAddClick: ()=>{
+      dispatch(updateSizeUpdater('add', 'bottom'));
+    },
+    onBottomMinusClick: () => {
+      dispatch(updateSizeUpdater('minus', 'bottom'));
+    }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(withPanelBackground(SizeTracker));
