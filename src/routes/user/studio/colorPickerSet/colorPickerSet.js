@@ -71,12 +71,12 @@ class ColorPickerSet extends Component{
 
 const mapStateToProps = (state, ownProps) => {
   const colorPickerData = state.colorPickerReducer.colorSetData;
-  console.log(colorPickerData);
   return {
     Color1: colorPickerData[0],
     Color2: colorPickerData[1],
     Color3: colorPickerData[2],
     Color4: colorPickerData[3],
+    ...ownProps
   }
 }
 

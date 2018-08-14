@@ -5,6 +5,7 @@ import {
   sizeUpdaterReducer,
   colorPickerReducer,
   stylePresetsReducer,
+  styleBalancerReducer
 } from './routerReducer';
 
 const appReducer = combineReducers({
@@ -12,7 +13,8 @@ const appReducer = combineReducers({
   nextWardrobeReducer,
   sizeUpdaterReducer,
   colorPickerReducer,
-  stylePresetsReducer
+  stylePresetsReducer,
+  styleBalancerReducer
 })
 
 export default appReducer;

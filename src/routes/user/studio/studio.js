@@ -8,6 +8,7 @@ import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
 import StyleBalancer from './styleBalancer/styleBalancerContainer';
 import './studio.css';
 import TopPanel from './topPanel/topPanel';
+import PanelBoard from './PanelBoard.jpg';
 
 // Warning! For NextWardrobeTracker the total width should be 100vw;
 
@@ -17,8 +18,11 @@ const Studio = () => {
     <div className={"studio"}>
       <Feedback boxReviewData={boxReviewData}/>
       <div className={"studio-container-wrapper"}>
+        <img src={PanelBoard} className={"studio-background"}/>
         <div className={"studio-container"} >
-          <TopPanel />
+          <div className={"top-panel-wrapper"}>
+            <TopPanel />
+          </div>
           <div className={"next-wardrobe-tracker-wrapper"}>
             <NextWardrobeTracker width={0.2}/>
           </div>
