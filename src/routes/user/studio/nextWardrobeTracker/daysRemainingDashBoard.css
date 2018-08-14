@@ -2,8 +2,16 @@
   position: relative;
 }
 
+.box-count-down-placeholder{
+  width: 100%;
+  padding-bottom: 56.5%;
+}
+
 .box-count-down-dash-board{
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .box-count-down-dash-board-arm{

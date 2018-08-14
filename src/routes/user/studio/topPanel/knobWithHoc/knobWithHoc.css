@@ -1,0 +1,13 @@
+.knob-with-hoc-container {
+    position: relative;
+    width: 100%;
+}
+.knob-with-hoc-background {
+    width: 100%;
+}
+.knob-with-hoc-top {
+    position: absolute;
+    left: 18%;
+    top: 30%;
+    width: 65%;
+}
