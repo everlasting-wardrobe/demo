@@ -17,6 +17,13 @@
 }
 .pattern-icon-wrapper{
   width: 16%;
+  padding-bottom: 16%;
+  position: relative;
+}
+.pattern-icon-wrapper img{
+  position: absolute;
+  top:0;
+  left: 0;
 }
 .patternImg{
   width:100%;
