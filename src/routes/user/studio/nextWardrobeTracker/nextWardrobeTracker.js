@@ -35,7 +35,8 @@ class NextWardrobeTracker extends Component{
             {"-NEXT WARDROBE-"}
           </p>
           <div className={"next-wardrobe-tracker"}>
-            <img className={"next-wardrobe-tracker-image"} src = {nextWardrobeTrackerImg} />
+            <div className={"next-wardrobe-tracker-placeholder"} />
+            <img className={"next-wardrobe-tracker-image"} src = {nextWardrobeTrackerImg} alt={""}/>
             <div className={'next-wardrobe-tracker-date'}>
               <p style={{fontSize:`${11 * width}vw`}}>
                 <span className={'next-wardrobe-tracker-month'}>{month}</span>

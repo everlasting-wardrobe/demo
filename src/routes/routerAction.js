@@ -43,3 +43,6 @@ export const FETCH_STYLE_PRESETS_DATA = 'FETCH_STYLE_PRESETS_DATA';
 export const fetchStylePresetsData = {
   type: FETCH_STYLE_PRESETS_DATA,
 }
+
+
+// Color Picker Actions

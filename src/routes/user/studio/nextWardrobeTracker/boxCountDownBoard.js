@@ -9,6 +9,7 @@ const DaysRemainingDashBoard = ({days}) => {
   let deg = 146 / 30 * days + 20;
   return(
     <div id={'days-remaining-dash-board'}>
+      <div className={'box-count-down-placeholder'} />
       <img className={`box-count-down-dash-board`} src={DashBoard} />
       <img className={`box-count-down-dash-board-arm`}
         src={DashBoardArm}
