@@ -175,3 +175,38 @@ export class Attachment extends Component{
   }
 
 }
+
+
+
+// Loaded Image, this image will display only after it is loaed.
+export class LoadedImg extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      imgLoaded: false,
+      loaded: this.props.loaded,
+    }
+    this.onImageLoaded = this.onImageLoaded.bind(this);
+  }
+
+  onImageLoaded = ()=>{
+    this.setState({imgLoaded: true});
+    if(this.state.loaded && typeof this.state.loaded === 'function'){
+      this.state.loaded();
+    }
+  }
+
+  render(){
+    const style={
+      ...this.props.style,
+      display: `${this.state.loaded? 'inline-block' : 'hidden'}`
+    }
+    return (
+      <img
+        {...this.props}
+        style={style}
+      />
+    )
+  }
+
+}

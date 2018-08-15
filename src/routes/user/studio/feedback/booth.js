@@ -62,7 +62,7 @@ export default class Booth extends Component {
         <content id="booth-item-image-review">
         <ErrorBoundary>
           <div id="booth-item-display-image-wrapper">
-             <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" /> 
+             <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
           </div>
         </ErrorBoundary>
         <ErrorBoundary>
