@@ -5,6 +5,7 @@ import {
   SAVE_SIZE_UPDATER,
   FETCH_COLORPICKER_USER_DATA,
   FETCH_STYLE_PRESETS_DATA,
+  FETCH_STYLE_BALANCER_DATA
 } from '../routes/routerAction';
 
 
@@ -93,6 +94,8 @@ export const colorPickerReducer = (state={
   }
 }
 
+
+// Style Presets Reducer
 export const stylePresetsReducer = (state={
   genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
   colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
@@ -107,6 +110,22 @@ export const stylePresetsReducer = (state={
 }, action) => {
   switch (action.type) {
     case FETCH_STYLE_PRESETS_DATA:
+      return state;
+      break;
+    default:
+      return state;
+  }
+}
+
+
+// Style Balancer actions
+export const styleBalancerReducer = (state = {
+  size: 1,
+  style: 3,
+  genre: 5
+}, action)=>{
+  switch (action.type) {
+    case FETCH_STYLE_BALANCER_DATA:
       return state;
       break;
     default:

@@ -16,8 +16,19 @@
   -ms-user-select: none;
 }
 
+.feedback-wrapper{
+  background-color: #eae7dc;
+}
+
 .studio-container-wrapper{
   background-color: #eae7dc;
+  z-index: 3;
+  position: relative;
+}
+
+.studio-placeholder{
+  height: 500px;
+  width: 100%;
 }
 
 .studio-container{
@@ -27,8 +38,17 @@
   padding-left: 3vw;
   padding-right: 3vw;
   padding-top: 0vw;
-  background-image: url('./PanelBoard.webp');
-  background-size: 100% 100%
+  /* background-image: url('./PanelBoard.webp');
+  background-size: 100% 100%; */
+}
+
+.studio-background{
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  left: 5%;
+  top: 0;
+  z-index: -1;
 }
 
 .style-balancer-wrapper{
@@ -37,6 +57,11 @@
 .next-wardrobe-tracker-wrapper, .size-tracker-wrapper,
 .equalizer-wrapper, .colorpicker-set-wrapper, .style-balancer-wrapper{
   margin: 0.5vw;
+  z-index: 2;
+}
+
+.top-panel-wrapper{
+  z-index: 2;
 }
 
 @font-face {

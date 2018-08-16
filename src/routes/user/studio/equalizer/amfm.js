@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import AMFMWebp from './StylePresetsTuner.webp';
 import AMFMPng from './StylePresetsTuner.png';
 import './amfm.css';
+import {LoadedImg} from '../util/util';
 
 const AMFM = ({rest})=>{
   // 62.5 it's a fixed value which will just fill the points area;
@@ -9,12 +9,26 @@ const AMFM = ({rest})=>{
   return (
     <div className={'amfm'}>
       <div className={'amfm-img-wrapper'}>
-        <picture className={"amfm-img"}>
-          <source srcSet={AMFMWebp} type="image/webp" />
-          <source srcSet={AMFMPng} type="image/png" />
-        </picture>
-        <img src = {AMFMWebp} className={'amfm-img'} />
-        <div className={'amfm-points'} style={{width: `${width}%`}}/>
+        <div style={{position: 'relative'}}>
+          <div
+            style={{paddingBottom: '41%'}}
+          />
+          <LoadedImg
+            src = {AMFMPng}
+            className={'amfm-img'}
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+            }}
+          />
+        </div>
+        <div
+          className={'amfm-points'}
+          style={{
+            width: `${width}%`,
+            zIndex: 3,
+          }}/>
       </div>
     </div>
   )
