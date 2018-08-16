@@ -8,7 +8,7 @@ import Rating from './rating';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import ErrorBoundary from './errorBoundary';
-import FeedbackBackground from './boxReviewBackground.webp';
+import FeedbackBackground from './boxReviewBackground.png';
 
 
 export default class Feedback extends Component{
@@ -100,13 +100,15 @@ export default class Feedback extends Component{
     return(
       <div className="feedback-wrapper">
         <div className='feedback'>
-          <img
-            className={"feedback-background"}
-            src={FeedbackBackground}
-            alt={""}
-            onLoad = {this.onBackgroundImageLoaded}
-            style = {{display: `${this.state.bgImgLoaded? 'inline-block':'hidden'}`}}
-          />
+          <div className={"feedback-background-wrapper"}>
+            <img
+              className={"feedback-background"}
+              src={FeedbackBackground}
+              alt={""}
+              onLoad = {this.onBackgroundImageLoaded}
+              style = {{display: `${this.state.bgImgLoaded? 'inline-block':'hidden'}`}}
+            />
+          </div>
           {this.state.bgImgLoaded &&
            (
              <div>

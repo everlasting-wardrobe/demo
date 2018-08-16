@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import AMFMWebp from './StylePresetsTuner.webp';
 import AMFMPng from './StylePresetsTuner.png';
 import './amfm.css';
 import {LoadedImg} from '../util/util';
@@ -15,7 +14,7 @@ const AMFM = ({rest})=>{
             style={{paddingBottom: '41%'}}
           />
           <LoadedImg
-            src = {AMFMWebp}
+            src = {AMFMPng}
             className={'amfm-img'}
             style={{
               position: 'absolute',

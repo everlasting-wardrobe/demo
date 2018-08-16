@@ -16,10 +16,19 @@
   -ms-user-select: none;
 }
 
+.feedback-wrapper{
+  background-color: #eae7dc;
+}
+
 .studio-container-wrapper{
   background-color: #eae7dc;
   z-index: 3;
   position: relative;
+}
+
+.studio-placeholder{
+  height: 500px;
+  width: 100%;
 }
 
 .studio-container{

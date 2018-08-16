@@ -9,6 +9,7 @@ import StyleBalancer from './styleBalancer/styleBalancerContainer';
 import './studio.css';
 import TopPanel from './topPanel/topPanel';
 import PanelBoard from './PanelBoard.jpg';
+import {LoadedImg} from './util/util';
 
 // Warning! For NextWardrobeTracker the total width should be 100vw;
 
@@ -16,22 +17,31 @@ class Studio extends Component{
   constructor(props){
     super(props);
     this.state = {
-      LowPartBackgroundLoaded : false
+      LowPartBackgroundLoaded : false,
     }
     this.onImageLoaded = this.onImageLoaded.bind(this);
   }
 
   onImageLoaded = () => {
     this.setState({LowPartBackgroundLoaded: true});
+    console.log("Studio onImageLoaded called");
   }
 
   render(){
     const boxReviewData = boxReviewDataGenerator();
     return (
       <div className={"studio"}>
-        <Feedback boxReviewData={boxReviewData}/>
+        <div className={"feedback-wrapper"}>
+          <Feedback boxReviewData={boxReviewData}/>
+        </div>
         <div className={"studio-container-wrapper"}>
-          <img src={PanelBoard} className={"studio-background"} onLoad = {this.onImageLoaded}/>
+          {!this.state.LowPartBackgroundLoaded && (
+            <div className="studio-placeholder" />
+          )}
+          <LoadedImg
+            src={PanelBoard} className={"studio-background"}
+            onLoad = {this.onImageLoaded}
+          />
           {this.state.LowPartBackgroundLoaded && (
             <div className={"studio-container"} >
               <div className={"top-panel-wrapper"}>

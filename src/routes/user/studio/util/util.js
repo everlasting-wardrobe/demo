@@ -184,7 +184,7 @@ export class LoadedImg extends Component{
     super(props);
     this.state = {
       imgLoaded: false,
-      loaded: this.props.loaded,
+      loaded: this.props.onLoad,
     }
     this.onImageLoaded = this.onImageLoaded.bind(this);
   }
@@ -199,12 +199,14 @@ export class LoadedImg extends Component{
   render(){
     const style={
       ...this.props.style,
-      display: `${this.state.loaded? 'inline-block' : 'hidden'}`
+      display: `${this.state.imgLoaded? 'inline-block' : 'hidden'}`,
     }
+
     return (
       <img
         {...this.props}
         style={style}
+        onLoad={this.onImageLoaded}
       />
     )
   }

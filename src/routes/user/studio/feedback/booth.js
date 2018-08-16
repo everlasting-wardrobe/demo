@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './booth.css';
 import ErrorBoundary from './errorBoundary';
 import ReactImageZoom from 'react-image-zoom';
+import {LoadedImg} from '../util/util';
 
 export default class Booth extends Component {
   constructor(props){
@@ -62,7 +63,7 @@ export default class Booth extends Component {
         <content id="booth-item-image-review">
         <ErrorBoundary>
           <div id="booth-item-display-image-wrapper">
-             <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
+             <LoadedImg src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
           </div>
         </ErrorBoundary>
         <ErrorBoundary>
