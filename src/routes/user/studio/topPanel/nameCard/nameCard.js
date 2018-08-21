@@ -13,7 +13,7 @@ class NameCard extends Component {
                 <div className="name-card-wrapper" >
                     <div className="name-card-label-wrapper">{"NAME"}</div>
                     <div className="name-card-window-wrapper">
-                        <img className="name-card-window" src={nameWindow} />
+                        <img className="name-card-window" src={nameWindow} alt={""}/>
                         <div className="name-card-value">{this.props.userName}</div>
                     </div>
                 </div>
