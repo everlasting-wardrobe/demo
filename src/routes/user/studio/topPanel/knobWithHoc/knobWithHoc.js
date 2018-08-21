@@ -24,7 +24,7 @@ const KnobWithHoc = (props) => {
     
     return (
         <div className={'knob-with-hoc-container'}>
-            <img className={'knob-with-hoc-background'} src={backgroundImage} />
+            <img className={'knob-with-hoc-background'} src={backgroundImage} alt={""}/>
             <div className={'knob-with-hoc-top'}>
                 <KnobTop  />
             </div>

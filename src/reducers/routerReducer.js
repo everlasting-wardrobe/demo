@@ -14,7 +14,7 @@ export const nextWardrobeReducer = (state={}, action) => {
   switch (action.type) {
     case FETCH_NEXT_WARDROBE_DATA:
       return {
-        month: 'SEPTEMBER',
+        month: 'SEPTEMBER', // should be time stamp
         day:'06',
         countdown: 15,
       }
@@ -28,7 +28,7 @@ export const nextWardrobeReducer = (state={}, action) => {
 // Size Updater Reducer
 export const sizeUpdaterReducer = (state={
   sizeTrackerRange : ['6M', '01', '02', '03', '04','05','06','07','08','10','12','14'],
-  topSizeIndex: 0,
+  topSizeIndex: 0, // should be a string;
   bottomSizeIndex: 0,
 }, action) => {
   switch (action.type) {
@@ -62,6 +62,10 @@ export const sizeUpdaterReducer = (state={
       }
       return state;
       break;
+    case SAVE_SIZE_UPDATER:
+      console.log(state);
+      return state;
+      break;
     default:
       return state;
   }
@@ -77,6 +81,7 @@ export const colorPickerReducer = (state={
      {r:'135', g: '255', b:'255', a:'1'},
      {r:'255', g: '255', b:'135', a:'1'}
   ],
+  // [{r: g: b: a:}]
 }, action) => {
   switch (action.type) {
     case FETCH_COLORPICKER_USER_DATA:
@@ -98,6 +103,7 @@ export const colorPickerReducer = (state={
 // Style Presets Reducer
 export const stylePresetsReducer = (state={
   genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
+  // {property: number}
   colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
   totalPoints: 5,
   pointBoundary: 10,

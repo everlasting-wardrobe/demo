@@ -46,7 +46,7 @@ class Studio extends Component{
           />
           {this.state.LowPartBackgroundLoaded && (
             <div className={"studio-container"} >
-              <div className={"top-panel-wrapper"}>
+              <div className={"top-panel-padding-div"}>
                 <TopPanel />
               </div>
               <div className={"next-wardrobe-tracker-wrapper"}>

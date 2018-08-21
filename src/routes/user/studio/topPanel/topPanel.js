@@ -22,7 +22,7 @@ class Tuners extends Component {
         return (
             <div className={"left-tuners-container"}>
                 <div className={"left-tuners-headphone-jack-wrapper"}>
-                    <img className={"left-tuners-headphone-jack"} src={headphoneJack} />
+                    <img className={"left-tuners-headphone-jack"} src={headphoneJack}alt={""}/>
                 </div>
                 <div className={"left-tuners-knob-container"}>
                     <KnobWithHoc knobName="Low" />
@@ -63,7 +63,7 @@ class RightButtons extends Component {
         return (
             <div className="right-buttons-container">
             <div className="right-buttons-air-button-wrapper">
-                <img className="right-buttons-air-button" src={airButton}/>
+                <img className="right-buttons-air-button" src={airButton} alt={""}/>
             </div>
             <div className="right-buttons-low-knob-wrapper">
                 <KnobWithHoc knobName="Low" />
@@ -74,12 +74,12 @@ class RightButtons extends Component {
             <div className="right-buttons-air-button-red-wrapper">
                 <img className="right-buttons-air-button-red" 
                      onClick={this.airButtonToggler}
-                     src={this.state.airButton? airButtonRed: offButton} />
+                     src={this.state.airButton? airButtonRed: offButton} alt={""}/>
             </div>
             <div className="right-buttons-on-button-wrapper">
                 <img className="right-buttons-on-button" 
                      onClick={this.onButtonToggler}
-                     src={this.state.onButton? onButton: offButton} />
+                     src={this.state.onButton? onButton: offButton} alt={""}/>
             </div>
             <div className="right-buttons-input-knob-wrapper">
                 <InputKnobWithHoc />
@@ -103,7 +103,7 @@ const topPanel = () => {
                     <RightButtons />
                 </div>
             </div>
-            <img className="top-panel-separator" src={separator} />
+            <img className="top-panel-separator" src={separator} alt={""}/>
         </div>
     );
 };

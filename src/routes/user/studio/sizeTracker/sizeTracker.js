@@ -6,10 +6,11 @@ import KnobMid from './KnobMid.png';
 import HeadphoneJack from './HeadphonesJack.png';
 import DownArrow from './DownArrow.png';
 import UpArrow from './UpArrow.png';
+import SaveButton from './SaveButton.png';
 import './sizeTracker.css';
 import {withPanelBackground} from '../util/util';
 import {connect} from 'react-redux';
-import {updateSizeUpdater} from '../../../routerAction';
+import {updateSizeUpdater, saveSizeUpdater} from '../../../routerAction';
 
 const SizeTrackerUnit = ({trackerName, value, onUpClick, onDownClick, width}) => {
   return (
@@ -46,6 +47,7 @@ class SizeTracker extends Component{
       onTopMinusClick: this.props.onTopMinusClick,
       onBottomAddClick: this.props.onBottomAddClick,
       onBottomMinusClick: this.props.onBottomMinusClick,
+      onSaveButtonClick: this.props.onSaveButtonClick,
     }
   }
 
@@ -73,6 +75,8 @@ class SizeTracker extends Component{
         </div>
         <div className={"size-tracker-decoration"}>
             <img className={"size-tracker-headphones-jack"} src={HeadphoneJack} alt={""} />
+            <img className={"size-tracker-save-button"} src={SaveButton} alt={""} 
+                 onClick={this.state.onSaveButtonClick}/>
             <div className={"size-tracker-knob-container"}>
               <img
                 className={"size-tracker-knob"}
@@ -126,6 +130,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onBottomMinusClick: () => {
       dispatch(updateSizeUpdater('minus', 'bottom'));
+    },
+    onSaveButtonClick: () => {
+      dispatch(saveSizeUpdater());
     }
   }
 }

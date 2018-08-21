@@ -23,9 +23,9 @@ export const updateSizeUpdater =  (actionType, target) => ({
   target,
 });
 
-export const saveSizeUpdater = () => {
-  type: SAVE_SIZE_UPDATER;
-}
+export const saveSizeUpdater = () => ({
+  type: SAVE_SIZE_UPDATER,
+});
 
 
 //color picker Actions

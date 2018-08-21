@@ -88,9 +88,18 @@
   height: 10%;
 }
 
+.size-tracker-save-button {
+  margin-top: 3%;
+  margin-left: 5%;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+}
+
 .size-tracker-knob-container{
-  width: 50%;
-  margin-left: 40%;
+  width: 60%;
+  margin-left: 5%;
+  line-height: 0ch;
 }
 
 .size-tracker-knob{
