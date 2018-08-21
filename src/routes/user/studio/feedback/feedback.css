@@ -9,11 +9,17 @@
     height: 0;
     padding-bottom: 40%;
     /* max-height: 480px; */
-    background-image: url('./boxReviewBackground.webp');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+  }
+
+  .feedback-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .box-review-wrapper {
@@ -57,11 +63,17 @@
     height: 0;
     padding-bottom: 40%;
     /* max-height: 480px; */
-    background-image: url('./boxReviewBackground.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+  }
+
+  .feedback-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .box-review-wrapper {
@@ -102,4 +114,9 @@
   .item-display-rating{
     width: 100%;
   }
+
+  .feedback-background-wrapper{
+    display: none;
+  }
+
 }

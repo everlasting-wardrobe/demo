@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import TopSizeTracker from './TopSizeTracker.png';
-import BottomSizeTracker from './BottomSizeTracker.png';
 import SizeTrackerWindow from './SizeTrackerWindow.png';
 import KnobHigh from './KnobHigh.png';
 import KnobLow from './KnobLow.png';

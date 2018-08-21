@@ -44,5 +44,9 @@ export const fetchStylePresetsData = {
   type: FETCH_STYLE_PRESETS_DATA,
 }
 
+// Style balancer actions
+export const FETCH_STYLE_BALANCER_DATA = 'FETCH_STYLE_BALANCER_DATA';
 
-// Color Picker Actions
+export const fetchStyleBalancerData = {
+  type: FETCH_STYLE_BALANCER_DATA,
+}

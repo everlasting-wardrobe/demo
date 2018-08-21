@@ -8,6 +8,7 @@ import Rating from './rating';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import ErrorBoundary from './errorBoundary';
+import FeedbackBackground from './boxReviewBackground.png';
 
 
 export default class Feedback extends Component{
@@ -18,12 +19,14 @@ export default class Feedback extends Component{
       boxReviewData : this.props.boxReviewData || [],
       displayingItem: null,
       currentKey : null,
+      bgImgLoaded: false,
     }
     this.onPreviousClick = this.onPreviousClick.bind(this);
     this.onClothClick = this.onClothClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
     this.onNextClick = this.onNextClick.bind(this);
     this.onUpdateClick = this.onUpdateClick.bind(this);
+    this.onBackgroundImageLoaded = this.onBackgroundImageLoaded.bind(this);
   }
 
   onPreviousClick = () => {
@@ -73,8 +76,12 @@ export default class Feedback extends Component{
     })
     .catch(function (error) {
       alert("Update Rating Failed");
-      console.log(error)
+      console.log(error);
     });
+  }
+
+  onBackgroundImageLoaded = () => {
+    this.setState({bgImgLoaded : true});
   }
 
   componentDidMount(){
@@ -93,39 +100,54 @@ export default class Feedback extends Component{
     return(
       <div className="feedback-wrapper">
         <div className='feedback'>
-          <div className="box-review-wrapper">
-            <ErrorBoundary>
-            {
-              this.state.month !== 0 &&
-              <BoxReview items={this.state.boxReviewData[this.state.month - 1].Products}
-                currentKey={this.state.currentKey}
-                onPreviousClick={this.onPreviousClick}
-                onNextClick={this.onNextClick}
-                onClothClick={this.onClothClick}/>
-            }
-            </ErrorBoundary>
+          <div className={"feedback-background-wrapper"}>
+            <img
+              className={"feedback-background"}
+              src={FeedbackBackground}
+              alt={""}
+              onLoad = {this.onBackgroundImageLoaded}
+              style = {{display: `${this.state.bgImgLoaded? 'inline-block':'hidden'}`}}
+            />
           </div>
-          <div className="item-display-rating">
-            <ErrorBoundary>
-            {
-              this.state.displayingItem &&
-              <div className='item-display-wrapper'>
-                <Booth item={this.state.displayingItem}/>
-              </div>
-            }
-            </ErrorBoundary>
-            <ErrorBoundary>
-            {
-              this.state.displayingItem &&
-              <div className="feedback-rating">
-                <Rating Barcode={this.state.displayingItem.Barcode}
-                  FitRating={this.state.displayingItem.BoxProducts.FitRating}
-                  StyleRating = {this.state.displayingItem.BoxProducts.StyleRating}
-                  onUpdateClick={this.onUpdateClick}/>
-              </div>
-            }
-            </ErrorBoundary>
-          </div>
+          {this.state.bgImgLoaded &&
+           (
+             <div>
+             <div className="box-review-wrapper">
+              <ErrorBoundary>
+              {
+                this.state.month !== 0 &&
+                <BoxReview items={this.state.boxReviewData[this.state.month - 1].Products}
+                  currentKey={this.state.currentKey}
+                  onPreviousClick={this.onPreviousClick}
+                  onNextClick={this.onNextClick}
+                  onClothClick={this.onClothClick}/>
+              }
+              </ErrorBoundary>
+            </div>
+            <div className="item-display-rating">
+              <ErrorBoundary>
+              {
+                this.state.displayingItem &&
+                <div className='item-display-wrapper'>
+                  <Booth item={this.state.displayingItem}/>
+                </div>
+              }
+              </ErrorBoundary>
+              <ErrorBoundary>
+              {
+                this.state.displayingItem &&
+                <div className="feedback-rating">
+                  <Rating Barcode={this.state.displayingItem.Barcode}
+                    FitRating={this.state.displayingItem.BoxProducts.FitRating}
+                    StyleRating = {this.state.displayingItem.BoxProducts.StyleRating}
+                    onUpdateClick={this.onUpdateClick}/>
+                </div>
+              }
+              </ErrorBoundary>
+            </div>
+            </div>
+          )
+        }
         </div>
       </div>
     )
