@@ -36,7 +36,6 @@ const withModeSelectorFunction = (Top) => {
                 for (let deg = this.props.startDeg; deg <= this.props.endDeg; deg += stepSize) {
                     this.modeSet.push(deg);
                 }
-                console.log(this.modeSet);
             }
             const initAngle = 'rotate(' + this.modeSet[this.props.initMode] + 'deg)';
             return (
