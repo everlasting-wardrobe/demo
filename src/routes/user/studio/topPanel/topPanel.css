@@ -2,11 +2,14 @@
     margin-top: 0.5vw;
     width: 100%;
     box-sizing: border-box;
+    position: absolute;
+    top: 0%;
 }
 .top-panel-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 5vw;
 }
 .top-panel-subbox {
     border: 1px black solid;

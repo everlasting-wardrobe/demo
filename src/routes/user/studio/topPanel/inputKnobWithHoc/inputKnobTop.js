@@ -3,7 +3,7 @@ import inputKnobTop from '../../assets/img/InputKnobTop.png';
 import withModeSelectorFunction from '../../util/withModeSelectorFunction';
 
 const InputKnobTop = () => (
-    <img style={{width: '100%', display: 'block'}} src={inputKnobTop} />
+    <img style={{width: '100%', display: 'block'}} src={inputKnobTop} alt={""}/>
 );
 
 export default withModeSelectorFunction(InputKnobTop);
