@@ -117,8 +117,8 @@ class PatternPannel extends Component{
       patternST.prefer = patternST.prefer + 1;
       this.setState({[pattern] :patternST});
     }
-    console.log(this.state[pattern]);
-    console.log(this.state[pattern].prefer);
+    // console.log(this.state[pattern]);
+    // console.log(this.state[pattern].prefer);
   }
 
   patternImgsrc = (pattern) =>{

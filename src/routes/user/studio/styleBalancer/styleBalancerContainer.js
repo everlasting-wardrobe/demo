@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import StyleBalancer from './styleBalancer';
+import {connect} from 'react-redux';
 
 class StyleBalancerContainer extends Component{
   constructor(props){
@@ -22,9 +23,14 @@ class StyleBalancerContainer extends Component{
 
   render(){
     return (
-      <StyleBalancer sliderArray={this.state.sliderArray}
-        size={this.state.size} style={this.state.style} genre={this.state.genre}
-        width={this.state.width} onChange = {this.onChange}/>
+      <StyleBalancer
+        sliderArray={this.state.sliderArray}
+        size={this.state.size}
+        style={this.state.style}
+        genre={this.state.genre}
+        width={this.state.width}
+        onChange = {this.onChange}
+      />
     )
   }
 }
@@ -42,4 +48,11 @@ StyleBalancerContainer.defaultProps = {
   width : 1,
 }
 
-export default StyleBalancerContainer;
+const mapStateToProps = (state, ownProps) => {
+    return {
+      ...state.styleBalancerReducer,
+      ...ownProps
+    }
+}
+
+export default connect(mapStateToProps)(StyleBalancerContainer);
