@@ -18,7 +18,9 @@ const Studio = () => {
       <Feedback boxReviewData={boxReviewData}/>
       <div className={"studio-container-wrapper"}>
         <div className={"studio-container"} >
-          <TopPanel />
+          <div className={'top-panel-padding-div'}>
+            <TopPanel />
+          </div>
           <div className={"next-wardrobe-tracker-wrapper"}>
             <NextWardrobeTracker width={0.2}/>
           </div>

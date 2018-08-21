@@ -14,8 +14,7 @@ input.feedback-slider, input.feedback-slider::-webkit-slider-runnable-track, inp
 
 input.feedback-slider::-webkit-slider-runnable-track {
   position: relative;
-
-  height: 3vw;
+  height: 2vw;
   padding-left: 0.3vw;
   padding-right: 0.3vw;
   background-size: cover;
@@ -34,16 +33,15 @@ input.fit-feedback-slider::-webkit-slider-runnable-track {
 
 input.feedback-slider::-webkit-slider-thumb {
   position: relative;
-  margin-left: 0em;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto 0;
   border: none;
-  border-radius: 50% 50% 0;
   background-image: url('./thumb.png');
   width: 11.11%;
   height: 100%;
   z-index: 100;
-  background-size: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
 }
 /* -------------------------for firefox ----------------------- */
 input.feedback-slider, input.feedback-slider::-moz-range-track, input.feedback-slider[type='range']::-moz-range-thumb {
@@ -116,4 +114,10 @@ input.feedback-slider::-ms-thumb {
   height: 100%;
   z-index: 100;
   background-size: inherit;
+}
+
+@media screen and (max-width: 414px) {
+  input.feedback-slider::-webkit-slider-runnable-track {
+    height: 6vw;
+  }
 }

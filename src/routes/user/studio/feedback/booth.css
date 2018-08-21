@@ -22,21 +22,22 @@
  * Booth item image review
  */
 #booth-item-image-review{
-  width: 45%;
-  height: 100%;
   display: flex;
   justify-content: space-around;
+  margin-left: 0;
 }
 
 
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 415px) {
+  #booth-item-image-review{
+    width: 45%;
+  }
   #booth-item-display-image-wrapper{
     order: 1;
     display: block;
     margin-left: 5%;
-    /* width: 80%; */
-    height: 100%;
+    width: 40%;
   }
   #booth-item-display-image-wrapper img{
     height: 100%;
@@ -50,7 +51,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-
   .item-image{
     height: 22%;
     margin: 0 auto 0 auto;
@@ -60,37 +60,59 @@
     user-select: none;
     cursor: pointer;
   }
+
+  #booth-item-info-wrapper{
+    margin-left: 5%;
+    width: 50%;
+    font-weight:400;
+    line-height: 1.5em;
+    font-family: Lato;
+    font-size: 1.0vw;
+  }
 }
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 414px) {
+  #booth-item-image-review{
+    width: 100%;
+    padding: 0 20%;
+    justify-content: space-between;
+  }
   #booth-item-display-image-wrapper{
     order: 1;
     display: block;
     margin-left: 0;
-    /* width: 80%; */
+    width: 60%;
     height: 100%;
-  }
-  #booth-item-display-image-wrapper img{
-    width: 90%;
-    display: block;
   }
   .booth-item-image-container{
     order: 2;
     /* height: 100%; */
-    width: 100%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-
+  #booth-item-display-image-wrapper img{
+    width: 100%;
+    display: block;
+  }
   .item-image{
     /* height: 22%; */
-    width: 120%;
+    width: 70%;
     margin: 0 auto 0 auto;
     opacity: 0.5;
     -webkit-user-drag:none;
     -moz-user-drag:none;
     user-select: none;
     cursor: pointer;
+  }
+
+  #booth-item-info-wrapper{
+    font-family: Lato;
+    width: 100%;
+    margin-top: 5%;
+    font-weight:400;
+    line-height: 1.5em;
+    font-size: 3.0vw;
   }
 }
 
@@ -106,17 +128,9 @@
   * Booth item info review
   */
 
-#booth-item-info-wrapper{
-  height: 100%;
-  margin-left: 5%;
-  width: 50%;
-  font-family: Lato;
-  font-weight:400;
-  line-height: 1.5em;
-}
+
 
 #booth-SKU-title{
-  height: 20%;
   font-size: 1.6em;
   font-weight: 600;
   text-align: left;
@@ -133,9 +147,9 @@
   font-size: 1em;
     height: 10%;
   /* line-height: 2em; */
-  padding-right: 8%;
+  /* padding-right: 8%; */
 }
-.overall-price{
+.overall-price h4{
 
   font-size: 1.5em;
 }

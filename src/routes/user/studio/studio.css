@@ -31,15 +31,23 @@
   background-size: 100% 100%
 }
 
-.style-balancer-wrapper{
-}
-
 .next-wardrobe-tracker-wrapper, .size-tracker-wrapper,
 .equalizer-wrapper, .colorpicker-set-wrapper, .style-balancer-wrapper{
   margin: 0.5vw;
+}
+.top-panel-padding-div {
+  width: 100%;
+  position: relative;
+  /* border: 2px black solid; */
+  padding-top: 10%;
 }
 
 @font-face {
     font-family: digital-dream-narrow;
     src: url('./util/DigitaldreamNarrow.eot'), url('./util/DigitaldreamNarrow.ttf');
+}
+@media screen and (max-width: 414px) {
+  .studio-container-wrapper{
+    display: none;
+  }
 }
