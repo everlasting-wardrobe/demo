@@ -62,6 +62,10 @@ export const sizeUpdaterReducer = (state={
       }
       return state;
       break;
+    case SAVE_SIZE_UPDATER:
+      console.log(state);
+      return state;
+      break;
     default:
       return state;
   }
