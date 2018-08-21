@@ -8,7 +8,7 @@ import Rating from './rating';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import ErrorBoundary from './errorBoundary';
-import FeedbackBackground from './boxReviewBackground.png';
+import FeedbackBackground from './boxReviewBackground.jpg';
 
 
 export default class Feedback extends Component{
@@ -106,11 +106,10 @@ export default class Feedback extends Component{
               src={FeedbackBackground}
               alt={""}
               onLoad = {this.onBackgroundImageLoaded}
-              style = {{display: `${this.state.bgImgLoaded? 'inline-block':'hidden'}`}}
+              style = {{display: 'inline-block'}}
             />
           </div>
-          {this.state.bgImgLoaded &&
-           (
+
              <div>
              <div className="box-review-wrapper">
               <ErrorBoundary>
@@ -146,8 +145,6 @@ export default class Feedback extends Component{
               </ErrorBoundary>
             </div>
             </div>
-          )
-        }
         </div>
       </div>
     )
