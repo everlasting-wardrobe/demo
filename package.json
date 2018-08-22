@@ -53,6 +53,7 @@
     "react-icons": "^2.2.7",
     "react-image-magnify": "^2.7.0",
     "react-image-zoom": "^0.7.0",
+    "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-simple-range": "^1.6.0",

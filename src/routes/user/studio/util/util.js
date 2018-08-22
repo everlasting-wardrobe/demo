@@ -212,3 +212,27 @@ export class LoadedImg extends Component{
   }
 
 }
+
+
+export const asyncLoadable = (ImportComponent) => {
+  class AsyncLoadable extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        component: null
+      };
+    }
+
+    componentDidMount = async () => {
+      this.setState({component: ImportComponent})
+    }
+
+    render(){
+      const C = this.state.component;
+
+      return C? <C {...this.props} /> : null;
+    }
+  }
+
+  return AsyncLoadable;
+}
