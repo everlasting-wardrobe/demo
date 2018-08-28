@@ -6,10 +6,6 @@ import PanelBoard from './PanelBoard.jpg';
 import {LoadedImg} from './util/util';
 import Loadable from 'react-loadable';
 
-
-
-
-
 const LoadableMixingBoard = Loadable({
   loader: () => import('./MixingBoard'),
   loading: (props) => {

@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 
 const User = () => {
+  console.log("User Component Called");
   return (
     <div>
       <HeaderMenuContainer color='black' />
