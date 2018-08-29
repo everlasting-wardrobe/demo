@@ -1,3 +1,12 @@
+// MixingBoard Actions:
+export const FETCH_MIXING_BOARD_DATA = 'FETCH_MIXING_BOARD_DATA';
+export const fetchMixingBoardData = (data) => {
+  return {
+    type: FETCH_MIXING_BOARD_DATA,
+    data: data
+  }
+};
+
 // Wardrobe tracker Actions:
 export const FETCH_NEXT_WARDROBE_DATA = 'FETCH_NEXT_WARDROBE_DATA';
 export const FETCH_NEXT_WARDROBE_COUNTDOWN = 'FETCH_NEXT_WARDROBE_COUNTDOWN';

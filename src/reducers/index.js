@@ -5,7 +5,8 @@ import {
   sizeUpdaterReducer,
   colorPickerReducer,
   stylePresetsReducer,
-  styleBalancerReducer
+  styleBalancerReducer,
+  mixingBoardReducer
 } from './routerReducer';
 
 const appReducer = combineReducers({
@@ -14,7 +15,8 @@ const appReducer = combineReducers({
   sizeUpdaterReducer,
   colorPickerReducer,
   stylePresetsReducer,
-  styleBalancerReducer
+  styleBalancerReducer,
+  mixingBoardReducer
 })
 
 export default appReducer;

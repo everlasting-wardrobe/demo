@@ -48,13 +48,6 @@ export default class Booth extends Component {
       )
     }
     const {Color_Combo, Size, Barcode, Item, PatternB} = this.state.product;
-    // const zoomImage={
-    //   width:
-    //   scale: 2,
-    //   img: this.state.product[this.state.selectImg]
-    // }
-
-    // <img src={this.state.product[this.state.selectImg]} alt="Item Image Review" />
     let title = Item.Brand.BrandName + " " + (PatternB ? PatternB.PatternB + " " : "")
                 + (PatternB && PatternB.PatternA && PatternB.PatternB !== PatternB.PatternA.PatternA ? PatternB.PatternA.PatternA + " ":"")
                 + Item.Genus.Genus;

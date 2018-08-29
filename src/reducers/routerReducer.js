@@ -5,9 +5,56 @@ import {
   SAVE_SIZE_UPDATER,
   FETCH_COLORPICKER_USER_DATA,
   FETCH_STYLE_PRESETS_DATA,
-  FETCH_STYLE_BALANCER_DATA
+  FETCH_STYLE_BALANCER_DATA,
+  FETCH_MIXING_BOARD_DATA
 } from '../routes/routerAction';
+import axios from 'axios';
 
+
+export const mixingBoardReducer = (
+  state={
+    UserName: 'USER NAME',
+    NextWardrobe: "2018-07-26T20:43:25.943Z",
+    SizeTrackerRange : ['6M', '01', '02', '03', '04','05','06','07','08','10','12','14'],
+    Top: '04', // should be a string;
+    Bottom: '01',
+    Color1: {r:'135', g: '255', b:'135', a:'1'},
+    Color2: {r:'135', g: '135', b:'255', a:'1'},
+    Color3: {r:'135', g: '255', b:'255', a:'1'},
+    Color4: {r:'255', g: '255', b:'135', a:'1'},
+    genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
+    // {property: number}
+    colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
+    totalPoints: 5,
+    pointBoundary: 10,
+    jazz: 0,
+    pop:  0,
+    indie: 5,
+    funk:  0,
+    jockJams: 0,
+    hipHop: 0,
+    size: 1,
+    style: 3,
+    genre: 5
+  }, action) => {
+    switch (action.type) {
+      case  FETCH_MIXING_BOARD_DATA:
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+        const parseColor = (Array)
+        const curState = {
+          ...action.data
+        }
+        console.log(curState);
+        return state;
+        break;
+      default:
+        return state;
+
+    }
+
+}
 
 // Next Wardrobe Reducer
 export const nextWardrobeReducer = (state={}, action) => {

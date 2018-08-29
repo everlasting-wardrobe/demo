@@ -236,3 +236,59 @@ export const asyncLoadable = (ImportComponent) => {
 
   return AsyncLoadable;
 }
+
+
+export class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null, errorInfo: null };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Catch errors in any components below and re-render with error message
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    })
+    // You can also log error messages to an error reporting service here
+  }
+
+  render() {
+    if (this.state.errorInfo) {
+      // Error path
+      return (
+        <div style={{width:'50%', maxWidth:'600px', margin: 'auto'}}>
+          <h2 style={{textAlign: 'center'}}>
+            Something went wrong.
+          </h2>
+            <div>
+              <img
+                style={{width: '100%'}}
+                src={"https://res.cloudinary.com/xiaoxu/image/upload/v1535247819/global/oops.png"}
+                alt="Oops!"
+              />
+            </div>
+        </div>
+      );
+    }
+    // Normally, just render children
+    return this.props.children;
+  }
+}
+
+export const Spinner = () => (
+  <div className="sk-circle">
+    <div className="sk-circle1 sk-child"></div>
+    <div className="sk-circle2 sk-child"></div>
+    <div className="sk-circle3 sk-child"></div>
+    <div className="sk-circle4 sk-child"></div>
+    <div className="sk-circle5 sk-child"></div>
+    <div className="sk-circle6 sk-child"></div>
+    <div className="sk-circle7 sk-child"></div>
+    <div className="sk-circle8 sk-child"></div>
+    <div className="sk-circle9 sk-child"></div>
+    <div className="sk-circle10 sk-child"></div>
+    <div className="sk-circle11 sk-child"></div>
+    <div className="sk-circle12 sk-child"></div>
+  </div>
+)

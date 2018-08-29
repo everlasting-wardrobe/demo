@@ -123,5 +123,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "proxy": "https://ew-express-staging.herokuapp.com"
 }
