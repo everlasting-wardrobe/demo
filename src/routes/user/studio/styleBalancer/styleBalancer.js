@@ -82,16 +82,34 @@ class StyleBalancerPanel extends Component{
 
   render(){
     return (
-      <InfoButtonInsertion type={'left'} top={'25%'}>
-        <Attachment right = {'100%'} top={'10%'} buttonTop={0} buttonRight={0}>
-          <img className={'attachment-img'} src={IndieAttachment}
-            alt={"attachment"}/>
+      <InfoButtonInsertion
+        type={'left'}
+        top={'25%'}
+      >
+        <Attachment
+          right = {'100%'}
+          top={'10%'}
+          buttonTop={0}
+          buttonRight={0}
+        >
+          <img
+            className={'attachment-img'}
+            src={IndieAttachment}
+            alt={"attachment"}
+          />
         </Attachment>
-        <div className={'style-balancer-panel'} style={{width:`${this.props.width * 100} vw`}}>
-          <div className={'style-balancer-title'}>
+        <div
+          className={'style-balancer-panel'}
+          style={{width:`${this.props.width * 100} vw`}}
+        >
+          <div
+            className={'style-balancer-title'}
+          >
             <h3>{"-STYLE BALANCE-"}</h3>
           </div>
-          <StyleBalancerWithBackground {...this.props} />
+          <StyleBalancerWithBackground
+            {...this.props}
+          />
         </div>
       </InfoButtonInsertion>
     )

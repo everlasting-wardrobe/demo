@@ -292,3 +292,12 @@ export const Spinner = () => (
     <div className="sk-circle12 sk-child"></div>
   </div>
 )
+
+export const propsFilter = (targetPropsArray, props) => {
+  const addToProps = (obj, prop) => {
+    obj[prop] = props[prop];
+    return obj;
+  }
+
+  return targetPropsArray.reduce(addToProps, {});
+}

@@ -4,11 +4,11 @@ import Studio from './studio/studio';
 import HeaderMenuContainer from '../../containers/headerMenuContainer';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-
+      // <HeaderMenuContainer color='black' />
 const User = () => {
   return (
     <div>
-      <HeaderMenuContainer color='black' />
+
       <Router>
         <Switch>
           <Route path={'/user/signup'} component={Signup} />

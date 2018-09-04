@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import StyleBalancer from './styleBalancer';
 import {connect} from 'react-redux';
+import {updataMixingBoardData} from '../../../routerAction';
+
 
 class StyleBalancerContainer extends Component{
   constructor(props){
@@ -19,6 +21,12 @@ class StyleBalancerContainer extends Component{
 
   onChange = (event, sliderName)=>{
     this.setState({[sliderName] : event.target.value});
+    if(this.props.saveToRedux){
+      this.props.saveToRedux({
+        ...this.state,
+        [sliderName]: event.target.value
+      })
+    }
   }
 
   render(){
@@ -49,10 +57,29 @@ StyleBalancerContainer.defaultProps = {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    const sbData = state.mixingBoardReducer;
     return {
-      ...state.styleBalancerReducer,
+      size: sbData.sb1,
+      style: sbData.sb2,
+      genre: sbData.sb3,
       ...ownProps
     }
 }
 
-export default connect(mapStateToProps)(StyleBalancerContainer);
+const mapDispatchToProps = (dispatch) => {
+  const mapPropsToState = (props) => {
+    return {
+      sb1: props.size,
+      sb2: props.style,
+      sb3: props.genre
+    }
+  };
+  return {
+    saveToRedux: (data) => {
+      const action = updataMixingBoardData(mapPropsToState(data));
+      dispatch(action);
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StyleBalancerContainer);

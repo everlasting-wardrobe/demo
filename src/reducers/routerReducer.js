@@ -6,22 +6,23 @@ import {
   FETCH_COLORPICKER_USER_DATA,
   FETCH_STYLE_PRESETS_DATA,
   FETCH_STYLE_BALANCER_DATA,
-  FETCH_MIXING_BOARD_DATA
+  FETCH_MIXING_BOARD_DATA,
+  SAVE_STYLE_PRESETS_DATA,
+  UPDATE_MIXING_BOARD_DATA
 } from '../routes/routerAction';
-import axios from 'axios';
 
 
 export const mixingBoardReducer = (
   state={
     UserName: 'USER NAME',
     NextWardrobe: "2018-07-26T20:43:25.943Z",
-    SizeTrackerRange : ['6M', '01', '02', '03', '04','05','06','07','08','10','12','14'],
-    Top: '04', // should be a string;
-    Bottom: '01',
-    Color1: {r:'135', g: '255', b:'135', a:'1'},
-    Color2: {r:'135', g: '135', b:'255', a:'1'},
-    Color3: {r:'135', g: '255', b:'255', a:'1'},
-    Color4: {r:'255', g: '255', b:'135', a:'1'},
+    sizeTrackerRange : ['6M', '1y', '2y', '3y', '4y','5y','6y','7y','8y','10','12','14'],
+    top: '4y', // should be a string;
+    bottom: '1y',
+    color1: {r:'135', g: '255', b:'135', a:'1'},
+    color2: {r:'135', g: '135', b:'255', a:'1'},
+    color3: {r:'135', g: '255', b:'255', a:'1'},
+    color4: {r:'255', g: '255', b:'135', a:'1'},
     genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
     // {property: number}
     colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
@@ -31,22 +32,48 @@ export const mixingBoardReducer = (
     pop:  0,
     indie: 5,
     funk:  0,
-    jockJams: 0,
-    hipHop: 0,
+    jockjams: 0,
+    hiphop: 0,
     size: 1,
     style: 3,
     genre: 5
   }, action) => {
     switch (action.type) {
       case  FETCH_MIXING_BOARD_DATA:
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-          "July", "August", "September", "October", "November", "December"
-        ];
-        const parseColor = (Array)
         const curState = {
-          ...action.data
+          ...state,
+          ...action.data,
         }
-        console.log(curState);
+        return curState;
+        break;
+      case UPDATE_MIXING_BOARD_DATA:
+        return {
+          ...state,
+          ...action.data
+        };
+        break;
+      case UPDATE_SIZE_UPDATER:
+        let sizeIndex;
+        let size;
+        if(action.target === 'top'){
+          sizeIndex = state.sizeTrackerRange.indexOf(state.top);
+          size = 'top';
+        }else{
+          sizeIndex = state.sizeTrackerRange.indexOf(state.bottom);
+          size = 'bottom';
+        }
+        if(action.actionType === 'add' && sizeIndex < state.sizeTrackerRange.length - 1){
+          return ({
+            ...state,
+            [size]: state.sizeTrackerRange[sizeIndex + 1],
+          })
+        }
+        if(action.actionType === 'minus' && sizeIndex > 0){
+          return {
+            ...state,
+            [size]: state.sizeTrackerRange[sizeIndex - 1],
+          }
+        }
         return state;
         break;
       default:
@@ -54,134 +81,4 @@ export const mixingBoardReducer = (
 
     }
 
-}
-
-// Next Wardrobe Reducer
-export const nextWardrobeReducer = (state={}, action) => {
-  switch (action.type) {
-    case FETCH_NEXT_WARDROBE_DATA:
-      return {
-        month: 'SEPTEMBER', // should be time stamp
-        day:'06',
-        countdown: 15,
-      }
-      break;
-    default:
-      return state;
-  }
-}
-
-
-// Size Updater Reducer
-export const sizeUpdaterReducer = (state={
-  sizeTrackerRange : ['6M', '01', '02', '03', '04','05','06','07','08','10','12','14'],
-  topSizeIndex: 0, // should be a string;
-  bottomSizeIndex: 0,
-}, action) => {
-  switch (action.type) {
-    case FETCH_SIZE_UPDATER_DATA:
-        return {
-          sizeTrackerRange : ['6M', '01', '02', '03', '04','05','06','07','08','10','12','14'],
-          topSizeIndex: 0,
-          bottomSizeIndex: 0,
-        }
-      break;
-    case UPDATE_SIZE_UPDATER:
-      let sizeIndex;
-      if(action.target === 'top'){
-        sizeIndex = 'topSizeIndex';
-      }else{
-        sizeIndex = 'bottomSizeIndex';
-      }
-      if(action.actionType === 'add' && state[sizeIndex] < state.sizeTrackerRange.length - 1){
-        return ({
-          ...state,
-          sizeTrackerRange: [...state.sizeTrackerRange],
-          [sizeIndex]: state[sizeIndex] + 1,
-        })
-      }
-      if(action.actionType === 'minus' && state[sizeIndex] > 0){
-        return {
-          ...state,
-          sizeTrackerRange: [...state.sizeTrackerRange],
-          [sizeIndex]: state[sizeIndex] - 1,
-        }
-      }
-      return state;
-      break;
-    case SAVE_SIZE_UPDATER:
-      console.log(state);
-      return state;
-      break;
-    default:
-      return state;
-  }
-}
-
-
-// Color Picker Reducer
-export const colorPickerReducer = (state={
-  colorSetData:
-   [
-     {r:'135', g: '255', b:'135', a:'1'},
-     {r:'135', g: '135', b:'255', a:'1'},
-     {r:'135', g: '255', b:'255', a:'1'},
-     {r:'255', g: '255', b:'135', a:'1'}
-  ],
-  // [{r: g: b: a:}]
-}, action) => {
-  switch (action.type) {
-    case FETCH_COLORPICKER_USER_DATA:
-      return {
-        colorSetData:[
-           {r:'135', g: '255', b:'135', a:'1'},
-           {r:'135', g: '135', b:'255', a:'1'},
-           {r:'135', g: '255', b:'255', a:'1'},
-           {r:'255', g: '255', b:'135', a:'1'}
-        ]
-      }
-      break;
-    default:
-      return state;
-  }
-}
-
-
-// Style Presets Reducer
-export const stylePresetsReducer = (state={
-  genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
-  // {property: number}
-  colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
-  totalPoints: 5,
-  pointBoundary: 10,
-  jazz: 0,
-  pop:  0,
-  indie: 5,
-  funk:  0,
-  jockJams: 0,
-  hipHop: 0,
-}, action) => {
-  switch (action.type) {
-    case FETCH_STYLE_PRESETS_DATA:
-      return state;
-      break;
-    default:
-      return state;
-  }
-}
-
-
-// Style Balancer actions
-export const styleBalancerReducer = (state = {
-  size: 1,
-  style: 3,
-  genre: 5
-}, action)=>{
-  switch (action.type) {
-    case FETCH_STYLE_BALANCER_DATA:
-      return state;
-      break;
-    default:
-      return state;
-  }
 }

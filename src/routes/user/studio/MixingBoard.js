@@ -21,12 +21,11 @@ class MixingBoard extends Component{
     axios('/api/v1/boxes/users/preference/leeweiss81@gmail.com', {
       method:'get',
       headers: {
-        'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzU1NjA2MTAsImV4cCI6MTUzNTU4MjIxMH0.cmb_F99zXksbIL4UJ2wyoBaSBIF_1MJ6E2ibZQHlBQk',
+        'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzYwNzc0MzgsImV4cCI6MTUzNjA5OTAzOH0.bUKw1sHeeRbiyh9pgl-GHT_nECfNszv7Bc8Clkd8V6c',
         'Access-Control-Allow-Origin': 'http://localhost:3000'
       }
     }).then(response => {
-      console.log(response.data);
-      fetchMixingBoardData(response.data);
+      this.props.fetchMixingBoardData(response.data);
     });
   }
 
@@ -43,7 +42,7 @@ class MixingBoard extends Component{
           <SizeTracker width={0.2}/>
         </div>
         <div className={"equalizer-wrapper"}>
-          <Equalizer width={0.4}/>
+          <Equalizer width={0.395}/>
         </div>
         <div className={"colorpicker-set-wrapper"}>
           <ColorPickerSet width={0.4}/>
@@ -59,7 +58,8 @@ class MixingBoard extends Component{
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchMixingBoardData: (data)=>{
-      dispatch(fetchMixingBoardData(data));
+      const action = fetchMixingBoardData(data);
+      dispatch(action);
     }
   }
 }

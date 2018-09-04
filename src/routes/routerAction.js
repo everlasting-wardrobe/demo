@@ -1,5 +1,8 @@
 // MixingBoard Actions:
 export const FETCH_MIXING_BOARD_DATA = 'FETCH_MIXING_BOARD_DATA';
+export const UPDATE_MIXING_BOARD_DATA = 'UPDATE_MIXING_BOARD_DATA';
+export const SAVE_MIXING_BOARD_DATA = 'SAVE_MIXING_BOARD_DATA';
+
 export const fetchMixingBoardData = (data) => {
   return {
     type: FETCH_MIXING_BOARD_DATA,
@@ -7,13 +10,18 @@ export const fetchMixingBoardData = (data) => {
   }
 };
 
-// Wardrobe tracker Actions:
-export const FETCH_NEXT_WARDROBE_DATA = 'FETCH_NEXT_WARDROBE_DATA';
-export const FETCH_NEXT_WARDROBE_COUNTDOWN = 'FETCH_NEXT_WARDROBE_COUNTDOWN';
+export const updataMixingBoardData = (data) => {
+  return {
+    type: UPDATE_MIXING_BOARD_DATA,
+    data: data
+  }
+}
 
-export const fetchNextWardrobeInfo = {
-  type: FETCH_NEXT_WARDROBE_DATA,
-};
+export const saveMixingBoardData = ()=>{
+  return {
+    type: SAVE_MIXING_BOARD_DATA
+  }
+}
 
 
 
@@ -35,27 +43,3 @@ export const updateSizeUpdater =  (actionType, target) => ({
 export const saveSizeUpdater = () => ({
   type: SAVE_SIZE_UPDATER,
 });
-
-
-//color picker Actions
-export const FETCH_COLORPICKER_USER_DATA = 'FETCH_COLORPICKER_USER_DATA';
-export const SAVE_COLORPICKER_DATA = 'SAVE_COLORPICKER_DATA';
-
-export const fetchColorPickerUserData = {
-  type: FETCH_COLORPICKER_USER_DATA,
-}
-
-
-// Style Presets Actions:
-export const FETCH_STYLE_PRESETS_DATA = 'FETCH_STYLE_PRESETS_DATA';
-
-export const fetchStylePresetsData = {
-  type: FETCH_STYLE_PRESETS_DATA,
-}
-
-// Style balancer actions
-export const FETCH_STYLE_BALANCER_DATA = 'FETCH_STYLE_BALANCER_DATA';
-
-export const fetchStyleBalancerData = {
-  type: FETCH_STYLE_BALANCER_DATA,
-}
