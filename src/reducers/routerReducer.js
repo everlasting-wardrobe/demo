@@ -5,6 +5,7 @@ import {
   SAVE_SIZE_UPDATER,
   FETCH_COLORPICKER_USER_DATA,
   FETCH_STYLE_PRESETS_DATA,
+  SAVE_STYLE_PRESETS_DATA,
   FETCH_STYLE_BALANCER_DATA
 } from '../routes/routerAction';
 
@@ -61,7 +62,6 @@ export const sizeUpdaterReducer = (state={
         }
       }
       return state;
-      break;
     case SAVE_SIZE_UPDATER:
       console.log(state);
       return state;
@@ -118,6 +118,9 @@ export const stylePresetsReducer = (state={
     case FETCH_STYLE_PRESETS_DATA:
       return state;
       break;
+    case SAVE_STYLE_PRESETS_DATA:
+      console.log(state);
+      return state;
     default:
       return state;
   }

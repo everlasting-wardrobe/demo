@@ -23,9 +23,9 @@ export const updateSizeUpdater =  (actionType, target) => ({
   target,
 });
 
-export const saveSizeUpdater = () => ({
+export const saveSizeUpdater = {
   type: SAVE_SIZE_UPDATER,
-});
+};
 
 
 //color picker Actions
@@ -39,10 +39,15 @@ export const fetchColorPickerUserData = {
 
 // Style Presets Actions:
 export const FETCH_STYLE_PRESETS_DATA = 'FETCH_STYLE_PRESETS_DATA';
+export const SAVE_STYLE_PRESETS_DATA = 'SAVE_STYLE_PRESETS_DATA';
 
 export const fetchStylePresetsData = {
   type: FETCH_STYLE_PRESETS_DATA,
 }
+
+export const saveStylePresetsData = {
+  type: SAVE_STYLE_PRESETS_DATA,
+};
 
 // Style balancer actions
 export const FETCH_STYLE_BALANCER_DATA = 'FETCH_STYLE_BALANCER_DATA';

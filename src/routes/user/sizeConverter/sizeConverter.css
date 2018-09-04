@@ -1,0 +1,134 @@
+.size-converter-container {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.size-converter-background {
+    width: 100%;
+    display: block;
+}
+.size-converter-press-button {
+    width: 29%;
+    position: absolute;
+    top: 57%;
+    left: 35%;
+    cursor: pointer;
+    z-index: 10;
+}
+.size-converter-press-button:active {
+    box-sizing: border-box;
+    padding: 1px;
+}
+.size-converter-tape {
+    width: 62%;
+    position: absolute;
+    top: 41%;
+    right: 19%;
+    z-index: 1;
+}
+.size-converter-left-wheel {
+    width: 38%;
+    position: absolute;
+    top: 15%;
+    left: 9%;
+    /* animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  */
+    z-index: 10;
+}
+.size-converter-left-highlight {
+    width: 6%;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    z-index: 10;
+}
+.size-converter-right-highlight {
+    width: 6%;
+    position: absolute;
+    top: 23.5%;
+    right: 23.5%;
+    z-index: 10;
+}
+.size-converter-left-shadow {
+    width: 26%;
+    position: absolute;
+    top: 43.5%;
+    right: 58.5%;
+    z-index: 5;
+}
+.size-converter-right-shadow {
+    width: 21%;
+    position: absolute;
+    top: 39%;
+    right: 16%;
+    z-index: 5;
+}
+.size-converter-right-wheel {
+    width: 37%;
+    position: absolute;
+    top: 15%;
+    right: 8%;
+    /* animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  */
+    z-index: 10;
+}
+.size-converter-wheel-spinning {
+    transform: rotate(-360deg);
+    transition: 1500ms;
+}
+.size-converter-step-buttons {
+    width: 36%;
+    position: absolute;
+    bottom: -1%;
+    left: 32%;
+    text-align: center;
+}
+
+.size-converter-step-buttons img {
+    width: 24%;
+    display: inline-block;
+    cursor: pointer;
+}
+.size-converter-step-buttons img:active {
+    box-sizing: border-box;
+    padding: 0.5%;
+}
+.size-converter-dropdown-list {
+    width: 26%;
+    position: absolute;
+    font-size: 1vw;
+}
+
+.size-converter-input-brand {
+    top: 64%;
+    left: 4%;
+}
+.size-converter-output-brand {
+    top: 64%;
+    right: 4%;
+}
+.size-converter-input-top {
+    top: 75%;
+    left: 4%;
+}
+.size-converter-output-top {
+    top: 75%;
+    right: 4%;
+}
+.size-converter-input-bottom {
+    top: 85.5%;
+    left: 4%;
+}
+.size-converter-output-bottom {
+    top: 85.5%;
+    right: 4%;
+}
+.button {
+    box-sizing: border-box;
+    border: 1px solid lightyellow;
+}

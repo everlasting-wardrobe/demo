@@ -47,7 +47,6 @@ class SizeTracker extends Component{
       onTopMinusClick: this.props.onTopMinusClick,
       onBottomAddClick: this.props.onBottomAddClick,
       onBottomMinusClick: this.props.onBottomMinusClick,
-      onSaveButtonClick: this.props.onSaveButtonClick,
     }
   }
 
@@ -76,7 +75,7 @@ class SizeTracker extends Component{
         <div className={"size-tracker-decoration"}>
             <img className={"size-tracker-headphones-jack"} src={HeadphoneJack} alt={""} />
             <img className={"size-tracker-save-button"} src={SaveButton} alt={""} 
-                 onClick={this.state.onSaveButtonClick}/>
+                 onClick={this.props.onSaveButtonClick}/>
             <div className={"size-tracker-knob-container"}>
               <img
                 className={"size-tracker-knob"}
@@ -132,7 +131,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(updateSizeUpdater('minus', 'bottom'));
     },
     onSaveButtonClick: () => {
-      dispatch(saveSizeUpdater());
+      dispatch(saveSizeUpdater);
     }
   }
 }
