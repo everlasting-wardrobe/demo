@@ -8,7 +8,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Navbar from '../landingPage/navbar';
+import Navbar from '../landingPage/navbar/navbar';
 
       // <HeaderMenuContainer color='black' />
 const User = () => {
