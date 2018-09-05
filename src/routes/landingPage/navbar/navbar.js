@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { NavTab, NavListWrapper, SocialListWrapper, Dropdown, EWNavLogo, TopBarWrapper, NavBar, ListContainer, RightLinks } from '../../components/globals/index';
-import Link from '../../components/link';
+import { EWNavLogo, 
+         TopBarWrapper, 
+         NavBar, 
+         ListContainer, 
+         RightLinks, 
+         BrandContainer } from './style';
+import { Dropdown, 
+         SocialListWrapper, 
+         NavListWrapper, 
+         NavTab, } from  '../../../components/globals/index';
+import Link from '../../../components/link';
+import { SocialInfoList } from '../../../components/links/links';
+import { BurgerButton } from '../../../components/buttons';
 
-import snapchat from '../../imgs/snapchatLogo.svg';
-import facebook from '../../imgs/facebookLogo.svg';
-import instgram from '../../imgs/instLogo.svg';
-import twitter from '../../imgs/twitterLogo.svg';
-import pinsterest from '../../imgs/pinterestLogo.svg';
-import EWLogo from '../../imgs/EWLogo.svg';
+// import snapchat from '../../imgs/snapchatLogo.svg';
+// import facebook from '../../imgs/facebookLogo.svg';
+// import instgram from '../../imgs/instLogo.svg';
+// import twitter from '../../imgs/twitterLogo.svg';
+// import pinsterest from '../../imgs/pinterestLogo.svg';
+import EWLogo from '../../../imgs/EWLogo.svg';
 
 const NavList = (props) => (
     <ListContainer flexInRow={props.inRow}>
@@ -23,32 +34,14 @@ const NavList = (props) => (
                 <NavTab to={""}>Log in</NavTab>
             </li>
         </NavListWrapper>
-        <SocialList />
+        <SocialListWrapper>
+            <SocialInfoList />
+        </SocialListWrapper>
     </ ListContainer>
 );
 
-const SocialList = () => (
-    <SocialListWrapper>
-        <Link to={""}>
-            <img src={snapchat} />
-        </Link>
-        <Link to={""}>
-            <img src={facebook} />
-        </Link>
-        <Link to={""}>
-            <img src={instgram} />
-        </Link>
-        <Link to={""}>
-            <img src={twitter} />
-        </Link>
-        <Link to={""}>
-            <img src={pinsterest} />
-        </Link>
-    </SocialListWrapper>
-);
-
 const BrandCombo = () => (
-    <div>
+    <BrandContainer>
         <EWNavLogo to={""}>
             <img src={EWLogo} />
         </EWNavLogo>
@@ -57,12 +50,12 @@ const BrandCombo = () => (
                 {"EverlastingWardrobe"}
             </h3>
         </EWNavLogo>
-    </div>
+    </BrandContainer>
 );
 
 class Navbar extends Component {
     state = {
-        closed: false,
+        closed: true,
     };
     
     dropdownToggler = () => {
@@ -75,14 +68,15 @@ class Navbar extends Component {
                 <TopBarWrapper>
                     <BrandCombo />
                     <RightLinks>
-                    <NavList inRow/>
+                    <NavList inRow />
                     </RightLinks>
-                    {/* <button onClick={this.dropdownToggler}>toggle</button> */}
+                    <BurgerButton width={"40px"}
+                                  hideAt={"1200px"}
+                                  clicked={this.dropdownToggler}/>
                 </TopBarWrapper>
                 <Dropdown collapse={this.state.closed}>
                     <NavList />
                 </Dropdown>
-                sign up box
             </NavBar>
         );
     }

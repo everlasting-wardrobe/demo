@@ -17,11 +17,60 @@ export const FlexRow = styled.div`
   align-items: center;
 `;
 
+export const FontFamily = new function(){
+  this.text = "'Lato', sans-serif";
+}();
+
+export const H1 = styled.h1`
+  margin: 0;
+  padding: 0;
+`;
+
+export const H2 = styled.h2`
+  font-family: ${FontFamily.text};
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+`;
+
+export const H3 = styled.h3`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
+
+export const H4 = styled.h4`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
+
+export const H5 = styled.h5`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
+
+export const H6 = styled.h6`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
 
 export const Img = styled.img`
   width: 100%;
   height: 100%;
 `;
+
+export const Input = styled.input`
+  font-family: ${FontFamily.text};
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+`
 
 export const EWColors = new function() {
   this.dorado = '#665350';
@@ -66,21 +115,26 @@ export const NavListWrapper = styled.ul`
   }
 `;
 
+export const P = styled.p`
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+`;
+
 export const SocialListWrapper = styled.div`
+  width: 250px;
   padding-left: 10px;
   margin: 5px 0;
-  display: flex;
-  flex-direction: row;
-   img {
-    max-height: 40px;
-    height: 28px;
-    opacity: .6;
-    margin-right: 7px;
-    transition: opacity .3s ease;
-  }
-  img:hover {
-    opacity: 1;
-  }
+`;
+
+export const Span = styled.span`
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  font-family: ${FontFamily.text};
 `;
 
 export const Dropdown = styled.div`
@@ -101,63 +155,6 @@ export const Dropdown = styled.div`
   }
 `;
 
-export const EWNavLogo = styled(Link)`
-  h3 {
-    display: inline-block;
-    font-family: 'Lato';
-    font-weight: 300;
-    font-size: 20px;
-    margin: 0;
-    color: #e75a50;
-  }
-`;
 
-export const TopBarWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 13px 5px;
-  font-size: 20px;
-  height: 100%;
-  border-bottom: 1px solid #e7e7e7;
-  a {
-    height: 100%;
-  }
-  a img {
-    height: 100%;
-  }
-  button {
-    float: right;
-  }
-`;
 
-export const NavBar = styled.div`
-  height: 66px;
-  background-color: #FCFCF5;
-`;
-export const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  ${props =>
-    props.flexInRow && css
-    ` 
-    flex-direction: row;
-    `}
-`;
 
-export const BrandName = styled.h3`
-  font-family: 'Lato';
-  font-size: 20px;
-  margin: 0;
-  color: #e75a50;
-  display: inline-block;
-  span {
-    font-weight: 400;
-  }
-`;
-
-export const RightLinks = styled.div`
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-`;

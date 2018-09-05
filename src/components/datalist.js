@@ -13,7 +13,6 @@ export default class Datalist extends Component{
       options: ''
     }
     this.inputHandler = this.inputHandler.bind(this);
-
   }
 
   //The reason it didn't work is the constuctor will only run once at the
