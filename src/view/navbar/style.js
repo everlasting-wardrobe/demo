@@ -21,21 +21,20 @@ export const TopBarWrapper = styled.div`
   justify-content: space-between;
   padding: 12px 5px;
   font-size: 20px;
-  height: 100%;
+  height: 76px;
   border-bottom: 1px solid #e7e7e7;
   button {
     float: right;
   }
-`;
-
-export const NavBar = styled.div`
-  height: 76px;
-  background-color: #FCFCF5;
-  -webkit-transition: height 0.2s ease-out;
-  transition: height 0.2s ease-out;
   @media (min-width: 1200px) {
     height: 94px;
   }
+`;
+
+export const NavBar = styled.div`
+  background-color: #FCFCF5;
+  -webkit-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
 `;
 export const ListContainer = styled.div`
   height: 100%;
