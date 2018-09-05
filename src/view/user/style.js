@@ -65,3 +65,34 @@ export const SubmitInput = styled(FormInput)`
   color: white;
   background-color: ${EWColors.burntSienna};
 `
+
+
+export const HowItWorkWrapper = styled.div`
+  background-color: ${EWColors.background};
+`
+
+export const IframeWrapper = styled.div`
+  width: 60%;
+  position: relative;
+  margin: auto;
+  margin-top: 60px;
+  @media (max-width: 800px){
+    width: 80%;
+  }
+  @media (max-width: 500px){
+    width: 100%;
+  }
+`
+
+export const IframePlaceholder = styled.div`
+  width: 100%;
+  padding-bottom: 56.2%;
+`
+
+export const Iframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+`

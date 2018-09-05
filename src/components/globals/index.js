@@ -81,6 +81,7 @@ export const EWColors = new function() {
   this.akaroa = '#d7c2a4';
   this.satinLinen = '#eae7dc';
   this.naturalGray = '#8e8d8a';
+  this.background = "#fcfcf5";
 } ();
 
 export const EWFF = {
@@ -153,12 +154,8 @@ export const Dropdown = styled.div`
     `
       max-height: 0;
     `}
-  
+
   @media (min-width: 1200px) {
     display: none;
   }
 `;
-
-
-
-
