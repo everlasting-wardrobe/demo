@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Link from '../../../components/link';
+import Link from '../../components/link';
 
 export const EWNavLogo = styled(Link)`
   h3 {
