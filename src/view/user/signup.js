@@ -1,30 +1,72 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Footer from '../footer/footer';
 import {UnderlinedInput} from '../../components/input';
 import {
+  BackgroundWrapper,
+  FormBoarder,
+  Title,
   InputWrapper,
-  FormWrapper
+  FormWrapper,
+  Form,
+  FormInput,
+  SubmitInput
 } from './style';
 import {InputBoarderWrapper} from '../../components/wrapper';
 
-export const Signup = ()=>(
-  <div>
-  <FormWrapper>
-  <InputBoarderWrapper>
-    <form style={{padding: "60px 0 60px 0"}}>
-      <InputWrapper>
-        <UnderlinedInput autoFocus={"autofocus"} placeholder={"email address"}/>
-      </InputWrapper>
-      <InputWrapper>
-        <UnderlinedInput placeholder={"password"}/>
-      </InputWrapper>
-      <InputWrapper>
-        <UnderlinedInput placeholder={"re-enter password"}/>
-      </InputWrapper>
-    </form>
-  </InputBoarderWrapper>
-  </FormWrapper>
-    <Footer />
-  </div>
+export class Signup extends Component{
+  constructor(props){
+    super(props);
+  }
 
-)
+
+  render(){
+    return (
+      <BackgroundWrapper>
+        <FormWrapper>
+          <FormBoarder>
+            <Title>
+              {"Sign up"}
+            </Title>
+            <Form
+              action="/d/uers"
+              accept-charset="UTF-8"
+              method="post"
+              >
+              <InputWrapper>
+                <FormInput
+                  type={"email"}
+                  required
+                  autoFocus={"autofocus"}
+                  placeholder={"email address"}
+                />
+              </InputWrapper>
+              <InputWrapper>
+                <FormInput
+                  required
+                  minLength={6}
+                  type={"password"}
+                  placeholder={"password"}
+                />
+              </InputWrapper>
+              <InputWrapper>
+                <FormInput
+                  required
+                  minLength={6}
+                  type={"password"}
+                  placeholder={"re-enter password"}
+                />
+              </InputWrapper>
+              <InputWrapper>
+                <SubmitInput
+                  type="submit"
+                  value="Sign up"
+                />
+              </InputWrapper>
+            </Form>
+          </FormBoarder>
+        </FormWrapper>
+        <Footer />
+      </BackgroundWrapper>
+    )
+  }
+}
