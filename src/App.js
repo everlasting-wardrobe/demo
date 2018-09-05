@@ -8,7 +8,7 @@ import {
 import Loadable from 'react-loadable';
 import {asyncLoadable} from './util/util';
 import {Spinner} from './routes/user/studio/util/util';
-import {Signup} from './view/user/signup';
+import UserManagement from './view/user/';
 
 const Homepage = asyncLoadable(Loadable({
   loader: ()=> import('./routes/homepage'),
@@ -34,7 +34,7 @@ export default class App extends Component {
               <Route exact path='/' component={Homepage} />
               <Route path='/service' component={Service} />
               <Route path='/user' component={User} />
-              <Route path={'/test/test'} component={Signup} />
+              <Route path={'/test/test'} component={UserManagement} />
             </Switch>
           </Router>
       </div>

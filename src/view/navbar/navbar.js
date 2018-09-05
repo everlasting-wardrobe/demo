@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { EWNavLogo, 
-         TopBarWrapper, 
-         NavBar, 
-         ListContainer, 
-         RightLinks, 
+import { EWNavLogo,
+         TopBarWrapper,
+         NavBar,
+         ListContainer,
+         RightLinks,
          BrandContainer } from './style';
-import { Dropdown, 
-         SocialListWrapper, 
-         NavListWrapper, 
+import { Dropdown,
+         SocialListWrapper,
+         NavListWrapper,
          NavTab, } from  '../../components/globals/index';
 import Link from '../../components/link';
 import { SocialInfoList } from '../../components/links/links';
 import { BurgerButton } from '../../components/buttons';
 
-// import snapchat from '../../imgs/snapchatLogo.svg';
-// import facebook from '../../imgs/facebookLogo.svg';
-// import instgram from '../../imgs/instLogo.svg';
-// import twitter from '../../imgs/twitterLogo.svg';
-// import pinsterest from '../../imgs/pinterestLogo.svg';
 import EWLogo from '../../imgs/EWLogo.svg';
 
 const NavList = (props) => (
@@ -57,7 +52,7 @@ class Navbar extends Component {
     state = {
         closed: true,
     };
-    
+
     dropdownToggler = () => {
         const oldState = this.state.closed;
         this.setState({closed: !oldState});

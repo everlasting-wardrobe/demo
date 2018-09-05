@@ -1,5 +1,20 @@
 import styled, {css} from 'styled-components';
 
+
+const baseButton = css`
+  display: flex;
+  flex: none;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  word-break: keep-all;
+  cursor: pointer;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+`;
+
 export const BurgerSlice = styled.span`
     background-color: #888;
     display: block;
@@ -16,7 +31,7 @@ export const BurgerWrapper = styled.div`
     margin: 10px 10px;
     padding: 5px 9px;
     cursor: pointer;
-    &:hover { 
+    &:hover {
         background-color: #ddd;
     }
 

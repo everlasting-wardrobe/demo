@@ -11,7 +11,7 @@ import {Span} from '../../components/globals';
 export const FooterWrapper = styled.footer`
   padding-top: 60px;
   display: block;
-  background-color: rgb(255, 255, 255);
+  background-color: ${EWColors.background};
 `
 export const ContentWrapper = styled.div`
   margin: 0 auto 0 auto;
