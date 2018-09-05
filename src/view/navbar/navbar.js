@@ -9,17 +9,17 @@ import { EWNavLogo,
 import { Dropdown, 
          SocialListWrapper, 
          NavListWrapper, 
-         NavTab, } from  '../../../components/globals/index';
-import Link from '../../../components/link';
-import { SocialInfoList } from '../../../components/links/links';
-import { BurgerButton } from '../../../components/buttons';
+         NavTab, } from  '../../components/globals/index';
+import Link from '../../components/link';
+import { SocialInfoList } from '../../components/links/links';
+import { BurgerButton } from '../../components/buttons';
 
 // import snapchat from '../../imgs/snapchatLogo.svg';
 // import facebook from '../../imgs/facebookLogo.svg';
 // import instgram from '../../imgs/instLogo.svg';
 // import twitter from '../../imgs/twitterLogo.svg';
 // import pinsterest from '../../imgs/pinterestLogo.svg';
-import EWLogo from '../../../imgs/EWLogo.svg';
+import EWLogo from '../../imgs/EWLogo.svg';
 
 const NavList = (props) => (
     <ListContainer flexInRow={props.inRow}>
