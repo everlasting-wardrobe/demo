@@ -31,7 +31,7 @@
   }
 }
 @media screen and (max-width:1199px) {
-  
+
   .feedback-notation :nth-child(2){
     display: none;
   }
@@ -39,11 +39,18 @@
 #update-rating{
   position: absolute;
   top: 100%;
-  margin-top: 2%;
+  margin-top: 1.5%;
   white-space: nowrap;
-  margin-left: 60%;
+  margin-left: 65%;
   font-size: 1vw;
-
+}
+#switch-comment{
+  position: absolute;
+  top: 100%;
+  margin-top: 1.5%;
+  white-space: nowrap;
+  margin-left: 7%;
+  font-size: 1vw;
 }
 @media screen and (max-width:414px) {
   .item-feedback-slider-wrapper{
@@ -57,4 +64,29 @@
   .feedback-notation div{
     font-size: 2em;
   }
+}
+textarea{
+  margin-left: 2vw;
+  margin-top: 1vw;
+  width: 30vw;
+  height: 8vw;
+  font-size: 1.5em;
+  font-family: Lato;
+}
+textarea::-webkit-input-placeholder {
+  color: pink;
+  font-size: 2.5vw;
+}
+.commentSection{
+  position: relative;
+}
+.switchToRating{
+  position: absolute;
+  top: 9vw;
+  left:2vw;
+}
+#SaveComment{
+  position: absolute;
+  top:9vw;
+  left:26vw;
 }

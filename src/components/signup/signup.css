@@ -1,0 +1,69 @@
+@media (max-width: 991px) and (min-width: 768px){
+  .signup-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('Social Good Image 1.jpg');
+    background-size: 100% 100%;
+    height: 80vw;
+    width: 100vw;
+  }
+  .signup-box-wrapper {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 40px;
+    padding-top: 10px;
+  }
+
+}
+@media (max-width: 1199px) and (min-width: 992px){
+  .signup-wrapper{
+    width: 100vw;
+    height: 48vw;
+    background-attachment: fixed;
+  }
+  .signup-box-wrapper {
+      margin-left: 33%;
+      margin-right: 33%;
+      padding-bottom: 40px;
+      padding-top: 10px;
+  }
+}
+@media (min-width: 1200px){
+  .signup-wrapper{
+    width: 100vw;
+    height: 48vw;
+    background-attachment: fixed;
+  }
+  .signup-box-wrapper {
+      margin-left: 33%;
+      margin-right: 33%;
+      padding-bottom: 40px;
+      padding-top: 10px;
+  }
+}
+.signup-wrapper{
+  background-image: url('Social Good Image 1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-top: calc((80vw - 398px)/2);
+}
+.signup-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url('Signup_Waitlist_Purcase Box Graphic.png');
+  background-size: 100% 100%;
+}
+.signup-lable{
+    font-family: "Handlee", cursive;
+    color: #e75a50;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 32px;
+}
+.Login-link{
+
+  color: #e75a50;
+}

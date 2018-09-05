@@ -1,4 +1,4 @@
-import styled from 'styled-componnets';
+import styled from 'styled-components';
 
 
 
@@ -21,3 +21,16 @@ export const Img = styled.img`
   width: 100%;
   height: 100%;
 `
+export const Input = styled.input`
+font-family: inherit;
+font-size: inherit;
+line-height: inherit;
+display: inline-block;
+background-color: transparent;
+border: none;
+outline: none;
+border-bottom: 1px solid #c1c1c1;
+&:focus {
+  border-bottom: 2px solid #e75a50;
+}
+`;

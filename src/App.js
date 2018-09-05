@@ -4,6 +4,7 @@ import Service from './routes/service'
 import Homepage from './routes/homepage'
 import User from './routes/user/user';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import SignUp from './components/signup/signup';
 
 export default class App extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class App extends Component {
               <Route exact path='/' component={Homepage} />
               <Route path='/service' component={Service} />
               <Route path='/user' component={User} />
+              <Route path='/signup' component={SignUp} />
             </Switch>
           </Router>
       </div>

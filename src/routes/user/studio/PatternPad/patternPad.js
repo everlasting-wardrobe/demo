@@ -50,50 +50,62 @@ class PatternPannel extends Component{
       fabric: {
         prefer : 1,
         imgsrc: [Fabric0, Fabric1, Fabric2],
+        info : "fabric",
       },
       graphics:{
         prefer : 1,
         imgsrc: [Graphics0, Graphics1, Graphics2],
+        info : "graphics",
       },
       logos: {
         prefer : 1,
         imgsrc: [Logos0, Logos1, Logos2],
+        info : "logos",
       },
       sayings: {
         prefer : 1,
         imgsrc: [Sayings0, Sayings1, Sayings2],
+        info : "sayings",
       },
       solids: {
         prefer : 1,
         imgsrc: [Solids0, Solids1, Solids2],
+        info : "solids",
       },
       heather: {
         prefer : 1,
         imgsrc: [Heather0, Heather1, Heather2],
+        info : "heather",
       },
       animal:{
         prefer : 1,
         imgsrc: [Animal0, Animal1, Animal2],
+        info : "animal",
       },
       dots:{
         prefer : 1,
         imgsrc: [Dots0, Dots1, Dots2],
+        info : "dots",
       },
       check:{
         prefer : 1,
         imgsrc: [Check0, Check1, Check2],
+        info : "check",
       },
       stripes:{
         prefer : 1,
         imgsrc: [Stripes0, Stripes1, Stripes2],
+        info : "stripes",
       },
       scales:{
         prefer : 1,
         imgsrc: [Scales0, Scales1, Scales2],
+        info : "scales",
       },
       prints:{
         prefer : 1,
         imgsrc: [Prints0, Prints1, Prints2],
+        info : "prints",
       },
       width : this.props.width|| 1,
     }
@@ -102,21 +114,32 @@ class PatternPannel extends Component{
     return this.state.pattern.map((pattern, i) =>{
       return(
           <div className={'pattern-icon-wrapper'} key={i}>
-            <img src={this.patternImgsrc(pattern)} onClick={()=>this.patternOnClick(pattern)} alt="${pattern}" className="patternImg" />
+            <img src={this.patternImgsrc(pattern)} onClick={()=>this.patternOnClick(pattern)} alt="${pattern}" className="patternImg"
+             title={this.state[pattern].info}/>
           </div>
       );
     });
   }
 
   patternOnClick = (pattern) =>{
-    let patternST = Object.assign({}, this.state[pattern]);
-    if(patternST.prefer === 2){
-      patternST.prefer = 0;
-      this.setState({[pattern] :patternST});
-    }else{
-      patternST.prefer = patternST.prefer + 1;
-      this.setState({[pattern] :patternST});
-    }
+    setTimeout(()=>{
+      let patternST = Object.assign({}, this.state[pattern]);
+      if(patternST.prefer === 2){
+        patternST.prefer = 0;
+        this.setState({[pattern] :patternST});
+      }else{
+        patternST.prefer = patternST.prefer + 1;
+        this.setState({[pattern] :patternST});
+      }
+    },10);
+    // let patternST = Object.assign({}, this.state[pattern]);
+    // if(patternST.prefer === 2){
+    //   patternST.prefer = 0;
+    //   this.setState({[pattern] :patternST});
+    // }else{
+    //   patternST.prefer = patternST.prefer + 1;
+    //   this.setState({[pattern] :patternST});
+    // }
     // console.log(this.state[pattern]);
     // console.log(this.state[pattern].prefer);
   }

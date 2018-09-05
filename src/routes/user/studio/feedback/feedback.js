@@ -9,7 +9,9 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import ErrorBoundary from './errorBoundary';
 import FeedbackBackground from './boxReviewBackground.jpg';
-
+import StyleFeedback from './Style_Feedback.png';
+import RatingAFAM from './ratingAFAM'
+import FitFeedback from './Fit_Feedback.png';
 
 export default class Feedback extends Component{
   constructor(props){
