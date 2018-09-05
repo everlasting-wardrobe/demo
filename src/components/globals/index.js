@@ -103,12 +103,15 @@ export const NavTab = styled(Link)`
   }
 `;
 
-export const NavList = styled.ul`
-  width: 100%;
+export const NavListWrapper = styled.ul`
   list-style: none;
-  float: left;
   > li {
-    display: block;
+    ${props =>
+      props.floated && css
+      `
+        width: auto;
+        float: left;
+      `}
   }
 `;
 
@@ -119,21 +122,10 @@ export const P = styled.p`
   padding: 0;
 `;
 
-export const SocialList = styled.div`
-  display: flex;
+export const SocialListWrapper = styled.div`
+  width: 250px;
   padding-left: 10px;
-  margin-bottom: 10px;
-   img {
-    max-height: 40px;
-    height: 28px;
-    width: auto;
-    opacity: .6;
-    margin-right: 7px;
-    transition: opacity .3s ease;
-  }
-  img:hover {
-    opacity: 1;
-  }
+  margin: 5px 0;
 `;
 
 export const Span = styled.span`
@@ -157,26 +149,12 @@ export const Dropdown = styled.div`
     `
       max-height: 0;
     `}
-`;
-
-export const EWNavLogoImg = styled(Link)`
-  display: inline-block;
-`;
-
-export const NavBrand = styled.div`
-  padding: 13px 5px;
-  font-size: 20px;
-  height: 100%;
-  width: auto;
-  a {
-    height: 100%;
-  }
-  a img {
-    height: 100%;
+  
+  @media (min-width: 1200px) {
+    display: none;
   }
 `;
 
-export const NavBar = styled.div`
-  height: 66px;
-  background-color: #FCFCF5;
-`;
+
+
+
