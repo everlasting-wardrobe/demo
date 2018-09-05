@@ -5,7 +5,7 @@ import {
 
 export const SocialInfoImg = styled(Img)`
   height: 40px;
-  width: 40px;
+  width: auto;
   opacity: 0.6;
   transition: opacity .3s ease;
   :hover {
