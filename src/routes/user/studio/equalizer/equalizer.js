@@ -4,6 +4,7 @@ import AMFM from './amfm';
 import "./equalizer.css";
 import ResetButton from './ResetButton.png';
 import SaveButton from './SaveButton.png';
+import { saveStylePresetsData } from '../../../routerAction';
 import {connect} from 'react-redux';
 import {propsFilter} from '../util/util';
 import {updataMixingBoardData} from '../../../routerAction';
@@ -116,7 +117,7 @@ class Equalizer extends Component{
             </div>
           </div>
           <img className={"equalizer-reset-button"} src={ResetButton} alt={"RESET"} onClick={this.onAmfmResetClick}/>
-          <img className={"equalizer-save-button"} src={SaveButton} alt={"SAVE"}/>
+          <img className={"equalizer-save-button"} src={SaveButton} alt={"SAVE"} onClick={this.props.onEqualizerSaveButtonClick}/>
           <div className={'controller-container-wrapper'}>
             <div className={"controller-container"}>
               {this.renderControllers()}
@@ -148,7 +149,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Equalizer);

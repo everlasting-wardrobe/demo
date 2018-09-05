@@ -40,6 +40,6 @@ export const updateSizeUpdater =  (actionType, target) => ({
   target,
 });
 
-export const saveSizeUpdater = () => ({
+export const saveSizeUpdater = {
   type: SAVE_SIZE_UPDATER,
-});
+};

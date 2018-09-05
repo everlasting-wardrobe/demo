@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import './App.css'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import {asyncLoadable} from './util/util';
 import {Spinner} from './routes/user/studio/util/util';
+import {Signup} from './view/user/signup';
 
 const Homepage = asyncLoadable(Loadable({
   loader: ()=> import('./routes/homepage'),
@@ -29,6 +34,7 @@ export default class App extends Component {
               <Route exact path='/' component={Homepage} />
               <Route path='/service' component={Service} />
               <Route path='/user' component={User} />
+              <Route path={'/test/test'} component={Signup} />
             </Switch>
           </Router>
       </div>
