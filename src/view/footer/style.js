@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   H2,
   EWColors,
+  EWFF,
   P
 } from '../../components/globals'
 import {NoneStyleLink} from '../../components/link';
@@ -28,7 +29,7 @@ export const ContentWrapper = styled.div`
 export const FooterTitle = styled(H2)`
   color: ${EWColors.naturalGray};
   text-align: center;
-  font-family: "Handlee", cursive;
+  font-family: ${EWFF.subtitle};
   margin: 30px 0 60px 0;
 `
 
@@ -38,6 +39,9 @@ export const SocialInfoWrapper = styled.ul`
   }
   @media (min-width: 480px) {
     width: 60%;
+  }
+  @media (max-width: 479px){
+    width: 80%;
   }
   margin: auto;
 `
@@ -66,6 +70,9 @@ export const CopyRightPanel = styled.section`
   display: flex-left;
   margin: auto;
   width: 50%;
+  @media (max-width: 600px){
+    width: 80%;
+  }
 `
 export const CopyRightP = styled(P)`
   text-align: center;

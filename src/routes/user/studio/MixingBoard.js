@@ -21,7 +21,7 @@ class MixingBoard extends Component{
     axios('/api/v1/boxes/users/preference/leeweiss81@gmail.com', {
       method:'get',
       headers: {
-        'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzYwNzc0MzgsImV4cCI6MTUzNjA5OTAzOH0.bUKw1sHeeRbiyh9pgl-GHT_nECfNszv7Bc8Clkd8V6c',
+        'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzYxNjI5NjksImV4cCI6MTUzNjE4NDU2OX0.mfjZ3ivI8k8u-K_XempS6DHxJJZKO8c0LghgnGZ0V1s',
         'Access-Control-Allow-Origin': 'http://localhost:3000'
       }
     }).then(response => {

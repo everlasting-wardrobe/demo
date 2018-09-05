@@ -83,6 +83,10 @@ export const EWColors = new function() {
   this.naturalGray = '#8e8d8a';
 } ();
 
+export const EWFF = {
+  subtitle: "'Handlee', cursive",
+}
+
 export const NavTab = styled(Link)`
   color: #777;
   line-height: 24px;
