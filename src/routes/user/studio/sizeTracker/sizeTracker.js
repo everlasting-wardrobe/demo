@@ -73,10 +73,20 @@ class SizeTracker extends Component{
             width={this.state.width}/>
         </div>
         <div className={"size-tracker-decoration"}>
-            <img className={"size-tracker-headphones-jack"} src={HeadphoneJack} alt={""} />
-            <img className={"size-tracker-save-button"} src={SaveButton} alt={""} 
-                 onClick={this.props.onSaveButtonClick}/>
-            <div className={"size-tracker-knob-container"}>
+            <img
+              className={"size-tracker-headphones-jack"}
+              src={HeadphoneJack}
+              alt={""}
+            />
+            <img
+              className={"size-tracker-save-button"}
+              src={SaveButton}
+              alt={""}
+              onClick={this.state.onSaveButtonClick}
+            />
+            <div
+              className={"size-tracker-knob-container"}
+            >
               <img
                 className={"size-tracker-knob"}
                 src={KnobHigh}
@@ -108,10 +118,10 @@ SizeTracker.defaultProps = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const sizeUpdaterData = state.sizeUpdaterReducer;
+  const sizeUpdaterData = state.mixingBoardReducer;
   return ({
-    topSize: sizeUpdaterData.sizeTrackerRange[sizeUpdaterData.topSizeIndex],
-    bottomSize: sizeUpdaterData.sizeTrackerRange[sizeUpdaterData.bottomSizeIndex],
+    topSize: sizeUpdaterData.top,
+    bottomSize: sizeUpdaterData.bottom,
     ...ownProps,
   });
 }

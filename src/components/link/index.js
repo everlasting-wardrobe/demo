@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {Link, withRouter } from 'react-router-dom';
 import {createLocation} from 'history';
 import LINK_PROPS from './props';
@@ -15,7 +16,7 @@ const propsFilter = (props) => {
 }
 
 
-export default withRouter(
+const BasicLink =  withRouter(
   (props) => {
     return(
       <Link
@@ -35,3 +36,15 @@ export default withRouter(
     )
   }
 )
+
+export default BasicLink;
+
+export const NoneStyleLink = styled(BasicLink)`
+  text-decoration: none;
+  &:link, &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+`

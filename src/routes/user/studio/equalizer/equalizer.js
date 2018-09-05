@@ -6,14 +6,18 @@ import ResetButton from './ResetButton.png';
 import SaveButton from './SaveButton.png';
 import { saveStylePresetsData } from '../../../routerAction';
 import {connect} from 'react-redux';
+import {propsFilter} from '../util/util';
+import {updataMixingBoardData} from '../../../routerAction';
 
+
+const targetProps = ['jazz', 'pop', 'indie', 'funk', 'jockjams', 'hiphop'];
 
 class Equalizer extends Component{
   constructor(props){
     super(props);
-    const {jazz, pop, indie, funk, jockJams, hipHop, totalPoints, pointBoundary} = this.props;
+    const {jazz, pop, indie, funk, jockjams, hiphop, totalPoints, pointBoundary} = this.props;
     this.state = {
-      genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
+      genres : ['jazz', 'pop', 'indie', 'funk', 'jockjams', 'hiphop'],
       colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
       totalPoints: totalPoints || 0,
       pointBoundary: pointBoundary || 10,
@@ -21,8 +25,8 @@ class Equalizer extends Component{
       pop: pop || 0,
       indie: indie || 0,
       funk: funk || 0,
-      jockJams: jockJams || 0,
-      hipHop: hipHop || 0,
+      jockjams: jockjams || 0,
+      hiphop: hiphop || 0,
       width: this.props.width || 1,
     }
     this.onAmfmResetClick = this.onAmfmResetClick.bind(this);
@@ -32,20 +36,33 @@ class Equalizer extends Component{
   // which will change corresponding genre's value.
   setValue(genre, action){
     // console.log(`${genre}  ${action}`);
+    let curState;
     if(action === 'plus'){
       if(this.state[genre] < 10 && this.state.totalPoints < 30){
         this.setState((prevState)=> {
-          return {[genre]: prevState[genre] + 1, totalPoints: prevState.totalPoints + 1}
+          curState = {[genre]: prevState[genre] + 1};
+          if(this.props.saveToRedux){
+            this.props.saveToRedux(curState);
+          }
+          return {[genre]: prevState[genre] + 1, totalPoints: prevState.totalPoints + 1};
         });
       }
     }
     if(action === 'minus'){
       if(this.state[genre] > 0 && this.state.totalPoints > 0){
         this.setState((prevState)=> {
-          return {[genre]: prevState[genre] - 1, totalPoints: prevState.totalPoints - 1}
+          curState = {[genre]: prevState[genre] - 1};
+          if(this.props.saveToRedux){
+            this.props.saveToRedux(curState);
+          }
+          return {[genre]: prevState[genre] - 1, totalPoints: prevState.totalPoints - 1};
         });
       }
     }
+  }
+
+  componentWillReceiveProps = (props) => {
+    this.setState({...props});
   }
 
   // construct event listener function for controller corresponding to genre and action.
@@ -83,8 +100,15 @@ class Equalizer extends Component{
 
   render(){
     return(
-      <div className={"equalizer"} style={{width: `${this.state.width * 100}vw`}}>
-        <h3 style={{fontSize: `${this.state.width * 10}vw`}}>{"-SYTLE PRESETS-"}</h3>
+      <div
+        className={"equalizer"}
+        style={{width: `${this.state.width * 100}vw`}}
+      >
+        <h3
+          style={{fontSize: `${this.state.width * 10}vw`}}
+        >
+          {"-SYTLE PRESETS-"}
+        </h3>
         <div className={"equalizer-container"}>
           <div className={'amfm-wrapper'}>
             <div className={'amfm-inner-wrapper'}>
@@ -107,18 +131,24 @@ class Equalizer extends Component{
 
 
 const mapStateToProps = (state, ownProps) => {
+  const propsFromReducer = propsFilter(targetProps, state.mixingBoardReducer);
+  const totalPoints = Object.keys(propsFromReducer)
+                            .reduce((sum, key)=>{return sum + propsFromReducer[key]}, 0);
   return {
-    ...state.stylePresetsReducer,
+    ...propsFromReducer,
     ...ownProps,
+    totalPoints: totalPoints
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onEqualizerSaveButtonClick: () => dispatch(saveStylePresetsData),
+    saveToRedux : (data) => {
+      const action = updataMixingBoardData(data);
+      dispatch(action);
+    }
   }
 }
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Equalizer);

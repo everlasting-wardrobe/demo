@@ -17,11 +17,60 @@ export const FlexRow = styled.div`
   align-items: center;
 `;
 
+export const FontFamily = new function(){
+  this.text = "'Lato', sans-serif";
+}();
+
+export const H1 = styled.h1`
+  margin: 0;
+  padding: 0;
+`;
+
+export const H2 = styled.h2`
+  font-family: ${FontFamily.text};
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+`;
+
+export const H3 = styled.h3`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
+
+export const H4 = styled.h4`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
+
+export const H5 = styled.h5`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
+
+export const H6 = styled.h6`
+  font-family: ${FontFamily.text};
+  margin: 0;
+  padding: 0;
+`;
 
 export const Img = styled.img`
   width: 100%;
   height: 100%;
 `;
+
+export const Input = styled.input`
+  font-family: ${FontFamily.text};
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+`
 
 export const EWColors = new function() {
   this.dorado = '#665350';
@@ -63,6 +112,13 @@ export const NavList = styled.ul`
   }
 `;
 
+export const P = styled.p`
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+`;
+
 export const SocialList = styled.div`
   display: flex;
   padding-left: 10px;
@@ -78,6 +134,15 @@ export const SocialList = styled.div`
   img:hover {
     opacity: 1;
   }
+`;
+
+export const Span = styled.span`
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  font-family: ${FontFamily.text};
 `;
 
 export const Dropdown = styled.div`
