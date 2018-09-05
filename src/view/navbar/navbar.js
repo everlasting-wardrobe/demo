@@ -64,6 +64,7 @@ class Navbar extends Component {
     }
     render() {
         return (
+            <div>
             <NavBar>
                 <TopBarWrapper>
                     <BrandCombo />
@@ -78,6 +79,8 @@ class Navbar extends Component {
                     <NavList />
                 </Dropdown>
             </NavBar>
+            cfghjo
+            </div>
         );
     }
 }
