@@ -5,6 +5,7 @@ import boxReviewDataGenerator from './feedback/boxReviewTestData';
 import SizeTracker from './sizeTracker/sizeTracker';
 import NextWardrobeTracker from './nextWardrobeTracker/nextWardrobeTracker';
 import StyleBalancer from './styleBalancer/styleBalancerContainer';
+import {PatternPannelWithBackground} from './PatternPad/patternPad';
 import './studio.css';
 import TopPanel from './topPanel/topPanel';
 import {connect} from 'react-redux';
@@ -49,6 +50,9 @@ class MixingBoard extends Component{
         </div>
         <div className={"style-balancer-wrapper"}>
           <StyleBalancer width={0.18}/>
+        </div>
+        <div className={"pattern-Pad-wrapper"}>
+          <PatternPannelWithBackground width={0.4}/>
         </div>
       </div>
     )

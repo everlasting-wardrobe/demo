@@ -36,18 +36,21 @@
 
   .item-display-rating{
     width: 45%;
-    margin-top: 7%;
-    margin-left: 40.5%;
+    margin-top: 6.7%;
+    margin-left: 40.2%;
     position: absolute;
     height: 50%;
   }
 
   .item-display-wrapper{
-    height: 60%;
+    height: 50%;
   }
 
   .feedback-rating{
-    margin-top: 3%;
+    margin-top: 1%;
+    background-image: url(Feedback_PopUp_Background.png);
+    height: 55%;
+    background-size: 100% 100%;
   }
 
 }
@@ -90,19 +93,20 @@
 
   .item-display-rating{
     width: 45%;
-    margin-top: 7%;
-    margin-left: 40.5%;
+    margin-top: 6.7%;
+    margin-left: 40.2%;
     position: absolute;
     height: 50%;
   }
 
   .item-display-wrapper{
-    height: 60%;
+    height: 50%;
   }
 
   .feedback-rating{
-    padding-top: 3%;
-    height: 40%;
+    margin-top: 1%;
+    height: 55%;
+
   }
 }
 @media screen and (max-width: 414px){
@@ -118,5 +122,10 @@
   .feedback-background-wrapper{
     display: none;
   }
+
+}
+.Ratingbar-wrapper{
+  display: flex;
+  flex-direction: row;
 
 }
