@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import {
   Input,
-  EWColors
+  EWColors,
+  EWText
 } from '../globals';
 
 export const UnderlinedInput = styled(Input)`
+  ${EWText};
   display: inline-block;
   background-color: transparent;
   border-bottom: 1px solid ${EWColors.naturalGray};

@@ -11,15 +11,17 @@ import {
   FormInput,
   SubmitInput,
   CheckBox,
-  ForgotLinks,
+  NavLink,
 } from './style';
+import {Label} from '../../components/globals';
 import {InputBoarderWrapper} from '../../components/wrapper';
 import Link from '../../components/link';
+import {WORKING_PATH} from '../../api/constants';
 
 const RememberMe = () => (
     <CheckBox>
         <input type={"checkbox"} name={"rememberme"} id={"rememberme"}/>
-        <label for={"rememberme"}>remember me</label>
+        <Label htmlFor={"rememberme"}>remember me</Label>
     </CheckBox>
 );
 
@@ -28,13 +30,8 @@ export class Login extends Component{
     super(props);
   }
 
-  
+
   render(){
-
-    const backupLinks = (
-        <ForgotLinks to={""}>Sign up</ForgotLinks>
-    );
-
     return (
       <BackgroundWrapper>
         <FormWrapper>
@@ -70,12 +67,11 @@ export class Login extends Component{
                   value="Log in"
                 />
               </InputWrapper>
-              <ForgotLinks to={""}>Sign up</ForgotLinks>
-              <ForgotLinks to={""}>Forgot your password?</ForgotLinks>
+              <NavLink to={WORKING_PATH + "signup"}>Sign up</NavLink>
+              <NavLink to={WORKING_PATH + "password/new"}>Forgot your password?</NavLink>
             </Form>
           </FormBoarder>
         </FormWrapper>
-        <Footer />
       </BackgroundWrapper>
     )
   }

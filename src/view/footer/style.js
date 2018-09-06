@@ -3,15 +3,16 @@ import {
   H2,
   EWColors,
   EWFF,
-  P
+  P,
+  Span
 } from '../../components/globals'
 import {NoneStyleLink} from '../../components/link';
-import {Span} from '../../components/globals';
 
 export const FooterWrapper = styled.footer`
   padding-top: 60px;
   display: block;
   background-color: ${EWColors.background};
+  padding-bottom: 45px;
 `
 export const ContentWrapper = styled.div`
   margin: 0 auto 0 auto;
@@ -34,6 +35,7 @@ export const FooterTitle = styled(H2)`
 `
 
 export const SocialInfoWrapper = styled.ul`
+  transition: height 0.2s ease-out;
   @media (min-width: 768px) {
     width: 40%;
   }
@@ -74,6 +76,14 @@ export const CopyRightPanel = styled.section`
     width: 80%;
   }
 `
+
+export const CopyRightLink = styled(NoneStyleLink)`
+  color: ${EWColors.naturalGray};
+  :hover{
+    text-decoration: none;
+  }
+`
+
 export const CopyRightP = styled(P)`
   text-align: center;
 `
