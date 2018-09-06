@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components';
 import Link from '../link';
 
-
+export const EWFF = {
+  subtitle: "'Handlee', cursive",
+  text : "'Lato', sans-serif"
+}
 
 export const FlexCol = styled.div`
   display: flex;
@@ -17,9 +20,9 @@ export const FlexRow = styled.div`
   align-items: center;
 `;
 
-export const FontFamily = new function(){
-  this.text = "'Lato', sans-serif";
-}();
+// export const FontFamily = new function(){
+//   this.text = "'Lato', sans-serif";
+// }();
 
 export const H1 = styled.h1`
   margin: 0;
@@ -27,7 +30,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
   font-size: 2rem;
   font-weight: 400;
   margin: 0;
@@ -35,25 +38,25 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
   margin: 0;
   padding: 0;
 `;
 
 export const H4 = styled.h4`
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
   margin: 0;
   padding: 0;
 `;
 
 export const H5 = styled.h5`
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
   margin: 0;
   padding: 0;
 `;
 
 export const H6 = styled.h6`
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
   margin: 0;
   padding: 0;
 `;
@@ -64,7 +67,7 @@ export const Img = styled.img`
 `;
 
 export const Input = styled.input`
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
   font-size: 1rem;
   border: none;
   outline: none;
@@ -84,10 +87,6 @@ export const EWColors = new function() {
   this.background = "#fcfcf5";
 } ();
 
-export const EWFF = {
-  subtitle: "'Handlee', cursive",
-}
-
 export const NavTab = styled(Link)`
   color: #777;
   line-height: 24px;
@@ -104,7 +103,7 @@ export const NavTab = styled(Link)`
     text-decoration: none;
   }
   &:hover {
-    color: #e75a50;
+    color: ${EWColors.burntSienna};
   }
 `;
 
@@ -139,7 +138,7 @@ export const Span = styled.span`
   line-height: 1.4;
   margin: 0;
   padding: 0;
-  font-family: ${FontFamily.text};
+  font-family: ${EWFF.text};
 `;
 
 export const Dropdown = styled.div`
