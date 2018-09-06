@@ -17,10 +17,6 @@ class NextWardrobeTracker extends Component{
     }
   }
 
-  componentDidMount(){
-    this.state.fetchNextWardrobeInfo();
-  }
-
   componentWillReceiveProps({month, day}){
     this.setState({month, day});
   }
@@ -30,7 +26,7 @@ class NextWardrobeTracker extends Component{
       return (
         <div style={{width: `${width * 100}vw`}}>
           <div className={"box-count-down-board-wrapper"}>
-            <BoxCountDownBoard />
+            <BoxCountDownBoard days={this.props.daysRemained}/>
           </div>
           <p className={"next-wardrobe-tracker-text"} style={{fontSize:`${10 * width}vw`}}>
             {"-NEXT WARDROBE-"}
@@ -57,23 +53,20 @@ NextWardrobeTracker.defaultProps = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const nextWardrobeData = state.nextWardrobeReducer;
+  const date = new Date(state.mixingBoardReducer.NextWardrobe);
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const today = new Date();
   return {
-    month: nextWardrobeData.month,
-    day: nextWardrobeData.day,
+    month: monthNames[date.getMonth()],
+    day: date.getDay(),
+    daysRemained: Math.ceil((date.getTime() - today.getTime()) / (1000 * 3600 * 24)),
     ...ownProps,
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchNextWardrobeInfo : ()=>{
-      dispatch(fetchNextWardrobeInfo);
-    }
-  }
-}
-
-const NextWardrobeTrackerContainer = connect(mapStateToProps, mapDispatchToProps)(NextWardrobeTracker);
+const NextWardrobeTrackerContainer = connect(mapStateToProps)(NextWardrobeTracker);
 
 
 export default NextWardrobeTrackerContainer;

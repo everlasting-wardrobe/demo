@@ -15,6 +15,10 @@ export default class ColorPicker extends Component{
     }
   }
 
+  componentWillReceiveProps(props){
+    this.setState({...props});
+  }
+
   constructOnRangeChange(stateName){
       let onRangeChange = (event) => {
         this.setState({[stateName] : event.target.value});
@@ -32,9 +36,21 @@ export default class ColorPicker extends Component{
         step = "0.01";
       }
       return (
-          <div>
-            <VerticalSlider key={stateName} type="range" color={stateName} min={min} max={max} step={step}
-              value={this.state[stateName]} onChange={this.constructOnRangeChange(stateName)}/>
+          <div key={i}>
+            <VerticalSlider
+              key={stateName}
+              type="range"
+              color={stateName}
+              min={min}
+              max={max}
+              step={step}
+              value={this.state[stateName]}
+              onChange={(event) => {
+                this.constructOnRangeChange(stateName)(event);
+                if(this.props.onSliderRangeChange){
+                  this.props.onSliderRangeChange(stateName, event.target.value);
+                }
+              }}/>
             <div className={'color-picker-slider-name'}>{stateName.toUpperCase()}</div>
           </div>
       )

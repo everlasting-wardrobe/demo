@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {LoadedImg} from '../util/util';
 
 const DaysRemainingDashBoard = ({days}) => {
-  let deg = 146 / 30 * days + 20;
+  let deg = 146 / 30 * (30 - Math.min(Math.max(days, 0), 30)) + 20;
   return(
     <div id={'days-remaining-dash-board'}>
       <div className={'box-count-down-placeholder'} />
@@ -25,9 +25,4 @@ DaysRemainingDashBoard.defaultProps={
   days: 30,
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  days: state.nextWardrobeReducer.countdown,
-})
-
-
-export default connect(mapStateToProps)(DaysRemainingDashBoard);
+export default DaysRemainingDashBoard;
