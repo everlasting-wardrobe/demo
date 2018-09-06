@@ -3,6 +3,7 @@ import Signup from './signup/signup';
 import Studio from './studio/studio';
 import SizeConverter from './sizeConverter/sizeConverter';
 import HeaderMenuContainer from '../../containers/headerMenuContainer';
+import { Login } from '../../view/user/login'; 
 import {
   BrowserRouter as Router,
   Route,
@@ -19,6 +20,7 @@ const User = () => {
           <Route path={'/user/studio'} component={Studio} />
           <Route path={'/user/size-converter'} component={SizeConverter} />
           <Route path={'/user/landing-page'} component={Navbar} />
+          <Route path={'/user/login'} component={Login} />
         </Switch>
       </Router>
     </div>
