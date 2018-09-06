@@ -86,7 +86,7 @@ export const IframeWrapper = styled.div`
 
 export const IframePlaceholder = styled.div`
   width: 100%;
-  padding-bottom: 56.2%;
+  padding-bottom: 56.35%;
 `
 
 export const Iframe = styled.iframe`

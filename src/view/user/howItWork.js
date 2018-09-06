@@ -18,7 +18,6 @@ export const HowItWork = () => (
       src="https://www.youtube.com/embed/Tmg-iAECrnk"
       frameborder={0}
       allowfullscreen
-      width = {'80%'}
     />
     </ IframeWrapper>
     <Title>
