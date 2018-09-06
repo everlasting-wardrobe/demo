@@ -13,6 +13,7 @@ import {
   CheckBox,
   NavLink,
 } from './style';
+import {Label} from '../../components/globals';
 import {InputBoarderWrapper} from '../../components/wrapper';
 import Link from '../../components/link';
 import {WORKING_PATH} from '../../api/constants';
@@ -20,7 +21,7 @@ import {WORKING_PATH} from '../../api/constants';
 const RememberMe = () => (
     <CheckBox>
         <input type={"checkbox"} name={"rememberme"} id={"rememberme"}/>
-        <label for={"rememberme"}>remember me</label>
+        <Label htmlFor={"rememberme"}>remember me</Label>
     </CheckBox>
 );
 
@@ -71,7 +72,6 @@ export class Login extends Component{
             </Form>
           </FormBoarder>
         </FormWrapper>
-        <Footer />
       </BackgroundWrapper>
     )
   }

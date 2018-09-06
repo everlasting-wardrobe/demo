@@ -72,7 +72,6 @@ export class Signup extends Component{
             </Form>
           </FormBoarder>
         </FormWrapper>
-        <Footer />
       </BackgroundWrapper>
     )
   }

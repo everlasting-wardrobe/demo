@@ -16,6 +16,7 @@ export const EWColors = new function() {
   this.satinLinen = '#eae7dc';
   this.naturalGray = '#8e8d8a';
   this.background = "#fcfcf5";
+  this.border='#e7e7e7';
 } ();
 
 export const EWTextWithBackground = css`
@@ -85,6 +86,10 @@ export const H6 = styled.h6`
   padding: 0;
 `;
 
+export const Label = styled.label`
+  ${EWText};
+`
+
 export const Img = styled.img`
   width: 100%;
   height: 100%;
@@ -108,7 +113,7 @@ export const NavTab = styled(Link)`
   padding: 10px 15px
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 100;
   font-family: inherit;
   transition: ease all .4s;
@@ -155,10 +160,10 @@ export const Span = styled.span`
 `;
 
 export const TextArea = styled.textarea`
+  ${EWText};
   flex: 1 0 auto;
   width: 100%;
   font-weight: 400;
-  font-size: 0.875rem;
   border: 1px solid ${EWColors.naturalGray};
   padding: 0.75rem;
   margin-top: 0.125rem;
