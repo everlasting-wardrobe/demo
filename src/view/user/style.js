@@ -5,8 +5,8 @@ import {
   EWFF,
   H2
 } from '../../components/globals';
-import {InputBoarderWrapper} from '../../components/wrapper';
-
+import { InputBoarderWrapper } from '../../components/wrapper';
+import { NavTab } from '../../components/globals/index';
 
 export const BackgroundWrapper = styled.div`
   background-image: url('https://res.cloudinary.com/xiaoxu/image/upload/v1536171244/work/signup_background_min-d8cc193cb5ffee99872fd2db525c0156d5e13155fa9e8abbc8a4322233ab7fad.jpg');
@@ -65,7 +65,21 @@ export const SubmitInput = styled(FormInput)`
   color: white;
   background-color: ${EWColors.burntSienna};
 `
+export const CheckBox = styled.div`
+  margin: 30px;
+  color: grey;
+  label {
+    margin-left: 5px;
+  }
+`;
 
+export const ForgotLinks = styled(NavTab)`
+  transition: none;
+  width: max-content;
+  margin: auto;
+  line-height: 5px;
+  color: ${EWColors.burntSienna};
+`;
 
 export const HowItWorkWrapper = styled.div`
   background-color: ${EWColors.background};
@@ -86,7 +100,7 @@ export const IframeWrapper = styled.div`
 
 export const IframePlaceholder = styled.div`
   width: 100%;
-  padding-bottom: 56.2%;
+  padding-bottom: 56.35%;
 `
 
 export const Iframe = styled.iframe`
