@@ -74,6 +74,14 @@ export const CopyRightPanel = styled.section`
     width: 80%;
   }
 `
+
+export const CopyRightLink = styled(NoneStyleLink)`
+  color: ${EWColors.naturalGray};
+  :hover{
+    text-decoration: none;
+  }
+`
+
 export const CopyRightP = styled(P)`
   text-align: center;
 `

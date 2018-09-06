@@ -26,6 +26,8 @@ export const TopBarWrapper = styled.div`
   button {
     float: right;
   }
+  -webkit-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
   @media (min-width: 1200px) {
     height: 94px;
   }
@@ -33,8 +35,6 @@ export const TopBarWrapper = styled.div`
 
 export const NavBar = styled.div`
   background-color: #FCFCF5;
-  -webkit-transition: height 0.2s ease-out;
-  transition: height 0.2s ease-out;
 `;
 export const ListContainer = styled.div`
   height: 100%;

@@ -13,6 +13,7 @@ import { Dropdown,
 import Link from '../../components/link';
 import { SocialInfoList } from '../../components/links/links';
 import { BurgerButton } from '../../components/buttons';
+import {WORKING_PATH} from '../../api/constants';
 
 import EWLogo from '../../imgs/EWLogo.svg';
 
@@ -20,13 +21,25 @@ const NavList = (props) => (
     <ListContainer flexInRow={props.inRow}>
         <NavListWrapper floated={props.inRow}>
             <li>
-                <NavTab to={""}>How It Works</NavTab>
+                <NavTab
+                  to={WORKING_PATH + "how-it-works"}
+                >
+                  {"How It Works"}
+                </NavTab>
             </li>
             <li>
-                <NavTab to={""}>Sign up</NavTab>
+                <NavTab
+                  to={WORKING_PATH + "signup"}
+                >
+                  {"Sign up"}
+                </NavTab>
             </li>
             <li>
-                <NavTab to={""}>Log in</NavTab>
+                <NavTab
+                  to={WORKING_PATH + "login"}
+                >
+                  {"Log in"}
+                  </NavTab>
             </li>
         </NavListWrapper>
         <SocialListWrapper>

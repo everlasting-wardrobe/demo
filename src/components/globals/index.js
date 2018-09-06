@@ -6,6 +6,30 @@ export const EWFF = {
   text : "'Lato', sans-serif"
 }
 
+export const EWColors = new function() {
+  this.dorado = '#665350';
+  this.masala = '#474441';
+  this.aquaIsland = '#96d6d7';
+  this.apricot = '#e97f74';
+  this.burntSienna = '#e75a50';
+  this.akaroa = '#d7c2a4';
+  this.satinLinen = '#eae7dc';
+  this.naturalGray = '#8e8d8a';
+  this.background = "#fcfcf5";
+} ();
+
+export const EWTextWithBackground = css`
+  background-color: ${EWColors.burntSienna};
+  color: white;
+  font-size: 1.25rem;
+  font-family: ${EWFF.text};
+`
+
+export const EWText = css`
+  font-size: 1.25rem;
+  font-family: ${EWFF.text};
+`
+
 export const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,19 +99,8 @@ export const Input = styled.input`
   padding: 0;
 `
 
-export const EWColors = new function() {
-  this.dorado = '#665350';
-  this.masala = '#474441';
-  this.aquaIsland = '#96d6d7';
-  this.apricot = '#e97f74';
-  this.burntSienna = '#e75a50';
-  this.akaroa = '#d7c2a4';
-  this.satinLinen = '#eae7dc';
-  this.naturalGray = '#8e8d8a';
-  this.background = "#fcfcf5";
-} ();
-
 export const NavTab = styled(Link)`
+  ${EWText};
   color: #777;
   line-height: 24px;
   position: relative;
@@ -139,6 +152,25 @@ export const Span = styled.span`
   margin: 0;
   padding: 0;
   font-family: ${EWFF.text};
+`;
+
+export const TextArea = styled.textarea`
+  flex: 1 0 auto;
+  width: 100%;
+  font-weight: 400;
+  font-size: 0.875rem;
+  border: 1px solid ${EWColors.naturalGray};
+  padding: 0.75rem;
+  margin-top: 0.125rem;
+  box-shadow: none;
+  background: rgba(0,0,0,0);
+
+
+  &:focus{
+    border: none;
+    outline: none;
+    border: 1.2px solid ${EWColors.naturalGray};
+  }
 `;
 
 export const Dropdown = styled.div`

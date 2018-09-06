@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HowItWorkWrapper,
+  UserPanelWrapper,
   Title,
   IframeWrapper,
   IframePlaceholder,
@@ -11,7 +11,7 @@ import {NavButton} from '../../components/buttons';
 import {WORKING_PATH} from '../../api/constants';
 
 export const HowItWork = () => (
-  <HowItWorkWrapper>
+  <UserPanelWrapper>
     <Title>
       {"How Does It Work?"}
     </Title>
@@ -31,6 +31,6 @@ export const HowItWork = () => (
     >
       {"Sign Up"}
     </StyledNavButton>
-  </HowItWorkWrapper>
+  </UserPanelWrapper>
 
 );
