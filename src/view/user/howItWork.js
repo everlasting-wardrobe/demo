@@ -4,8 +4,11 @@ import {
   Title,
   IframeWrapper,
   IframePlaceholder,
-  Iframe
+  Iframe,
+  StyledNavButton
 } from './style';
+import {NavButton} from '../../components/buttons';
+import {WORKING_PATH} from '../../api/constants';
 
 export const HowItWork = () => (
   <HowItWorkWrapper>
@@ -23,6 +26,11 @@ export const HowItWork = () => (
     <Title>
       {"Get Started Today!"}
     </Title>
+    <StyledNavButton
+      to={WORKING_PATH + "signup"}
+    >
+      {"Sign Up"}
+    </StyledNavButton>
   </HowItWorkWrapper>
 
 );

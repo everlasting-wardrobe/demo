@@ -3,8 +3,10 @@ import {UnderlinedInput} from '../../components/input';
 import {
   EWColors,
   EWFF,
-  H2
+  H2,
+  NavTab
 } from '../../components/globals';
+import {NavButton} from '../../components/buttons';
 import {InputBoarderWrapper} from '../../components/wrapper';
 
 
@@ -76,10 +78,11 @@ export const IframeWrapper = styled.div`
   position: relative;
   margin: auto;
   margin-top: 60px;
+  transition: ease all .4s;
   @media (max-width: 800px){
     width: 80%;
   }
-  @media (max-width: 500px){
+  @media (max-width: 600px){
     width: 100%;
   }
 `
@@ -95,4 +98,13 @@ export const Iframe = styled.iframe`
   position: absolute;
   left: 0;
   top: 0;
+`
+
+export const StyledNavButton = styled(NavButton)`
+  width: 30%;
+  margin: auto;
+  margin-top: 45px;
+  @media (max-width: 600px){
+    width: 100%;
+  }
 `
