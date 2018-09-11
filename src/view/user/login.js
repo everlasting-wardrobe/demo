@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import Footer from '../footer/footer';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {login} from '../../actions/authentication';
 import {UnderlinedInput} from '../../components/input';
 import {
   BackgroundWrapper,
@@ -25,54 +27,73 @@ const RememberMe = () => (
     </CheckBox>
 );
 
-export class Login extends Component{
+class Login extends Component{
   constructor(props){
     super(props);
   }
 
+  onLoginSubmit = (e) => {
+    e.preventDefault();
+    if(this.props.login && typeof this.props.login === 'function'){
+        this.props.login();
+    }
+  }
 
   render(){
+    const {from} = this.props.location.state || {from:{pathname : "/"}};
+    const {currentUser} = this.props;
+    console.log(currentUser);
+    // console.log(this.props.location);
+    const {login} = this.props;
     return (
-      <BackgroundWrapper>
-        <FormWrapper>
-          <FormBoarder>
-            <Title>
-              {"Log in"}
-            </Title>
-            <Form
-              action="/d/uers"
-              accept-charset="UTF-8"
-              method="post"
-              >
-              <InputWrapper>
-                <FormInput
-                  type={"email"}
-                  required
-                  autoFocus={"autofocus"}
-                  placeholder={"email address"}
-                />
-              </InputWrapper>
-              <InputWrapper>
-                <FormInput
-                  required
-                  minLength={6}
-                  type={"password"}
-                  placeholder={"password"}
-                />
-              </InputWrapper>
-              <RememberMe />
-              <InputWrapper>
-                <SubmitInput
-                  type="submit"
-                  value="Log in"
-                />
-              </InputWrapper>
-              <NavLink to={WORKING_PATH + "signup"}>Sign up</NavLink>
-              <NavLink to={WORKING_PATH + "password/new"}>Forgot your password?</NavLink>
-            </Form>
-          </FormBoarder>
-        </FormWrapper>
-      </BackgroundWrapper>
+          <BackgroundWrapper>
+            <FormWrapper>
+              <FormBoarder>
+                <Title>
+                  {"Log in"}
+                </Title>
+                <Form
+                  action="/d/uers"
+                  accept-charset="UTF-8"
+                  method="post"
+                  >
+                  <InputWrapper>
+                    <FormInput
+                      type={"email"}
+                      required
+                      autoFocus={"autofocus"}
+                      placeholder={"email address"}
+                    />
+                  </InputWrapper>
+                  <InputWrapper>
+                    <FormInput
+                      required
+                      minLength={6}
+                      type={"password"}
+                      placeholder={"password"}
+                    />
+                  </InputWrapper>
+                  <RememberMe />
+                  <InputWrapper>
+                    <SubmitInput
+                      type="submit"
+                      value="Log in"
+                      onClick = {this.onLoginSubmit}
+                    />
+                  </InputWrapper>
+                  <NavLink to={WORKING_PATH + "signup"}>Sign up</NavLink>
+                  <NavLink to={WORKING_PATH + "password/new"}>Forgot your password?</NavLink>
+                </Form>
+              </FormBoarder>
+            </FormWrapper>
+          </BackgroundWrapper>
+
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => (
+  {login: () => {dispatch(login)}}
+)
+
+export default connect(null, mapDispatchToProps)(Login);

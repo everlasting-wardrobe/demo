@@ -2,9 +2,10 @@ import React from 'react';
 import {Signup} from './signup';
 import {HowItWork} from './howItWork';
 import {ForgetPassWordPanel} from './forgetPassword';
+import {WaitList} from './waitlist';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
-import {Login} from './login';
+import Login from './login';
 import {ContactUs} from './contact';
 import {
   BrowserRouter as Router,
@@ -15,7 +16,7 @@ import {WORKING_PATH} from '../../api/constants';
 
 const UserManagement = () => {
   return (
-    <div>
+    <div style={{minHeight: '100vh'}}>
       <Navbar />
       <Router>
         <Switch>
@@ -24,6 +25,7 @@ const UserManagement = () => {
           <Route path={WORKING_PATH + 'login'} component={Login} />
           <Route path={WORKING_PATH + 'password/new'} component={ForgetPassWordPanel} />
           <Route path={WORKING_PATH + 'contact-us'} component={ContactUs} />
+          <Route path={WORKING_PATH + 'waitlist'} component={WaitList} />
         </Switch>
       </Router>
       <Footer />

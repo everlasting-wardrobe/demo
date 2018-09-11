@@ -3,7 +3,7 @@ import Signup from './signup/signup';
 import Studio from './studio/studio';
 import SizeConverter from './sizeConverter/sizeConverter';
 import HeaderMenuContainer from '../../containers/headerMenuContainer';
-import { Login } from '../../view/user/login'; 
+import Login from '../../view/user/login'; 
 import {
   BrowserRouter as Router,
   Route,

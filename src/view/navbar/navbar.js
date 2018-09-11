@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+// Components for style
 import styled from 'styled-components';
 import { EWNavLogo,
          TopBarWrapper,
@@ -14,8 +16,9 @@ import Link from '../../components/link';
 import { SocialInfoList } from '../../components/links/links';
 import { BurgerButton } from '../../components/buttons';
 import {WORKING_PATH} from '../../api/constants';
-
 import EWLogo from '../../imgs/EWLogo.svg';
+
+
 
 const NavList = (props) => (
     <ListContainer flexInRow={props.inRow}>
@@ -71,6 +74,7 @@ class Navbar extends Component {
         this.setState({closed: !oldState});
     }
     render() {
+        const {currentUser} = this.props;
         return (
             <NavBar>
                 <TopBarWrapper>
@@ -90,4 +94,9 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+  currentUser: state.userReducer.currentUser
+})
+
+
+export default connect(mapStateToProps)(Navbar);

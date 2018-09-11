@@ -3,10 +3,12 @@ import loginReducer from './loginReducer';
 import {
   mixingBoardReducer
 } from './routerReducer';
+import userReducer from './users';
 
 const appReducer = combineReducers({
   loginReducer,
-  mixingBoardReducer
+  mixingBoardReducer,
+  userReducer
 })
 
 export default appReducer;
