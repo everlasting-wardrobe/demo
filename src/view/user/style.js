@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import {UnderlinedInput} from '../../components/input';
+import {ProfileSelect, ProfileOption} from '../../components/select';
 import {
   EWColors,
   EWFF,
-  H2
+  H2,
+  H4,
 } from '../../components/globals';
 import { InputBoarderWrapper } from '../../components/wrapper';
 import { NavTab } from '../../components/globals/index';
@@ -110,3 +112,57 @@ export const Iframe = styled.iframe`
   left: 0;
   top: 0;
 `
+
+export const Notes = styled(H4)`
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+  color: #999;
+`;
+
+export const SizedFormInput = styled(FormInput)`
+  width: ${props => props.size};
+  margin: 10px;
+`;
+
+export const SelectorWrapper = styled.div`
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  width: ${props => props.size};
+`;
+
+export const DropdownArrowWrapper = styled.div`
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  z-index: 10;
+`;
+
+export const IncompletedCircle = styled.span`
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #ffffff;
+  border: 4px solid #e75a50;
+`;
+
+export const CompletedCircle = styled(IncompletedCircle)`
+  background-color: #e75a50;
+`;
+
+export const ConnectBar = styled.span`
+  background-color: #e75a50;
+  display: inline-block;
+  width: 5em;
+  height: 5px;
+  box-shadow: 1px 1px 1px 1px;
+`;
+
+export const StepsBarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: auto;
+`;
