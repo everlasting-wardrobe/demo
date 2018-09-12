@@ -13,6 +13,8 @@ import { Dropdown,
          NavListWrapper,
          NavTab, } from  '../../components/globals/index';
 import Link from '../../components/link';
+import {logout} from '../../actions/authentication';
+import {PureTextButton} from '../../components/buttons';
 import { SocialInfoList } from '../../components/links/links';
 import { BurgerButton } from '../../components/buttons';
 import {WORKING_PATH} from '../../api/constants';
@@ -36,6 +38,11 @@ const NavList = (props) => (
             <NavTab to={'/'}>
             {`Hello ${props.currentUser}`}
             </NavTab>
+          </li>
+          <li>
+            <PureTextButton style={{display: "inline"}} onClick={props.logout}>
+            {"Logout"}
+            </PureTextButton>
           </li>
         </NavListWrapper>
       ) : (
@@ -92,14 +99,14 @@ class Navbar extends Component {
         this.setState({closed: !oldState});
     }
     render() {
-        const {currentUser} = this.props;
-        console.log(currentUser);
+        const {currentUser, logout} = this.props;
+        console.log(logout);
         return (
             <NavBar>
                 <TopBarWrapper>
                     <BrandCombo />
                     <RightLinks>
-                    <NavList inRow currentUser={currentUser}/>
+                    <NavList inRow currentUser={currentUser} logout={logout}/>
                     </RightLinks>
                     <BurgerButton width={"40px"}
                                   hideAt={"1200px"}
@@ -117,7 +124,12 @@ const mapStateToProps = (state, ownProps) => {
   console.log(state);
   return {
     currentUser: state.userReducer.currentUser,
-    ...ownProps}
+    ...ownProps
   }
+}
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = (dispatch) => (
+  {logout: () => {dispatch(logout)}}
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
