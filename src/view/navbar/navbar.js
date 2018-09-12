@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+// Components for style
 import styled from 'styled-components';
 import { EWNavLogo,
          TopBarWrapper,
@@ -14,34 +16,53 @@ import Link from '../../components/link';
 import { SocialInfoList } from '../../components/links/links';
 import { BurgerButton } from '../../components/buttons';
 import {WORKING_PATH} from '../../api/constants';
-
 import EWLogo from '../../imgs/EWLogo.svg';
+
+
+
 
 const NavList = (props) => (
     <ListContainer flexInRow={props.inRow}>
+      {props.currentUser? (
         <NavListWrapper floated={props.inRow}>
-            <li>
-                <NavTab
-                  to={WORKING_PATH + "how-it-works"}
-                >
-                  {"How It Works"}
-                </NavTab>
-            </li>
-            <li>
-                <NavTab
-                  to={WORKING_PATH + "signup"}
-                >
-                  {"Sign up"}
-                </NavTab>
-            </li>
-            <li>
-                <NavTab
-                  to={WORKING_PATH + "login"}
-                >
-                  {"Log in"}
-                  </NavTab>
-            </li>
+          <li>
+            <NavTab
+              to={WORKING_PATH + "how-it-works"}
+            >
+            {"How It Works"}
+            </NavTab>
+          </li>
+          <li>
+            <NavTab to={'/'}>
+            {`Hello ${props.currentUser}`}
+            </NavTab>
+          </li>
         </NavListWrapper>
+      ) : (
+      <NavListWrapper floated={props.inRow}>
+        <li>
+          <NavTab
+            to={WORKING_PATH + "how-it-works"}
+          >
+          {"How It Works"}
+          </NavTab>
+        </li>
+        <li>
+          <NavTab
+            to={WORKING_PATH + "signup"}
+          >
+          {"Sign up"}
+          </NavTab>
+        </li>
+        <li>
+          <NavTab
+            to={WORKING_PATH + "login"}
+          >
+          {"Log in"}
+          </NavTab>
+        </li>
+      </NavListWrapper>
+    )}
         <SocialListWrapper>
             <SocialInfoList />
         </SocialListWrapper>
@@ -71,12 +92,14 @@ class Navbar extends Component {
         this.setState({closed: !oldState});
     }
     render() {
+        const {currentUser} = this.props;
+        console.log(currentUser);
         return (
             <NavBar>
                 <TopBarWrapper>
                     <BrandCombo />
                     <RightLinks>
-                    <NavList inRow />
+                    <NavList inRow currentUser={currentUser}/>
                     </RightLinks>
                     <BurgerButton width={"40px"}
                                   hideAt={"1200px"}
@@ -90,4 +113,11 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  return {
+    currentUser: state.userReducer.currentUser,
+    ...ownProps}
+  }
+
+export default connect(mapStateToProps)(Navbar);

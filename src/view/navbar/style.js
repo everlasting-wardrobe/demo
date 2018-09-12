@@ -37,7 +37,7 @@ export const TopBarWrapper = styled.div`
   }
 `;
 
-export const NavBar = styled.div`
+export const NavBar = styled.nav`
   background-color: ${EWColors.background};
 `;
 export const ListContainer = styled.div`

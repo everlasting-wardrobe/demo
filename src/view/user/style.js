@@ -34,6 +34,7 @@ export const Title = styled(H2)`
   text-align: center;
   font-family: ${EWFF.subtitle};
   padding-top: 45px;
+  margin-bottom: 45px;
 `
 
 export const InputWrapper = styled.div`
@@ -56,6 +57,7 @@ export const FormWrapper = styled.div`
     padding: 0;
     width: 100%;
   }
+  text-align: center;
 `
 
 export const Form = styled.form`
@@ -123,7 +125,6 @@ export const StyledNavButton = styled(NavButton)`
   width: 30%;
   margin: auto;
   margin-top: 45px;
-  transition: ease all 0.4s;
   @media (max-width: 600px){
     width: 100%;
   }

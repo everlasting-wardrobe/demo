@@ -64,24 +64,31 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   font-family: ${EWFF.text};
+  color: ${EWColors.naturalGray};
+  text-align: center;
   margin: 0;
   padding: 0;
 `;
 
 export const H4 = styled.h4`
   font-family: ${EWFF.text};
+  color: ${EWColors.naturalGray};
+  text-align: center;
   margin: 0;
   padding: 0;
 `;
 
 export const H5 = styled.h5`
   font-family: ${EWFF.text};
+  color: ${EWColors.naturalGray};
+  text-align: center;
   margin: 0;
   padding: 0;
 `;
 
 export const H6 = styled.h6`
   font-family: ${EWFF.text};
+  color: ${EWColors.naturalGray};
   margin: 0;
   padding: 0;
 `;
