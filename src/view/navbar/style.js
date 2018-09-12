@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 import Link from '../../components/link';
 import {NavTab, Dropdown} from  '../../components/globals/index';
+import {
+  EWColors,
+  H3
+} from '../../components/globals';
 
 export const EWNavLogo = styled(Link)`
   h3 {
@@ -9,7 +13,7 @@ export const EWNavLogo = styled(Link)`
     font-weight: 300;
     font-size: 20px;
     margin: 0;
-    color: #e75a50;
+    color: ${EWColors.burntSienna};
   }
 
   @media (min-width: 1200px) {
@@ -23,7 +27,7 @@ export const TopBarWrapper = styled.div`
   padding: 12px 5px;
   font-size: 20px;
   height: 76px;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid ${EWColors.border};
   button {
     float: right;
   }
@@ -34,8 +38,8 @@ export const TopBarWrapper = styled.div`
   }
 `;
 
-export const NavBar = styled.div`
-  background-color: #FCFCF5;
+export const NavBarWrapper = styled.nav`
+  background-color: ${EWColors.background};
 `;
 
 export const HidableNavTab = styled(NavTab)`
@@ -50,17 +54,16 @@ export const ListContainer = styled.div`
   flex-direction: column;
   ${props =>
     props.flexInRow && css
-    ` 
+    `
     align-items: center;
     flex-direction: row;
     `}
 `;
 
-export const BrandName = styled.h3`
-  font-family: 'Lato';
+export const BrandName = styled(H3)`
   font-size: 20px;
   margin: 0;
-  color: #e75a50;
+  color: ${EWColors.burntSienna};
   display: inline-block;
   span {
     font-weight: 400;
@@ -79,7 +82,7 @@ export const BrandContainer = styled.div`
     a img {
       height: 100%;
     }
-  
+
   @media (min-width: 1200px) {
     width: 320px;
   }

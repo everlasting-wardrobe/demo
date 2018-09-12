@@ -14,20 +14,20 @@ input.feedback-slider, input.feedback-slider::-webkit-slider-runnable-track, inp
 
 input.feedback-slider::-webkit-slider-runnable-track {
   position: relative;
-  height: 2vw;
+  height: 1.2vw;
   padding-left: 0.3vw;
-  padding-right: 0.3vw;
+  padding-right: 0vw;
   background-size: cover;
   z-index: 1;
 }
 
 input.feedback-slider::-webkit-slider-runnable-track {
-  background-image: url('./styleFeedbackTrack.png');
+  background-image: url('./Feedback_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
 input.fit-feedback-slider::-webkit-slider-runnable-track {
-  background-image: url('./fitFeedbackTrack.png');
+  background-image: url('./Feedback_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
@@ -35,8 +35,8 @@ input.feedback-slider::-webkit-slider-thumb {
   position: relative;
   margin: auto 0;
   border: none;
-  background-image: url('./thumb.png');
-  width: 11.11%;
+  background-image: url('./Feedback_Slider_Button.png');
+  width: 7.11%;
   height: 100%;
   z-index: 100;
   background-size: contain;
@@ -51,7 +51,7 @@ input.feedback-slider, input.feedback-slider::-moz-range-track, input.feedback-s
 input.feedback-slider::-moz-range-track {
   position: relative;
 
-  height: 3vw;
+  height: 1.2vw;
   padding-left: 0.3vw;
   padding-right: 0.3vw;
   background-size: cover;
@@ -59,12 +59,12 @@ input.feedback-slider::-moz-range-track {
 }
 
 input.feedback-slider::-moz-range-track {
-  background-image: url('./styleFeedbackTrack.png');
+  background-image: url('./Feedback_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
 input.fit-feedback-slider::-moz-range-track {
-  background-image: url('./fitFeedbackTrack.png');
+  background-image: url('./Feedback_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
@@ -73,7 +73,7 @@ input.feedback-slider::-moz-range-thumb {
   margin-left: 0em;
   border: none;
   border-radius: 50% 50% 0;
-  background-image: url('./thumb.png');
+  background-image: url('./Feedback_Slider_Button.png');
   width: 11.11%;
   height: 100%;
   z-index: 100;
@@ -87,7 +87,7 @@ input.feedback-slider, input.feedback-slider::-ms-track, input.feedback-slider[t
 input.feedback-slider::-ms-track {
   position: relative;
 
-  height: 3vw;
+  height: 1.2vw;
   padding-left: 0.3vw;
   padding-right: 0.3vw;
   background-size: cover;
@@ -95,12 +95,12 @@ input.feedback-slider::-ms-track {
 }
 
 input.feedback-slider::-ms-track {
-  background-image: url('./styleFeedbackTrack.png');
+  background-image: url('./Feedback_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
 input.fit-feedback-slider::-ms-track {
-  background-image: url('./fitFeedbackTrack.png');
+  background-image: url('./Feedback_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
@@ -109,7 +109,7 @@ input.feedback-slider::-ms-thumb {
   margin-left: 0em;
   border: none;
   border-radius: 50% 50% 0;
-  background-image: url('./thumb.png');
+  background-image: url('./Feedback_Slider_Button.png');
   width: 11.11%;
   height: 100%;
   z-index: 100;

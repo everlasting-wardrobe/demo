@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+// Components for style
 import styled from 'styled-components';
 import ArrowDown from 'react-icons/lib/ti/arrow-sorted-down';
 
 import { EWNavLogo,
          TopBarWrapper,
-         NavBar,
+         NavBarWrapper,
          ListContainer,
          RightLinks,
          BrandContainer,
@@ -19,7 +21,7 @@ import { Dropdown,
 import Link from '../../components/link';
 import { SocialInfoList } from '../../components/links/links';
 import { BurgerButton } from '../../components/buttons';
-
+import {WORKING_PATH} from '../../api/constants';
 import EWLogo from '../../imgs/EWLogo.svg';
 
 class NavList extends Component  {
@@ -32,14 +34,14 @@ class NavList extends Component  {
             <ListContainer flexInRow={this.props.inRow}>
                 <NavListWrapper floated={this.props.inRow}>
                     <li>
-                        <NavTab to={""}>How It Works</NavTab>
+                        <NavTab to={WORKING_PATH + "how-it-works"}>How It Works</NavTab>
                     </li>
                     <li>
-                        <NavTab to={""}>Sign up</NavTab>
+                        <NavTab to={WORKING_PATH + "signup"}>Sign up</NavTab>
                     </li>
                     <li>
-                        <HidableNavTab hidden={this.props.loggedIn} to={""}>Log in</HidableNavTab>
-                        <HidableNavTab hidden={!this.props.loggedIn} to={""}>Account <ArrowDown /></HidableNavTab>
+                        <HidableNavTab hidden={this.props.loggedIn} to={WORKING_PATH + "login"}>Log in</HidableNavTab>
+                        <HidableNavTab hidden={!this.props.loggedIn} to={'/'}>Account <ArrowDown /></HidableNavTab>
                         <NavDropdown maxHeight={'200px'} collapse={false}>
                             <NavListWrapper>
                                 <li>
@@ -66,6 +68,56 @@ class NavList extends Component  {
     } 
 }
 
+
+
+// const NavList = (props) => (
+//     <ListContainer flexInRow={props.inRow}>
+//       {props.currentUser? (
+//         <NavListWrapper floated={props.inRow}>
+//           <li>
+//             <NavTab
+//               to={WORKING_PATH + "how-it-works"}
+//             >
+//             {"How It Works"}
+//             </NavTab>
+//           </li>
+//           <li>
+//             <NavTab to={'/'}>
+//             {`Hello ${props.currentUser}`}
+//             </NavTab>
+//           </li>
+//         </NavListWrapper>
+//       ) : (
+//       <NavListWrapper floated={props.inRow}>
+//         <li>
+//           <NavTab
+//             to={WORKING_PATH + "how-it-works"}
+//           >
+//           {"How It Works"}
+//           </NavTab>
+//         </li>
+//         <li>
+//           <NavTab
+//             to={WORKING_PATH + "signup"}
+//           >
+//           {"Sign up"}
+//           </NavTab>
+//         </li>
+//         <li>
+//           <NavTab
+//             to={WORKING_PATH + "login"}
+//           >
+//           {"Log in"}
+//           </NavTab>
+//         </li>
+//       </NavListWrapper>
+//     )}
+//         <SocialListWrapper>
+//             <SocialInfoList />
+//         </SocialListWrapper>
+//     </ ListContainer>
+// );
+
 const BrandCombo = () => (
     <BrandContainer>
         <EWNavLogo to={""}>
@@ -90,12 +142,14 @@ class Navbar extends Component {
         this.setState({closed: !oldState});
     }
     render() {
+        const {currentUser} = this.props;
+        console.log(currentUser);
         return (
-            <NavBar>
+            <NavBarWrapper>
                 <TopBarWrapper>
                     <BrandCombo />
                     <RightLinks>
-                    <NavList inRow loggedIn={this.state.loggedIn}/>
+                    <NavList inRow currentUser={currentUser} loggedIn={this.state.loggedIn}/>
                     </RightLinks>
                     <BurgerButton width={"40px"}
                                   hideAt={"1200px"}
@@ -104,9 +158,16 @@ class Navbar extends Component {
                 <NavDropdown maxHeight={'400px'} collapse={this.state.closed}>
                     <NavList loggedIn={this.state.loggedIn}/>
                 </NavDropdown>
-            </NavBar>
+            </NavBarWrapper>
         );
     }
 }
 
-export default Navbar;
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  return {
+    currentUser: state.userReducer.currentUser,
+    ...ownProps}
+  }
+
+export default connect(mapStateToProps)(Navbar);

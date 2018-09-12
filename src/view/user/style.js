@@ -6,9 +6,14 @@ import {
   EWFF,
   H2,
   H4,
+  NavTab
 } from '../../components/globals';
-import { InputBoarderWrapper } from '../../components/wrapper';
-import { NavTab } from '../../components/globals/index';
+import {NavButton} from '../../components/buttons';
+import {InputBoarderWrapper} from '../../components/wrapper';
+
+export const UserPanelWrapper = styled.div`
+  background-color: ${EWColors.background};
+`
 
 export const BackgroundWrapper = styled.div`
   background-image: url('https://res.cloudinary.com/xiaoxu/image/upload/v1536171244/work/signup_background_min-d8cc193cb5ffee99872fd2db525c0156d5e13155fa9e8abbc8a4322233ab7fad.jpg');
@@ -17,6 +22,7 @@ export const BackgroundWrapper = styled.div`
   background-repeat: no-repeat;
 `
 export const FormBoarder = styled(InputBoarderWrapper)`
+  transition: ease all 0.4s;
   @media(max-width: 900px){
     padding: 0;
     width: 100%;
@@ -30,6 +36,7 @@ export const Title = styled(H2)`
   text-align: center;
   font-family: ${EWFF.subtitle};
   padding-top: 45px;
+  margin-bottom: 45px;
 `
 
 export const InputWrapper = styled.div`
@@ -39,8 +46,9 @@ export const InputWrapper = styled.div`
 
 export const FormWrapper = styled.div`
   margin: auto;
+  transition: ease all 0.4s;
   @media (min-width: 1300px){
-    padding: 10% 0 10% 0;
+    padding: 6% 0 6% 0;
     width: 40%;
   }
   @media (max-width: 1299px){
@@ -51,6 +59,7 @@ export const FormWrapper = styled.div`
     padding: 0;
     width: 100%;
   }
+  text-align: center;
 `
 
 export const Form = styled.form`
@@ -75,7 +84,7 @@ export const CheckBox = styled.div`
   }
 `;
 
-export const ForgotLinks = styled(NavTab)`
+export const NavLink = styled(NavTab)`
   transition: none;
   width: max-content;
   margin: auto;
@@ -92,10 +101,11 @@ export const IframeWrapper = styled.div`
   position: relative;
   margin: auto;
   margin-top: 60px;
+  transition: ease all .4s;
   @media (max-width: 800px){
     width: 80%;
   }
-  @media (max-width: 500px){
+  @media (max-width: 600px){
     width: 100%;
   }
 `
@@ -166,3 +176,11 @@ export const StepsBarWrapper = styled.div`
   width: max-content;
   margin: auto;
 `;
+export const StyledNavButton = styled(NavButton)`
+  width: 30%;
+  margin: auto;
+  margin-top: 45px;
+  @media (max-width: 600px){
+    width: 100%;
+  }
+`

@@ -1,14 +1,17 @@
 import React from 'react';
 import {
-  HowItWorkWrapper,
+  UserPanelWrapper,
   Title,
   IframeWrapper,
   IframePlaceholder,
-  Iframe
+  Iframe,
+  StyledNavButton
 } from './style';
+import {NavButton} from '../../components/buttons';
+import {WORKING_PATH} from '../../api/constants';
 
 export const HowItWork = () => (
-  <HowItWorkWrapper>
+  <UserPanelWrapper>
     <Title>
       {"How Does It Work?"}
     </Title>
@@ -23,6 +26,11 @@ export const HowItWork = () => (
     <Title>
       {"Get Started Today!"}
     </Title>
-  </HowItWorkWrapper>
+    <StyledNavButton
+      to={WORKING_PATH + "signup"}
+    >
+      {"Sign Up"}
+    </StyledNavButton>
+  </UserPanelWrapper>
 
 );

@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
 
 const HeaderMenuContainer = connect(mapStateToProps, mapDispatchToProps)(HeaderMenu);
 
-export default HeaderMenuContainer;
+// export default HeaderMenuContainer;

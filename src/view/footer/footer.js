@@ -9,9 +9,11 @@ import {
   TLink,
   CopyRightPanel,
   CopyRightSpan,
-  CopyRightP
+  CopyRightP,
+  CopyRightLink
 } from './style';
 import {SocialInfoList} from '../../components/links/links';
+import {WORKING_PATH} from '../../api/constants';
 
 
 const Footer = () => (
@@ -43,7 +45,9 @@ const Footer = () => (
         <CopyRightSpan>How it Works</CopyRightSpan>
         <CopyRightSpan>{"FAQ's"}</CopyRightSpan>
         <CopyRightSpan>Press</CopyRightSpan>
-        <CopyRightSpan>Contact Us</CopyRightSpan>
+        <CopyRightLink to={WORKING_PATH + 'contact-us'}>
+          <CopyRightSpan>Contact Us</CopyRightSpan>
+        </CopyRightLink>
         <CopyRightSpan>Charitable Programs</CopyRightSpan>
         <CopyRightSpan>Become a Brand Partner</CopyRightSpan>
       </CopyRightP>

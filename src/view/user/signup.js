@@ -9,9 +9,11 @@ import {
   FormWrapper,
   Form,
   FormInput,
-  SubmitInput
+  SubmitInput,
+  NavLink
 } from './style';
 import {InputBoarderWrapper} from '../../components/wrapper';
+import {WORKING_PATH} from '../../api/constants';
 
 export class Signup extends Component{
   constructor(props){
@@ -62,10 +64,14 @@ export class Signup extends Component{
                   value="Sign up"
                 />
               </InputWrapper>
+              <NavLink
+                to={WORKING_PATH + 'login'}
+              >
+              Login
+              </NavLink>
             </Form>
           </FormBoarder>
         </FormWrapper>
-        <Footer />
       </BackgroundWrapper>
     )
   }
