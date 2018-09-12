@@ -1,12 +1,12 @@
 import React from 'react';
 //import sectionBox from './TopLeftSectionBox.png';
 import headphoneJack from './HeadphonesJack.png';
-import InputKnob from '../inputKnob/inputKnob';
+import InputKnob from '../inputKnobWithHoc/inputKnobWithHoc';
 import {withPanelBackground} from '../../util/util';
 import Knob from '../knob/knob';
 import KnobWithHoc from '../knobWithHoc/knobWithHoc';
 import Test from './test';
-import './leftTuners.css';
+//import './leftTuners.css';
 
 const LeftTuners = (props) => {
     return (

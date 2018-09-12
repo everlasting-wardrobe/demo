@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
 import airButton from './OnAirButton.png';
 import onButton from './OnButtonGreen.png';
-import InputKnobComp from '../inputKnob/inputKnob';
+import InputKnobComp from '../inputKnobWithHoc/inputKnobWithHoc';
 import KnobWithHoc from '../knobWithHoc/knobWithHoc';
 import airButtonRed from './AirButtonRed.png';
 import offButton from './OffButton.png';
