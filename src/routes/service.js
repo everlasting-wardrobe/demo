@@ -2,7 +2,7 @@ import React from 'react';
 import ImpressionMap from '../displayPanel/impressionMap';
 import BarChart from '../displayPanel/barChart';
 import SearchPanel from '../containers/search_panel';
-import HeaderMenuContainer from '../containers/headerMenuContainer';
+import Navbar from '../view/navbar/navbar';
 import HiwVideo from '../displayPanel/hiwVideo';
 import {
   BrowserRouter as Router,
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 const Service = () => {
     return (
       <div className={css(styles.background)}>
-        <HeaderMenuContainer color={'black'} />
+        <Navbar />
         <Router>
           <Switch>
             <Route path='/service/impressionMap' component={ImpressionMap} />

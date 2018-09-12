@@ -3,7 +3,6 @@ import {Signup} from './signup';
 import {HowItWork} from './howItWork';
 import {ForgetPassWordPanel} from './forgetPassword';
 import {WaitList} from './waitlist';
-import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
 import Login from './login';
 import {ContactUs} from './contact';
@@ -17,8 +16,6 @@ import {WORKING_PATH} from '../../api/constants';
 const UserManagement = () => {
   return (
     <div style={{minHeight: '100vh'}}>
-      <Navbar />
-      <Router>
         <Switch>
           <Route path={WORKING_PATH + 'how-it-works'} component={HowItWork} />
           <Route path={WORKING_PATH + 'signup'} component={Signup} />
@@ -27,7 +24,6 @@ const UserManagement = () => {
           <Route path={WORKING_PATH + 'contact-us'} component={ContactUs} />
           <Route path={WORKING_PATH + 'waitlist'} component={WaitList} />
         </Switch>
-      </Router>
       <Footer />
     </div>
   )

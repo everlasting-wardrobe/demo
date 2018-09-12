@@ -7,7 +7,6 @@ const initialState = {
 export default function userReducer (state = initialState, action){
   switch (action.type) {
     case LOGIN:
-      console.log(action.data);  
       return {
         currentUser: action.data.username
       }

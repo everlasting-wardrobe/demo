@@ -30,6 +30,9 @@ const RememberMe = () => (
 class Login extends Component{
   constructor(props){
     super(props);
+    this.state = {
+      currentUser: this.props.currentUser
+    }
   }
 
   onLoginSubmit = (e) => {
@@ -41,10 +44,11 @@ class Login extends Component{
 
   render(){
     const {from} = this.props.location.state || {from:{pathname : "/"}};
-    const {currentUser} = this.props;
-    console.log(currentUser);
-    // console.log(this.props.location);
-    const {login} = this.props;
+    const {currentUser, login} = this.props;
+    if(currentUser != null){
+      console.log(from);
+      return <Redirect to={from} />;
+    }
     return (
           <BackgroundWrapper>
             <FormWrapper>
@@ -92,8 +96,15 @@ class Login extends Component{
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...ownProps,
+    currentUser: state.userReducer.currentUser
+  }
+}
+
 const mapDispatchToProps = (dispatch) => (
   {login: () => {dispatch(login)}}
 )
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
