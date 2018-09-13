@@ -3,8 +3,8 @@ import Signup from './signup/signup';
 import Studio from './studio/studio';
 import SizeConverter from './sizeConverter/sizeConverterStyledComp';
 import HeaderMenuContainer from '../../containers/headerMenuContainer';
-import Login from '../../view/user/login'; 
-import { Profile } from '../../view/user/profile'; 
+import Login from '../../view/user/login';
+import { Profile } from '../../view/user/profile';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,7 +15,6 @@ import Navbar from '../../view/navbar/navbar';
 const User = () => {
   return (
     <div>
-      <Router>
         <Switch>
           <Route path={'/user/signup'} component={Signup} />
           <Route path={'/user/studio'} component={Studio} />
@@ -24,7 +23,6 @@ const User = () => {
           <Route path={'/user/login'} component={Login} />
           <Route path={'/user/profile'} component={Profile} />
         </Switch>
-      </Router>
     </div>
   )
 }

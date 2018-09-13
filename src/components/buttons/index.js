@@ -5,7 +5,8 @@ import { BurgerSlice,
 import {
   NavTab,
   EWColors,
-  EWTextWithBackground
+  EWTextWithBackground,
+  EWCickableText
 } from '../globals';
 
 export const BurgerButton = (props) => (
@@ -32,6 +33,12 @@ export const NavButton = styled(NavTab)`
 
 export const BasicButton = styled.button`
   border: none;
+`
+
+export const PureTextButton = styled(BasicButton)`
+  border: none;
+  background: none;
+  ${EWCickableText};
 `
 
 export const Button = styled(BasicButton)`
