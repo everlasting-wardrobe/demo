@@ -4,30 +4,33 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import ArrowDown from 'react-icons/lib/ti/arrow-sorted-down';
 
-import {
-  EWNavLogo,
-  TopBarWrapper,
-  NavBarWrapper,
-  ListContainer,
-  RightLinks,
-  BrandContainer,
-  HidableNavTab,
-  NavDropdown,
-  AccNavTab,
-  NavTabSector
-} from './style';
+import { EWNavLogo,
+         TopBarWrapper,
+         NavBarWrapper,
+         ListContainer,
+         RightLinks,
+         BrandContainer,
+         HidableNavTab,
+         NavDropdown,
+         AccNavTab,
+         NavTabSector,
+         AccNavListWrapper,
+         NavDropdownToggler,
+         AccNavDropdown } from './style';
 import { Dropdown,
          SocialListWrapper,
          NavListWrapper,
-         NavTab,
-} from  '../../components/globals/index';
+         NavTab, } from  '../../components/globals/index';
 import Link from '../../components/link';
-import {logout} from '../../actions/authentication';
-import {PureTextButton} from '../../components/buttons';
 import { SocialInfoList } from '../../components/links/links';
-import { BurgerButton } from '../../components/buttons';
+import {
+  BurgerButton,
+  PureTextButton
+ } from '../../components/buttons';
 import {WORKING_PATH} from '../../api/constants';
 import EWLogo from '../../imgs/EWLogo.svg';
+import {logout} from '../../actions/authentication';
+import {withRouter} from 'react-router-dom';
 
 class NavList extends Component  {
     constructor(props){
@@ -37,71 +40,115 @@ class NavList extends Component  {
       };
     }
 
+    accountToggler = () => {
+        const oldState = this.state.accInfoOpen;
+        this.setState({accInfoOpen: !oldState});
+    }
 
     render() {
       const {inRow, currentUser, logout} = this.props;
+      const LogoutButton = withRouter(
+        ({history}) => {
+          return (
+            <PureTextButton
+              onClick={() => {
+                  if(this.props.logout && typeof this.props.logout === 'function'){
+                    logout();
+                  }
+                  history.push("/");
+                }
+              }
+            >
+              {"Logout"}
+            </PureTextButton>
+          )
+        }
+      )
+
       console.log(logout);
         return (
             <ListContainer flexInRow={this.props.inRow}>
                 <NavListWrapper floated={this.props.inRow}>
                     <li>
                         <NavTab
-                          to={WORKING_PATH + "how-it-works"}
-                        >
+                          to={WORKING_PATH + "how-it-works"}>
                           {"How It Works"}
                         </NavTab>
                     </li>
                     <li>
                         <HidableNavTab
-                          hidden={this.props.currentUser}
-                          to={WORKING_PATH + "signup"}>
-                          {"Sign up"}
-                        </HidableNavTab>
-                    </li>
-                    <li>
-                        <HidableNavTab
-                          hidden={!this.props.currentUser}
-                          to={'/'}
-                          onClick={logout}
+                          to={WORKING_PATH + "signup"}
+                          hidden={currentUser}
                         >
-                            {"logout"}
+                         {"Sign up"}
                         </HidableNavTab>
                     </li>
                     <li>
                         <HidableNavTab
-                          hidden={this.props.currentUser}
+                          hidden={currentUser}
                           to={WORKING_PATH + "login"}
                         >
-                         {"Log in"}
+                          {"Log in"}
                         </HidableNavTab>
-                        <HidableNavTab
-                          hidden={!this.props.currentUser}
-                          to={'/'}
+                        <NavDropdownToggler
+                          hidden={!currentUser}
+                          onClick={this.accountToggler}
                         >
-                            {"Account"}
-                            <ArrowDown />
-                        </HidableNavTab>
-                        <NavDropdown maxHeight={'200px'} collapse={false}>
-                            <NavListWrapper>
+                          {"Account"}
+                        <ArrowDown />
+                        </NavDropdownToggler>
+                        <NavDropdown
+                          maxHeight={'200px'}
+                          collapse={!this.state.accInfoOpen}
+                        >
+                            <AccNavListWrapper>
                                 <li>
                                     <AccNavTab to={""}>Dashboard</AccNavTab>
                                 </li>
                                 <li>
-                                    <AccNavTab to={WORKING_PATH + "redeem-gift-card"}>Redeem a Gift Card</AccNavTab>
+                                    <AccNavTab
+                                      to={WORKING_PATH + "redeem-gift-card"}
+                                    >
+                                      {"Redeem a Gift Card"}
+                                    </AccNavTab>
                                 </li>
                                 <li>
                                     <NavTabSector />
                                 </li>
                                 <li>
-                                    <AccNavTab to={""}>Log out</AccNavTab>
+                                    <LogoutButton />
                                 </li>
-                            </NavListWrapper>
+                            </AccNavListWrapper>
                         </NavDropdown>
                     </li>
                 </NavListWrapper>
                 <SocialListWrapper>
                     <SocialInfoList />
                 </SocialListWrapper>
+                <AccNavDropdown maxHeight={'200px'} collapse={!this.state.accInfoOpen}>
+                    <AccNavListWrapper>
+                        <li>
+                            <AccNavTab to={""}>Dashboard</AccNavTab>
+                        </li>
+                        <li>
+                            <AccNavTab
+                              to={WORKING_PATH + "redeem-gift-card"}
+                            >
+                              {"Redeem a Gift Card"}
+                            </AccNavTab>
+                        </li>
+                        <li>
+                            <NavTabSector />
+                        </li>
+                        <li>
+                            <AccNavTab
+                              to={""}
+                            >
+                              {"Log out"}
+                            </AccNavTab>
+                        </li>
+                    </AccNavListWrapper>
+                </AccNavDropdown>
             </ ListContainer>
         );
     }
@@ -132,20 +179,23 @@ class Navbar extends Component {
     }
     render() {
         const {currentUser, logout} = this.props;
-        console.log(logout);
+        console.log(currentUser);
         return (
             <NavBarWrapper>
                 <TopBarWrapper>
                     <BrandCombo />
                     <RightLinks>
-                        <NavList inRow currentUser={currentUser}  logout={logout}/>
+                    <NavList inRow currentUser={currentUser} logout={logout}/>
                     </RightLinks>
                     <BurgerButton width={"40px"}
                                   hideAt={"1200px"}
                                   clicked={this.dropdownToggler}/>
                 </TopBarWrapper>
                 <NavDropdown maxHeight={'400px'} collapse={this.state.closed}>
-                    <NavList logout={logout} currentUser={currentUser}/>
+                    <NavList
+                      currentUser={currentUser}
+                      logout={logout}
+                    />
                 </NavDropdown>
             </NavBarWrapper>
         );
@@ -160,8 +210,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => (
-  {logout: () => {dispatch(logout)}}
-)
+const mapDispatchToProps = (dispatch) => {
+  return (
+      {logout: ()=> {dispatch(logout)}}
+  )
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
