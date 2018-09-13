@@ -13,7 +13,10 @@ import { EWNavLogo,
          HidableNavTab,
          NavDropdown,
          AccNavTab,
-         NavTabSector } from './style';
+         NavTabSector,
+         AccNavListWrapper,
+         NavDropdownToggler,
+         AccNavDropdown } from './style';
 import { Dropdown,
          SocialListWrapper,
          NavListWrapper,
@@ -29,6 +32,11 @@ class NavList extends Component  {
         accInfoOpen: false,
     };
 
+    accountToggler = () => {
+        const oldState = this.state.accInfoOpen;
+        this.setState({accInfoOpen: !oldState});
+    }
+
     render() {
         return (
             <ListContainer flexInRow={this.props.inRow}>
@@ -41,9 +49,12 @@ class NavList extends Component  {
                     </li>
                     <li>
                         <HidableNavTab hidden={this.props.loggedIn} to={WORKING_PATH + "login"}>Log in</HidableNavTab>
-                        <HidableNavTab hidden={!this.props.loggedIn} to={'/'}>Account <ArrowDown /></HidableNavTab>
-                        <NavDropdown maxHeight={'200px'} collapse={false}>
-                            <NavListWrapper>
+                        <NavDropdownToggler hidden={!this.props.loggedIn} 
+                                            onClick={this.accountToggler}>
+                            Account <ArrowDown />
+                        </NavDropdownToggler>
+                        <NavDropdown maxHeight={'200px'} collapse={!this.state.accInfoOpen}>
+                            <AccNavListWrapper>
                                 <li>
                                     <AccNavTab to={""}>Dashboard</AccNavTab>
                                 </li>
@@ -56,13 +67,29 @@ class NavList extends Component  {
                                 <li>
                                     <AccNavTab to={""}>Log out</AccNavTab>
                                 </li>
-                            </NavListWrapper>
+                            </AccNavListWrapper>
                         </NavDropdown>
                     </li>
                 </NavListWrapper>
                 <SocialListWrapper>
                     <SocialInfoList />
                 </SocialListWrapper>
+                <AccNavDropdown maxHeight={'200px'} collapse={!this.state.accInfoOpen}>
+                    <AccNavListWrapper>
+                        <li>
+                            <AccNavTab to={""}>Dashboard</AccNavTab>
+                        </li>
+                        <li>
+                            <AccNavTab to={""}>Redeem a Gift Card</AccNavTab>
+                        </li>
+                        <li>
+                            <NavTabSector />
+                        </li>
+                        <li>
+                            <AccNavTab to={""}>Log out</AccNavTab>
+                        </li>
+                    </AccNavListWrapper>
+                </AccNavDropdown>
             </ ListContainer>
         );
     } 

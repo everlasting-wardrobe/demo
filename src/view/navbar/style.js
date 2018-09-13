@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import Link from '../../components/link';
-import {NavTab, Dropdown} from  '../../components/globals/index';
+import { BaseDropdown } from '../../components/dropdown';
+import {NavTab, NavListWrapper, BaseLinkStyle} from  '../../components/globals/index';
 import {
   EWColors,
   H3
@@ -40,6 +41,7 @@ export const TopBarWrapper = styled.div`
 
 export const NavBarWrapper = styled.nav`
   background-color: ${EWColors.background};
+  position: relative;
 `;
 
 export const HidableNavTab = styled(NavTab)`
@@ -52,6 +54,7 @@ export const ListContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
   ${props =>
     props.flexInRow && css
     `
@@ -95,13 +98,14 @@ export const RightLinks = styled.div`
   }
 `;
 
-export const NavDropdown = styled(Dropdown)`
+export const NavDropdown = styled(BaseDropdown)`
   @media (min-width: 1200px) {
     display: none;
   }
 `;
 
 export const AccNavTab = styled(NavTab)`
+  margin-left: 3%;
   line-height: 12px;
 `;
 
@@ -110,4 +114,27 @@ export const NavTabSector = styled.div`
   margin-top: 12px;
   margin-bottom: 12px;
   border-bottom: 1px solid #e7e7e7;
+`;
+
+export const AccNavListWrapper = styled(NavListWrapper)`
+  margin: 1% 0;
+`;
+
+export const NavDropdownToggler = styled.div`
+  ${BaseLinkStyle};
+  ${props => props.hidden && css`
+    display: none;
+  `}
+`;
+
+export const AccNavDropdown = styled(NavDropdown)`
+  position: absolute;
+  left: 22%;
+  top: 103%;
+  width: 33%;
+  display: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+  @media (min-width: 1200px) {
+    display: block;
+  }
 `;
