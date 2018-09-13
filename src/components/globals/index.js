@@ -70,6 +70,12 @@ export const FlexRow = styled.div`
 //   this.text = "'Lato', sans-serif";
 // }();
 
+export const LineBreaker = styled.div`
+  background: ${props => (props.color || EWColors.naturalGray)};
+  height: ${props => (props.height || '1px')};
+  width: 100%;
+`
+
 export const H1 = styled.h1`
   margin: 0;
   padding: 0;
@@ -144,7 +150,7 @@ export const NavTabStyle = css`
   line-height: 24px;
   position: relative;
   display: block;
-  padding: 10px 15px
+  padding: 10px 15px;
   cursor: pointer;
   text-decoration: none;
   font-size: 17px;

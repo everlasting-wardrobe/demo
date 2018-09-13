@@ -91,7 +91,6 @@ class Login extends Component{
               </FormBoarder>
             </FormWrapper>
           </BackgroundWrapper>
-
     )
   }
 }

@@ -39,6 +39,8 @@ class NavList extends Component  {
 
 
     render() {
+      const {inRow, currentUser, logout} = this.props;
+      console.log(logout);
         return (
             <ListContainer flexInRow={this.props.inRow}>
                 <NavListWrapper floated={this.props.inRow}>
@@ -50,10 +52,20 @@ class NavList extends Component  {
                         </NavTab>
                     </li>
                     <li>
-                        <NavTab
+                        <HidableNavTab
+                          hidden={this.props.currentUser}
                           to={WORKING_PATH + "signup"}>
                           {"Sign up"}
-                        </NavTab>
+                        </HidableNavTab>
+                    </li>
+                    <li>
+                        <HidableNavTab
+                          hidden={!this.props.currentUser}
+                          to={'/'}
+                          onClick={logout}
+                        >
+                            {"logout"}
+                        </HidableNavTab>
                     </li>
                     <li>
                         <HidableNavTab
@@ -69,14 +81,13 @@ class NavList extends Component  {
                             {"Account"}
                             <ArrowDown />
                         </HidableNavTab>
-
                         <NavDropdown maxHeight={'200px'} collapse={false}>
                             <NavListWrapper>
                                 <li>
                                     <AccNavTab to={""}>Dashboard</AccNavTab>
                                 </li>
                                 <li>
-                                    <AccNavTab to={""}>Redeem a Gift Card</AccNavTab>
+                                    <AccNavTab to={WORKING_PATH + "redeem-gift-card"}>Redeem a Gift Card</AccNavTab>
                                 </li>
                                 <li>
                                     <NavTabSector />
