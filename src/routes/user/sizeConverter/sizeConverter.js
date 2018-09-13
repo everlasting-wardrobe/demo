@@ -71,15 +71,18 @@ class SizeConverter extends Component {
         return (
             <div className={"size-converter-container"}>
                 <img className={"size-converter-background"} src={converterBackground} alt={""} />
+                
                 <img className={["size-converter-left-wheel", 
                                  this.state.running? "size-converter-wheel-spinning": null].join(' ')} 
                      src={leftWheel} alt={""} />
+                <img className={"size-converter-left-highlight"} src={leftHightlight} alt={""} />
+                <img className={"size-converter-left-shadow"} src={leftShadow} alt={""} />
                 <img className={["size-converter-right-wheel", 
                                  this.state.running? "size-converter-wheel-spinning": null].join(' ')} 
                                  src={rightWheel} alt={""} />
-                <img className={"size-converter-left-highlight"} src={leftHightlight} alt={""} />
+                
                 <img className={"size-converter-right-highlight"} src={rightHightlight} alt={""} />
-                <img className={"size-converter-left-shadow"} src={leftShadow} alt={""} />
+                
                 <img className={"size-converter-right-shadow"} src={rightShadow} alt={""} />
                 <img className={"size-converter-press-button"} 
                      onClick={this.startCalculation}

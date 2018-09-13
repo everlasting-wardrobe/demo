@@ -6,7 +6,7 @@ import {withPanelBackground} from '../../util/util';
 import Knob from '../knobWithHoc/knobWithHoc';
 import KnobWithHoc from '../knobWithHoc/knobWithHoc';
 import Test from './test';
-import './leftTuners.css';
+//import './leftTuners.css';
 
 const LeftTuners = (props) => {
     return (

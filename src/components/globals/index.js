@@ -132,8 +132,14 @@ export const Input = styled.input`
   padding: 0;
 `
 
-export const NavTab = styled(Link)`
-  ${EWText};
+export const Select = styled.select`
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+`;
+
+export const NavTabStyle = css`
   color: #777;
   line-height: 24px;
   position: relative;
@@ -151,6 +157,10 @@ export const NavTab = styled(Link)`
   &:hover {
     color: ${EWColors.burntSienna};
   }
+`;
+
+export const NavTab = styled(Link)`
+  ${NavTabStyle}
 `;
 
 export const NavListWrapper = styled.ul`
@@ -209,7 +219,7 @@ export const TextArea = styled.textarea`
 export const Dropdown = styled.div`
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
-  max-height: 200px;
+  max-height: ${props => props.maxHeight}
   overflow: hidden;
   background-color: #FCFCF5;
   box-sizing: content-box;
@@ -218,8 +228,4 @@ export const Dropdown = styled.div`
     `
       max-height: 0;
     `}
-
-  @media (min-width: 1200px) {
-    display: none;
-  }
 `;

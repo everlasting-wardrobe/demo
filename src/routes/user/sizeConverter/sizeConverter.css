@@ -32,10 +32,6 @@
     position: absolute;
     top: 15%;
     left: 9%;
-    /* animation-name: spin;
-    animation-duration: 3000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;  */
     z-index: 10;
 }
 .size-converter-left-highlight {

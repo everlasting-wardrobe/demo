@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 // Components for style
 import styled from 'styled-components';
+import ArrowDown from 'react-icons/lib/ti/arrow-sorted-down';
+
 import { EWNavLogo,
          TopBarWrapper,
-         NavBar,
+         NavBarWrapper,
          ListContainer,
          RightLinks,
-         BrandContainer } from './style';
+         BrandContainer,
+         HidableNavTab,
+         NavDropdown,
+         AccNavTab,
+         NavTabSector } from './style';
 import { Dropdown,
          SocialListWrapper,
          NavListWrapper,
@@ -20,61 +26,102 @@ import { BurgerButton } from '../../components/buttons';
 import {WORKING_PATH} from '../../api/constants';
 import EWLogo from '../../imgs/EWLogo.svg';
 
+class NavList extends Component  {
+    state = {
+        accInfoOpen: false,
+    };
+
+    render() {
+        return (
+            <ListContainer flexInRow={this.props.inRow}>
+                <NavListWrapper floated={this.props.inRow}>
+                    <li>
+                        <NavTab to={WORKING_PATH + "how-it-works"}>How It Works</NavTab>
+                    </li>
+                    <li>
+                        <NavTab to={WORKING_PATH + "signup"}>Sign up</NavTab>
+                    </li>
+                    <li>
+                        <HidableNavTab hidden={this.props.loggedIn} to={WORKING_PATH + "login"}>Log in</HidableNavTab>
+                        <HidableNavTab hidden={!this.props.loggedIn} to={'/'}>Account <ArrowDown /></HidableNavTab>
+                        <PureTextButton style={{display: "inline"}} onClick={this.props.logout}>
+                        {"Logout"}
+                        </PureTextButton>
+                        <NavDropdown maxHeight={'200px'} collapse={false}>
+                            <NavListWrapper>
+                                <li>
+                                    <AccNavTab to={""}>Dashboard</AccNavTab>
+                                </li>
+                                <li>
+                                    <AccNavTab to={""}>Redeem a Gift Card</AccNavTab>
+                                </li>
+                                <li>
+                                    <NavTabSector />
+                                </li>
+                                <li>
+                                    <AccNavTab to={""}>Log out</AccNavTab>
+                                </li>
+                            </NavListWrapper>
+                        </NavDropdown>
+                    </li>
+                </NavListWrapper>
+                <SocialListWrapper>
+                    <SocialInfoList />
+                </SocialListWrapper>
+            </ ListContainer>
+        );
+    }
+}
 
 
 
-const NavList = (props) => (
-    <ListContainer flexInRow={props.inRow}>
-      {props.currentUser? (
-        <NavListWrapper floated={props.inRow}>
-          <li>
-            <NavTab
-              to={WORKING_PATH + "how-it-works"}
-            >
-            {"How It Works"}
-            </NavTab>
-          </li>
-          <li>
-            <NavTab to={'/'}>
-            {`Hello ${props.currentUser}`}
-            </NavTab>
-          </li>
-          <li>
-            <PureTextButton style={{display: "inline"}} onClick={props.logout}>
-            {"Logout"}
-            </PureTextButton>
-          </li>
-        </NavListWrapper>
-      ) : (
-      <NavListWrapper floated={props.inRow}>
-        <li>
-          <NavTab
-            to={WORKING_PATH + "how-it-works"}
-          >
-          {"How It Works"}
-          </NavTab>
-        </li>
-        <li>
-          <NavTab
-            to={WORKING_PATH + "signup"}
-          >
-          {"Sign up"}
-          </NavTab>
-        </li>
-        <li>
-          <NavTab
-            to={WORKING_PATH + "login"}
-          >
-          {"Log in"}
-          </NavTab>
-        </li>
-      </NavListWrapper>
-    )}
-        <SocialListWrapper>
-            <SocialInfoList />
-        </SocialListWrapper>
-    </ ListContainer>
-);
+// const NavList = (props) => (
+//     <ListContainer flexInRow={props.inRow}>
+//       {props.currentUser? (
+//         <NavListWrapper floated={props.inRow}>
+//           <li>
+//             <NavTab
+//               to={WORKING_PATH + "how-it-works"}
+//             >
+//             {"How It Works"}
+//             </NavTab>
+//           </li>
+//           <li>
+//             <NavTab to={'/'}>
+//             {`Hello ${props.currentUser}`}
+//             </NavTab>
+//           </li>
+//         </NavListWrapper>
+//       ) : (
+//       <NavListWrapper floated={props.inRow}>
+//         <li>
+//           <NavTab
+//             to={WORKING_PATH + "how-it-works"}
+//           >
+//           {"How It Works"}
+//           </NavTab>
+//         </li>
+//         <li>
+//           <NavTab
+//             to={WORKING_PATH + "signup"}
+//           >
+//           {"Sign up"}
+//           </NavTab>
+//         </li>
+//         <li>
+//           <NavTab
+//             to={WORKING_PATH + "login"}
+//           >
+//           {"Log in"}
+//           </NavTab>
+//         </li>
+//       </NavListWrapper>
+//     )}
+//         <SocialListWrapper>
+//             <SocialInfoList />
+//         </SocialListWrapper>
+//     </ ListContainer>
+// );
 
 const BrandCombo = () => (
     <BrandContainer>
@@ -92,6 +139,7 @@ const BrandCombo = () => (
 class Navbar extends Component {
     state = {
         closed: true,
+        loggedIn: true,
     };
 
     dropdownToggler = () => {
@@ -102,20 +150,20 @@ class Navbar extends Component {
         const {currentUser, logout} = this.props;
         console.log(logout);
         return (
-            <NavBar>
+            <NavBarWrapper>
                 <TopBarWrapper>
                     <BrandCombo />
                     <RightLinks>
-                    <NavList inRow currentUser={currentUser} logout={logout}/>
+                    <NavList inRow currentUser={currentUser} loggedIn={this.state.loggedIn} logout={logout}/>
                     </RightLinks>
                     <BurgerButton width={"40px"}
                                   hideAt={"1200px"}
                                   clicked={this.dropdownToggler}/>
                 </TopBarWrapper>
-                <Dropdown collapse={this.state.closed}>
-                    <NavList />
-                </Dropdown>
-            </NavBar>
+                <NavDropdown maxHeight={'400px'} collapse={this.state.closed}>
+                    <NavList loggedIn={this.state.loggedIn}/>
+                </NavDropdown>
+            </NavBarWrapper>
         );
     }
 }
