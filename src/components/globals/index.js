@@ -139,7 +139,7 @@ export const Select = styled.select`
   background-color: transparent;
 `;
 
-export const NavTabStyle = css`
+export const BaseLinkStyle = css`
   color: #777;
   line-height: 24px;
   position: relative;
@@ -160,7 +160,7 @@ export const NavTabStyle = css`
 `;
 
 export const NavTab = styled(Link)`
-  ${NavTabStyle}
+  ${BaseLinkStyle}
 `;
 
 export const NavListWrapper = styled.ul`
@@ -216,16 +216,9 @@ export const TextArea = styled.textarea`
   }
 `;
 
-export const Dropdown = styled.div`
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
-  max-height: ${props => props.maxHeight}
-  overflow: hidden;
-  background-color: #FCFCF5;
-  box-sizing: content-box;
-  ${props =>
-    props.collapse && css
-    `
-      max-height: 0;
-    `}
+
+export const LineBreaker = styled.div`
+  height: 1px;
+  background-color: ${props => props.color};
+  width: ${props => props.width};
 `;
