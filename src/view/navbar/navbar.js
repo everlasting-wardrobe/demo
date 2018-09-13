@@ -95,7 +95,7 @@ class NavList extends Component  {
                           onClick={this.accountToggler}
                         >
                           {"Account"}
-                        <ArrowDown />
+                          <ArrowDown />
                         </NavDropdownToggler>
                         <NavDropdown
                           maxHeight={'200px'}
