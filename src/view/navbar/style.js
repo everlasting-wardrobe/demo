@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 import Link from '../../components/link';
 import { BaseDropdown } from '../../components/dropdown';
-import {NavTab, NavListWrapper, BaseLinkStyle} from  '../../components/globals/index';
+import {
+  NavTab,
+  NavListWrapper,
+  BaseLinkStyle
+} from  '../../components/globals/index';
 import {
   EWColors,
   H3

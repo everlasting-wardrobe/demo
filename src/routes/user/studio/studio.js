@@ -46,14 +46,27 @@ class Studio extends Component{
     const {currentUser} = this.props;
 
     if(!currentUser){
-      return <Redirect to={{pathname : WORKING_PATH + "login"}} />
+      return (
+        <Redirect
+          to={{
+            pathname : WORKING_PATH + "login",
+            state : {from : this.props.location}
+          }}
+        />
+      )
     }
     const boxReviewData = boxReviewDataGenerator();
     return (
       <ErrorBoundary >
-        <div className={"studio"}>
-          <div className={"feedback-wrapper"}>
-            <Feedback boxReviewData={boxReviewData}/>
+        <div
+          className={"studio"}
+        >
+          <div
+            className={"feedback-wrapper"}
+          >
+            <Feedback
+              boxReviewData={boxReviewData}
+            />
           </div>
           <div className={"studio-container-wrapper"}>
             {!this.state.LowPartBackgroundLoaded && (
