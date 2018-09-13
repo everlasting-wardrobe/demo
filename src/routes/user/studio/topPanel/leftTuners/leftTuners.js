@@ -3,7 +3,7 @@ import React from 'react';
 import headphoneJack from './HeadphonesJack.png';
 import InputKnob from '../inputKnobWithHoc/inputKnobWithHoc';
 import {withPanelBackground} from '../../util/util';
-import Knob from '../knob/knob';
+import Knob from '../knobWithHoc/knobWithHoc';
 import KnobWithHoc from '../knobWithHoc/knobWithHoc';
 import Test from './test';
 //import './leftTuners.css';
@@ -24,7 +24,7 @@ const LeftTuners = (props) => {
             <div className={"left-tuners-inputknob-wrapper"}>
                 <InputKnob />
             </div>
-            
+
         </div>
     );
 }

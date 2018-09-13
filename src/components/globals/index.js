@@ -31,6 +31,27 @@ export const EWText = css`
   font-family: ${EWFF.text};
 `
 
+export const EWCickableText = css`
+  ${EWText};
+  color: #777;
+  line-height: 24px;
+  position: relative;
+  display: block;
+  padding: 10px 15px
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 100;
+  font-family: inherit;
+  transition: ease all .4s;
+  &:link, &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    color: ${EWColors.burntSienna};
+  }
+`
+
 export const FlexCol = styled.div`
   display: flex;
   flex-direction: column;

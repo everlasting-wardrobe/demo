@@ -9,6 +9,9 @@ import {
   Spinner
 } from './util/util';
 import Loadable from 'react-loadable';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {WORKING_PATH} from '../../../api/constants';
 
 
 const LoadableMixingBoard = Loadable({
@@ -40,6 +43,11 @@ class Studio extends Component{
   }
 
   render(){
+    const {currentUser} = this.props;
+
+    if(!currentUser){
+      return <Redirect to={{pathname : WORKING_PATH + "login"}} />
+    }
     const boxReviewData = boxReviewDataGenerator();
     return (
       <ErrorBoundary >
@@ -63,4 +71,11 @@ class Studio extends Component{
   }
 }
 
-export default Studio;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    currentUser: state.userReducer.currentUser,
+    ...ownProps
+  }
+}
+
+export default connect(mapStateToProps)(Studio);
