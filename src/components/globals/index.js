@@ -216,9 +216,15 @@ export const TextArea = styled.textarea`
   }
 `;
 
-
 export const LineBreaker = styled.div`
   height: 1px;
   background-color: ${props => props.color};
   width: ${props => props.width};
+`;
+
+export const URLBackgroundWrapper = styled.div`
+  background-image: url(${props => props.url});
+  background-size: 100%;
+  background-attachment: initial;
+  background-repeat: no-repeat;
 `;

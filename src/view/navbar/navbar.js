@@ -42,16 +42,16 @@ class NavList extends Component  {
             <ListContainer flexInRow={this.props.inRow}>
                 <NavListWrapper floated={this.props.inRow}>
                     <li>
-                        <NavTab to={WORKING_PATH + "how-it-works"}>How It Works</NavTab>
+                        <NavTab to={WORKING_PATH + "how-it-works"}>{"How It Works"}</NavTab>
                     </li>
                     <li>
-                        <NavTab to={WORKING_PATH + "signup"}>Sign up</NavTab>
+                        <NavTab to={WORKING_PATH + "signup"}>{"Sign up"}</NavTab>
                     </li>
                     <li>
                         <HidableNavTab hidden={this.props.loggedIn} to={WORKING_PATH + "login"}>Log in</HidableNavTab>
                         <NavDropdownToggler hidden={!this.props.loggedIn} 
                                             onClick={this.accountToggler}>
-                            Account <ArrowDown />
+                            {"Account"} <ArrowDown />
                         </NavDropdownToggler>
                         <NavDropdown maxHeight={'200px'} collapse={!this.state.accInfoOpen}>
                             <AccNavListWrapper>
@@ -94,8 +94,6 @@ class NavList extends Component  {
         );
     } 
 }
-
-
 
 // const NavList = (props) => (
 //     <ListContainer flexInRow={props.inRow}>

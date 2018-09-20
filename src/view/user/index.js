@@ -6,6 +6,7 @@ import {WaitList} from './waitlist';
 import Footer from '../footer/footer';
 import Login from './login';
 import {ContactUs} from './contact';
+import LandingPage from './landingpage';
 import {
   BrowserRouter as Router,
   Route,
@@ -23,6 +24,7 @@ const UserManagement = () => {
           <Route path={WORKING_PATH + 'password/new'} component={ForgetPassWordPanel} />
           <Route path={WORKING_PATH + 'contact-us'} component={ContactUs} />
           <Route path={WORKING_PATH + 'waitlist'} component={WaitList} />
+          <Route path={WORKING_PATH + 'landingpage'} component={LandingPage} />
         </Switch>
       <Footer />
     </div>
