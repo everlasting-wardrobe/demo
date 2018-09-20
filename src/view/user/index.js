@@ -2,6 +2,7 @@ import React from 'react';
 import {Signup} from './signup';
 import {HowItWork} from './howItWork';
 import {ForgetPassWordPanel} from './forgetPassword';
+import RedeemGiftCard from './redeemGiftCard';
 import {WaitList} from './waitlist';
 import Footer from '../footer/footer';
 import Login from './login';
@@ -25,6 +26,7 @@ const UserManagement = () => {
           <Route path={WORKING_PATH + 'contact-us'} component={ContactUs} />
           <Route path={WORKING_PATH + 'waitlist'} component={WaitList} />
           <Route path={WORKING_PATH + 'landingpage'} component={LandingPage} />
+          <Route path={WORKING_PATH + 'redeem-gift-card'} component={RedeemGiftCard} />
         </Switch>
       <Footer />
     </div>

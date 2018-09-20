@@ -70,6 +70,7 @@ export const FlexRow = styled.div`
 //   this.text = "'Lato', sans-serif";
 // }();
 
+
 export const H1 = styled.h1`
   margin: 0;
   padding: 0;
@@ -144,7 +145,7 @@ export const BaseLinkStyle = css`
   line-height: 24px;
   position: relative;
   display: block;
-  padding: 10px 15px
+  padding: 10px 15px;
   cursor: pointer;
   text-decoration: none;
   font-size: 17px;
@@ -218,8 +219,9 @@ export const TextArea = styled.textarea`
 
 export const LineBreaker = styled.div`
   height: 1px;
-  background-color: ${props => props.color};
-  width: ${props => props.width};
+  background: ${props => (props.color || EWColors.naturalGray)};
+  height: ${props => (props.height || '1px')};
+  width: ${props => (props.width || '100%')};
 `;
 
 export const URLBackgroundWrapper = styled.div`
