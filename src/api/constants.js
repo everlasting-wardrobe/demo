@@ -7,3 +7,4 @@ export const SERVER_URL = IS_PROD
     'http://localhost:3000';
 
 export const WORKING_PATH = '/test/test/';
+export const IMAGE_STORAGE = 'https://res.cloudinary.com/xiaoxu/image/upload/';

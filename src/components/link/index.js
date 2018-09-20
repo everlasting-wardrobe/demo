@@ -48,3 +48,32 @@ export const NoneStyleLink = styled(BasicLink)`
     text-decoration: none;
   }
 `
+export const RedButtonLink = styled(NoneStyleLink)`
+  display: block;
+  background-color: rgb(185,22,20);
+  color: white;
+  font-family: "Open Sans",sans-serif;
+  font-size: 2rem;
+  box-shadow: rgba(0,0,0,0.75) 10px 10px 51px 0px;
+  border-color: rgb(185,22,20);
+  border-radius: 3%;
+  font-weight: 300;
+  text-align: center;
+  &:hover {
+    color: white;
+  }
+`;
+
+export const TransparentButtonLink = styled(NoneStyleLink)`
+  display: block;
+  font-size: 1.5rem;
+  width: 18rem;
+  border: 0.2rem white solid;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  &:hover {
+    color: white;
+  }
+`; 

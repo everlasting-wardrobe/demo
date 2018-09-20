@@ -16,7 +16,7 @@ import {
   ConnectBar,
   CompletedCircle,
   IncompletedCircle,
-  StepsBarWrapper,
+  RespMarginStepsBar,
 } from './style';
 import {InputBoarderWrapper} from '../../components/wrapper';
 import {ProfileSelect, ProfileOption} from '../../components/select';
@@ -35,9 +35,9 @@ const StepsBar = (props) => {
     }
   }
   return (
-    <StepsBarWrapper>
+    <RespMarginStepsBar>
       {stepsCombo}
-    </StepsBarWrapper>
+    </RespMarginStepsBar>
   );
 };
 
@@ -77,7 +77,7 @@ export class Profile extends Component{
 
     return (
       <BackgroundWrapper>
-        <StepsBar size={6} curStep={4} />
+        <StepsBar size={4} curStep={0} />
         <FormWrapper>
           <FormBoarder>
             <Title>

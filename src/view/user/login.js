@@ -5,6 +5,7 @@ import {login} from '../../actions/authentication';
 import {UnderlinedInput} from '../../components/input';
 import {
   BackgroundWrapper,
+  RspBackgroundWrapper,
   FormBoarder,
   Title,
   InputWrapper,
@@ -50,7 +51,7 @@ class Login extends Component{
       return <Redirect to={from} />;
     }
     return (
-          <BackgroundWrapper>
+          <RspBackgroundWrapper>
             <FormWrapper>
               <FormBoarder>
                 <Title>
@@ -90,7 +91,8 @@ class Login extends Component{
                 </Form>
               </FormBoarder>
             </FormWrapper>
-          </BackgroundWrapper>
+          </RspBackgroundWrapper>
+
     )
   }
 }
