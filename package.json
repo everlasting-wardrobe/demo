@@ -125,5 +125,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "https://ew-express-staging.herokuapp.com"
+  "proxy": "https://ew-express-staging.herokuapp.com",
+  "homepage":"https://everlasting-wardrobe.github.io/demo"
 }
