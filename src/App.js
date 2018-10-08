@@ -11,11 +11,12 @@ import {Spinner} from './routes/user/studio/util/util';
 import UserManagement from './view/user/';
 import Navbar from './view/navbar/navbar';
 import User from './routes/user/user';
+import Homepage from './routes/homepage';
 
-const Homepage = asyncLoadable(Loadable({
-  loader: ()=> import('./routes/homepage'),
-  loading: () => {return <Spinner />}
-}));
+// const Homepage = asyncLoadable(Loadable({
+//   loader: ()=> import('./routes/homepage'),
+//   loading: () => {return <Spinner />}
+// }));
 
 // const User = asyncLoadable(Loadable({
 //   loader: ()=> import('./routes/user/user'),
@@ -33,9 +34,9 @@ export default class App extends Component {
       <div>
             <Navbar />
             <Switch>
-              <Route exact path='/' component={Homepage} />
-              <Route path='/service' component={Service} />
-              <Route path='/user' component={User} />
+              <Route exact path={process.env.PUBLIC_URL + '/'} component={Homepage} />
+              <Route path={process.env.PUBLIC_URL + '/service'} component={Service} />
+              <Route path={process.env.PUBLIC_URL + '/user'} component={User} />
               <Route path={'/test/test'} component={UserManagement} />
             </Switch>
       </div>

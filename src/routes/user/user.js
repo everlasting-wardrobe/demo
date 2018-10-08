@@ -16,11 +16,11 @@ const User = () => {
   return (
     <div>
         <Switch>
-          <Route path={'/user/signup'} component={Signup} />
-          <Route path={'/user/studio'} component={Studio} />
+          <Route path={process.env.PUBLIC_URL + '/user/signup'} component={Signup} />
+          <Route path={process.env.PUBLIC_URL + '/user/studio'} component={Studio} />
           <Route path={'/user/size-converter'} component={SizeConverter} />
           <Route path={'/user/landing-page'} component={Navbar} />
-          <Route path={'/user/login'} component={Login} />
+          <Route path={process.env.PUBLIC_URL + '/user/login'} component={Login} />
           <Route path={'/user/profile'} component={Profile} />
         </Switch>
     </div>
