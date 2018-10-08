@@ -17,7 +17,7 @@ import {
   NavTabSector,
   AccNavListWrapper,
   NavDropdownToggler,
-  AccNavDropdown 
+  AccNavDropdown
 } from './style';
 import { Dropdown,
          SocialListWrapper,
@@ -29,11 +29,11 @@ import {
   BurgerButton,
   PureTextButton
  } from '../../components/buttons';
-// import {WORKING_PATH} from '../../api/constants';
+import {WORKING_PATH} from '../../api/constants';
 import EWLogo from '../../imgs/EWLogo.svg';
 import {logout} from '../../actions/authentication';
 import {withRouter} from 'react-router-dom';
-const WORKING_PATH = process.env.PUBLIC_URL;
+// const WORKING_PATH = process.env.PUBLIC_URL;
 
 class NavList extends Component  {
     constructor(props){

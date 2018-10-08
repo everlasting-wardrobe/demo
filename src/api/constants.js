@@ -6,5 +6,5 @@ export const SERVER_URL = IS_PROD
   : // In development we gotta redirect to localhost:3001/whatever tho
     'http://localhost:3000';
 
-export const WORKING_PATH = '/test/test/';
+export const WORKING_PATH = '/demo/';
 export const IMAGE_STORAGE = 'https://res.cloudinary.com/xiaoxu/image/upload/';
