@@ -53,7 +53,16 @@ class MixingBoard extends Component{
           <StyleBalancer width={0.18}/>
         </div>
         <div>
-          <img src = {SwipeApp}  style={{width: '18vw'}} alt={"Swipe App Comming Soon!"}/>
+          <img src = {SwipeApp}
+            style={{
+              width: '20vw',
+              height: '20vw',
+              marginTop: '-10px',
+              marginLeft: '1vw',
+              padding: '0 1vw 0 1vw'
+            }}
+            alt={"Swipe App Comming Soon!"}
+          />
         </div>
         <div className={"pattern-Pad-wrapper"}>
           <PatternPannelWithBackground width={0.4}/>

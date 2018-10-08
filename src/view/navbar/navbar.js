@@ -4,19 +4,21 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import ArrowDown from 'react-icons/lib/ti/arrow-sorted-down';
 
-import { EWNavLogo,
-         TopBarWrapper,
-         NavBarWrapper,
-         ListContainer,
-         RightLinks,
-         BrandContainer,
-         HidableNavTab,
-         NavDropdown,
-         AccNavTab,
-         NavTabSector,
-         AccNavListWrapper,
-         NavDropdownToggler,
-         AccNavDropdown } from './style';
+import {
+  EWNavLogo,
+  TopBarWrapper,
+  NavBarWrapper,
+  ListContainer,
+  RightLinks,
+  BrandContainer,
+  HidableNavTab,
+  NavDropdown,
+  AccNavTab,
+  NavTabSector,
+  AccNavListWrapper,
+  NavDropdownToggler,
+  AccNavDropdown 
+} from './style';
 import { Dropdown,
          SocialListWrapper,
          NavListWrapper,
