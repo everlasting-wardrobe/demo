@@ -29,11 +29,11 @@ import {
   BurgerButton,
   PureTextButton
  } from '../../components/buttons';
-import {WORKING_PATH} from '../../api/constants';
+// import {WORKING_PATH} from '../../api/constants';
 import EWLogo from '../../imgs/EWLogo.svg';
 import {logout} from '../../actions/authentication';
 import {withRouter} from 'react-router-dom';
-// const WORKING_PATH = process.env.PUBLIC_URL;
+const WORKING_PATH = process.env.PUBLIC_URL;
 
 class NavList extends Component  {
     constructor(props){
@@ -159,10 +159,10 @@ class NavList extends Component  {
 
 const BrandCombo = () => (
     <BrandContainer>
-        <EWNavLogo to={WORKING_PATH}>
+        <EWNavLogo to={""}>
             <img src={EWLogo} />
         </EWNavLogo>
-        <EWNavLogo to={WORKING_PATH}>
+        <EWNavLogo to={""}>
             <h3>
                 {"EverlastingWardrobe"}
             </h3>
