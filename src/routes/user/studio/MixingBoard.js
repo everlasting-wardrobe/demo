@@ -10,7 +10,7 @@ import './studio.css';
 import TopPanel from './topPanel/topPanel';
 import {connect} from 'react-redux';
 import {fetchMixingBoardData} from '../../routerAction';
-import {SwipeApp} from './swipeApp/swipeAppComingSoon.png';
+import SwipeApp from './swipeApp/swipeAppComingSoon.png';
 import axios from 'axios';
 
 
