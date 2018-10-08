@@ -159,10 +159,10 @@ class NavList extends Component  {
 
 const BrandCombo = () => (
     <BrandContainer>
-        <EWNavLogo to={""}>
+        <EWNavLogo to={WORKING_PATH}>
             <img src={EWLogo} />
         </EWNavLogo>
-        <EWNavLogo to={""}>
+        <EWNavLogo to={WORKING_PATH}>
             <h3>
                 {"EverlastingWardrobe"}
             </h3>
