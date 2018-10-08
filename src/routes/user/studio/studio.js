@@ -49,7 +49,7 @@ class Studio extends Component{
       return (
         <Redirect
           to={{
-            pathname : WORKING_PATH + "login",
+            pathname : process.env.PUBLIC_URL + "login",
             state : {from : this.props.location}
           }}
         />

@@ -10,6 +10,7 @@ import './studio.css';
 import TopPanel from './topPanel/topPanel';
 import {connect} from 'react-redux';
 import {fetchMixingBoardData} from '../../routerAction';
+import {SwipeApp} from './swipeApp/swipeAppComingSoon.png';
 import axios from 'axios';
 
 
@@ -50,6 +51,9 @@ class MixingBoard extends Component{
         </div>
         <div className={"style-balancer-wrapper"}>
           <StyleBalancer width={0.18}/>
+        </div>
+        <div>
+          <img src = {SwipeApp}  style={{width: '18vw'}} alt={"Swipe App Comming Soon!"}/>
         </div>
         <div className={"pattern-Pad-wrapper"}>
           <PatternPannelWithBackground width={0.4}/>
