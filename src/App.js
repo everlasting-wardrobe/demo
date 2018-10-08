@@ -10,16 +10,17 @@ import {asyncLoadable} from './util/util';
 import {Spinner} from './routes/user/studio/util/util';
 import UserManagement from './view/user/';
 import Navbar from './view/navbar/navbar';
+import User from './routes/user/user';
 
 const Homepage = asyncLoadable(Loadable({
   loader: ()=> import('./routes/homepage'),
   loading: () => {return <Spinner />}
 }));
 
-const User = asyncLoadable(Loadable({
-  loader: ()=> import('./routes/user/user'),
-  loading: () => {return <Spinner />}
-}));
+// const User = asyncLoadable(Loadable({
+//   loader: ()=> import('./routes/user/user'),
+//   loading: () => {return <Spinner />}
+// }));
 
 const Service = asyncLoadable( Loadable({
   loader: ()=> import('./routes/service'),
