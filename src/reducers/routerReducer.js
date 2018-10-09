@@ -22,21 +22,21 @@ export const mixingBoardReducer = (
     color1: {r:'135', g: '255', b:'135', a:'1'},
     color2: {r:'135', g: '135', b:'255', a:'1'},
     color3: {r:'135', g: '255', b:'255', a:'1'},
-    color4: {r:'255', g: '255', b:'135', a:'1'},
+    color4: {r:'255', g: '135', b:'135', a:'1'},
     genres : ['jazz', 'pop', 'indie', 'funk', 'jockJams', 'hipHop'],
     // {property: number}
     colors : ['blue', 'yellow', 'orange', 'red', 'green', 'gray'],
-    totalPoints: 5,
+    totalPoints: 0,
     pointBoundary: 10,
     jazz: 0,
     pop:  0,
-    indie: 5,
+    indie: 0,
     funk:  0,
     jockjams: 0,
     hiphop: 0,
-    size: 1,
+    size: 3,
     style: 3,
-    genre: 5
+    genre: 3
   }, action) => {
     switch (action.type) {
       case  FETCH_MIXING_BOARD_DATA:
