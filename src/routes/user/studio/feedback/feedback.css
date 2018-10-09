@@ -12,6 +12,21 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    opacity: 1;
+  	animation-name: fadeInOpacity;
+  	animation-iteration-count: 1;
+  	animation-timing-function: ease-in;
+  	animation-duration: 1.5s;
+    transition: ease all 0.5s;
+  }
+
+  @keyframes fadeInOpacity {
+  	0% {
+  		opacity: 0;
+  	}
+  	100% {
+  		opacity: 1;
+  	}
   }
 
   .feedback-background{

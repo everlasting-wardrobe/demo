@@ -12,22 +12,8 @@ import Loadable from 'react-loadable';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {WORKING_PATH} from '../../../api/constants';
+import MixingBoard from './MixingBoard';
 
-
-const LoadableMixingBoard = Loadable({
-  loader: () => import('./MixingBoard'),
-  loading: (props) => {
-    if (props.error) {
-      return <div>Error! <button onClick={ props.retry }>Retry</button></div>;
-    } else if (props.pastDelay) {
-      return <Spinner />;
-    } else {
-      return null;
-    }
-  }
-});
-
-// Warning! For NextWardrobeTracker the total width should be 100vw;
 
 class Studio extends Component{
   constructor(props){
@@ -76,7 +62,7 @@ class Studio extends Component{
               src={PanelBoard} className={"studio-background"}
               onLoad = {this.onImageLoaded}
             />
-            <LoadableMixingBoard />
+            <MixingBoard />
           </div>
         </div>
       </ErrorBoundary>
