@@ -45,16 +45,16 @@ class Studio extends Component{
   render(){
     const {currentUser} = this.props;
 
-    if(!currentUser){
-      return (
-        <Redirect
-          to={{
-            pathname : process.env.PUBLIC_URL + "login",
-            state : {from : this.props.location}
-          }}
-        />
-      )
-    }
+    // if(!currentUser){
+    //   return (
+    //     <Redirect
+    //       to={{
+    //         pathname : process.env.PUBLIC_URL + "login",
+    //         state : {from : this.props.location}
+    //       }}
+    //     />
+    //   )
+    // }
     const boxReviewData = boxReviewDataGenerator();
     return (
       <ErrorBoundary >
