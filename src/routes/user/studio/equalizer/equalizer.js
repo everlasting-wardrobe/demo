@@ -104,11 +104,11 @@ class Equalizer extends Component{
         className={"equalizer"}
         style={{width: `${this.state.width * 100}vw`}}
       >
-        <h3>
-          {"-SYTLE PRESETS-"}
-        </h3>
         <div className={"equalizer-container"}>
           <div className={'amfm-wrapper'}>
+            <h3>
+              {"-SYTLE PRESETS-"}
+            </h3>
             <div className={'amfm-inner-wrapper'}>
               <AMFM rest={30 - this.state.totalPoints}
                 onResetClick={this.onAmfmResetClick}/>
