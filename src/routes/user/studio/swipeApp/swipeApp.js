@@ -14,9 +14,9 @@ const SwipeApp = () => {
       <img src = {SwipeAppImg}
         style={{
           width: '20vw',
-          height: '24vw',
+          height: '25vw',
           marginLeft: '1vw',
-          padding: '0 1vw 1vw 1vw'
+          padding: '0 0 1vw 0'
         }}
         alt={"Swipe App Comming Soon!"}
       />

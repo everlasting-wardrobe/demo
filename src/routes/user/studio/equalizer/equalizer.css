@@ -1,10 +1,10 @@
 .equalizer h3{
-  margin-bottom: 2.5%;
+  /* margin-bottom: 1%; */
   text-align: center;
   font-family: Lato;
   font-size: 2vw;
   font-weight: 300;
-  padding-bottom: 10%;
+  padding-bottom: 3%;
 }
 
 .equalizer-container{
