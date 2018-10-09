@@ -9,8 +9,8 @@ import {PatternPannelWithBackground} from './PatternPad/patternPad';
 import './studio.css';
 import TopPanel from './topPanel/topPanel';
 import {connect} from 'react-redux';
+import SwipeApp from './swipeApp/swipeApp';
 import {fetchMixingBoardData} from '../../routerAction';
-import SwipeApp from './swipeApp/swipeAppComingSoon.png';
 import axios from 'axios';
 
 
@@ -48,24 +48,17 @@ class MixingBoard extends Component{
         </div>
         <div className={"colorpicker-set-wrapper"}>
           <ColorPickerSet width={0.4}/>
+          <PatternPannelWithBackground width={0.4}/>
         </div>
         <div className={"style-balancer-wrapper"}>
           <StyleBalancer width={0.18}/>
         </div>
-        <div>
-          <img src = {SwipeApp}
-            style={{
-              width: '20vw',
-              height: '20vw',
-              marginTop: '-10px',
-              marginLeft: '1vw',
-              padding: '0 1vw 0 1vw'
-            }}
-            alt={"Swipe App Comming Soon!"}
-          />
-        </div>
-        <div className={"pattern-Pad-wrapper"}>
-          <PatternPannelWithBackground width={0.4}/>
+        <div
+          style={{
+            margin: '0 -1vw 0 1vw',
+          }}
+        >
+          <SwipeApp />
         </div>
       </div>
     )
