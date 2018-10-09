@@ -28,7 +28,7 @@ class NextWardrobeTracker extends Component{
           <div className={"box-count-down-board-wrapper"}>
             <BoxCountDownBoard days={this.props.daysRemained}/>
           </div>
-          <p className={"next-wardrobe-tracker-text"} style={{fontSize:`${10 * width}vw`}}>
+          <p className={"next-wardrobe-tracker-text"}>
             {"-NEXT WARDROBE-"}
           </p>
           <div className={"next-wardrobe-tracker"}>

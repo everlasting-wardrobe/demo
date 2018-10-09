@@ -12,6 +12,9 @@
   /* font-size: 8vw; */
   margin: 0;
   text-align: right;
+  font-family: Lato;
+  font-size: 1.5vw;
+  font-weight: 300;
 }
 
 .size-tracker-display{
@@ -68,6 +71,10 @@
   width: 90%;
   margin: auto;
   padding-top: 8%;
+  font-family: Lato;
+  font-size: 1.5vw;
+  font-weight: 300;
+  text-align: center;
 }
 
 .size-tracker-unit-wrapper{

@@ -4,6 +4,9 @@
 
 .color-picker-set-title{
   text-align: center;
+  font-family: Lato;
+  font-size: 2vw;
+  font-weight: 300;
 }
 
 .color-picker-set-info-left{

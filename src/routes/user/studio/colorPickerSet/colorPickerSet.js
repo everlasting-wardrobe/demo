@@ -66,7 +66,6 @@ class ColorPickerSet extends Component{
       >
         <h3
           className={'color-picker-set-title'}
-          style={{fontSize: `${this.state.width * 6}vw`}}
         >
           {"-COLOR PICKER-"}
         </h3>

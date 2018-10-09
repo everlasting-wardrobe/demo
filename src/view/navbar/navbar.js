@@ -68,7 +68,7 @@ class NavList extends Component  {
         }
       )
 
-      console.log(logout);
+      // console.log(logout);
         return (
             <ListContainer flexInRow={this.props.inRow}>
                 <NavListWrapper floated={this.props.inRow}>
@@ -182,7 +182,7 @@ class Navbar extends Component {
     }
     render() {
         const {currentUser, logout} = this.props;
-        console.log(currentUser);
+        // console.log(currentUser);
         return (
             <NavBarWrapper>
                 <TopBarWrapper>
@@ -206,7 +206,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
+  // console.log(state);
   return {
     currentUser: state.userReducer.currentUser,
     ...ownProps

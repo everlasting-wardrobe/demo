@@ -104,9 +104,7 @@ class Equalizer extends Component{
         className={"equalizer"}
         style={{width: `${this.state.width * 100}vw`}}
       >
-        <h3
-          style={{fontSize: `${this.state.width * 10}vw`}}
-        >
+        <h3>
           {"-SYTLE PRESETS-"}
         </h3>
         <div className={"equalizer-container"}>

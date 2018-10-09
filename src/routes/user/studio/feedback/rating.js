@@ -14,7 +14,7 @@ const RatingAFAM = (props)=>{
   const score = props.score;
   let RatingScore = (score*100/10-10)*0.95 + 8;
   let imgSrc = props.imgSrc;
-  console.log(RatingScore);
+  // console.log(RatingScore);
   return(
     <div className={"Rating-bar"} style={{textAlign: 'center'}}>
       <Afam src ={imgSrc}/>
