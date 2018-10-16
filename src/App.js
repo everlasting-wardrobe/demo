@@ -12,21 +12,8 @@ import UserManagement from './view/user/';
 import Navbar from './view/navbar/navbar';
 import User from './routes/user/user';
 import Homepage from './routes/homepage';
+import Studio from './routes/user/studio/studio';
 
-// const Homepage = asyncLoadable(Loadable({
-//   loader: ()=> import('./routes/homepage'),
-//   loading: () => {return <Spinner />}
-// }));
-
-// const User = asyncLoadable(Loadable({
-//   loader: ()=> import('./routes/user/user'),
-//   loading: () => {return <Spinner />}
-// }));
-
-const Service = asyncLoadable( Loadable({
-  loader: ()=> import('./routes/service'),
-  loading: () => {return <Spinner />}
-}));
 
 export default class App extends Component {
   render() {
@@ -34,10 +21,7 @@ export default class App extends Component {
       <div>
             <Navbar />
             <Switch>
-              <Route exact path={process.env.PUBLIC_URL + '/'} component={Homepage} />
-              <Route path={process.env.PUBLIC_URL + '/service'} component={Service} />
-              <Route path={process.env.PUBLIC_URL + '/user'} component={User} />
-              <Route path={'/test/test'} component={UserManagement} />
+              <Route path={process.env.PUBLIC_URL + '/'} component={Studio} />
             </Switch>
       </div>
     );
