@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
-// import boxReviewDataGenerator from './boxReviewTestData';
 import BoxReview from './boxReview';
 import Booth from './booth';
 import './feedback.css';
 import './feedbackSlider.css';
 import Rating from './rating';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import ErrorBoundary from './errorBoundary';
-import FeedbackBackground from './boxReviewBackground.jpg';
-import StyleFeedback from './Style_Feedback.png';
-import RatingAFAM from './ratingAFAM'
-import FitFeedback from './Fit_Feedback.png';
+const FeedbackBackgroundImageUrl = "https://res.cloudinary.com/the-wardrobe/image/upload/w_2000/v1539631571/Music_Studio_Fo_Real_Color.png";
 
 export default class Feedback extends Component{
   constructor(props){
@@ -82,6 +77,7 @@ export default class Feedback extends Component{
     });
   }
 
+
   onBackgroundImageLoaded = () => {
     this.setState({bgImgLoaded : true});
   }
@@ -105,7 +101,7 @@ export default class Feedback extends Component{
           <div className={"feedback-background-wrapper"}>
             <img
               className={"feedback-background"}
-              src={FeedbackBackground}
+              src={FeedbackBackgroundImageUrl}
               alt={""}
               onLoad = {this.onBackgroundImageLoaded}
               style = {{display: 'inline-block'}}

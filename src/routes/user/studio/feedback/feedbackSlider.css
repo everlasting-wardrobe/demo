@@ -22,12 +22,12 @@ input.feedback-slider::-webkit-slider-runnable-track {
 }
 
 input.feedback-slider::-webkit-slider-runnable-track {
-  background-image: url('./Feedback_Slider_Bar.png');
+  background-image: url('https://res.cloudinary.com/the-wardrobe/image/upload/v1539636360/Fit_Bar_Slider_Bar.png');
   background-size: 100% 100%;
 }
 
 input.fit-feedback-slider::-webkit-slider-runnable-track {
-  background-image: url('./Feedback_Slider_Bar.png');
+  background-image: url('https://res.cloudinary.com/the-wardrobe/image/upload/v1539636360/Fit_Bar_Slider_Bar.png');
   background-size: 100% 100%;
 }
 

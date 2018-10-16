@@ -12,21 +12,6 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    opacity: 1;
-  	animation-name: fadeInOpacity;
-  	animation-iteration-count: 1;
-  	animation-timing-function: ease-in;
-  	animation-duration: 1.5s;
-    transition: ease all 0.5s;
-  }
-
-  @keyframes fadeInOpacity {
-  	0% {
-  		opacity: 0;
-  	}
-  	100% {
-  		opacity: 1;
-  	}
   }
 
   .feedback-background{
@@ -38,9 +23,9 @@
   }
 
   .box-review-wrapper {
-    width: 22%;
-    height: 70%;
-    margin-left: 16%;
+    width: 25%;
+    height: 75%;
+    margin-left: 10%;
     padding-top: 6.5%;
     margin-right: 0px;
     /* display: inline-block; */
@@ -50,9 +35,9 @@
   }
 
   .item-display-rating{
-    width: 45%;
+    width: 52%;
     margin-top: 6.7%;
-    margin-left: 40.2%;
+    margin-left: 38%;
     position: absolute;
     height: 50%;
   }
@@ -63,7 +48,6 @@
 
   .feedback-rating{
     margin-top: 1%;
-    background-image: url(Feedback_PopUp_Background.png);
     height: 55%;
     background-size: 100% 100%;
   }
@@ -95,9 +79,9 @@
   }
 
   .box-review-wrapper {
-    width: 22%;
-    height: 70%;
-    margin-left: 16%;
+    width: 25%;
+    height: 75%;
+    margin-left: 10%;
     padding-top: 6.5%;
     margin-right: 0px;
     /* display: inline-block; */
@@ -107,9 +91,9 @@
   }
 
   .item-display-rating{
-    width: 45%;
+    width: 52%;
     margin-top: 6.7%;
-    margin-left: 40.2%;
+    margin-left: 38%;
     position: absolute;
     height: 50%;
   }

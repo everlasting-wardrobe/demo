@@ -68,6 +68,7 @@
     line-height: 1.5em;
     font-family: Lato;
     font-size: 1.0vw;
+    text-align: left;
   }
 }
 @media screen and (max-width: 414px) {
@@ -138,17 +139,29 @@
   overflow: hidden;
 }
 #booth-SKU-code{
+  margin-top: 3%;
   height: 10%;
   font-family: Lato;
   font-size: 1.1em;
+  text-align: left;
+}
+
+.cloth-info-container {
+  text-align: left;
 }
 
 .cloth-info-container span {
   font-size: 1em;
-    height: 10%;
+  height: 10%;
   /* line-height: 2em; */
   /* padding-right: 8%; */
 }
+
+.cloth-info-container{
+  text-align: left;
+  margin-top: 2%;
+}
+
 .overall-price h4{
 
   font-size: 1.5em;
@@ -160,6 +173,11 @@
   display: inline-block;
   text-decoration: line-through;
 }
+
+#booth-item-msrp {
+  text-align: left;
+}
+
 #booth-item-price{
     display: none;
 }

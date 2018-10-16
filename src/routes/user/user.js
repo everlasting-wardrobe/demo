@@ -1,6 +1,6 @@
 import React from 'react';
 import Signup from './signup/signup';
-import Studio from './studio/studio';
+import Studio from './studio/studio.js';
 import SizeConverter from './sizeConverter/sizeConverterStyledComp';
 import HeaderMenuContainer from '../../containers/headerMenuContainer';
 import Login from '../../view/user/login';

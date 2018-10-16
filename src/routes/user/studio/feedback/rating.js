@@ -3,18 +3,21 @@ import './rating.css';
 import FitFeedback from './Fit_Feedback.png';
 import StyleFeedback from './Style_Feedback.png';
 import styled from 'styled-components';
+const FitFeedbackSliderTrack = "https://res.cloudinary.com/the-wardrobe/image/upload/v1539635938/Style_Bar_Blue.png";
+const StyleFeedbackSliderTrack = 'https://res.cloudinary.com/the-wardrobe/image/upload/v1539634323/Fit_Bar_Blue.png';
+
 
 const Afam = styled.img`
-  height: 6.5vw;
-  width: 96%;
+  height: 6vw;
+  width: 88%;
   position: relative;
+  padding-top: 3%;
 `
 
 const RatingAFAM = (props)=>{
   const score = props.score;
-  let RatingScore = (score*100/10-10)*0.95 + 8;
+  let RatingScore = (score*100/10-10)*0.9 + props.offset;
   let imgSrc = props.imgSrc;
-  // console.log(RatingScore);
   return(
     <div className={"Rating-bar"} style={{textAlign: 'center'}}>
       <Afam src ={imgSrc}/>
@@ -33,7 +36,7 @@ const RatingAFAM = (props)=>{
           zIndex:5,
           position: 'absolute',
           width: '8.6%',
-          height:'3.6vw',
+          height:'4vw',
           backgroundColor: '#96D6D7',
           opacity: 0.5,
           top: '0.95vw',
@@ -90,8 +93,8 @@ export default class Rating extends Component{
       </div>
         <div key={this.state.Barcode} className={`item-feedback-slider-container`} style={{display: `${this.state.rating}`}} >
             <div className={"Ratingbar-wrapper"}>
-              <RatingAFAM score={this.state.StyleRating} imgSrc={FitFeedback}/>
-              <RatingAFAM score={this.state.FitRating} imgSrc={StyleFeedback}/>
+              <RatingAFAM score={this.state.StyleRating} offset={10} imgSrc={FitFeedbackSliderTrack}/>
+              <RatingAFAM score={this.state.FitRating} offset={8} imgSrc={StyleFeedbackSliderTrack}/>
             </div>
               <div className="item-feedback-slider-wrapper">
               <div className="item-feedback-slider-title">{"Style Rating"}</div>
